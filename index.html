@@ -92,9 +92,9 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 20px 60px;
+      padding: 0px 20px 60px;
       /* account for safe area on notched phones */
-      padding-top: max(40px, calc(24px + env(safe-area-inset-top)));
+      padding-top: max(0px, env(safe-area-inset-top));
       background:
         radial-gradient(ellipse 60% 40% at 50% 0%, rgba(232,102,61,.22) 0%, transparent 65%),
         radial-gradient(ellipse 40% 60% at 80% 80%, rgba(232,102,61,.04) 0%, transparent 60%),
@@ -917,8 +917,8 @@
     @media (max-width: 600px) {
       /* Hero — tighter on small screens, account for notch */
       .hero {
-        padding: 24px 16px 36px;
-        padding-top: max(24px, calc(16px + env(safe-area-inset-top)));
+        padding: 0px 16px 36px;
+        padding-top: max(0px, env(safe-area-inset-top));
       }
       .hero-badge { font-size: 10px; letter-spacing: .05em; padding: 5px 13px; margin-bottom: 20px; }
       .hero-sub { font-size: 14px; margin-bottom: 28px; }
@@ -1102,22 +1102,24 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 12px;
+      /* negative margin pulls logo up, compensating for
+         the internal black padding baked into the PNG     */
+      margin-top: -40px;
+      margin-bottom: 0px;
     }
     .hero-logo {
-      width: 200px;
-      height: 200px;
+      width: 160px;
+      height: 160px;
       object-fit: contain;
       display: block;
       image-rendering: auto;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      /* clean, sharp — no glow or color bleed */
       filter: none;
     }
     @media (max-width: 600px) {
-      .hero-logo { width: 150px; height: 150px; }
-      .hero-logo-wrap { margin-bottom: 10px; }
+      .hero-logo { width: 130px; height: 130px; }
+      .hero-logo-wrap { margin-top: -28px; margin-bottom: 0px; }
     }
 
     /* ── CTA BUTTON — CLEAN (no price inside) ──────────── */
