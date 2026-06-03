@@ -92,9 +92,9 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 80px 20px 72px;
+      padding: 40px 20px 60px;
       /* account for safe area on notched phones */
-      padding-top: max(80px, calc(60px + env(safe-area-inset-top)));
+      padding-top: max(40px, calc(24px + env(safe-area-inset-top)));
       background:
         radial-gradient(ellipse 60% 40% at 50% 0%, rgba(232,102,61,.22) 0%, transparent 65%),
         radial-gradient(ellipse 40% 60% at 80% 80%, rgba(232,102,61,.04) 0%, transparent 60%),
@@ -129,7 +129,7 @@
       letter-spacing: .06em;
       text-transform: uppercase;
       color: var(--orange);
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
     .hero-badge-dot {
       width: 6px; height: 6px;
@@ -917,8 +917,8 @@
     @media (max-width: 600px) {
       /* Hero — tighter on small screens, account for notch */
       .hero {
-        padding: 48px 16px 44px;
-        padding-top: max(48px, calc(32px + env(safe-area-inset-top)));
+        padding: 24px 16px 36px;
+        padding-top: max(24px, calc(16px + env(safe-area-inset-top)));
       }
       .hero-badge { font-size: 10px; letter-spacing: .05em; padding: 5px 13px; margin-bottom: 20px; }
       .hero-sub { font-size: 14px; margin-bottom: 28px; }
@@ -1102,7 +1102,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 28px;
+      margin-bottom: 12px;
     }
     .hero-logo {
       width: 200px;
@@ -1117,7 +1117,7 @@
     }
     @media (max-width: 600px) {
       .hero-logo { width: 150px; height: 150px; }
-      .hero-logo-wrap { margin-bottom: 22px; }
+      .hero-logo-wrap { margin-bottom: 10px; }
     }
 
     /* ── CTA BUTTON — CLEAN (no price inside) ──────────── */
@@ -1319,7 +1319,7 @@
   </div>
 
   <!-- CTA -->
-  <a href="#payment" class="cta-btn-clean">ابدأ التأهيل الآن</a>
+  <a href="#payment" onclick="scrollToPayment(event)" class="cta-btn-clean">ابدأ التأهيل الآن</a>
   <p class="cta-note">
     <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
     مبني على أحدث الأبحاث في الـ <span class="en" style="font-size:11px;">Sports Rehabilitation</span>
@@ -1504,6 +1504,18 @@
       </div>
 
     </div>
+
+    <!-- CTA after phases — shortcut for high-intent users -->
+    <div style="text-align:center; margin-top:40px;">
+      <a href="#payment" onclick="scrollToPayment(event)" class="cta-btn-clean" style="margin:0 auto;">
+        احجز مكانك الآن
+      </a>
+      <p class="cta-note" style="margin-top:12px;">
+        <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
+        وصول فوري بعد التأكيد · <span class="en" style="font-size:11px;">900 EGP One-Time</span>
+      </p>
+    </div>
+
   </div>
 </section>
 
@@ -1580,7 +1592,7 @@
           </div>
           <h3>تعليمات السلامة <span class="en">(Safety Guidelines)</span></h3>
         </div>
-        <p>إرشادات واضحة للتعامل مع مختلف السيناريوهات، تحدد بدقة متى يمكنك الاستمرار في التمرين ومتى يجب التوقف الفوري (<span class="en">Red Flags</span>) لضمان الأمان التام وتجنب تفاقم الإصابة.</p>
+        <p>إرشادات سريرية واضحة للتعامل مع مختلف السيناريوهات، تحدد بدقة متى يمكنك الاستمرار في التمرين ومتى يجب التوقف الفوري (<span class="en">Red Flags</span>) لضمان الأمان التام وتجنب تفاقم الإصابة.</p>
       </div>
 
     </div>
@@ -1596,7 +1608,7 @@
       <div class="sec-label">القصة بدأت منين؟</div>
 
       <div class="backstory-pull">
-        شفت رياضيين كتير ييكملوا العلاج الطبيعي…<br />
+        شفت رياضيين كتير يكملوا علاجهم الطبيعي…<br />
         <em>ويرجع يحصلهم التواء تاني بعد أسابيع.</em>
       </div>
 
@@ -1651,7 +1663,7 @@
       <ul class="notfor-list">
         <li><span class="cross">✕</span>مش مستعد تلتزم ببرنامج تأهيل منظم بشكل يومي.</li>
         <li><span class="cross">✕</span>بتدور على حل سريع يخفف الألم وخلاص — من غير ما تشتغل على الجذور الحقيقية للمشكلة.</li>
-        <li><span class="cross">✕</span>مش مستعد تدخل مراحل <span class="en">strength loading</span> وتحديات <span class="en">plyometric progression</span> فعلية.</li>
+        <li><span class="cross">✕</span>مش مستعد تدخل مراحل تقوية وتحديات بلايومتريكس.</li>
         <li><span class="cross">✕</span>عايز <span class="en">rehab</span> مريح ومش مُجهِد.</li>
       </ul>
       <div class="notfor-truth">
@@ -1670,7 +1682,7 @@
     <span class="en">Sprinting · Cutting · Jumping · Change of Direction</span><br />
     بثقة كاملة من غير خوف أو ألم.
   </p>
-  <a href="#payment" class="cta-btn-clean" style="margin:0 auto;">ابدأ التأهيل الآن</a>
+  <a href="#payment" onclick="scrollToPayment(event)" class="cta-btn-clean" style="margin:0 auto;">ابدأ التأهيل الآن</a>
 </div>
 
 <hr class="div" />
@@ -1922,7 +1934,7 @@
     الكاحل مش نقطة ضعفك —<br />
     <em>خليه سلاحك الأقوى.</em>
   </h2>
-  <a href="#payment" class="cta-btn-clean" style="margin:0 auto;">ابدأ التأهيل الآن</a>
+  <a href="#payment" onclick="scrollToPayment(event)" class="cta-btn-clean" style="margin:0 auto;">ابدأ التأهيل الآن</a>
   <p class="cta-note" style="margin-top:14px;">
     <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
     مبني على أحدث الأبحاث العلمية · <span class="en" style="font-size:11px;">Evidence-Based Rehab Protocol</span>
@@ -1932,6 +1944,28 @@
 <div class="foot">© 2026 BULLETPROOF ANKLE PROGRAM · ALL RIGHTS RESERVED</div>
 
 <script>
+/* ── Scroll-to-top on every page load ──────────────────
+   Prevents the browser from restoring a prior scroll
+   position or jumping to a #hash in the URL on load.   */
+window.addEventListener('load', function () {
+  // Force viewport to the very top, overriding any
+  // anchor in the URL or browser scroll restoration.
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  history.replaceState(null, '', window.location.pathname);
+});
+
+/* ── Smooth-scroll to payment section ──────────────────
+   All CTA buttons call this instead of using bare <a href="#payment">.
+   This makes the jump smooth and only fires on explicit click. */
+function scrollToPayment(e) {
+  if (e) e.preventDefault();
+  var target = document.getElementById('payment');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+/* ── Copy-to-clipboard ──────────────────────────────── */
 function copyText(id, btn) {
   var text = document.getElementById(id).textContent.trim();
   navigator.clipboard.writeText(text).then(function() {
