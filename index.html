@@ -1112,11 +1112,8 @@
       image-rendering: auto;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      /* sharp shiny glow — tight bright edge + subtle wider halo */
-      filter:
-        drop-shadow(0 0 3px rgba(255,255,255,.45))
-        drop-shadow(0 0 8px rgba(232,102,61,.85))
-        drop-shadow(0 0 20px rgba(232,102,61,.40));
+      /* clean, sharp — no glow or color bleed */
+      filter: none;
     }
     @media (max-width: 600px) {
       .hero-logo { width: 150px; height: 150px; }
@@ -1190,129 +1187,6 @@
       letter-spacing: .04em;
     }
 
-
-    /* ── NOT-FOR SECTION ───────────────────────────────── */
-    .notfor-card {
-      background: var(--bg-card);
-      border: 1px solid var(--bg-stroke);
-      border-radius: 14px;
-      padding: 40px 36px;
-    }
-    @media (max-width: 480px) { .notfor-card { padding: 28px 20px; } }
-
-    .acute-warning {
-      background: rgba(184,68,68,.06);
-      border: 1px solid rgba(184,68,68,.2);
-      border-radius: 10px;
-      padding: 18px 22px;
-      font-size: 13.5px;
-      color: #d9a0a0;
-      margin-bottom: 32px;
-      line-height: 1.75;
-      backdrop-filter: blur(4px);
-    }
-    .acute-warning strong { color: #e07070; }
-
-    .notfor-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-    .notfor-list li {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      font-size: 14.5px;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
-    .cross {
-      flex-shrink: 0;
-      width: 22px; height: 22px;
-      margin-top: 2px;
-      border-radius: 50%;
-      background: rgba(184,68,68,.1);
-      border: 1px solid rgba(184,68,68,.22);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--red-soft);
-    }
-
-    .notfor-truth {
-      border-top: 1px solid var(--bg-stroke);
-      padding-top: 24px;
-      margin-top: 4px;
-      font-size: 14.5px;
-      color: var(--text-mid);
-      line-height: 1.8;
-      border-right: 3px solid var(--orange);
-      padding-right: 18px;
-    }
-    .notfor-truth strong { color: var(--text-hi); }
-
-    /* ── BACKSTORY ─────────────────────────────────────── */
-    .backstory-bg {
-      background: var(--bg-card);
-      border-top: 1px solid var(--bg-stroke);
-      border-bottom: 1px solid var(--bg-stroke);
-    }
-    .backstory-inner { max-width: 660px; margin: 0 auto; }
-
-    .backstory-pull {
-      font-size: clamp(20px, 3.2vw, 32px);
-      font-weight: 700;
-      line-height: 1.35;
-      margin-bottom: 28px;
-    }
-    .backstory-pull em { font-style: normal; color: var(--orange); }
-
-    .story-p {
-      color: var(--text-mid);
-      font-size: 15px;
-      margin-bottom: 14px;
-      line-height: 1.8;
-    }
-    .story-p strong { color: var(--text-hi); }
-
-    .story-list {
-      list-style: none;
-      background: var(--bg-lift);
-      border: 1px solid var(--bg-stroke);
-      border-radius: var(--radius);
-      padding: 20px 22px;
-      display: flex; flex-direction: column; gap: 10px;
-      margin: 18px 0;
-    }
-    .story-list li {
-      display: flex; gap: 12px; align-items: flex-start;
-      font-size: 14px; color: var(--text-mid);
-    }
-    .story-arrow { color: var(--orange); font-weight: 700; flex-shrink: 0; }
-
-    .brand-name-display { text-align: center; margin: 40px 0; }
-    .brand-name-display span {
-      font-family: var(--display);
-      font-size: clamp(38px, 8vw, 74px);
-      color: var(--orange);
-      letter-spacing: .04em;
-      text-shadow: 0 0 50px rgba(232,102,61,.28);
-    }
-
-    .result-block { margin-top: 28px; border-top: 1px solid var(--bg-stroke); padding-top: 24px; }
-    .result-block h3 { font-size: 17px; font-weight: 700; margin-bottom: 14px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .chip {
-      background: rgba(232,102,61,.08);
-      border: 1px solid rgba(232,102,61,.18);
-      color: var(--orange-hi);
-      font-size: 13px; font-weight: 600;
-      padding: 6px 14px; border-radius: 50px;
-    }
 
     /* ── FAQ override ──────────────────────────────────── */
     .faq-label { background: #111315; border-color: #1e2022; }
@@ -1455,22 +1329,22 @@
   <div class="tech-bar">
     <div class="tech-item">
       <span class="tech-dot"></span>
-      Web App Platform
+      تطبيق الويب
     </div>
     <div class="tech-sep"></div>
     <div class="tech-item">
       <span class="tech-dot"></span>
-      Progress Tracking
+      متابعة التطور
     </div>
     <div class="tech-sep"></div>
     <div class="tech-item">
       <span class="tech-dot"></span>
-      HD Video Library
+      مكتبة تمارين
     </div>
     <div class="tech-sep"></div>
     <div class="tech-item">
       <span class="tech-dot"></span>
-      4-Phase Protocol
+      برنامج أربع مراحل
     </div>
   </div>
 </section>
@@ -1490,7 +1364,7 @@
           <!-- icon: repeat/loop -->
           <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
         </div>
-        <p>تمارين أستك (<span class="en">Band exercises</span>) بدائية ومملة مش بتترجم لأداء حقيقي جوه الملعب — تعبت من الحلول اللي ما بنيتش عضلة ولا ثقة حقيقية.</p>
+        <p>دوامة الإصابات المتكررة (<span class="en">Chronic Instability</span>): كل إصابة جديدة تؤدي إلى تدهور ملحوظ في الأداء الحركي، وتزيد من فترة الانقطاع عن الملاعب.</p>
       </div>
 
       <div class="pain-card">
@@ -1687,6 +1561,28 @@
         <p>مكتبة تعليمية شاملة — تفاصيل عن طبيعة إصابتك، إزاي تختار الشوز الأنسب، ونصائح عملية تخليك تحمي نفسك وتحسّن أداءك في نفس الوقت.</p>
       </div>
 
+      <div class="deliv-card">
+        <div class="deliv-index">05</div>
+        <div class="deliv-icon-row">
+          <div class="deliv-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/></svg>
+          </div>
+          <h3>أداة التقييم <span class="en">(Assessment Tool)</span></h3>
+        </div>
+        <p>تقييم دقيق وشامل لتحديد نقطة البداية الصحيحة، مع فحص كامل للأعراض لضمان الأمان وتجنب تفاقم الإصابة.</p>
+      </div>
+
+      <div class="deliv-card">
+        <div class="deliv-index">06</div>
+        <div class="deliv-icon-row">
+          <div class="deliv-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
+          </div>
+          <h3>تعليمات السلامة <span class="en">(Safety Guidelines)</span></h3>
+        </div>
+        <p>إرشادات سريرية واضحة للتعامل مع مختلف السيناريوهات، تحدد بدقة متى يمكنك الاستمرار في التمرين ومتى يجب التوقف الفوري (<span class="en">Red Flags</span>) لضمان الأمان التام وتجنب تفاقم الإصابة.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1700,7 +1596,7 @@
       <div class="sec-label">القصة بدأت منين؟</div>
 
       <div class="backstory-pull">
-        شفت رياضيين كتير بيكملو العلاج الطبيعي ...<br />
+        شفت رياضيين كتير يكملوا علاجهم الطبيعي…<br />
         <em>ويرجع يحصلهم التواء تاني بعد أسابيع.</em>
       </div>
 
@@ -1759,7 +1655,7 @@
         <li><span class="cross">✕</span>عايز <span class="en">rehab</span> مريح ومش مُجهِد.</li>
       </ul>
       <div class="notfor-truth">
-        <strong>الحقيقة اللي مفيش جدال فيها:</strong><br />
+        <strong>الحقيقة التي لا جدال فيها:</strong><br />
         لو التأهيل ما وصلش للمستوى اللي يتحدى فيه جسمك فعلًا — مش هيحصل أي تغيير حقيقي. الجسم بيتكيف مع الضغط اللي بيتعرضله، لا أكتر ولا أقل.
       </div>
     </div>
@@ -1828,16 +1724,16 @@
       </div>
 
 
-      <!-- CLINICAL Q4 — Pain during rehab -->
+      <!-- CLINICAL Q4 — PT replacement -->
       <div class="faq-item">
         <input type="checkbox" id="q4" />
         <label class="faq-label" for="q4">
-          <span>هل هحس بألم أثناء التمارين وده طبيعي؟</span>
+          <span>هل البرنامج ده يغنيني عن دكتور العلاج الطبيعي؟</span>
           <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </label>
         <div class="faq-body">
           <div class="faq-body-inner">
-            فيه فرق جوهري بين <span class="en">Discomfort</span> وبين <span class="en">Pain</span>. الـ <span class="en">Discomfort</span> أو الإحساس بالتعب العضلي أثناء تمارين الـ <span class="en">Loading</span> ده طبيعي جداً وجزء أساسي من عملية التكيّف. لكن أي ألم حاد، ألم نابض، أو تورم ملحوظ بعد الجلسة، ده إشارة إنك تخفف الحِمل أو تراجع المرحلة. البروتوكول مصمم بـ <span class="en">Progressive Overload</span> تدريجي عشان يتجنب تمامًا أي <span class="en">Overloading</span> مبكر.
+            بروتوكول الدرع هو نظام تأهيلي متقدم مبني على أحدث أسس الميكانيكا الحيوية الرياضية، ولكنه لا يحل محل التقييم الطبي المبدئي. البرنامج مصمم ليقود رحلة استشفائك الحركي بالكامل، بشرط أن تكون قد خضعت لفحص مبدئي لاستبعاد وجود كسور أو تمزقات كاملة تتطلب تدخلاً جراحياً.
           </div>
         </div>
       </div>
