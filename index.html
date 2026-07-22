@@ -31,6 +31,7 @@
       --text-mid:   #9ca0a4;
       --text-lo:    #3e4247;
       --red-soft:   #b84444;
+      --green:      #5BAD6F;
       --orange-dim: rgba(232,102,61,.12);
       --radius:     10px;
       --ar: 'IBM Plex Sans Arabic', sans-serif;
@@ -92,9 +93,9 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 60px 20px 60px;
+      padding: 36px 20px 60px;
       /* account for safe area on notched phones */
-      padding-top: max(60px, calc(40px + env(safe-area-inset-top)));
+      padding-top: max(36px, calc(24px + env(safe-area-inset-top)));
       background:
         radial-gradient(ellipse 60% 40% at 50% 0%, rgba(232,102,61,.22) 0%, transparent 65%),
         radial-gradient(ellipse 40% 60% at 80% 80%, rgba(232,102,61,.04) 0%, transparent 60%),
@@ -917,8 +918,8 @@
     @media (max-width: 600px) {
       /* Hero — tighter on small screens, account for notch */
       .hero {
-        padding: 60px 16px 48px;
-        padding-top: max(60px, calc(40px + env(safe-area-inset-top)));
+        padding: 28px 16px 48px;
+        padding-top: max(28px, calc(20px + env(safe-area-inset-top)));
       }
       .hero-badge { font-size: 10px; letter-spacing: .05em; padding: 5px 13px; margin-bottom: 20px; }
       .hero-sub { font-size: 14px; margin-bottom: 28px; }
@@ -1102,12 +1103,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 0px;
-      margin-bottom: 8px;
+      margin: -12px 0 0;
     }
     .hero-logo {
-      width: 160px;
-      height: 160px;
+      width: 230px;
+      height: 230px;
       object-fit: contain;
       display: block;
       image-rendering: auto;
@@ -1116,8 +1116,8 @@
       filter: none;
     }
     @media (max-width: 600px) {
-      .hero-logo { width: 130px; height: 130px; }
-      .hero-logo-wrap { margin-top: 0px; margin-bottom: 6px; }
+      .hero-logo { width: 180px; height: 180px; }
+      .hero-logo-wrap { margin: -8px 0 0; }
     }
 
     /* ── CTA BUTTON — CLEAN (no price inside) ──────────── */
@@ -1271,6 +1271,198 @@
       flex-shrink: 0;
       animation: pulse 2s ease-in-out infinite;
     }
+
+    /* ══════════════════════════════════════════════════════
+       THE SYSTEM — Assessment Center + Phase Gates
+       ══════════════════════════════════════════════════════ */
+    .sys-intro { color: var(--text-mid); font-size: 15.5px; max-width: 640px; margin-bottom: 44px; line-height: 1.9; }
+    .sys-intro strong { color: var(--text-hi); font-weight: 600; }
+
+    .sys-block { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; margin-bottom: 72px; }
+    .sys-block:last-of-type { margin-bottom: 0; }
+    .sys-block.flip .sys-copy { order: 2; }
+    .sys-kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--en); font-size: 10px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--orange); border: 1px solid rgba(232,102,61,.3);
+      border-radius: 50px; padding: 4px 14px; margin-bottom: 14px;
+    }
+    .sys-h3 { font-size: 21px; font-weight: 700; margin-bottom: 10px; line-height: 1.5; }
+    .sys-p { color: var(--text-mid); font-size: 14.5px; line-height: 1.9; }
+    .sys-p strong { color: var(--text-hi); font-weight: 600; }
+
+    /* mock app frame — single example of the real product */
+    .app-frame {
+      background: var(--bg-card); border: 1px solid var(--bg-stroke);
+      border-radius: 16px; padding: 22px; position: relative;
+      box-shadow: 0 0 0 1px rgba(232,102,61,.05), 0 24px 48px rgba(0,0,0,.55);
+    }
+    .app-frame::before {
+      content: ''; position: absolute; inset: 0; border-radius: 16px;
+      background: radial-gradient(ellipse 70% 40% at 80% 0%, rgba(232,102,61,.08), transparent 70%);
+      pointer-events: none;
+    }
+    .app-frame-tag {
+      position: absolute; top: -11px; inset-inline-start: 18px;
+      background: var(--orange); color: #fff; font-size: 10.5px; font-weight: 700;
+      padding: 3px 14px; border-radius: 50px;
+    }
+    .app-frame-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .app-frame-title { font-size: 14px; font-weight: 600; }
+    .app-frame-title .en { font-size: 11px; color: var(--text-mid); }
+    .gate-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 50px;
+      background: rgba(232,102,61,.12); color: var(--orange-hi);
+      border: 1px solid rgba(232,102,61,.3); white-space: nowrap;
+    }
+    .gate-pill svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+
+    .metric-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 11px 0; border-bottom: 1px solid #1a1d21; }
+    .metric-row:last-of-type { border-bottom: none; }
+    .metric-name { font-size: 12.5px; font-weight: 500; color: var(--text-hi); }
+    .metric-val { font-family: var(--en); font-size: 12.5px; font-weight: 700; direction: ltr; }
+    .metric-val.pass { color: var(--green); }
+    .metric-val.pend { color: var(--orange-hi); }
+    .metric-bar { grid-column: 1 / -1; height: 4px; background: #1a1d21; border-radius: 4px; overflow: hidden; }
+    .metric-fill { height: 100%; border-radius: 4px; background: var(--green); }
+    .metric-fill.pend { background: var(--orange); }
+    .gate-foot {
+      margin-top: 16px; display: flex; align-items: center; gap: 10px;
+      background: #0D0F11; border: 1px solid var(--bg-stroke);
+      border-radius: 12px; padding: 12px 16px; font-size: 12px; color: var(--text-mid); line-height: 1.8;
+    }
+    .gate-foot b { color: var(--text-hi); font-weight: 600; }
+    .gate-foot svg { width: 16px; height: 16px; stroke: var(--orange); fill: none; stroke-width: 2; flex-shrink: 0; }
+
+    /* assessment quality chips — no test names, no protocols */
+    .test-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .test-chip {
+      position: relative; overflow: hidden;
+      background: linear-gradient(160deg, #14171a, var(--bg-card));
+      border: 1px solid var(--bg-stroke);
+      border-radius: 14px; padding: 16px 16px 15px;
+      transition: border-color .22s, transform .22s, box-shadow .22s;
+    }
+    .test-chip::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 100% 0%, rgba(232,102,61,.10), transparent 70%);
+      opacity: 0; transition: opacity .22s; pointer-events: none;
+    }
+    .test-chip:hover {
+      border-color: rgba(232,102,61,.5); transform: translateY(-3px);
+      box-shadow: 0 12px 26px rgba(0,0,0,.4);
+    }
+    .test-chip:hover::after { opacity: 1; }
+    .test-chip-ico {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; border-radius: 9px; margin-bottom: 10px;
+      background: var(--orange-dim); border: 1px solid rgba(232,102,61,.22);
+    }
+    .test-chip-ico svg { width: 17px; height: 17px; stroke: var(--orange-hi); fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+    .test-chip-idx {
+      position: absolute; top: 13px; inset-inline-end: 14px;
+      font-family: var(--display); font-size: 20px; line-height: 1;
+      color: rgba(232,102,61,.28);
+    }
+    .test-chip-name { font-size: 13.5px; font-weight: 600; display: block; line-height: 1.5; color: var(--text-hi); }
+    .test-chip-sub { font-size: 11px; color: var(--text-mid); display: block; margin-top: 3px; line-height: 1.6; }
+    .test-chip-accent {
+      background: linear-gradient(160deg, rgba(232,102,61,.14), rgba(232,102,61,.04));
+      border-color: rgba(232,102,61,.35);
+    }
+    .test-chip-accent .test-chip-ico { background: rgba(232,102,61,.2); }
+
+    .sys-closer { margin-top: 64px; text-align: center; font-size: 17px; font-weight: 600; line-height: 1.9; }
+    .sys-closer em { color: var(--orange-hi); font-style: normal; }
+
+    /* ══════════════════════════════════════════════════════
+       VALUE STACK + PRICE REVEAL (payment section)
+       ══════════════════════════════════════════════════════ */
+    .offer-sub { text-align: center; color: var(--text-mid); font-size: 14.5px; max-width: 520px; margin: 0 auto 40px; line-height: 1.9; }
+
+    .stack-card {
+      background: var(--bg-card); border: 1px solid var(--bg-stroke);
+      border-radius: 18px; overflow: hidden; max-width: 640px; margin: 0 auto 44px;
+      box-shadow: 0 0 0 1px rgba(232,102,61,.05), 0 28px 60px rgba(0,0,0,.6);
+    }
+    .stack-head {
+      background: linear-gradient(180deg, #15181c, #111315);
+      border-bottom: 1px solid var(--bg-stroke);
+      padding: 18px 26px; display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    }
+    .stack-head-title { font-size: 14px; font-weight: 700; }
+    .stack-head-en { font-family: var(--en); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); white-space: nowrap; }
+    .stack-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 16px 26px; border-bottom: 1px solid #1a1d21; }
+    .stack-item-main { display: flex; gap: 12px; align-items: flex-start; }
+    .stack-check {
+      width: 20px; height: 20px; flex-shrink: 0; margin-top: 3px; border-radius: 6px;
+      background: var(--orange-dim); display: flex; align-items: center; justify-content: center;
+    }
+    .stack-check svg { width: 11px; height: 11px; stroke: var(--orange-hi); fill: none; stroke-width: 3; }
+    .stack-item-name { font-size: 14px; font-weight: 600; line-height: 1.6; }
+    .stack-item-desc { font-size: 12px; color: var(--text-mid); line-height: 1.8; margin-top: 2px; }
+    .stack-item-val { font-family: var(--en); direction: ltr; font-size: 12.5px; font-weight: 700; color: var(--text-mid); white-space: nowrap; padding-top: 4px; }
+    .stack-total { display: flex; justify-content: space-between; align-items: center; padding: 18px 26px; background: #0D0F11; }
+    .stack-total-label { font-size: 13px; font-weight: 600; color: var(--text-mid); }
+    .stack-total-val {
+      font-family: var(--en); direction: ltr; font-size: 16px; font-weight: 800; color: var(--text-mid);
+      text-decoration: line-through; text-decoration-color: var(--orange); text-decoration-thickness: 2px;
+    }
+
+    .offer-price {
+      padding: 30px 26px 30px; text-align: center;
+      background: linear-gradient(180deg, #17110e, #1a1210);
+      border-top: 2px solid var(--orange);
+      position: relative;
+    }
+    .offer-price-label {
+      font-size: 12px; font-weight: 700; letter-spacing: .02em;
+      color: var(--orange-hi); margin-bottom: 4px;
+    }
+    .offer-price-amount {
+      font-family: var(--display); font-size: clamp(64px, 14vw, 92px); line-height: 1;
+      color: #fff; letter-spacing: .02em; text-shadow: 0 0 60px rgba(232,102,61,.5);
+    }
+    .offer-price-currency { font-size: .32em; color: var(--orange); vertical-align: 40%; margin-inline-end: 8px; letter-spacing: .08em; }
+    .offer-price-save {
+      display: inline-block; margin-top: 10px;
+      font-size: 12.5px; font-weight: 600; color: var(--green);
+      background: rgba(91,173,111,.1); border: 1px solid rgba(91,173,111,.28);
+      border-radius: 50px; padding: 5px 16px;
+    }
+    .offer-price-save b { color: var(--green); font-weight: 800; }
+    .offer-price-terms { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+    .term-chip { font-size: 11px; font-weight: 600; color: var(--text-mid); border: 1px solid var(--bg-stroke); border-radius: 50px; padding: 5px 14px; background: #0D0F11; }
+    .offer-compare { font-size: 12.5px; color: var(--text-mid); margin: 18px auto 0; max-width: 420px; line-height: 1.9; }
+    .offer-compare b { color: var(--text-hi); }
+
+    /* mobile rules for new sections */
+    @media (max-width: 768px) {
+      .sys-block { grid-template-columns: 1fr; gap: 22px; margin-bottom: 56px; }
+      .sys-block.flip .sys-copy { order: 0; }
+    }
+    @media (max-width: 600px) {
+      .sys-intro { font-size: 14.5px; margin-bottom: 36px; }
+      .sys-h3 { font-size: 18px; }
+      .sys-p { font-size: 14px; }
+      .sys-closer { font-size: 15.5px; margin-top: 44px; }
+      .app-frame { padding: 18px 14px; }
+      .test-grid { gap: 8px; }
+      .test-chip { padding: 11px 13px; }
+      .stack-card { margin-bottom: 36px; }
+      .stack-item { padding: 14px 16px; gap: 12px; }
+      .stack-head, .stack-total { padding-inline: 16px; }
+      .stack-item-name { font-size: 13.5px; }
+      .stack-item-val { font-size: 12px; }
+      .offer-price { padding: 28px 16px 26px; }
+      .offer-sub { font-size: 13.5px; margin-bottom: 32px; }
+    }
+    @media (max-width: 380px) {
+      .test-grid { grid-template-columns: 1fr; }
+      .stack-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+    }
 </style>
 </head>
 <body>
@@ -1285,7 +1477,7 @@
   <div class="hero-logo-wrap">
     <img
       src="brand.png"
-      alt="Behind The Injury � Bulletproof Ankle"
+      alt="Behind The Injury — Bulletproof Ankle"
       class="hero-logo"
       loading="eager"
     />
@@ -1304,7 +1496,7 @@
   <p class="hero-sub">
     وترجع تجري، تغيّر اتجاه، وتنط بدون خوف من الإصابة تاني —
     برنامج مبني خصيصًا للرياضيين اللي عندهم
-    <span class="en">Chronic Ankle Instability</span>
+    <strong style="color:var(--text-hi);">عدم ثبات مزمن في الكاحل</strong>
   </p>
 
   <!-- VIDEO -->
@@ -1319,7 +1511,7 @@
   </div>
 
   <!-- CTA -->
-  <a href="#payment" onclick="scrollToPayment(event)" class="cta-btn-clean">ابدأ التأهيل الآن</a>
+  <a href="#payment" onclick="scrollToPayment(event)" class="cta-btn-clean">ابدأ البرنامج</a>
   <p class="cta-note">
     <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
     مبني على أحدث الأبحاث في الـ <span class="en" style="font-size:11px;">Sports Rehabilitation</span>
@@ -1388,7 +1580,7 @@
           <!-- icon: percent / reduced performance -->
           <svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
         </div>
-        <p>بتلعب على 70–80% بس عشان خايف — فقدت الثقة الكاملة في جسمك وبقيت بتلعب بعقلية دفاعية مش هجومية.</p>
+        <p>بتلعب بمجهود 70–80% بس عشان خايف — فقدت الثقة الكاملة في جسمك وبقيت بتلعب بعقلية دفاعية مش هجومية.</p>
       </div>
 
       <div class="pain-card">
@@ -1439,7 +1631,7 @@
       </div>
       <div class="dream-card">
         <div class="dream-num">٤</div>
-        <p>الـ <span class="en">lower body</span> كله <span class="en">stable</span> و<span class="en">powerful</span> — مش بس الكاحل — لأن التأهيل الحقيقي بيشتغل على السلسلة كلها.</p>
+        <p>رجلك بقت كلها قوية وثابتة — مش بس الكاحل — لأن التأهيل الحقيقي بيشتغل على السلسلة كلها.</p>
       </div>
       <div class="dream-card">
         <div class="dream-num">٥</div>
@@ -1521,6 +1713,124 @@
 
 <hr class="div" />
 
+<!-- ═══════════════ THE SYSTEM ═══════════════ -->
+<section id="system">
+  <div class="wrap sec">
+    <div class="sec-label">إيه اللي جوه السيستم؟</div>
+    <h2 class="sec-title">ده مش برنامج تمارين.<br />ده <span style="color:var(--orange);">نظام بيقود التأهيل</span> خطوة بخطوة.</h2>
+    <p class="sys-intro">
+      أي حد يقدر يديك شوية تمارين. السؤال الحقيقي هو:
+      <strong>إمتى تزوّد الحمل؟ إمتى تنتقل للمرحلة اللي بعدها؟ إمتى تبقى فعلًا جاهز ترجع تلعب؟</strong><br />
+      وده اللي النظام بيعمله — القرار مش بالإحساس. القرار بالأرقام.
+    </p>
+
+    <!-- 01 · Assessment Center -->
+    <div class="sys-block">
+      <div class="sys-copy">
+        <span class="sys-kicker">01 · Assessment Center</span>
+        <h3 class="sys-h3">بدل التخمين… بتبدأ بـ7 اختبارات بسيطة تعرفك مستواك الحقيقي</h3>
+        <p class="sys-p">
+          كل اختبار ليه <strong>رقم مستهدف</strong>. ولما تحققه… تعرف إنك جاهز تكمل.
+          الاختبارات بتقيس الجوانب دي — وبتتعاد في نهاية كل مرحلة عشان تشوف الفجوة بتقفل:
+        </p>
+      </div>
+      <div class="test-grid">
+        <div class="test-chip">
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 8-8 8 8 0 0 1 8 8"/><line x1="12" y1="12" x2="16" y2="9"/></svg></span>
+          <span class="test-chip-idx">01</span>
+          <span class="test-chip-name">المرونة والحركة</span>
+        </div>
+        <div class="test-chip">
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M5 9l7-4 7 4"/><path d="M5 15l7 4 7-4"/></svg></span>
+          <span class="test-chip-idx">02</span>
+          <span class="test-chip-name">التوازن الديناميكي</span>
+        </div>
+        <div class="test-chip">
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+          <span class="test-chip-idx">03</span>
+          <span class="test-chip-name">الثبات التفاعلي</span>
+        </div>
+        <div class="test-chip">
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+          <span class="test-chip-idx">04</span>
+          <span class="test-chip-name">القوة الانفجارية</span>
+        </div>
+        <div class="test-chip">
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M6.5 6.5a2.5 2.5 0 0 1 5 0v11a2.5 2.5 0 0 1-5 0z"/><path d="M12.5 9h5a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-5"/></svg></span>
+          <span class="test-chip-idx">05</span>
+          <span class="test-chip-name">قوة العضلات</span>
+        </div>
+        <div class="test-chip">
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span>
+          <span class="test-chip-idx">06</span>
+          <span class="test-chip-name">التحكم العصبي</span>
+        </div>
+        <div class="test-chip">
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg></span>
+          <span class="test-chip-idx">07</span>
+          <span class="test-chip-name">الثقة في المفصل</span>
+        </div>
+        <div class="test-chip test-chip-accent">
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></span>
+          <span class="test-chip-name">بتتعاد في كل مرحلة</span>
+          <span class="test-chip-sub">عشان تشوف الفجوة بتقفل</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 · Phase Gates -->
+    <div class="sys-block flip">
+      <div class="sys-copy">
+        <span class="sys-kicker">02 · Phase Gates</span>
+        <h3 class="sys-h3">المرحلة الجاية مقفولة — لحد ما أرقامك تفتحها</h3>
+        <p class="sys-p">
+          البرنامج متقسم لـ4 مراحل، وكل مرحلة ليها "بوابة خروج": معايير رقمية لازم تحققها الأول.
+          <strong>مستحيل تستعجل وتتصاب تاني، ومستحيل تتأخر وأنت جاهز.</strong>
+          بدون استعجال… ولا تضييع وقت.
+        </p>
+      </div>
+      <div class="app-frame" role="img" aria-label="مثال من واجهة التطبيق: بوابة مرحلة ومعايير الفتح">
+        <span class="app-frame-tag">مثال من داخل التطبيق</span>
+        <div class="app-frame-head">
+          <div class="app-frame-title">بوابة المرحلة ٤ <span class="en">Return to Sport</span></div>
+          <span class="gate-pill"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> مقفولة</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-name">معيار الثبات</span>
+          <span class="metric-val pend">86% / 90%</span>
+          <div class="metric-bar"><div class="metric-fill pend" style="width:86%"></div></div>
+        </div>
+        <div class="metric-row">
+          <span class="metric-name">معيار القوة</span>
+          <span class="metric-val pass">93% ✓</span>
+          <div class="metric-bar"><div class="metric-fill" style="width:93%"></div></div>
+        </div>
+        <div class="metric-row">
+          <span class="metric-name">معيار التوازن</span>
+          <span class="metric-val pass">✓</span>
+          <div class="metric-bar"><div class="metric-fill" style="width:100%"></div></div>
+        </div>
+        <div class="metric-row">
+          <span class="metric-name">الثقة في المفصل</span>
+          <span class="metric-val pend">7 / 8</span>
+          <div class="metric-bar"><div class="metric-fill pend" style="width:70%"></div></div>
+        </div>
+        <div class="gate-foot">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span><b>٢ من ٤ معايير اتحققت.</b> البوابة بتتفتح أوتوماتيك لما الأرقام كلها تعدّي.</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="sys-closer">
+      يوتيوب بيوريك تمارين.<br />
+      النظام ده يوريك <em>أنت واقف فين.</em>
+    </p>
+  </div>
+</section>
+
+<hr class="div" />
+
 <!-- ═══════════════ DELIVERABLES ═══════════════ -->
 <section>
   <div class="wrap sec">
@@ -1533,22 +1843,22 @@
         <div class="deliv-index">01</div>
         <div class="deliv-icon-row">
           <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           </div>
-          <h3>فيديوهات شرح تفصيلية</h3>
+          <h3><span class="en">Progress Tracking App</span></h3>
         </div>
-        <p>كل تمرين في كل مرحلة مشروح بالتفصيل الكامل — متصوّر بدقة عشان تضمن تطبيق صح للتكنيك من أول يوم. مفيش تخمين، كل حاجة واضحة.</p>
+        <p>سجّل نتائجك، شوف تقدمك، واعرف إمتى تبقى جاهز للمرحلة اللي بعدها — كل ده على حسابك الشخصي في تطبيق الويب.</p>
       </div>
 
       <div class="deliv-card">
         <div class="deliv-index">02</div>
         <div class="deliv-icon-row">
           <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/></svg>
           </div>
-          <h3><span class="en">Progress Tracking Web App</span></h3>
+          <h3>مركز التقييم <span class="en">(Assessment Center)</span></h3>
         </div>
-        <p>تطبيق ويب مخصص لمتابعة تطورك خطوة بخطوة في كل مرحلة — عشان تعرف بالظبط إمتى تكون جاهز للمرحلة الجاية، وتشوف مسارك واضح قدامك.</p>
+        <p>7 اختبارات تقيس القوة، التوازن، التحكم، والجاهزية للعودة — عشان تعرف نقطة بدايتك الصحيحة ومستواك الحقيقي.</p>
       </div>
 
       <div class="deliv-card">
@@ -1557,31 +1867,31 @@
           <div class="deliv-icon">
             <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
-          <h3>بروتوكول تأهيل متقدم</h3>
+          <h3>بروتوكول تأهيل 10 أسابيع</h3>
         </div>
-        <p>مبني على أحدث الأبحاث العلمية في الـ <span class="en">Sports Rehabilitation</span> — مفيش عشوائية. كل خطوة محسوبة ومبرّرة علميًا لتعالج الـ <span class="en">Chronic Instability</span> من جذورها.</p>
+        <p>خطة واضحة من أول أسبوع لحد العودة للرياضة — مبنية على أحدث الأبحاث في الـ <span class="en">Sports Rehabilitation</span>. مفيش عشوائية، كل خطوة محسوبة.</p>
       </div>
 
       <div class="deliv-card">
         <div class="deliv-index">04</div>
         <div class="deliv-icon-row">
           <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
           </div>
-          <h3><span class="en">Educational Center</span></h3>
+          <h3>مكتبة التمارين <span class="en">(Exercise Library)</span></h3>
         </div>
-        <p>مكتبة تعليمية شاملة — تفاصيل عن طبيعة إصابتك، إزاي تختار الشوز الأنسب، ونصائح عملية تخليك تحمي نفسك وتحسّن أداءك في نفس الوقت.</p>
+        <p>كل تمرين متصوّر — تعرف التكنيك بالظبط، والأخطاء اللي لازم تتجنبها. مفيش تخمين، كل حاجة واضحة من أول يوم.</p>
       </div>
 
       <div class="deliv-card">
         <div class="deliv-index">05</div>
         <div class="deliv-icon-row">
           <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
           </div>
-          <h3>أداة التقييم <span class="en">(Assessment Tool)</span></h3>
+          <h3>المركز التعليمي <span class="en">(Education Center)</span></h3>
         </div>
-        <p>تقييم دقيق وشامل لتحديد نقطة البداية الصحيحة، مع فحص كامل للأعراض لضمان الأمان وتجنب تفاقم الإصابة.</p>
+        <p>افهم ليه الإصابة بتحصل، وإزاي تمنعها ترجع — بالإضافة لنصائح عملية زي اختيار الشوز الأنسب لرياضتك.</p>
       </div>
 
       <div class="deliv-card">
@@ -1590,9 +1900,9 @@
           <div class="deliv-icon">
             <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
           </div>
-          <h3>تعليمات السلامة <span class="en">(Safety Guidelines)</span></h3>
+          <h3>نظام الأمان <span class="en">(Safety System)</span></h3>
         </div>
-        <p>إرشادات سريرية واضحة للتعامل مع مختلف السيناريوهات، تحدد بدقة متى يمكنك الاستمرار في التمرين ومتى يجب التوقف الفوري (<span class="en">Red Flags</span>) لضمان الأمان التام وتجنب تفاقم الإصابة.</p>
+        <p>اعرف إمتى تكمل، إمتى تخفف، وإمتى توقف فورًا (<span class="en">Red Flags</span>) — إرشادات واضحة لضمان الأمان وتجنب تفاقم الإصابة.</p>
       </div>
 
     </div>
@@ -1608,7 +1918,7 @@
       <div class="sec-label">القصة بدأت منين؟</div>
 
       <div class="backstory-pull">
-        شفت رياضيين كتير يكملوا علاجهم الطبيعي…<br />
+        شفت رياضيين كتير يكملوا العلاج الطبيعي…<br />
         <em>ويرجع يحصلهم التواء تاني بعد أسابيع.</em>
       </div>
 
@@ -1640,7 +1950,7 @@
           <span class="chip">يجروا بثقة حقيقية</span>
           <span class="chip">ينطوا بدون خوف</span>
           <span class="chip">يلاعبوا بأسلوب هجومي</span>
-          <span class="chip">يخرجوا من دوامة الـ <span class="en" style="font-size:12px;">Re-injury</span></span>
+          <span class="chip">يخرجوا من دوامة تكرار الإصابة</span>
         </div>
       </div>
     </div>
@@ -1656,7 +1966,7 @@
     <div class="notfor-card">
 
       <div class="acute-warning">
-        <strong>ملاحظة مهمة:</strong> لو لسه متعرض لـ <strong><span class="en">Acute Ankle Sprain</span></strong> حاصل من أيام قليلة، البرنامج ده مش مناسب دلوقتي. هو متصمم لـ <span class="en">Chronic cases</span> والـ <span class="en">Late-stage rehab</span> — ومش مناسب للـ <span class="en">Acute phase</span> اللي محتاجة تدخل طبي أولي والكاحل لسه وارم ومتورم.
+        <strong>ملاحظة مهمة:</strong> لو لسه متعرض لـ <strong>التواء في الكاحل</strong> من أيام قليلة، البرنامج ده مش مناسب دلوقتي — الكاحل لسه محتاج راحة وتدخل طبي أولي. هو متصمم لحالات عدم الثبات المزمن والتأهيل الرياضي، مش للإصابة وهي لسه وارمة ومتورمة.
       </div>
 
       <p style="font-weight:800; font-size:16px; margin-bottom:18px;">مش مناسب ليك لو:</p>
@@ -1699,12 +2009,12 @@
       <div class="faq-item">
         <input type="checkbox" id="q0" />
         <label class="faq-label" for="q0">
-          <span>ايه الأدوات اللي محتاجها في البرنامج؟</span>
+          <span>إيه الأدوات اللي محتاجها في البرنامج؟</span>
           <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </label>
         <div class="faq-body">
           <div class="faq-body-inner">
-            ادوات بسيطة جداً زي حبل مقاومة واوزان مع وجود بدائل للتمرين في حالة عدم توفرها.
+            أدوات بسيطة جدًا زي حبل مقاومة وأوزان — مع وجود بدائل لكل تمرين في حالة عدم توفرها.
           </div>
         </div>
       </div>
@@ -1759,7 +2069,7 @@
         </label>
         <div class="faq-body">
           <div class="faq-body-inner">
-            أغلب حالات الـ <span class="en">Re-injury</span> بتحصل بسبب <span class="en">Proprioceptive Deficits</span> وضعف في الـ <span class="en">Neuromuscular Control</span> اللي بيبقوا غير محلولين حتى بعد انتهاء الألم الظاهري. البرنامج بيعالج التسلسل الكامل — بدأً من إعادة تأهيل الـ <span class="en">Mechanoreceptors</span> في الكاحل، مرورًا ببناء قدرة انفجارية حقيقية، وصولاً للتدريب على الـ <span class="en">Reactive Agility</span> تحت ظروف مشابهة للعب الفعلي. النتيجة: كاحل مش بس محتمل، لكن جاهز نيورولوجيًا وميكانيكيًا لأي حِمل غير متوقع.
+            أغلب حالات الـ <span class="en">Re-injury</span> بتحصل بسبب <span class="en">Proprioceptive Deficits</span> وضعف في الـ <span class="en">Neuromuscular Control</span> اللي بيبقوا غير محلولين حتى بعد انتهاء الألم الظاهري. البرنامج بيعالج التسلسل الكامل — بدءًا من إعادة تأهيل الـ <span class="en">Mechanoreceptors</span> في الكاحل، مرورًا ببناء قدرة انفجارية حقيقية، وصولاً للتدريب على الـ <span class="en">Reactive Agility</span> تحت ظروف مشابهة للعب الفعلي. النتيجة: كاحل مش بس محتمل، لكن جاهز نيورولوجيًا وميكانيكيًا لأي حِمل غير متوقع.
           </div>
         </div>
       </div>
@@ -1782,12 +2092,12 @@
       <div class="faq-item">
         <input type="checkbox" id="q7" />
         <label class="faq-label" for="q7">
-          <span>عندي تواء قديم من سنين — البرنامج هينفع معايا؟</span>
+          <span>عندي التواء قديم من سنين — البرنامج هينفع معايا؟</span>
           <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </label>
         <div class="faq-body">
           <div class="faq-body-inner">
-            بالتأكيد. الـ <span class="en">Chronic Ankle Instability</span> حتى اللي من سنين، لو الأربطة التئمت بشكل مش مثالي أو فضل عندك <span class="en">Neuromuscular Deficit</span>، الجهاز العصبي العضلي قادر على التأهيل والتكيّف من خلال التدريب المبرمج الصحيح. الأبحاث الحديثة بتثبت إن الـ <span class="en">Neuroplasticity</span> والـ <span class="en">Tissue Adaptation</span> ممكنة في أي مرحلة — الشرط الوحيد هو الـ <span class="en">Progressive Loading</span> المنظم والمتسق. هوه ده بالظبط اللي البرنامج مبني عليه.
+            بالتأكيد. الـ <span class="en">Chronic Ankle Instability</span> حتى اللي من سنين، لو الأربطة التئمت بشكل مش مثالي أو فضل عندك <span class="en">Neuromuscular Deficit</span>، الجهاز العصبي العضلي قادر على التأهيل والتكيّف من خلال التدريب المبرمج الصحيح. الأبحاث الحديثة بتثبت إن الـ <span class="en">Neuroplasticity</span> والـ <span class="en">Tissue Adaptation</span> ممكنة في أي مرحلة — الشرط الوحيد هو الـ <span class="en">Progressive Loading</span> المنظم والمتسق. وده بالظبط اللي البرنامج مبني عليه.
           </div>
         </div>
       </div>
@@ -1812,15 +2122,81 @@
 <!-- ═══════════════ PAYMENT SECTION ═══════════════ -->
 <section id="payment" style="background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(255,82,0,.07) 0%, transparent 70%), var(--bg); padding: 80px 0;">
   <div class="wrap">
-    <div class="sec-label-center">احجز مكانك الآن</div>
-    <h2 class="sec-title" style="text-align:center; margin-bottom:32px;">اختار طريقة الدفع المناسبة ليك</h2>
+    <div class="sec-label-center">العرض الكامل</div>
+    <h2 class="sec-title" style="text-align:center; max-width:560px; margin:0 auto 14px;">نظام كامل لـ10 أسابيع — بسعر جلستين علاج طبيعي تقريبًا.</h2>
+    <p class="offer-sub">مش بتشتري ملف تمارين. بتشتري نظام كامل بيقيس، بيتابع، وبيقرر معاك.</p>
 
-    <!-- PRICE DISPLAY -->
-    <div class="pay-price-block">
-      <span class="pay-price-amount">
-        <span class="pay-price-currency">EGP</span>900
-      </span>
-      <p class="pay-price-note">ONE-TIME PAYMENT · INSTANT ACCESS</p>
+    <!-- VALUE STACK -->
+    <div class="stack-card">
+      <div class="stack-head">
+        <span class="stack-head-title">اللي هتاخده لحظة الدفع:</span>
+        <span class="stack-head-en">The Full System</span>
+      </div>
+
+      <div class="stack-item">
+        <div class="stack-item-main">
+          <span class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div>
+            <div class="stack-item-name">بروتوكول 10 أسابيع (بديل ~12 جلسة تأهيل)</div>
+            <div class="stack-item-desc">خطة واضحة من أول أسبوع لحد العودة للرياضة — وكل تمرين متصوّر بالتكنيك والأخطاء الشائعة.</div>
+          </div>
+        </div>
+        <span class="stack-item-val">3,600 EGP</span>
+      </div>
+
+      <div class="stack-item">
+        <div class="stack-item-main">
+          <span class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div>
+            <div class="stack-item-name">مركز التقييم — 7 اختبارات قياس</div>
+            <div class="stack-item-desc">كل اختبار له رقم مستهدف يعرفك مستواك الحقيقي وجاهزيتك للخطوة الجاية.</div>
+          </div>
+        </div>
+        <span class="stack-item-val">400 EGP</span>
+      </div>
+
+      <div class="stack-item">
+        <div class="stack-item-main">
+          <span class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div>
+            <div class="stack-item-name">تطبيق المتابعة + بوابات المراحل</div>
+            <div class="stack-item-desc">حساب شخصي بيحفظ نتائجك، وبيفتح المرحلة الجاية لما أرقامك تثبت جاهزيتك.</div>
+          </div>
+        </div>
+        <span class="stack-item-val">400 EGP</span>
+      </div>
+
+      <div class="stack-item">
+        <div class="stack-item-main">
+          <span class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div>
+            <div class="stack-item-name">المركز التعليمي + نظام الأمان</div>
+            <div class="stack-item-desc">تفهم إصابتك وتعرف بدقة إمتى تكمل، إمتى تخفف، وإمتى توقف فورًا.</div>
+          </div>
+        </div>
+        <span class="stack-item-val">400 EGP</span>
+      </div>
+
+      <div class="stack-total">
+        <span class="stack-total-label">القيمة الكاملة</span>
+        <span class="stack-total-val">4,800 EGP</span>
+      </div>
+
+      <!-- PRICE REVEAL -->
+      <div class="offer-price">
+        <div class="offer-price-label">اللي هتدفعه فعليًا — دفعة واحدة</div>
+        <div class="offer-price-amount"><span class="offer-price-currency">EGP</span>900</div>
+        <div class="offer-price-save">توفّر <b>3,900 ج.م</b> من القيمة الكاملة</div>
+        <div class="offer-price-terms">
+          <span class="term-chip">دفعة واحدة</span>
+          <span class="term-chip">وصول فوري</span>
+          <span class="term-chip">تحديثات مجانية</span>
+        </div>
+        <p class="offer-compare">
+          جلسة علاج طبيعي واحدة ممكن تتكلف <b>300–600 ج.م</b>.
+          النظام ده كله بيكلفك أقل من أسبوع جلسات — ومعاك على طول.
+        </p>
+      </div>
     </div>
 
     <!-- URGENCY -->
