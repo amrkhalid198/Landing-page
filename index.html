@@ -166,83 +166,6 @@
       margin-bottom: 36px;
     }
 
-    /* VIDEO */
-    .video-shell {
-      width: 100%;
-      max-width: 740px;
-      aspect-ratio: 16/9;
-      background: #0e0e0e;
-      border-radius: 14px;
-      border: 1px solid rgba(255,82,0,.2);
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      margin-bottom: 28px;
-      box-shadow:
-        0 0 0 1px rgba(255,82,0,.06),
-        0 0 60px rgba(255,82,0,.1),
-        0 28px 60px rgba(0,0,0,.7);
-      transition: border-color .25s;
-    }
-    .video-shell:hover { border-color: rgba(255,82,0,.45); }
-
-    /* subtle scanline texture */
-    .video-shell::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(255,255,255,.012) 2px,
-        rgba(255,255,255,.012) 4px
-      );
-      pointer-events: none;
-    }
-
-    .video-content {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 14px;
-    }
-    .play-ring {
-      width: 68px; height: 68px;
-      border-radius: 50%;
-      background: var(--orange);
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 0 10px rgba(255,82,0,.15), 0 0 0 22px rgba(255,82,0,.06);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .video-shell:hover .play-ring {
-      transform: scale(1.08);
-      box-shadow: 0 0 0 14px rgba(255,82,0,.2), 0 0 0 30px rgba(255,82,0,.08);
-    }
-    .play-ring svg { width: 26px; height: 26px; fill: #fff; margin-left: 3px; }
-    .video-tag {
-      font-family: var(--en);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-    }
-    .video-label-pill {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(255,82,0,.85);
-      backdrop-filter: blur(6px);
-      color: #fff;
-      font-family: var(--en);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 5px 11px;
-      border-radius: 4px;
-    }
-
     /* ── CTA BUTTON ────────────────────────────────────── */
     .cta-btn {
       display: inline-flex;
@@ -923,7 +846,6 @@
       }
       .hero-badge { font-size: 10px; letter-spacing: .05em; padding: 5px 13px; margin-bottom: 20px; }
       .hero-sub { font-size: 14px; margin-bottom: 28px; }
-      .video-shell { margin-bottom: 22px; }
 
       /* ── more breathing room between sections on mobile ── */
       .sec { padding: 64px 0; }
@@ -1404,6 +1326,10 @@
     .stack-item-name { font-size: 14px; font-weight: 600; line-height: 1.6; }
     .stack-item-desc { font-size: 12px; color: var(--text-mid); line-height: 1.8; margin-top: 2px; }
     .stack-item-val { font-family: var(--en); direction: ltr; font-size: 12.5px; font-weight: 700; color: var(--text-mid); white-space: nowrap; padding-top: 4px; }
+    .stack-item-gift { display: flex; flex-direction: column; align-items: center; gap: 3px; padding-top: 2px; }
+    .stack-item-gift svg { width: 22px; height: 22px; stroke: var(--orange); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; display: block; }
+    .stack-item-gift-cap { font-family: var(--ar); font-size: 10px; font-weight: 700; color: var(--orange-hi); line-height: 1; }
+    .stack-item-anchor { text-decoration: line-through; text-decoration-color: var(--orange); text-decoration-thickness: 2px; color: var(--text-mid); }
     .stack-total { display: flex; justify-content: space-between; align-items: center; padding: 18px 26px; background: #0D0F11; }
     .stack-total-label { font-size: 13px; font-weight: 600; color: var(--text-mid); }
     .stack-total-val {
@@ -1499,17 +1425,6 @@
     <strong style="color:var(--text-hi);">عدم ثبات مزمن في الكاحل</strong>
   </p>
 
-  <!-- VIDEO -->
-  <div class="video-shell">
-    <div class="video-label-pill">WATCH FIRST</div>
-    <div class="video-content">
-      <div class="play-ring">
-        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-      </div>
-      <span class="video-tag">Play Video</span>
-    </div>
-  </div>
-
   <!-- CTA -->
   <a href="#payment" onclick="scrollToPayment(event)" class="cta-btn-clean">ابدأ البرنامج</a>
   <p class="cta-note">
@@ -1596,7 +1511,7 @@
           <!-- icon: phone/social -->
           <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
-        <p>جربت فيديوهات عشوائية من السوشيال ميديا ومش جايباله نتيجة — لأن مفيش <span class="en">system</span> متكامل خلف أي فيديو منهم.</p>
+        <p>جربت فيديوهات عشوائية من السوشيال ميديا ومش جايبه نتيجة — لأن مفيش <span class="en">system</span> متكامل خلف أي فيديو منهم.</p>
       </div>
 
     </div>
@@ -1657,7 +1572,7 @@
           <span class="phase-tag">PHASE 1 — MIN 2 WEEKS</span>
           <h3>التنشيط والحماية</h3>
           <p>
-            استعادة الـ <span class="en">Arthrokinematics</span> الأساسية للكاحل، تقليل الاستجابة الالتهابية، تطبيع ميكانيكا الـ <span class="en">Dorsiflexion</span>، وإعادة التنشيط العصبي العضلي المعزول لـ <span class="en">Intrinsic Foot Muscles</span> والـ <span class="en">Lateral Stabilizers</span>.
+            استعادة الـ <span class="en">Arthrokinematics</span> الأساسية للكاحل، تقليل الاستجابة الالتهابية، استعادة حركة الـ <span class="en">Dorsiflexion</span>، وإعادة التنشيط العصبي العضلي المعزول لـ <span class="en">Intrinsic Foot Muscles</span> والـ <span class="en">Lateral Stabilizers</span>.
           </p>
         </div>
       </div>
@@ -1918,7 +1833,7 @@
       <div class="sec-label">القصة بدأت منين؟</div>
 
       <div class="backstory-pull">
-        شفت رياضيين كتير يكملوا العلاج الطبيعي…<br />
+        شفت رياضيين كتير يكملوا التأهيل…<br />
         <em>ويرجع يحصلهم التواء تاني بعد أسابيع.</em>
       </div>
 
@@ -1987,7 +1902,7 @@
 <!-- ═══════════════ CTA SCROLL PROMPT ═══════════════ -->
 <div class="cta-block">
   <div class="sec-label-center">جاهز تبدأ؟</div>
-  <h2 class="sec-title" style="text-align:center; max-width:540px; margin:0 auto 12px;">ابدأ تبني كاحل مش ممكن ينكسر</h2>
+  <h2 class="sec-title" style="text-align:center; max-width:540px; margin:0 auto 12px;">تبدأ تبني كاحل مش ممكن ينكسر</h2>
   <p style="color:var(--text-mid); font-size:14px; margin-bottom:32px; text-align:center;">
     <span class="en">Sprinting · Cutting · Jumping · Change of Direction</span><br />
     بثقة كاملة من غير خوف أو ألم.
@@ -2123,7 +2038,7 @@
 <section id="payment" style="background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(255,82,0,.07) 0%, transparent 70%), var(--bg); padding: 80px 0;">
   <div class="wrap">
     <div class="sec-label-center">العرض الكامل</div>
-    <h2 class="sec-title" style="text-align:center; max-width:560px; margin:0 auto 14px;">نظام كامل لـ10 أسابيع — بسعر جلستين علاج طبيعي تقريبًا.</h2>
+    <h2 class="sec-title" style="text-align:center; max-width:560px; margin:0 auto 14px;">نظام كامل لـ10 أسابيع — بسعر جلستين تأهيل تقريبًا.</h2>
     <p class="offer-sub">مش بتشتري ملف تمارين. بتشتري نظام كامل بيقيس، بيتابع، وبيقرر معاك.</p>
 
     <!-- VALUE STACK -->
@@ -2141,7 +2056,7 @@
             <div class="stack-item-desc">خطة واضحة من أول أسبوع لحد العودة للرياضة — وكل تمرين متصوّر بالتكنيك والأخطاء الشائعة.</div>
           </div>
         </div>
-        <span class="stack-item-val">3,600 EGP</span>
+        <span class="stack-item-val stack-item-anchor">4,800 EGP</span>
       </div>
 
       <div class="stack-item">
@@ -2152,7 +2067,7 @@
             <div class="stack-item-desc">كل اختبار له رقم مستهدف يعرفك مستواك الحقيقي وجاهزيتك للخطوة الجاية.</div>
           </div>
         </div>
-        <span class="stack-item-val">400 EGP</span>
+        <span class="stack-item-val stack-item-gift" aria-label="هدية"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span class="stack-item-gift-cap">هدية</span></span>
       </div>
 
       <div class="stack-item">
@@ -2163,7 +2078,7 @@
             <div class="stack-item-desc">حساب شخصي بيحفظ نتائجك، وبيفتح المرحلة الجاية لما أرقامك تثبت جاهزيتك.</div>
           </div>
         </div>
-        <span class="stack-item-val">400 EGP</span>
+        <span class="stack-item-val stack-item-gift" aria-label="هدية"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span class="stack-item-gift-cap">هدية</span></span>
       </div>
 
       <div class="stack-item">
@@ -2174,7 +2089,7 @@
             <div class="stack-item-desc">تفهم إصابتك وتعرف بدقة إمتى تكمل، إمتى تخفف، وإمتى توقف فورًا.</div>
           </div>
         </div>
-        <span class="stack-item-val">400 EGP</span>
+        <span class="stack-item-val stack-item-gift" aria-label="هدية"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span class="stack-item-gift-cap">هدية</span></span>
       </div>
 
       <div class="stack-total">
