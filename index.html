@@ -1331,7 +1331,7 @@
     .stack-item-gift svg { width: 22px; height: 22px; stroke: var(--orange); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; display: block; }
     .stack-item-gift-cap { font-family: var(--ar); font-size: 10px; font-weight: 700; color: var(--orange-hi); line-height: 1; }
     .stack-item-anchor { text-decoration: line-through; text-decoration-color: var(--orange); text-decoration-thickness: 2px; color: var(--text-mid); }
-    .stack-total { display: flex; justify-content: space-between; align-items: center; padding: 18px 26px; background: #0D0F11; }
+    .stack-total { display: flex; justify-content: space-between; align-items: center; padding: 18px 26px; background: #0D0F11; border-top: 1px solid var(--bg-stroke); }
     .stack-total-label { font-size: 13px; font-weight: 600; color: var(--text-mid); }
     .stack-total-val {
       font-family: var(--en); direction: ltr; font-size: 16px; font-weight: 800; color: var(--text-mid);
@@ -2092,11 +2092,6 @@
         <span class="stack-item-val stack-item-gift" aria-label="هدية"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span class="stack-item-gift-cap">هدية</span></span>
       </div>
 
-      <div class="stack-total">
-        <span class="stack-total-label">القيمة الكاملة</span>
-        <span class="stack-total-val">4,800 EGP</span>
-      </div>
-
       <!-- PRICE REVEAL -->
       <div class="offer-price" id="price">
         <div class="offer-price-label">اللي هتدفعه فعليًا — دفعة واحدة</div>
@@ -2107,6 +2102,11 @@
           <span class="term-chip">وصول فوري</span>
           <span class="term-chip">تحديثات مجانية</span>
         </div>
+      </div>
+
+      <div class="stack-total">
+        <span class="stack-total-label">القيمة الكاملة</span>
+        <span class="stack-total-val">4,800 EGP</span>
       </div>
     </div>
 
