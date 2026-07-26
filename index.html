@@ -1339,31 +1339,30 @@
     }
 
     .offer-price {
-      padding: 30px 26px 30px; text-align: center;
+      padding: 38px 26px 38px; text-align: center;
       background: linear-gradient(180deg, #17110e, #1a1210);
       border-top: 2px solid var(--orange);
       position: relative;
+      scroll-margin-top: 22vh;
     }
     .offer-price-label {
-      font-size: 12px; font-weight: 700; letter-spacing: .02em;
-      color: var(--orange-hi); margin-bottom: 4px;
+      font-size: 14px; font-weight: 700; letter-spacing: .02em;
+      color: var(--orange-hi); margin-bottom: 8px;
     }
     .offer-price-amount {
-      font-family: var(--display); font-size: clamp(64px, 14vw, 92px); line-height: 1;
+      font-family: var(--display); font-size: clamp(84px, 18vw, 124px); line-height: 1;
       color: #fff; letter-spacing: .02em; text-shadow: 0 0 60px rgba(232,102,61,.5);
     }
     .offer-price-currency { font-size: .32em; color: var(--orange); vertical-align: 40%; margin-inline-end: 8px; letter-spacing: .08em; }
     .offer-price-save {
-      display: inline-block; margin-top: 10px;
-      font-size: 12.5px; font-weight: 600; color: var(--green);
+      display: inline-block; margin-top: 16px;
+      font-size: 14px; font-weight: 600; color: var(--green);
       background: rgba(91,173,111,.1); border: 1px solid rgba(91,173,111,.28);
-      border-radius: 50px; padding: 5px 16px;
+      border-radius: 50px; padding: 7px 20px;
     }
     .offer-price-save b { color: var(--green); font-weight: 800; }
-    .offer-price-terms { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
-    .term-chip { font-size: 11px; font-weight: 600; color: var(--text-mid); border: 1px solid var(--bg-stroke); border-radius: 50px; padding: 5px 14px; background: #0D0F11; }
-    .offer-compare { font-size: 12.5px; color: var(--text-mid); margin: 18px auto 0; max-width: 420px; line-height: 1.9; }
-    .offer-compare b { color: var(--text-hi); }
+    .offer-price-terms { display: flex; justify-content: center; gap: 9px; flex-wrap: wrap; margin-top: 18px; }
+    .term-chip { font-size: 12.5px; font-weight: 600; color: var(--text-mid); border: 1px solid var(--bg-stroke); border-radius: 50px; padding: 6px 16px; background: #0D0F11; }
 
     /* mobile rules for new sections */
     @media (max-width: 768px) {
@@ -1383,7 +1382,7 @@
       .stack-head, .stack-total { padding-inline: 16px; }
       .stack-item-name { font-size: 13.5px; }
       .stack-item-val { font-size: 12px; }
-      .offer-price { padding: 28px 16px 26px; }
+      .offer-price { padding: 32px 16px 32px; }
       .offer-sub { font-size: 13.5px; margin-bottom: 32px; }
     }
     @media (max-width: 380px) {
@@ -1427,7 +1426,7 @@
   </p>
 
   <!-- CTA -->
-  <a href="#payment" onclick="scrollToPayment(event)" class="cta-btn-clean">ابدأ البرنامج</a>
+  <a href="#price" onclick="scrollToPayment(event)" class="cta-btn-clean">ابدأ البرنامج</a>
   <p class="cta-note">
     <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
     مبني على أحدث الأبحاث في الـ <span class="en" style="font-size:11px;">Sports Rehabilitation</span>
@@ -1615,7 +1614,7 @@
 
     <!-- CTA after phases — shortcut for high-intent users -->
     <div style="text-align:center; margin-top:40px;">
-      <a href="#payment" onclick="scrollToPayment(event)" class="cta-btn-clean" style="margin:0 auto;">
+      <a href="#price" onclick="scrollToPayment(event)" class="cta-btn-clean" style="margin:0 auto;">
         احجز مكانك الآن
       </a>
       <p class="cta-note" style="margin-top:12px;">
@@ -1908,7 +1907,7 @@
     <span class="en">Sprinting · Cutting · Jumping · Change of Direction</span><br />
     بثقة كاملة من غير خوف أو ألم.
   </p>
-  <a href="#payment" onclick="scrollToPayment(event)" class="cta-btn-clean" style="margin:0 auto;">ابدأ التأهيل الآن</a>
+  <a href="#price" onclick="scrollToPayment(event)" class="cta-btn-clean" style="margin:0 auto;">ابدأ التأهيل الآن</a>
 </div>
 
 <hr class="div" />
@@ -2099,7 +2098,7 @@
       </div>
 
       <!-- PRICE REVEAL -->
-      <div class="offer-price">
+      <div class="offer-price" id="price">
         <div class="offer-price-label">اللي هتدفعه فعليًا — دفعة واحدة</div>
         <div class="offer-price-amount"><span class="offer-price-currency">EGP</span>900</div>
         <div class="offer-price-save">توفّر <b>3,900 ج.م</b> من القيمة الكاملة</div>
@@ -2108,10 +2107,6 @@
           <span class="term-chip">وصول فوري</span>
           <span class="term-chip">تحديثات مجانية</span>
         </div>
-        <p class="offer-compare">
-          جلسة علاج طبيعي واحدة ممكن تتكلف <b>300–600 ج.م</b>.
-          النظام ده كله بيكلفك أقل من أسبوع جلسات — ومعاك على طول.
-        </p>
       </div>
     </div>
 
@@ -2226,7 +2221,7 @@
     الكاحل مش نقطة ضعفك —<br />
     <em>خليه سلاحك الأقوى.</em>
   </h2>
-  <a href="#payment" onclick="scrollToPayment(event)" class="cta-btn-clean" style="margin:0 auto;">ابدأ التأهيل الآن</a>
+  <a href="#price" onclick="scrollToPayment(event)" class="cta-btn-clean" style="margin:0 auto;">ابدأ التأهيل الآن</a>
   <p class="cta-note" style="margin-top:14px;">
     <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
     مبني على أحدث الأبحاث العلمية · <span class="en" style="font-size:11px;">Evidence-Based Rehab Protocol</span>
@@ -2246,14 +2241,15 @@ window.addEventListener('load', function () {
   history.replaceState(null, '', window.location.pathname);
 });
 
-/* ── Smooth-scroll to payment section ──────────────────
-   All CTA buttons call this instead of using bare <a href="#payment">.
-   This makes the jump smooth and only fires on explicit click. */
+/* ── Smooth-scroll to the actual price (900 EGP) ───────
+   All CTA buttons call this instead of using bare <a href="#price">.
+   The jump lands on the price block itself and centers it in the
+   viewport, so the client sees the real number first. */
 function scrollToPayment(e) {
   if (e) e.preventDefault();
-  var target = document.getElementById('payment');
+  var target = document.getElementById('price') || document.getElementById('payment');
   if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 }
 
