@@ -70,6 +70,14 @@
       direction: ltr;
       display: inline-block;
     }
+    /* Latin term sitting mid-sentence in Arabic: isolated so the
+       parentheses keep their direction, without inline-block's
+       extra side spacing. */
+    .en-term {
+      font-family: var(--en);
+      direction: ltr;
+      unicode-bidi: isolate;
+    }
     section { position: relative; z-index: 1; }
     .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
 
@@ -390,6 +398,16 @@
     }
     .acute-warning strong { color: #e07070; }
 
+    .notfor-head {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 16px; color: #e07070;
+      margin-bottom: 20px;
+    }
+    .notfor-head svg {
+      flex-shrink: 0; width: 20px; height: 20px;
+      fill: none; stroke: var(--orange-hi);
+      stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round;
+    }
     .notfor-list {
       list-style: none;
       display: flex; flex-direction: column; gap: 14px;
@@ -1885,19 +1903,23 @@
     <div class="notfor-card">
 
       <div class="acute-warning">
-        <strong>ملاحظة مهمة:</strong> لو لسه متعرض لـ <strong>التواء في الكاحل</strong> من أيام قليلة، البرنامج ده مش مناسب دلوقتي — الكاحل لسه محتاج راحة وتدخل طبي أولي. هو متصمم لحالات عدم الثبات المزمن والتأهيل الرياضي، مش للإصابة وهي لسه وارمة ومتورمة.
+        <strong>ملاحظة مهمة:</strong> لو لسه متعرض لـ <strong>التواء في الكاحل</strong> من أيام قليلة، البرنامج ده مش مناسب دلوقتي — الكاحل لسه محتاج راحة وتدخل طبي أولي. هو متصمم لحالات عدم الثبات المزمن والتأهيل الرياضي، مش للإصابة وهي لسه حديثة ووارمة.
       </div>
 
-      <p style="font-weight:800; font-size:16px; margin-bottom:18px;">مش مناسب ليك لو:</p>
+      <p class="notfor-head">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        متبدأش البرنامج ده لو:
+      </p>
       <ul class="notfor-list">
-        <li><span class="cross">✕</span>مش مستعد تلتزم ببرنامج تأهيل منظم بشكل يومي.</li>
-        <li><span class="cross">✕</span>بتدور على حل سريع يخفف الألم وخلاص — من غير ما تشتغل على الجذور الحقيقية للمشكلة.</li>
-        <li><span class="cross">✕</span>مش مستعد تدخل مراحل تقوية وتحديات بلايومتريكس.</li>
-        <li><span class="cross">✕</span>عايز <span class="en">rehab</span> مريح ومش مُجهِد.</li>
+        <li><span class="cross">✕</span><span>معملتش أشعة <span class="en-term">(X-ray)</span> عشان نستبعد وجود كسر بعد إصابة قوية في الكاحل.</span></li>
+        <li><span class="cross">✕</span><span>مش قادر تحمل وزنك خالص على الكاحل من غير ألم شديد.</span></li>
+        <li><span class="cross">✕</span><span>عندك تورم شديد نشط بيمنع الـ <span class="en-term">(Range of Motion)</span> تمامًا.</span></li>
+        <li><span class="cross">✕</span><span>اتشخصت بقطع كامل في الأربطة ومحتاج استشارة جراحية.</span></li>
+        <li><span class="cross">✕</span><span>عندك علامات عدوى (سخونة، احمرار، حمى).</span></li>
+        <li><span class="cross">✕</span><span>اتشخصت بـ <span class="en-term">(Peripheral Neuropathy)</span> أو أمراض الأوعية الدموية في الساق.</span></li>
       </ul>
       <div class="notfor-truth">
-        <strong>الحقيقة التي لا جدال فيها:</strong><br />
-        لو التأهيل ما وصلش للمستوى اللي يتحدى فيه جسمك فعلًا — مش هيحصل أي تغيير حقيقي. الجسم بيتكيف مع الضغط اللي بيتعرضله، لا أكتر ولا أقل.
+        لو أي حاجة من دول بتنطبق عليك — أو لو مش متأكد — لازم تشوف دكتور علاج طبيعي قبل ما تبدأ. البرنامج ده متصمم للتأهيل بعد التقييم الطبي، مش كبديل ليه.
       </div>
     </div>
   </div>
