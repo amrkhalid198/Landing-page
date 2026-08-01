@@ -1411,6 +1411,228 @@
       .test-grid { grid-template-columns: 1fr; }
       .stack-head { flex-direction: column; align-items: flex-start; gap: 4px; }
     }
+
+    /* ══════════════════════════════════════════════════════
+       HERO — FULL PHOTO + HOOK LINE
+       ══════════════════════════════════════════════════════ */
+    .hero-photo-frame {
+      width: 100%;
+      max-width: 440px;
+      margin-bottom: 30px;
+    }
+    .hero-photo-full {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+      border: 1px solid rgba(232,102,61,.4);
+      box-shadow:
+        0 0 0 5px rgba(232,102,61,.07),
+        0 26px 60px rgba(0,0,0,.6),
+        0 0 80px rgba(232,102,61,.14);
+      object-fit: cover;
+    }
+    .hero-hook {
+      color: var(--orange);
+      font-size: clamp(17px, 3vw, 21px);
+      font-weight: 700;
+      line-height: 1.75;
+      max-width: 580px;
+      margin-bottom: 18px;
+    }
+    .hero .hero-h1 { margin-bottom: 26px; }
+    @media (max-width: 600px) {
+      .hero-photo-frame { max-width: 340px; margin-bottom: 24px; }
+      .hero-photo-full { border-radius: 16px; }
+      .hero-hook { font-size: 16px; margin-bottom: 14px; }
+    }
+
+    /* ══════════════════════════════════════════════════════
+       INJURY LOOP — الحلقة اللي بترجعك لنفس النقطة
+       ══════════════════════════════════════════════════════ */
+    .loop-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      padding-right: 8px;
+    }
+    .loop-list::before {
+      content: '';
+      position: absolute;
+      right: 15px;
+      top: 34px; bottom: 30px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(232,102,61,.55) 0%, rgba(232,102,61,.25) 100%);
+      z-index: 0;
+    }
+    .loop-row {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding-bottom: 30px;
+      position: relative;
+      z-index: 1;
+    }
+    .loop-num {
+      flex-shrink: 0;
+      width: 34px;
+      font-family: var(--ar);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--orange);
+      line-height: 1;
+      text-align: center;
+      background: var(--bg);
+      padding: 6px 0 10px;
+    }
+    .loop-card {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-stroke);
+      border-radius: 16px;
+      padding: 24px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: 0 14px 34px rgba(0,0,0,.35);
+      transition: border-color .2s, transform .2s;
+    }
+    .loop-card:hover { border-color: rgba(232,102,61,.3); transform: translateY(-2px); }
+    .loop-ico {
+      flex-shrink: 0;
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: var(--orange-dim);
+      border: 1px solid rgba(232,102,61,.22);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .loop-ico svg { width: 23px; height: 23px; stroke: var(--orange); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .loop-card h3 { font-size: 17.5px; font-weight: 700; margin-bottom: 5px; }
+    .loop-card p { font-size: 14.5px; color: var(--text-mid); line-height: 1.85; }
+    .loop-card .self-talk { color: var(--text-hi); font-weight: 700; }
+
+    /* rinse & repeat pill */
+    .loop-repeat {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+      padding-right: 0;
+    }
+    .loop-repeat-ico {
+      flex-shrink: 0;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(232,102,61,.4);
+    }
+    .loop-repeat-ico svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .loop-repeat-pill {
+      background: var(--orange);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 50px;
+      padding: 11px 26px;
+      box-shadow: 0 6px 24px rgba(232,102,61,.35);
+    }
+
+    .loop-closer {
+      margin-top: 40px;
+      background: rgba(232,102,61,.05);
+      border: 1px solid rgba(232,102,61,.18);
+      border-right: 3px solid var(--orange);
+      border-radius: var(--radius);
+      padding: 26px 28px;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+    .loop-closer .loop-no {
+      font-family: var(--display);
+      font-size: 34px;
+      color: var(--orange);
+      letter-spacing: .06em;
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .loop-closer p { color: var(--text-mid); font-size: 14.5px; }
+    .loop-closer .q-wrong,
+    .loop-closer .q-right {
+      display: block;
+      font-weight: 700;
+      font-size: 17px;
+      margin-top: 6px;
+    }
+    .loop-closer .q-wrong { color: var(--text-hi); }
+    .loop-closer .q-right { color: var(--orange-hi); font-size: 18px; }
+    @media (max-width: 600px) {
+      .loop-list { padding-right: 0; }
+      .loop-list::before { right: 13px; top: 30px; bottom: 26px; }
+      .loop-row { gap: 14px; padding-bottom: 22px; }
+      .loop-num { width: 28px; font-size: 19px; padding: 5px 0 8px; }
+      .loop-card { padding: 18px 16px; gap: 12px; border-radius: 14px; }
+      .loop-ico { width: 40px; height: 40px; border-radius: 10px; }
+      .loop-ico svg { width: 20px; height: 20px; }
+      .loop-card h3 { font-size: 16px; }
+      .loop-card p { font-size: 14px; }
+      .loop-repeat { gap: 10px; }
+      .loop-repeat-pill { font-size: 14px; padding: 10px 20px; }
+      .loop-closer { padding: 22px 18px; margin-top: 32px; }
+      .loop-closer .q-wrong { font-size: 16px; }
+      .loop-closer .q-right { font-size: 17px; }
+    }
+
+    /* ══════════════════════════════════════════════════════
+       FOR-YOU LIST — معمول ليك لو (paired with الاستبعاد)
+       ══════════════════════════════════════════════════════ */
+    .forfit-card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-stroke);
+      border-radius: 14px;
+      padding: 36px 32px;
+      margin-top: 20px;
+    }
+    @media (max-width: 480px) { .forfit-card { padding: 28px 20px; } }
+    .forfit-head {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 16px; color: var(--green);
+      margin-bottom: 20px;
+    }
+    .forfit-head .en { font-family: var(--display); font-size: 17px; letter-spacing: .04em; color: var(--orange); font-weight: 400; }
+    .forfit-head svg {
+      flex-shrink: 0; width: 20px; height: 20px;
+      fill: none; stroke: var(--green);
+      stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .fit-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .fit-list li {
+      display: flex; gap: 14px; align-items: flex-start;
+      font-size: 14.5px; font-weight: 600; color: #c6cacd;
+      line-height: 1.8;
+    }
+    .fit-list li strong { color: var(--text-hi); font-weight: 800; }
+    /* match the exclusion list to the same bold, scannable weight */
+    .notfor-list li { font-size: 14.5px; font-weight: 600; color: #c6cacd; line-height: 1.8; }
+    .tick {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      margin-top: 3px;
+      border-radius: 50%;
+      background: rgba(91,173,111,.12);
+      border: 1px solid rgba(91,173,111,.3);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .tick svg { width: 10px; height: 10px; stroke: var(--green); fill: none; stroke-width: 3.2; }
+    @media (max-width: 600px) {
+      .fit-list li { font-size: 14px; }
+    }
 </style>
 </head>
 <body>
@@ -1421,20 +1643,20 @@
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
 
-  <!-- BRAND LOGO -->
-  <div class="hero-logo-wrap">
+  <!-- COACH PHOTO — full-width, outlined -->
+  <div class="hero-photo-frame">
     <img
-      src="brand.png"
-      alt="Behind The Injury — Bulletproof Ankle"
-      class="hero-logo"
+      src="amr.jpg"
+      alt="عمرو — أخصائي علاج طبيعي، مؤسس برنامج Bulletproof Ankle"
+      class="hero-photo-full"
       loading="eager"
+      width="860"
+      height="1075"
     />
   </div>
 
-    <div class="hero-badge">
-    <span class="hero-badge-dot"></span>
-    Sports Rehabilitation &nbsp;·&nbsp; Performance Training
-  </div>
+  <!-- HOOK LINE (accent) -->
+  <p class="hero-hook">أنا عمرو — أخصائي علاج طبيعي مهتم بتأهيل الرياضيين والعودة للرياضة بعد إصابات الكاحل.</p>
 
   <h1 class="hero-h1">
     رجّع قوة وثبات الكاحل
@@ -1483,64 +1705,94 @@
 <!-- ═══════════════ PAIN POINTS ═══════════════ -->
 <section>
   <div class="wrap sec">
-    <div class="sec-label">هل ده بيوصف حالتك؟</div>
-    <h2 class="sec-title">البرنامج ده معمول ليك لو تعبت من:</h2>
+    <div class="sec-label">حلقة الإصابة</div>
+    <h2 class="sec-title">لو كل مرة بترجع لنفس النقطة… فدي مش صدفة.</h2>
 
-    <div class="pain-grid">
+    <div class="loop-list">
 
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: repeat/loop -->
-          <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
+      <div class="loop-row">
+        <div class="loop-num">١</div>
+        <div class="loop-card">
+          <span class="loop-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+          <div>
+            <h3>الكاحل بيتلوي.</h3>
+            <p>تقعد، ترتاح، تحط تلج… وبعد شوية الألم يهدى.</p>
+          </div>
         </div>
-        <p>دوامة الإصابات المتكررة (<span class="en">Chronic Instability</span>): كل إصابة جديدة تؤدي إلى تدهور ملحوظ في الأداء الحركي، وتزيد من فترة الانقطاع عن الملاعب.</p>
       </div>
 
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: alert triangle -->
-          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div class="loop-row">
+        <div class="loop-num">٢</div>
+        <div class="loop-card">
+          <span class="loop-ico"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+          <div>
+            <h3>الألم يختفي.</h3>
+            <p>فتقول: <span class="self-talk">"خلاص، أنا تمام."</span></p>
+          </div>
         </div>
-        <p>الإحساس المستمر إن كاحلك ممكن "يفلت" منك في أي <span class="en">landing</span> أو <span class="en">hard cut</span> — حتى لو ما حصلش تواء من فترة.</p>
       </div>
 
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: user/stand still -->
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21v-2a6.5 6.5 0 0 1 13 0v2"/></svg>
+      <div class="loop-row">
+        <div class="loop-num">٣</div>
+        <div class="loop-card">
+          <span class="loop-ico"><svg viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="M9 22l2-7-3-2 1-6 4-1 3 3 3 1"/><path d="M8 12l-3 2 1 5"/></svg></span>
+          <div>
+            <h3>ترجع تلعب.</h3>
+            <p>لكن من غير ما تعرف هل الكاحل استعاد فعلًا القوة والثبات اللي محتاجهم للرياضة.</p>
+          </div>
         </div>
-        <p>حاسس إنك واقف مكانك بينما زمايلك بيتمرنوا وينافسوا — الإصابة بقت قيد بيحول بينك وبين أهدافك الرياضية.</p>
       </div>
 
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: percent / reduced performance -->
-          <svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+      <div class="loop-row">
+        <div class="loop-num">٤</div>
+        <div class="loop-card">
+          <span class="loop-ico"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+          <div>
+            <h3>تبدأ تلعب بحذر.</h3>
+            <p>تخفف سرعتك في الجري، تتردد قبل القفز أو تحمّل على الرجل التانية من غير ما تاخد بالك.</p>
+          </div>
         </div>
-        <p>بتلعب بمجهود 70–80% بس عشان خايف — فقدت الثقة الكاملة في جسمك وبقيت بتلعب بعقلية دفاعية مش هجومية.</p>
       </div>
 
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: frown -->
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+      <div class="loop-row">
+        <div class="loop-num">٥</div>
+        <div class="loop-card">
+          <span class="loop-ico"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+          <div>
+            <h3>تحصل حركة مفاجئة.</h3>
+            <p><span class="en">Landing</span> غلط. تغيير اتجاه. احتكاك.<br />والكاحل يفلت تاني.</p>
+          </div>
         </div>
-        <p>عمال تحاول تقنع نفسك إن "هي دي طبيعة كاحلك" و"مش هيرجع زي الأول" — وده مش صح على الإطلاق.</p>
       </div>
 
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: phone/social -->
-          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      <div class="loop-row">
+        <div class="loop-num">٦</div>
+        <div class="loop-card">
+          <span class="loop-ico"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg></span>
+          <div>
+            <h3>ترجع لنفس البداية.</h3>
+            <p>راحة ← تحسن ← رجوع للملعب ← إصابة تانية.<br />وتبدأ تقنع نفسك: <span class="self-talk">"يمكن كاحلي عمره ما هيرجع زي الأول."</span></p>
+          </div>
         </div>
-        <p>جربت فيديوهات عشوائية من السوشيال ميديا ومش جايبه نتيجة — لأن مفيش <span class="en">system</span> متكامل خلف أي فيديو منهم.</p>
+      </div>
+
+      <div class="loop-repeat">
+        <span class="loop-repeat-ico"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+        <span class="loop-repeat-pill">وتاني… من الأول.</span>
       </div>
 
     </div>
 
-    <div class="pain-closer">
-      لو الكلام ده بيوصف حالتك، أنت محتاج <strong><span class="en">System</span> حقيقي يربط بين التأهيل والأداء الرياضي الفعلي.</strong><br />
-      مش تمارين عشوائية — <strong>بروتوكول متكامل مبني على العلم.</strong>
+    <div class="loop-closer">
+      <span class="loop-no">لا.</span>
+      <p>
+        المشكلة إنك كل مرة كنت بتقيس التعافي بسؤال واحد:
+        <span class="q-wrong">"الألم خف؟"</span>
+      </p>
+      <p style="margin-top:14px;">
+        بينما السؤال الأهم:
+        <span class="q-right">"هل أنا جاهز للحمل اللي هحطه على الكاحل في الملعب؟"</span>
+      </p>
     </div>
   </div>
 </section>
@@ -1922,6 +2174,22 @@
         لو أي حاجة من دول بتنطبق عليك — أو لو مش متأكد — لازم تشوف دكتور علاج طبيعي قبل ما تبدأ. البرنامج ده متصمم للتأهيل بعد التقييم الطبي، مش كبديل ليه.
       </div>
     </div>
+
+    <!-- IS FOR YOU — paired directly under the exclusion card -->
+    <div class="forfit-card">
+      <p class="forfit-head">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        و<span class="en">Bulletproof Ankle</span>&nbsp;معمول ليك لو:
+      </p>
+      <ul class="fit-list">
+        <li><span class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>تعبت من التمارين العشوائية ومحتاج <strong>خطة واضحة ومنظمة</strong> لمشكلتك بالظبط.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>مش واثق 100% في كاحلك وخايف ترجع تتمرن تاني.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>الكاحل بقاله فترة مش بيوجعك، لكن أول ما تدخل الملعب <strong>تبدأ تحسب كل حركة.</strong></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>حصل لك أكتر من التواء، وبقيت حاسس إن الكاحل ممكن يتصاب في أي وقت.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>عايز تعرف مستواك <strong>بالأرقام</strong> بدل ما تعتمد على إحساسك إنك "بقيت أحسن".</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>مستعد تلتزم بـ <strong>4 تدريبات أسبوعيًا لمدة 10 أسابيع</strong> عشان تبني قدرة حقيقية، مش مجرد تختفي الأعراض.</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -2139,7 +2407,7 @@
     <!-- URGENCY -->
     <div class="urgency-bar">
       <span class="urgency-dot"></span>
-      الأماكن محدودة في الدفعة الحالية — الوصول فوري بعد التأكيد
+      وصول فوري بعد تأكيد الدفع — بدون انتظار دفعة جديدة.
     </div>
     <h3 style="text-align:center; font-size:15px; font-weight:600; color:var(--text-mid); margin-bottom:24px; letter-spacing:.01em;">اختار طريقة الدفع:</h3>
 
