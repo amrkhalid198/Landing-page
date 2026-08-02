@@ -1452,6 +1452,145 @@
       .test-grid { grid-template-columns: 1fr; }
       .stack-head { flex-direction: column; align-items: flex-start; gap: 4px; }
     }
+
+    /* ══════════════════════════════════════════════════════
+       COACH PORTRAIT (backstory) + TRAINING GALLERY
+       ══════════════════════════════════════════════════════ */
+    .coach-card {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 34px;
+      background: var(--bg-card);
+      border: 1px solid rgba(232,102,61,.25);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(232,102,61,.05), 0 24px 48px rgba(0,0,0,.55);
+    }
+    .coach-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+    }
+    .coach-cap {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 14px;
+      background: #0D0F11;
+      border-top: 1px solid var(--bg-stroke);
+    }
+    .coach-name { font-size: 15px; font-weight: 800; color: var(--text-hi); line-height: 1.4; }
+    .coach-sep { color: var(--orange); font-weight: 700; }
+    .coach-role {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      white-space: nowrap;
+    }
+
+    .hero-visual {
+      width: 100%;
+      max-width: 560px;
+      margin: -10px auto 38px;
+      pointer-events: none;
+    }
+    .hero-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 18px 44px rgba(232,102,61,.18));
+    }
+    @media (max-width: 600px) {
+      .hero-visual { max-width: 330px; margin: -6px auto 30px; }
+    }
+
+    .shots-grid {
+      columns: 2;
+      column-gap: 14px;
+    }
+    .shot-card {
+      break-inside: avoid;
+      margin: 0 0 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-stroke);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(232,102,61,.04), 0 16px 36px rgba(0,0,0,.45);
+      transition: border-color .22s;
+    }
+    .shot-card:hover { border-color: rgba(232,102,61,.4); }
+    .shot-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .shot-cap {
+      padding: 12px 16px;
+      border-top: 1px solid var(--bg-stroke);
+      background: #0D0F11;
+      font-size: 12.5px;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+    .shot-cap b { color: var(--text-hi); font-weight: 700; }
+
+    .train-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .train-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-stroke);
+      transition: border-color .22s, transform .22s, box-shadow .22s;
+    }
+    .train-card:hover {
+      border-color: rgba(232,102,61,.5);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 26px rgba(0,0,0,.4);
+    }
+    .train-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+    }
+    .train-cap {
+      position: absolute;
+      bottom: 0;
+      inset-inline: 0;
+      padding: 26px 12px 10px;
+      background: linear-gradient(0deg, rgba(0,0,0,.78) 30%, transparent 100%);
+      pointer-events: none;
+    }
+    .train-cap .en {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .coach-card { max-width: 260px; margin-bottom: 28px; }
+      .shots-grid { columns: 1; }
+      .shot-card { margin-bottom: 12px; }
+      .shot-cap { font-size: 12px; padding: 10px 14px; }
+      .train-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .train-cap { padding: 22px 10px 8px; }
+      .train-cap .en { font-size: 10px; letter-spacing: .05em; }
+      .coach-name { font-size: 14px; }
+      .coach-role { font-size: 10px; }
+    }
 </style>
 </head>
 <body>
@@ -1487,6 +1626,11 @@
     برنامج مبني خصيصًا للرياضيين اللي عندهم
     <strong style="color:var(--text-hi);">عدم ثبات مزمن في الكاحل</strong>
   </p>
+
+  <!-- HERO VISUAL — injured ankle → armored ankle -->
+  <div class="hero-visual">
+    <img src="hero-ankle.webp" width="1200" height="800" alt="التحول: من كاحل مصاب لكاحل مدرّع" loading="eager" fetchpriority="high" />
+  </div>
 
   <!-- CTA -->
   <a href="#price" onclick="scrollToPayment(event)" class="cta-btn-clean">ابدأ البرنامج</a>
@@ -1893,6 +2037,16 @@
 <section class="backstory-bg">
   <div class="wrap sec">
     <div class="backstory-inner">
+
+      <figure class="coach-card">
+        <img src="coach.jpg" width="900" height="1200" loading="lazy" alt="عمرو خالد — Sports Rehabilitation" class="coach-img" />
+        <figcaption class="coach-cap">
+          <span class="coach-name">عمرو خالد</span>
+          <span class="coach-sep" aria-hidden="true">·</span>
+          <span class="coach-role en">Sports Rehabilitation</span>
+        </figcaption>
+      </figure>
+
       <div class="sec-label">القصة بدأت منين؟</div>
 
       <div class="backstory-pull">
@@ -1931,6 +2085,75 @@
           <span class="chip">يخرجوا من دوامة تكرار الإصابة</span>
         </div>
       </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- ═══════════════ APP SCREENSHOTS ═══════════════ -->
+<section>
+  <div class="wrap sec">
+    <div class="sec-label">من جوه المنصة</div>
+    <h2 class="sec-title">صور من داخل التطبيق</h2>
+
+    <div class="shots-grid">
+
+      <figure class="shot-card">
+        <img src="app-protocol.webp" width="724" height="486" loading="lazy" alt="بروتوكول التأهيل داخل التطبيق — المراحل والجلسات يوم بيوم" />
+        <figcaption class="shot-cap"><b>بروتوكول التأهيل</b> — الجلسات يوم بيوم، وقاعدة ألم واضحة لكل مرحلة.</figcaption>
+      </figure>
+
+      <figure class="shot-card">
+        <img src="app-progress.webp" width="713" height="628" loading="lazy" alt="شاشة متابعة التطور — 7 اختبارات بأرقام مستهدفة" />
+        <figcaption class="shot-cap"><b>متابعة التطور</b> — ٧ اختبارات بأرقام مستهدفة وتسجيل نتائجك.</figcaption>
+      </figure>
+
+      <figure class="shot-card">
+        <img src="app-symptoms.webp" width="346" height="514" loading="lazy" alt="مراقبة الأعراض اليومية — الألم والتورم والثقة في المفصل" />
+        <figcaption class="shot-cap"><b>مراقبة الأعراض</b> — سجل يومي للألم والتورم والثقة في المفصل.</figcaption>
+      </figure>
+
+      <figure class="shot-card">
+        <img src="app-education.webp" width="699" height="517" loading="lazy" alt="المركز التعليمي — التثقيف الطبي داخل التطبيق" />
+        <figcaption class="shot-cap"><b>التثقيف الطبي</b> — تفهم ليه الإصابة بتتكرر وإزاي تمنعها ترجع.</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- ═══════════════ TRAINING GALLERY ═══════════════ -->
+<section>
+  <div class="wrap sec">
+    <div class="sec-label">من جوه التدريب</div>
+    <h2 class="sec-title">كل جوانب تأهيل الكاحل... في نظام واحد</h2>
+
+    <div class="train-grid">
+
+      <figure class="train-card">
+        <img src="ex-mobility.jpg" width="435" height="578" loading="lazy" alt="تمرين مرونة من داخل البرنامج" />
+        <figcaption class="train-cap"><span class="en">Mobility</span></figcaption>
+      </figure>
+
+      <figure class="train-card">
+        <img src="ex-reactive.jpg" width="431" height="496" loading="lazy" alt="تمرين ثبات تفاعلي بحبل مقاومة من داخل البرنامج" />
+        <figcaption class="train-cap"><span class="en">Reactive Stability</span></figcaption>
+      </figure>
+
+      <figure class="train-card">
+        <img src="ex-landing.jpg" width="294" height="386" loading="lazy" alt="تمرين تحكم في الهبوط من داخل البرنامج" />
+        <figcaption class="train-cap"><span class="en">Landing Control</span></figcaption>
+      </figure>
+
+      <figure class="train-card">
+        <img src="ex-balance.jpg" width="490" height="621" loading="lazy" alt="تمرين توازن ديناميكي من داخل البرنامج" />
+        <figcaption class="train-cap"><span class="en">Dynamic Balance</span></figcaption>
+      </figure>
+
     </div>
   </div>
 </section>
