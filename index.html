@@ -1547,19 +1547,15 @@
     .plan-card-vip .plan-price-num { text-shadow: 0 0 38px rgba(232,102,61,.5); }
     .plan-card-vip .plan-price-cur { color: var(--orange-hi); }
 
-    /* ── standard-tier warning — loud on purpose ── */
+    /* ── standard-tier warning — bare red line, no panel ── */
     .plan-warn {
-      display: flex; align-items: flex-start; gap: 11px;
-      padding: 15px 16px;
-      border-radius: 13px;
-      border: 1px solid rgba(242,85,90,.45);
-      background: linear-gradient(180deg, rgba(242,85,90,.14), rgba(242,85,90,.05));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 0 26px rgba(242,85,90,.09);
+      display: flex; align-items: flex-start; gap: 8px;
+      margin: -9px 0 -5px;
       color: var(--red-warn);
-      font-size: 14.5px; font-weight: 700; line-height: 1.75;
+      font-size: 12.5px; font-weight: 600; line-height: 1.65;
     }
     .plan-warn svg {
-      width: 19px; height: 19px; flex-shrink: 0; margin-top: 3px;
+      width: 14px; height: 14px; flex-shrink: 0; margin-top: 3px;
       stroke: var(--red-warn); fill: none; stroke-width: 2;
       stroke-linecap: round; stroke-linejoin: round;
     }
@@ -1664,7 +1660,7 @@
       .plan-price-num { font-size: 46px; }
       .plan-price-cur { font-size: 23px; }
       .plan-eyebrow { font-size: 14px; letter-spacing: .15em; }
-      .plan-warn { font-size: 13.5px; padding: 14px 14px; }
+      .plan-warn { font-size: 12px; }
       .plan-feat { font-size: 14px; }
       .plan-feats { gap: 13px; padding-top: 18px; }
       .plan-fit { padding: 14px 14px; }
