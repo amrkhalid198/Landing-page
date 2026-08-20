@@ -1436,70 +1436,153 @@
     .plans-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
-      margin: 0 auto 36px;
+      gap: 20px;
+      margin: 0 auto 40px;
       align-items: stretch;
       scroll-margin-top: 84px;
     }
     @media (min-width: 640px) { .plans-grid { grid-template-columns: 1fr 1fr; } }
 
     .plan-card {
-      background: var(--bg-card);
-      border: 2px solid var(--bg-stroke);
-      border-radius: 18px;
-      padding: 28px 24px;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      box-shadow: 0 0 0 1px rgba(232,102,61,.04), 0 24px 56px rgba(0,0,0,.5);
+      gap: 20px;
+      padding: 34px 28px 28px;
+      border-radius: 20px;
+      border: 1px solid var(--bg-stroke);
+      background: linear-gradient(180deg, #15181b 0%, #101214 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.045),
+        0 20px 50px rgba(0,0,0,.5);
+      transition: transform .28s ease, box-shadow .28s ease;
     }
-    /* VIP emphasis — border only. One device, deliberately. */
-    .plan-card-vip { border-color: var(--orange); }
+    /* hairline of light along the top edge — lifts the card off the page */
+    .plan-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.10) 30%, rgba(255,255,255,.10) 70%, transparent);
+      z-index: 2;
+    }
+    .plan-card > * { position: relative; z-index: 1; }
+    .plan-card:hover { transform: translateY(-4px); }
 
-    .plan-name { font-size: 21px; font-weight: 700; line-height: 1.5; color: var(--text-hi); }
+    /* ── VIP — the emphasised card. Glowing outline, one device. ── */
+    .plan-card-vip {
+      border-color: rgba(232,102,61,.9);
+      background:
+        radial-gradient(ellipse 120% 60% at 50% 0%, rgba(232,102,61,.16), transparent 68%),
+        linear-gradient(180deg, #1b1613 0%, #121316 58%, #0f1113 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 0 0 1px rgba(232,102,61,.28),
+        0 0 24px rgba(232,102,61,.30),
+        0 0 64px rgba(232,102,61,.16),
+        0 24px 60px rgba(0,0,0,.55);
+    }
+    .plan-card-vip::before {
+      background: linear-gradient(90deg, transparent, rgba(232,102,61,.95) 35%, rgba(255,190,160,.9) 50%, rgba(232,102,61,.95) 65%, transparent);
+      box-shadow: 0 0 12px rgba(232,102,61,.7);
+    }
+    .plan-card-vip:hover {
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.09),
+        0 0 0 1px rgba(232,102,61,.38),
+        0 0 30px rgba(232,102,61,.40),
+        0 0 80px rgba(232,102,61,.22),
+        0 28px 66px rgba(0,0,0,.6);
+    }
 
-    /* Standard-tier warning — deliberately loud, not a footnote. */
+    /* ── head ── */
+    .plan-eyebrow {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 11px; font-weight: 700; letter-spacing: .24em;
+      color: var(--text-mid); text-transform: uppercase;
+    }
+    .plan-eyebrow::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, currentColor, transparent);
+      opacity: .3;
+    }
+    .plan-card-vip .plan-eyebrow { color: var(--orange-hi); }
+    .plan-name {
+      font-size: 25px; font-weight: 700; line-height: 1.4;
+      letter-spacing: -.012em; color: var(--text-hi); margin-top: -8px;
+    }
+
+    /* ── price ── */
+    .plan-price { display: flex; align-items: baseline; gap: 10px; margin: -4px 0 -2px; }
+    .plan-price-num {
+      font-family: var(--en); direction: ltr;
+      font-size: 56px; font-weight: 800; line-height: 1;
+      letter-spacing: -.038em; color: #fff;
+      font-variant-numeric: tabular-nums;
+    }
+    .plan-card-vip .plan-price-num { text-shadow: 0 0 38px rgba(232,102,61,.5); }
+    .plan-price-cur { font-size: 16px; font-weight: 600; color: var(--text-mid); letter-spacing: .01em; }
+
+    /* ── standard-tier warning — loud on purpose ── */
     .plan-warn {
-      display: flex; align-items: flex-start; gap: 10px;
-      background: rgba(242,85,90,.09);
-      border: 1px solid rgba(242,85,90,.4);
-      border-inline-start: 4px solid var(--red-warn);
-      border-radius: 12px;
-      padding: 14px 16px;
+      display: flex; align-items: flex-start; gap: 11px;
+      padding: 15px 16px;
+      border-radius: 13px;
+      border: 1px solid rgba(242,85,90,.45);
+      background: linear-gradient(180deg, rgba(242,85,90,.14), rgba(242,85,90,.05));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 0 26px rgba(242,85,90,.09);
       color: var(--red-warn);
       font-size: 14.5px; font-weight: 700; line-height: 1.75;
     }
     .plan-warn svg {
-      width: 19px; height: 19px; flex-shrink: 0; margin-top: 4px;
+      width: 19px; height: 19px; flex-shrink: 0; margin-top: 3px;
       stroke: var(--red-warn); fill: none; stroke-width: 2;
       stroke-linecap: round; stroke-linejoin: round;
     }
 
-    .plan-price { display: flex; align-items: baseline; gap: 8px; }
-    .plan-price-num {
-      font-family: var(--display); font-size: 56px; line-height: 1;
-      color: #fff; letter-spacing: .02em; direction: ltr;
-      text-shadow: 0 0 50px rgba(232,102,61,.42);
+    /* ── VIP lead-in line ── */
+    .plan-note {
+      font-size: 14px; font-weight: 700; line-height: 1.75;
+      color: var(--orange-hi); letter-spacing: -.005em;
     }
-    .plan-price-cur { font-size: 17px; font-weight: 700; color: var(--orange); }
 
-    .plan-note { font-size: 14px; font-weight: 600; color: var(--text-hi); line-height: 1.8; }
-
-    .plan-feats { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .plan-feat { display: flex; align-items: flex-start; gap: 11px; font-size: 14.5px; line-height: 1.85; }
-    .plan-feat-check {
-      width: 20px; height: 20px; flex-shrink: 0; margin-top: 5px; border-radius: 6px;
-      background: var(--orange-dim); display: flex; align-items: center; justify-content: center;
+    /* ── features ── */
+    .plan-feats {
+      list-style: none; display: flex; flex-direction: column; gap: 14px;
+      padding-top: 20px; border-top: 1px solid var(--bg-stroke);
     }
-    .plan-feat-check svg { width: 11px; height: 11px; stroke: var(--orange-hi); fill: none; stroke-width: 3; }
+    .plan-card-vip .plan-feats { border-top-color: rgba(232,102,61,.22); }
+    .plan-feat {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14.5px; line-height: 1.8; color: var(--text-hi);
+    }
+    .plan-feat svg {
+      width: 19px; height: 19px; flex-shrink: 0; margin-top: 4px;
+      stroke: var(--orange); fill: none;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .plan-feat svg circle { opacity: .34; stroke-width: 1.5; }
+    .plan-feat svg polyline { stroke-width: 2.4; }
+    .plan-card-vip .plan-feat svg { stroke: var(--orange-hi); }
 
+    /* ── who it's for ── */
     .plan-fit {
       margin-top: auto;
-      border-top: 1px solid var(--bg-stroke);
-      padding-top: 16px;
-      font-size: 13.5px; line-height: 1.9; color: var(--text-mid);
+      padding: 15px 16px;
+      border-radius: 13px;
+      border: 1px solid var(--bg-stroke);
+      background: rgba(255,255,255,.022);
+      font-size: 13.5px; line-height: 1.85; color: var(--text-mid);
+    }
+    .plan-card-vip .plan-fit {
+      border-color: rgba(232,102,61,.24);
+      background: rgba(232,102,61,.045);
     }
     .plan-fit b { color: var(--text-hi); font-weight: 700; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .plan-card { transition: box-shadow .28s ease; }
+      .plan-card:hover { transform: none; }
+    }
 
     /* ── WHATSAPP FLOATING BUTTON ──────────────────────────
        z-index 1000 clears the fixed grain overlay (999).
@@ -1550,12 +1633,14 @@
       .stack-item-val { font-size: 12px; }
       .offer-price { padding: 32px 16px 32px; }
       .offer-sub { font-size: 13.5px; margin-bottom: 32px; }
-      .plans-grid { gap: 14px; margin-bottom: 30px; }
-      .plan-card { padding: 24px 18px; gap: 16px; }
-      .plan-name { font-size: 19px; }
+      .plans-grid { gap: 16px; margin-bottom: 32px; }
+      .plan-card { padding: 28px 20px 22px; gap: 18px; border-radius: 18px; }
+      .plan-name { font-size: 21px; }
       .plan-price-num { font-size: 48px; }
-      .plan-warn { font-size: 13.5px; padding: 13px 14px; }
+      .plan-warn { font-size: 13.5px; padding: 14px 14px; }
       .plan-feat { font-size: 14px; }
+      .plan-feats { gap: 13px; padding-top: 18px; }
+      .plan-fit { padding: 14px 14px; }
     }
     @media (max-width: 380px) {
       .test-grid { grid-template-columns: 1fr; }
@@ -2461,10 +2546,11 @@
 
       <!-- STANDARD -->
       <div class="plan-card">
+        <div class="plan-eyebrow"><span class="en">STANDARD</span></div>
         <h3 class="plan-name">الباقة الأساسية</h3>
 
         <div class="plan-warn">
-          <svg viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           <span>مفيش متابعة شخصية مني، انت بتستلم البرنامج وهو بيوجهك تمشي فيه ازاي لوحدك</span>
         </div>
 
@@ -2474,11 +2560,11 @@
         </div>
 
         <ul class="plan-feats">
-          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>برنامج تأهيل كامل لمدة 10 أسابيع</span></li>
-          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="en-term">Assessment Center</span> لتقييم حالتك</span></li>
-          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>خطة منظمة ومتدرجة على 4 مراحل</span></li>
-          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>شرح وفيديوهات لكل تمرين</span></li>
-          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>متابعة تقدمك داخل البرنامج</span></li>
+          <li class="plan-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><polyline points="8.2 12.3 10.9 15 15.9 9.4"/></svg><span>برنامج تأهيل كامل لمدة 10 أسابيع</span></li>
+          <li class="plan-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><polyline points="8.2 12.3 10.9 15 15.9 9.4"/></svg><span><span class="en-term">Assessment Center</span> لتقييم حالتك</span></li>
+          <li class="plan-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><polyline points="8.2 12.3 10.9 15 15.9 9.4"/></svg><span>خطة منظمة ومتدرجة على 4 مراحل</span></li>
+          <li class="plan-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><polyline points="8.2 12.3 10.9 15 15.9 9.4"/></svg><span>شرح وفيديوهات لكل تمرين</span></li>
+          <li class="plan-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><polyline points="8.2 12.3 10.9 15 15.9 9.4"/></svg><span>متابعة تقدمك داخل البرنامج</span></li>
         </ul>
 
         <p class="plan-fit"><b>مناسبة لك إذا:</b> تقدر تلتزم بالبرنامج وتنفذه بنفسك بدون الحاجة لمتابعة مباشرة مني.</p>
@@ -2486,6 +2572,7 @@
 
       <!-- VIP -->
       <div class="plan-card plan-card-vip">
+        <div class="plan-eyebrow"><span class="en">VIP</span></div>
         <h3 class="plan-name">باقة <span class="en-term">VIP</span></h3>
 
         <div class="plan-price">
@@ -2496,10 +2583,10 @@
         <p class="plan-note">كل ما يوجد في الباقة الأساسية، بالإضافة إلى:</p>
 
         <ul class="plan-feats">
-          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>متابعة أسبوعية مباشرة معايا (يوم واحد في الاسبوع)</span></li>
-          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>تقدر تصوّر التمرين وتبعتهولي عشان أراجع الـ <span class="en-term">Technique</span> وأصححهالك</span></li>
-          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>تمرين مخصصة لرياضتك في المرحلة الأخيرة</span></li>
-          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>توجيه ومساعدة في التقدم، المشاكل، والأسئلة اللي ممكن تظهر أثناء التأهيل</span></li>
+          <li class="plan-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><polyline points="8.2 12.3 10.9 15 15.9 9.4"/></svg><span>متابعة أسبوعية مباشرة معايا (يوم واحد في الاسبوع)</span></li>
+          <li class="plan-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><polyline points="8.2 12.3 10.9 15 15.9 9.4"/></svg><span>تقدر تصوّر التمرين وتبعتهولي عشان أراجع الـ <span class="en-term">Technique</span> وأصححهالك</span></li>
+          <li class="plan-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><polyline points="8.2 12.3 10.9 15 15.9 9.4"/></svg><span>تمرين مخصصة لرياضتك في المرحلة الأخيرة</span></li>
+          <li class="plan-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><polyline points="8.2 12.3 10.9 15 15.9 9.4"/></svg><span>توجيه ومساعدة في التقدم، المشاكل، والأسئلة اللي ممكن تظهر أثناء التأهيل</span></li>
         </ul>
 
         <p class="plan-fit"><b>مناسبة لك إذا:</b> مش عايز تمشي في التأهيل لوحدك وعايزني أكون معاك خطوة بخطوة أثناء البرنامج.</p>
