@@ -1496,8 +1496,8 @@
 
     /* ── head ── */
     .plan-eyebrow {
-      display: flex; align-items: center; gap: 12px;
-      font-size: 11px; font-weight: 700; letter-spacing: .24em;
+      display: flex; align-items: center; gap: 14px;
+      font-size: 16px; font-weight: 800; letter-spacing: .17em;
       color: var(--text-mid); text-transform: uppercase;
     }
     .plan-eyebrow::after {
@@ -1512,15 +1512,20 @@
     }
 
     /* ── price ── */
-    .plan-price { display: flex; align-items: baseline; gap: 10px; margin: -4px 0 -2px; }
-    .plan-price-num {
-      font-family: var(--en); direction: ltr;
-      font-size: 56px; font-weight: 800; line-height: 1;
-      letter-spacing: -.038em; color: #fff;
-      font-variant-numeric: tabular-nums;
+    /* direction:ltr so the pair reads "900 EGP"; flex-end keeps it on
+       the RTL start edge of the card. */
+    .plan-price {
+      display: flex; align-items: baseline; justify-content: flex-end;
+      direction: ltr; gap: 9px; margin: -4px 0 -2px;
     }
-    .plan-card-vip .plan-price-num { text-shadow: 0 0 38px rgba(232,102,61,.5); }
-    .plan-price-cur { font-size: 16px; font-weight: 600; color: var(--text-mid); letter-spacing: .01em; }
+    .plan-price-num, .plan-price-cur {
+      font-family: var(--en); color: #fff; line-height: 1;
+      font-weight: 900; font-variant-numeric: tabular-nums;
+    }
+    .plan-price-num { font-size: 58px; letter-spacing: -.042em; }
+    .plan-price-cur { font-size: 42px; letter-spacing: -.022em; }
+    .plan-card-vip .plan-price-num,
+    .plan-card-vip .plan-price-cur { text-shadow: 0 0 38px rgba(232,102,61,.5); }
 
     /* ── standard-tier warning — loud on purpose ── */
     .plan-warn {
@@ -1636,7 +1641,9 @@
       .plans-grid { gap: 16px; margin-bottom: 32px; }
       .plan-card { padding: 28px 20px 22px; gap: 18px; border-radius: 18px; }
       .plan-name { font-size: 21px; }
-      .plan-price-num { font-size: 48px; }
+      .plan-price-num { font-size: 46px; }
+      .plan-price-cur { font-size: 34px; }
+      .plan-eyebrow { font-size: 14px; letter-spacing: .15em; }
       .plan-warn { font-size: 13.5px; padding: 14px 14px; }
       .plan-feat { font-size: 14px; }
       .plan-feats { gap: 13px; padding-top: 18px; }
@@ -2556,7 +2563,7 @@
 
         <div class="plan-price">
           <span class="plan-price-num">900</span>
-          <span class="plan-price-cur">جنيه</span>
+          <span class="plan-price-cur">EGP</span>
         </div>
 
         <ul class="plan-feats">
@@ -2577,7 +2584,7 @@
 
         <div class="plan-price">
           <span class="plan-price-num">2,500</span>
-          <span class="plan-price-cur">جنيه</span>
+          <span class="plan-price-cur">EGP</span>
         </div>
 
         <p class="plan-note">كل ما يوجد في الباقة الأساسية، بالإضافة إلى:</p>
@@ -2594,11 +2601,6 @@
 
     </div>
 
-    <!-- URGENCY -->
-    <div class="urgency-bar">
-      <span class="urgency-dot"></span>
-      الأماكن محدودة في الدفعة الحالية — الوصول فوري بعد التأكيد
-    </div>
     <h3 style="text-align:center; font-size:15px; font-weight:600; color:var(--text-mid); margin-bottom:24px; letter-spacing:.01em;">اختار طريقة الدفع:</h3>
 
     <div class="pay-grid">
