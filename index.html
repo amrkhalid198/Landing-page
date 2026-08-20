@@ -6,6 +6,18 @@
        Change it here and every WhatsApp link on the page follows
        (floating button + the after-payment receipt button). -->
   <script>const WHATSAPP_NUMBER = '201017201075';</script>
+
+  <!-- ═══ PAYMOB / VISA ═══════════════════════════════════
+       To go live once Paymob verification clears:
+         1. paste the checkout URL into PAYMOB_CHECKOUT_URL
+         2. set PAYMOB_LIVE to true
+       Nothing else on the page needs editing. While LIVE is
+       false (or the URL is blank) the Visa option renders as
+       a deliberate "coming soon" tile that cannot be clicked. -->
+  <script>
+    const PAYMOB_LIVE = false;
+    const PAYMOB_CHECKOUT_URL = '';
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bulletproof Ankle — برنامج تأهيل الكاحل للرياضيين</title>
   <meta name="description" content="برنامج تأهيل كاحل متكامل من 10 أسابيع للرياضيين اللي عندهم Chronic Ankle Instability. 4 مراحل مبنية على العلم — ارجع تجري وتنط بدون خوف." />
@@ -1237,6 +1249,72 @@
       border-color: rgba(37,211,102,.3) !important;
     }
     .copy-btn svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── VISA / PAYMOB ────────────────────────────────────
+       Disabled reads as scheduled, not failed: the tile keeps its
+       structure and a live accent on the "coming soon" marker, and
+       only the action itself is quieted. */
+    .visa-card {
+      max-width: 520px;
+      margin: 0 auto 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      background: linear-gradient(180deg, #14171c 0%, #0f1114 100%);
+      border: 1px solid rgba(90,120,190,.32);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+    }
+    .visa-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0; }
+    .visa-mark { display: flex; color: #7d9ad6; }
+    .visa-mark svg { width: 24px; height: 24px; display: block; }
+    .visa-brand {
+      font-family: var(--en); font-size: 14px; font-weight: 800;
+      letter-spacing: .06em; color: #9fb6e4;
+    }
+    .visa-soon {
+      font-size: 10.5px; font-weight: 700; line-height: 1.6;
+      color: var(--orange-hi);
+      background: var(--orange-dim);
+      border: 1px solid rgba(232,102,61,.34);
+      border-radius: 50px;
+      padding: 3px 11px;
+    }
+    .visa-soon:empty { display: none; }
+
+    .visa-btn {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 44px; padding: 10px 22px;
+      border-radius: 10px;
+      font-family: var(--ar); font-size: 12.5px; font-weight: 700;
+      text-decoration: none;
+      background: #2b4a8f; color: #fff;
+      box-shadow: 0 6px 20px rgba(43,74,143,.35);
+      transition: transform .2s, opacity .2s;
+    }
+    .visa-btn:hover { transform: scale(1.02); opacity: .92; }
+    .visa-btn:active { transform: scale(.978); transition: transform 90ms ease-out; }
+
+    /* awaiting Paymob verification */
+    .visa-card.is-soon { border-style: dashed; border-color: rgba(90,120,190,.3); }
+    .is-soon .visa-mark, .is-soon .visa-brand { opacity: .62; }
+    .is-soon .visa-btn {
+      background: transparent;
+      color: var(--text-mid);
+      border: 1px dashed var(--bg-stroke);
+      box-shadow: none;
+      cursor: not-allowed;
+      user-select: none;
+    }
+    .is-soon .visa-btn:hover, .is-soon .visa-btn:active { transform: none; opacity: 1; }
+
+    @media (max-width: 600px) {
+      .visa-card { padding: 13px 13px; gap: 11px; }
+      .visa-btn { width: 100%; font-size: 11.5px; padding: 10px 14px; }
+    }
 
     /* ── SECURE BADGE ─────────────────────────────────── */
     .secure-badge {
@@ -2715,6 +2793,21 @@
 
     </div>
 
+    <!-- VISA / PAYMOB — state driven by PAYMOB_LIVE at the top of the file -->
+    <div class="visa-card is-soon" id="visa-card">
+      <div class="visa-head">
+        <span class="visa-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1.5" y="4.5" width="21" height="15" rx="2.5"/><line x1="1.5" y1="9.5" x2="22.5" y2="9.5"/><line x1="5.5" y1="15" x2="9.5" y2="15"/>
+          </svg>
+        </span>
+        <span class="visa-brand">Visa</span>
+        <!-- ↓ Arabic "coming soon" line — write it here. Hidden while empty. -->
+        <span class="visa-soon" id="visa-soon"></span>
+      </div>
+      <a class="visa-btn" id="visa-btn" aria-disabled="true">ادفع عبر Visa</a>
+    </div>
+
     <!-- SECURE BADGE -->
     <div class="secure-badge">
       <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke-width="2"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
@@ -2798,6 +2891,30 @@ function scrollToPayment(e) {
     target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
   }
 }
+
+/* ── Visa / Paymob ─────────────────────────────────────
+   Reads PAYMOB_LIVE + PAYMOB_CHECKOUT_URL declared at the top of
+   the file. The markup ships in the disabled state, so there is no
+   flash of a live button before this runs. */
+(function () {
+  var card = document.getElementById('visa-card');
+  var btn  = document.getElementById('visa-btn');
+  if (!card || !btn) return;
+
+  if (PAYMOB_LIVE && PAYMOB_CHECKOUT_URL) {
+    card.classList.remove('is-soon');
+    btn.setAttribute('href', PAYMOB_CHECKOUT_URL);
+    btn.setAttribute('target', '_blank');
+    btn.setAttribute('rel', 'noopener');
+    btn.removeAttribute('aria-disabled');
+  } else {
+    card.classList.add('is-soon');
+    /* no href: the anchor is not focusable, not activatable,
+       and has nowhere to navigate to */
+    btn.removeAttribute('href');
+    btn.setAttribute('aria-disabled', 'true');
+  }
+})();
 
 /* ── WhatsApp links ────────────────────────────────────
    Every wa.me href on the page is built here from the single
