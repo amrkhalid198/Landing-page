@@ -2,6 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <!-- ═══ SINGLE SOURCE OF TRUTH — WhatsApp contact number ═══
+       Change it here and every WhatsApp link on the page follows
+       (floating button + the after-payment receipt button). -->
+  <script>const WHATSAPP_NUMBER = '201017201075';</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bulletproof Ankle — برنامج تأهيل الكاحل للرياضيين</title>
   <meta name="description" content="برنامج تأهيل كاحل متكامل من 10 أسابيع للرياضيين اللي عندهم Chronic Ankle Instability. 4 مراحل مبنية على العلم — ارجع تجري وتنط بدون خوف." />
@@ -31,6 +35,7 @@
       --text-mid:   #9ca0a4;
       --text-lo:    #3e4247;
       --red-soft:   #b84444;
+      --red-warn:   #F2555A;   /* standard-tier warning — 5.75:1 on --bg */
       --green:      #5BAD6F;
       --orange-dim: rgba(232,102,61,.12);
       --radius:     10px;
@@ -1427,6 +1432,104 @@
     .offer-price-terms { display: flex; justify-content: center; gap: 9px; flex-wrap: wrap; margin-top: 18px; }
     .term-chip { font-size: 12.5px; font-weight: 600; color: var(--text-mid); border: 1px solid var(--bg-stroke); border-radius: 50px; padding: 6px 16px; background: #0D0F11; }
 
+    /* ── TWO-TIER PLANS ────────────────────────────────── */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin: 0 auto 36px;
+      align-items: stretch;
+      scroll-margin-top: 84px;
+    }
+    @media (min-width: 640px) { .plans-grid { grid-template-columns: 1fr 1fr; } }
+
+    .plan-card {
+      background: var(--bg-card);
+      border: 2px solid var(--bg-stroke);
+      border-radius: 18px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      box-shadow: 0 0 0 1px rgba(232,102,61,.04), 0 24px 56px rgba(0,0,0,.5);
+    }
+    /* VIP emphasis — border only. One device, deliberately. */
+    .plan-card-vip { border-color: var(--orange); }
+
+    .plan-name { font-size: 21px; font-weight: 700; line-height: 1.5; color: var(--text-hi); }
+
+    /* Standard-tier warning — deliberately loud, not a footnote. */
+    .plan-warn {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: rgba(242,85,90,.09);
+      border: 1px solid rgba(242,85,90,.4);
+      border-inline-start: 4px solid var(--red-warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: var(--red-warn);
+      font-size: 14.5px; font-weight: 700; line-height: 1.75;
+    }
+    .plan-warn svg {
+      width: 19px; height: 19px; flex-shrink: 0; margin-top: 4px;
+      stroke: var(--red-warn); fill: none; stroke-width: 2;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    .plan-price { display: flex; align-items: baseline; gap: 8px; }
+    .plan-price-num {
+      font-family: var(--display); font-size: 56px; line-height: 1;
+      color: #fff; letter-spacing: .02em; direction: ltr;
+      text-shadow: 0 0 50px rgba(232,102,61,.42);
+    }
+    .plan-price-cur { font-size: 17px; font-weight: 700; color: var(--orange); }
+
+    .plan-note { font-size: 14px; font-weight: 600; color: var(--text-hi); line-height: 1.8; }
+
+    .plan-feats { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .plan-feat { display: flex; align-items: flex-start; gap: 11px; font-size: 14.5px; line-height: 1.85; }
+    .plan-feat-check {
+      width: 20px; height: 20px; flex-shrink: 0; margin-top: 5px; border-radius: 6px;
+      background: var(--orange-dim); display: flex; align-items: center; justify-content: center;
+    }
+    .plan-feat-check svg { width: 11px; height: 11px; stroke: var(--orange-hi); fill: none; stroke-width: 3; }
+
+    .plan-fit {
+      margin-top: auto;
+      border-top: 1px solid var(--bg-stroke);
+      padding-top: 16px;
+      font-size: 13.5px; line-height: 1.9; color: var(--text-mid);
+    }
+    .plan-fit b { color: var(--text-hi); font-weight: 700; }
+
+    /* ── WHATSAPP FLOATING BUTTON ──────────────────────────
+       z-index 1000 clears the fixed grain overlay (999).
+       Any future modal must sit above 1000. */
+    .wa-fab {
+      position: fixed;
+      right: 18px;
+      bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+      z-index: 1000;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 22px rgba(37,211,102,.4), 0 2px 6px rgba(0,0,0,.4);
+      transition: opacity .25s, visibility .25s, transform .25s;
+    }
+    .wa-fab svg { width: 30px; height: 30px; fill: #fff; display: block; }
+    .wa-fab:hover { transform: scale(1.06); }
+    /* Hidden while the payment section is on screen, so it can never
+       cover the pricing cards or the pay buttons. */
+    .wa-fab.is-hidden { opacity: 0; visibility: hidden; transform: scale(.8); pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .wa-fab { transition: opacity .25s, visibility .25s; }
+      .wa-fab:hover, .wa-fab.is-hidden { transform: none; }
+    }
+    @media (max-width: 600px) {
+      .wa-fab { width: 54px; height: 54px; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
+      .wa-fab svg { width: 28px; height: 28px; }
+    }
+
     /* mobile rules for new sections */
     @media (max-width: 768px) {
       .sys-block { grid-template-columns: 1fr; gap: 22px; margin-bottom: 56px; }
@@ -1447,6 +1550,12 @@
       .stack-item-val { font-size: 12px; }
       .offer-price { padding: 32px 16px 32px; }
       .offer-sub { font-size: 13.5px; margin-bottom: 32px; }
+      .plans-grid { gap: 14px; margin-bottom: 30px; }
+      .plan-card { padding: 24px 18px; gap: 16px; }
+      .plan-name { font-size: 19px; }
+      .plan-price-num { font-size: 48px; }
+      .plan-warn { font-size: 13.5px; padding: 13px 14px; }
+      .plan-feat { font-size: 14px; }
     }
     @media (max-width: 380px) {
       .test-grid { grid-template-columns: 1fr; }
@@ -2347,77 +2456,55 @@
 <!-- ═══════════════ PAYMENT SECTION ═══════════════ -->
 <section id="payment" style="background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(255,82,0,.07) 0%, transparent 70%), var(--bg); padding: 80px 0;">
   <div class="wrap">
-    <div class="sec-label-center">العرض الكامل</div>
-    <h2 class="sec-title" style="text-align:center; max-width:560px; margin:0 auto 14px;">نظام كامل لـ10 أسابيع — بسعر جلستين تأهيل تقريبًا.</h2>
-    <p class="offer-sub">مش بتشتري ملف تمارين. بتشتري نظام كامل بيقيس، بيتابع، وبيقرر معاك.</p>
+    <!-- ═══ TWO PLANS — id="price" is the scroll target for every CTA ═══ -->
+    <div class="plans-grid" id="price">
 
-    <!-- PRICE REVEAL -->
-    <div class="offer-price" id="price">
-      <div class="offer-price-label">اللي هتدفعه فعليًا — دفعة واحدة</div>
-      <div class="offer-price-amount"><span class="offer-price-currency">EGP</span>900</div>
-      <div class="offer-price-save">توفّر <b>3,900 ج.م</b> من القيمة الكاملة</div>
-      <div class="offer-price-terms">
-        <span class="term-chip">دفعة واحدة</span>
-        <span class="term-chip">وصول فوري</span>
-        <span class="term-chip">تحديثات مجانية</span>
-      </div>
-    </div>
+      <!-- STANDARD -->
+      <div class="plan-card">
+        <h3 class="plan-name">الباقة الأساسية</h3>
 
-    <!-- VALUE STACK -->
-    <div class="stack-card">
-      <div class="stack-head">
-        <span class="stack-head-title">اللي هتاخده لحظة الدفع:</span>
-        <span class="stack-head-en">The Full System</span>
-      </div>
-
-      <div class="stack-item">
-        <div class="stack-item-main">
-          <span class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <div>
-            <div class="stack-item-name">بروتوكول 10 أسابيع (بديل ~12 جلسة تأهيل)</div>
-            <div class="stack-item-desc">خطة واضحة من أول أسبوع لحد العودة للرياضة — وكل تمرين متصوّر بالتكنيك والأخطاء الشائعة.</div>
-          </div>
+        <div class="plan-warn">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>مفيش متابعة شخصية مني، انت بتستلم البرنامج وهو بيوجهك تمشي فيه ازاي لوحدك</span>
         </div>
-        <span class="stack-item-val stack-item-anchor">4,800 EGP</span>
-      </div>
 
-      <div class="stack-item">
-        <div class="stack-item-main">
-          <span class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <div>
-            <div class="stack-item-name">مركز التقييم — 7 اختبارات قياس</div>
-            <div class="stack-item-desc">كل اختبار له رقم مستهدف يعرفك مستواك الحقيقي وجاهزيتك للخطوة الجاية.</div>
-          </div>
+        <div class="plan-price">
+          <span class="plan-price-num">900</span>
+          <span class="plan-price-cur">جنيه</span>
         </div>
-        <span class="stack-item-val stack-item-gift" aria-label="هدية"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span class="stack-item-gift-cap">هدية</span></span>
+
+        <ul class="plan-feats">
+          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>برنامج تأهيل كامل لمدة 10 أسابيع</span></li>
+          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="en-term">Assessment Center</span> لتقييم حالتك</span></li>
+          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>خطة منظمة ومتدرجة على 4 مراحل</span></li>
+          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>شرح وفيديوهات لكل تمرين</span></li>
+          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>متابعة تقدمك داخل البرنامج</span></li>
+        </ul>
+
+        <p class="plan-fit"><b>مناسبة لك إذا:</b> تقدر تلتزم بالبرنامج وتنفذه بنفسك بدون الحاجة لمتابعة مباشرة مني.</p>
       </div>
 
-      <div class="stack-item">
-        <div class="stack-item-main">
-          <span class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <div>
-            <div class="stack-item-name">تطبيق المتابعة + بوابات المراحل</div>
-            <div class="stack-item-desc">حساب شخصي بيحفظ نتائجك، وبيفتح المرحلة الجاية لما أرقامك تثبت جاهزيتك.</div>
-          </div>
+      <!-- VIP -->
+      <div class="plan-card plan-card-vip">
+        <h3 class="plan-name">باقة <span class="en-term">VIP</span></h3>
+
+        <div class="plan-price">
+          <span class="plan-price-num">2,500</span>
+          <span class="plan-price-cur">جنيه</span>
         </div>
-        <span class="stack-item-val stack-item-gift" aria-label="هدية"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span class="stack-item-gift-cap">هدية</span></span>
+
+        <p class="plan-note">كل ما يوجد في الباقة الأساسية، بالإضافة إلى:</p>
+
+        <ul class="plan-feats">
+          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>متابعة أسبوعية مباشرة معايا (يوم واحد في الاسبوع)</span></li>
+          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>تقدر تصوّر التمرين وتبعتهولي عشان أراجع الـ <span class="en-term">Technique</span> وأصححهالك</span></li>
+          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>تمرين مخصصة لرياضتك في المرحلة الأخيرة</span></li>
+          <li class="plan-feat"><span class="plan-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>توجيه ومساعدة في التقدم، المشاكل، والأسئلة اللي ممكن تظهر أثناء التأهيل</span></li>
+        </ul>
+
+        <p class="plan-fit"><b>مناسبة لك إذا:</b> مش عايز تمشي في التأهيل لوحدك وعايزني أكون معاك خطوة بخطوة أثناء البرنامج.</p>
       </div>
 
-      <div class="stack-item">
-        <div class="stack-item-main">
-          <span class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <div>
-            <div class="stack-item-name">المركز التعليمي + نظام الأمان</div>
-            <div class="stack-item-desc">تفهم إصابتك وتعرف بدقة إمتى تكمل، إمتى تخفف، وإمتى توقف فورًا.</div>
-          </div>
-        </div>
-        <span class="stack-item-val stack-item-gift" aria-label="هدية"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span class="stack-item-gift-cap">هدية</span></span>
-      </div>
-
-      <div class="stack-total">
-        <span class="stack-total-label">القيمة الكاملة</span>
-        <span class="stack-total-val">4,800 EGP</span>
-      </div>
     </div>
 
     <!-- URGENCY -->
@@ -2504,12 +2591,12 @@
         </div>
         <div class="after-step">
           <div class="after-step-num">٢</div>
-          <p>ابعت الـ <strong>screenshot</strong> على الواتساب — وهبعتلك البرنامج <strong>فورًا.</strong></p>
+          <p>ابعت الـ <strong>screenshot</strong> على الواتساب واكتبلي اخترت أنهي باقة — <strong>الأساسية</strong> ولا <strong>VIP</strong> — وهبعتلك البرنامج <strong>فورًا.</strong></p>
         </div>
       </div>
 
       <div class="social-btns">
-        <a href="https://wa.me/201017201075?text=السلام%20عليكم%2C%20عايز%20أشترك%20في%20Bulletproof%20Ankle%20Program%20وبعتلك%20الإيصال" target="_blank" class="social-btn wa-btn">
+        <a data-wa-text="السلام عليكم، عايز أشترك في Bulletproof Ankle Program — الباقة: (الأساسية / VIP) وبعتلك الإيصال" target="_blank" rel="noopener" class="social-btn wa-btn">
           <svg viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
             <path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.824L.057 23.852l6.188-1.438A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.513-5.167-1.407l-.37-.22-3.674.853.877-3.579-.242-.379A9.971 9.971 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
@@ -2540,6 +2627,11 @@
 
 <div class="foot">© 2026 BULLETPROOF ANKLE PROGRAM · ALL RIGHTS RESERVED</div>
 
+<!-- ═══════════════ WHATSAPP FLOATING BUTTON ═══════════════ -->
+<a class="wa-fab" data-wa-text="السلام عليكم، عايز أستفسر عن Bulletproof Ankle Program" target="_blank" rel="noopener" aria-label="تواصل معايا على WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.824L.057 23.852l6.188-1.438A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.513-5.167-1.407l-.37-.22-3.674.853.877-3.579-.242-.379A9.971 9.971 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
 <script>
 /* ── Scroll-to-top on every page load ──────────────────
    Prevents the browser from restoring a prior scroll
@@ -2551,17 +2643,40 @@ window.addEventListener('load', function () {
   history.replaceState(null, '', window.location.pathname);
 });
 
-/* ── Smooth-scroll to the actual price (900 EGP) ───────
+/* ── Smooth-scroll to the pricing plans ────────────────
    All CTA buttons call this instead of using bare <a href="#price">.
-   The jump lands on the price block itself and centers it in the
-   viewport, so the client sees the real number first. */
+   The jump lands on the two plan cards so the client sees both
+   options first. */
 function scrollToPayment(e) {
   if (e) e.preventDefault();
   var target = document.getElementById('price') || document.getElementById('payment');
   if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
+
+/* ── WhatsApp links ────────────────────────────────────
+   Every wa.me href on the page is built here from the single
+   WHATSAPP_NUMBER constant declared at the top of the file. */
+(function () {
+  var links = document.querySelectorAll('[data-wa-text]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].href = 'https://wa.me/' + WHATSAPP_NUMBER +
+      '?text=' + encodeURIComponent(links[i].getAttribute('data-wa-text'));
+  }
+})();
+
+/* ── Float the WhatsApp button out of the way ──────────
+   It hides while the payment section is on screen so it can
+   never sit on top of the plan cards or the pay buttons. */
+(function () {
+  var fab = document.querySelector('.wa-fab');
+  var pay = document.getElementById('payment');
+  if (!fab || !pay || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (entries) {
+    fab.classList.toggle('is-hidden', entries[0].isIntersecting);
+  }, { threshold: 0 }).observe(pay);
+})();
 
 /* ── Copy-to-clipboard ──────────────────────────────── */
 function copyText(id, btn) {
