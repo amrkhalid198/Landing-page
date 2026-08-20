@@ -753,20 +753,24 @@
     }
 
     /* ── PAYMENT SECTION ───────────────────────────────── */
+    /* Two compact tiles, side by side at every width, capped so they stay
+       small and leave room for another method underneath. */
     .pay-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-bottom: 28px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 520px;
+      margin: 0 auto 14px;
     }
-    @media (min-width: 580px) { .pay-grid { grid-template-columns: 1fr 1fr; } }
 
     .pay-card {
-      border-radius: 14px;
-      padding: 26px 24px;
+      border-radius: 16px;
+      padding: 18px 12px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      align-items: center;
+      text-align: center;
+      gap: 11px;
       position: relative;
       overflow: hidden;
       transition: transform .2s, box-shadow .2s;
@@ -791,28 +795,31 @@
 
     .pay-card-top {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+      gap: 7px;
     }
     .pay-logo {
-      display: flex; align-items: center; gap: 10px;
+      display: flex; flex-direction: column; align-items: center; gap: 7px;
     }
+    .pay-logo > svg { width: 26px; height: 26px; }
     .pay-brand-name {
       font-family: var(--en);
-      font-size: 15px;
+      font-size: 12.5px;
       font-weight: 700;
       letter-spacing: .02em;
+      line-height: 1.2;
     }
     .vf-logo .pay-brand-name { color: #ff3333; }
     .ip-logo .pay-brand-name { color: #9b7dff; }
 
     .pay-badge {
       font-family: var(--ar);
-      font-size: 11px;
+      font-size: 9.5px;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 4px;
+      line-height: 1.5;
     }
     .vf-badge { background: rgba(220,0,0,.12); color: #ff5555; border: 1px solid rgba(220,0,0,.2); }
     .ip-badge { background: rgba(108,71,255,.12); color: #a98aff; border: 1px solid rgba(108,71,255,.2); }
@@ -820,10 +827,12 @@
     .pay-number-row {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 4px;
+      width: 100%;
     }
     .pay-num-label {
-      font-size: 11px;
+      font-size: 9.5px;
       font-weight: 700;
       text-transform: uppercase;
       font-family: var(--en);
@@ -833,22 +842,29 @@
 
     .pay-num {
       font-family: var(--en);
-      font-size: 22px;
+      font-size: 15px;
       font-weight: 700;
-      letter-spacing: .04em;
+      letter-spacing: .02em;
       direction: ltr;
       display: block;
+      white-space: nowrap;
     }
     .vf-num { color: #fff; }
-    .ip-num { color: #fff; font-size: 17px; letter-spacing: .02em; }
+    .ip-num { color: #fff; font-size: 11.5px; letter-spacing: 0; }
 
     .pay-action-btn {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 44px;
+      margin-top: auto;
       text-align: center;
-      padding: 14px 20px;
-      border-radius: 8px;
+      padding: 10px 8px;
+      border-radius: 10px;
       font-family: var(--ar);
-      font-size: 15px;
+      font-size: 12.5px;
+      line-height: 1.35;
       font-weight: 700;
       text-decoration: none;
       transition: transform .2s, opacity .2s;
@@ -962,14 +978,16 @@
       .tech-sep { display: none; } /* hide separators when wrapping */
 
       /* payment cards */
-      .pay-grid { gap: 12px; }
-      .pay-card { padding: 20px 16px; gap: 16px; }
-      .pay-num { font-size: 18px; letter-spacing: .02em; }
-      .ip-num { font-size: 14px; letter-spacing: .01em; }
-      /* make copy button a proper tap target (min 44px) */
-      .copy-btn { padding: 8px 12px; font-size: 10px; }
-      /* pay action buttons — full width, larger touch target */
-      .pay-action-btn { padding: 16px 20px; font-size: 16px; min-height: 54px; }
+      .pay-grid { gap: 10px; }
+      .pay-card { padding: 15px 9px; gap: 9px; }
+      .pay-num { font-size: 13.5px; }
+      .ip-num { font-size: 10px; }
+      .pay-brand-name { font-size: 11.5px; }
+      .pay-badge { font-size: 9px; padding: 3px 6px; }
+      .copy-btn { padding: 5px 8px; font-size: 9px; letter-spacing: .04em; }
+      /* stack so the number gets the tile's full width and never breaks */
+      .copy-row { flex-direction: column; gap: 6px; }
+      .pay-action-btn { padding: 9px 6px; font-size: 11.5px; min-height: 44px; }
 
       /* social buttons */
       .social-btns { flex-direction: column; gap: 12px; }
@@ -1182,7 +1200,9 @@
     .copy-row {
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      gap: 8px;
+      max-width: 100%;
     }
     .copy-btn {
       flex-shrink: 0;
