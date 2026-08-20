@@ -1270,10 +1270,15 @@
     }
     .visa-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0; }
     .visa-mark { display: flex; color: #7d9ad6; }
-    .visa-mark svg { width: 24px; height: 24px; display: block; }
+    .visa-mark svg { width: 34px; height: 34px; display: block; }
     .visa-brand {
-      font-family: var(--en); font-size: 14px; font-weight: 800;
-      letter-spacing: .06em; color: #9fb6e4;
+      font-family: var(--en); font-size: 19px; font-weight: 800;
+      letter-spacing: .05em; color: #9fb6e4;
+    }
+    /* Arabic sits in the RTL flow; no tracking on cursive script */
+    .visa-region {
+      font-size: 12.5px; font-weight: 600; line-height: 1.6;
+      color: var(--text-mid);
     }
     .visa-soon {
       font-size: 10.5px; font-weight: 700; line-height: 1.6;
@@ -1310,9 +1315,16 @@
       user-select: none;
     }
     .is-soon .visa-btn:hover, .is-soon .visa-btn:active { transform: none; opacity: 1; }
+    .is-soon .visa-btn {
+      font-family: var(--en); font-size: 12px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+    }
 
     @media (max-width: 600px) {
       .visa-card { padding: 13px 13px; gap: 11px; }
+      .visa-mark svg { width: 30px; height: 30px; }
+      .visa-brand { font-size: 17px; }
+      .visa-region { font-size: 12px; }
       .visa-btn { width: 100%; font-size: 11.5px; padding: 10px 14px; }
     }
 
@@ -2802,10 +2814,12 @@
           </svg>
         </span>
         <span class="visa-brand">Visa</span>
+        <span class="visa-region">(خارج مصر)</span>
         <!-- ↓ Arabic "coming soon" line — write it here. Hidden while empty. -->
         <span class="visa-soon" id="visa-soon"></span>
       </div>
-      <a class="visa-btn" id="visa-btn" aria-disabled="true">ادفع عبر Visa</a>
+      <!-- Label swaps to data-label-live automatically when PAYMOB_LIVE is true -->
+      <a class="visa-btn" id="visa-btn" aria-disabled="true" data-label-live="ادفع عبر Visa">Coming Soon</a>
     </div>
 
     <!-- SECURE BADGE -->
@@ -2907,6 +2921,7 @@ function scrollToPayment(e) {
     btn.setAttribute('target', '_blank');
     btn.setAttribute('rel', 'noopener');
     btn.removeAttribute('aria-disabled');
+    btn.textContent = btn.getAttribute('data-label-live');
   } else {
     card.classList.add('is-soon');
     /* no href: the anchor is not focusable, not activatable,
