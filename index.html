@@ -1251,45 +1251,46 @@
     .copy-btn svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; }
 
     /* ── VISA / PAYMOB ────────────────────────────────────
-       Disabled reads as scheduled, not failed: the tile keeps its
-       structure and a live accent on the "coming soon" marker, and
-       only the action itself is quieted. */
+       One quiet row in a single blue family. While disabled the
+       action is a status chip, not a button — nothing that cannot
+       be pressed gets drawn to look pressable. */
     .visa-card {
       max-width: 520px;
       margin: 0 auto 14px;
-      padding: 14px 16px;
-      border-radius: 16px;
+      padding: 13px 16px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
-      background: linear-gradient(180deg, #14171c 0%, #0f1114 100%);
-      border: 1px solid rgba(90,120,190,.32);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+      background: linear-gradient(180deg, #14171c 0%, #101317 100%);
+      border: 1px solid rgba(90,120,190,.26);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
     }
-    .visa-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0; }
-    .visa-mark { display: flex; color: #7d9ad6; }
-    .visa-mark svg { width: 34px; height: 34px; display: block; }
+    .visa-head { display: flex; align-items: center; gap: 11px; min-width: 0; }
+    .visa-mark { display: flex; color: #7d9ad6; flex-shrink: 0; }
+    .visa-mark svg { width: 30px; height: 30px; display: block; }
+    .visa-names { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; min-width: 0; }
     .visa-brand {
       font-family: var(--en); font-size: 19px; font-weight: 800;
-      letter-spacing: .05em; color: #9fb6e4;
+      letter-spacing: .04em; color: #b3c6e8; line-height: 1.1;
     }
     /* Arabic sits in the RTL flow; no tracking on cursive script */
-    .visa-region {
-      font-size: 12.5px; font-weight: 600; line-height: 1.6;
-      color: var(--text-mid);
-    }
+    .visa-region { font-size: 12px; font-weight: 600; color: #6f7f9b; line-height: 1.5; }
+
+    /* the empty Arabic slot, if it ever gets filled */
     .visa-soon {
       font-size: 10.5px; font-weight: 700; line-height: 1.6;
-      color: var(--orange-hi);
-      background: var(--orange-dim);
-      border: 1px solid rgba(232,102,61,.34);
+      color: #9fb6e4;
+      background: rgba(90,120,190,.12);
+      border: 1px solid rgba(90,120,190,.28);
       border-radius: 50px;
       padding: 3px 11px;
     }
     .visa-soon:empty { display: none; }
 
+    /* live: a real button */
     .visa-btn {
       display: flex; align-items: center; justify-content: center;
       min-height: 44px; padding: 10px 22px;
@@ -1303,29 +1304,32 @@
     .visa-btn:hover { transform: scale(1.02); opacity: .92; }
     .visa-btn:active { transform: scale(.978); transition: transform 90ms ease-out; }
 
-    /* awaiting Paymob verification */
-    .visa-card.is-soon { border-style: dashed; border-color: rgba(90,120,190,.3); }
-    .is-soon .visa-mark, .is-soon .visa-brand { opacity: .62; }
+    /* awaiting Paymob verification — a chip that reads as a state */
     .is-soon .visa-btn {
-      background: transparent;
-      color: var(--text-mid);
-      border: 1px dashed var(--bg-stroke);
+      min-height: 0;
+      padding: 5px 13px;
+      border-radius: 50px;
+      background: rgba(90,120,190,.11);
+      border: 1px solid rgba(90,120,190,.30);
+      color: #90a6cd;
       box-shadow: none;
-      cursor: not-allowed;
-      user-select: none;
+      font-family: var(--en); font-size: 10px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      cursor: default; user-select: none;
     }
     .is-soon .visa-btn:hover, .is-soon .visa-btn:active { transform: none; opacity: 1; }
-    .is-soon .visa-btn {
-      font-family: var(--en); font-size: 12px; font-weight: 700;
-      letter-spacing: .1em; text-transform: uppercase;
-    }
 
     @media (max-width: 600px) {
-      .visa-card { padding: 13px 13px; gap: 11px; }
-      .visa-mark svg { width: 30px; height: 30px; }
+      .visa-card { padding: 12px 13px; gap: 10px; }
+      .visa-mark svg { width: 27px; height: 27px; }
       .visa-brand { font-size: 17px; }
-      .visa-region { font-size: 12px; }
+      /* full width applies to the live button only — the chip stays a chip */
       .visa-btn { width: 100%; font-size: 11.5px; padding: 10px 14px; }
+      .is-soon .visa-btn { width: auto; font-size: 9.5px; padding: 5px 11px; letter-spacing: .11em; }
+    }
+    @media (max-width: 360px) {
+      .visa-head { gap: 9px; }
+      .visa-region { font-size: 11.5px; }
     }
 
     /* ── SECURE BADGE ─────────────────────────────────── */
@@ -2813,8 +2817,10 @@
             <rect x="1.5" y="4.5" width="21" height="15" rx="2.5"/><line x1="1.5" y1="9.5" x2="22.5" y2="9.5"/><line x1="5.5" y1="15" x2="9.5" y2="15"/>
           </svg>
         </span>
-        <span class="visa-brand">Visa</span>
-        <span class="visa-region">(خارج مصر)</span>
+        <span class="visa-names">
+          <span class="visa-brand">Visa</span>
+          <span class="visa-region">(خارج مصر)</span>
+        </span>
         <!-- ↓ Arabic "coming soon" line — write it here. Hidden while empty. -->
         <span class="visa-soon" id="visa-soon"></span>
       </div>
