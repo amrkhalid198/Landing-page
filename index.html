@@ -168,7 +168,7 @@
       display: block;
       font-size: clamp(56px, 13vw, 96px);
       color: var(--orange);
-      letter-spacing: .04em;
+      /* no letter-spacing: Arabic is cursive, tracking breaks the joins */
       line-height: 1.0;
       margin-top: 5px;
       text-shadow: 0 0 70px rgba(255,82,0,.3);
@@ -825,7 +825,6 @@
     .pay-num-label {
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: .1em;
       text-transform: uppercase;
       font-family: var(--en);
     }
@@ -1034,7 +1033,6 @@
       font-size: 11px;
       font-weight: 600;
       color: var(--text-mid);
-      letter-spacing: .04em;
       white-space: nowrap;
     }
     .tech-dot {
@@ -1124,7 +1122,6 @@
       font-family: var(--ar);
       font-size: 17px;
       font-weight: 700;
-      letter-spacing: .01em;
       text-align: center;
       transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
       box-shadow: 0 8px 32px rgba(232,102,61,.38);
@@ -1235,6 +1232,29 @@
       color: var(--text-lo);
     }
     .secure-badge svg { stroke: var(--text-lo); flex-shrink: 0; }
+    /* Arabic is cursive — never track it, even inside a tracked Latin label */
+    .ar-reset { letter-spacing: normal; }
+
+    /* ── PRESS FEEDBACK — fires on pointer-down, not on release ── */
+    .cta-btn-clean, .pay-action-btn, .social-btn, .copy-btn, .faq-label, .wa-fab {
+      -webkit-tap-highlight-color: transparent;
+    }
+    .cta-btn-clean:active, .pay-action-btn:active, .social-btn:active {
+      transform: scale(.978); transition: transform 90ms ease-out;
+    }
+    .copy-btn:active, .faq-label:active { transform: scale(.99); transition: transform 90ms ease-out; }
+    .wa-fab:active { transform: scale(.93); transition: transform 90ms ease-out; }
+
+    /* ── KEYBOARD FOCUS — visible ring on a dark ground ── */
+    :focus-visible {
+      outline: 2px solid var(--orange-hi);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* copy button keeps its small look but gets a 44px hit area */
+    .copy-btn { position: relative; }
+    .copy-btn::after { content: ''; position: absolute; inset: -11px; }
 
     /* ── URGENCY BAR ──────────────────────────────────── */
     .urgency-bar {
@@ -1508,7 +1528,7 @@
     .plan-card-vip .plan-eyebrow { color: var(--orange-hi); }
     .plan-name {
       font-size: 25px; font-weight: 700; line-height: 1.4;
-      letter-spacing: -.012em; color: var(--text-hi); margin-top: -8px;
+      color: var(--text-hi); margin-top: -8px;
     }
 
     /* ── price ── */
@@ -1519,13 +1539,13 @@
       direction: ltr; gap: 9px; margin: -4px 0 -2px;
     }
     .plan-price-num, .plan-price-cur {
-      font-family: var(--en); color: #fff; line-height: 1;
+      font-family: var(--en); line-height: 1;
       font-weight: 900; font-variant-numeric: tabular-nums;
     }
-    .plan-price-num { font-size: 58px; letter-spacing: -.042em; }
-    .plan-price-cur { font-size: 42px; letter-spacing: -.022em; }
-    .plan-card-vip .plan-price-num,
-    .plan-card-vip .plan-price-cur { text-shadow: 0 0 38px rgba(232,102,61,.5); }
+    .plan-price-num { font-size: 58px; letter-spacing: -.042em; color: #fff; }
+    .plan-price-cur { font-size: 27px; letter-spacing: -.01em; color: var(--orange); }
+    .plan-card-vip .plan-price-num { text-shadow: 0 0 38px rgba(232,102,61,.5); }
+    .plan-card-vip .plan-price-cur { color: var(--orange-hi); }
 
     /* ── standard-tier warning — loud on purpose ── */
     .plan-warn {
@@ -1547,7 +1567,7 @@
     /* ── VIP lead-in line ── */
     .plan-note {
       font-size: 14px; font-weight: 700; line-height: 1.75;
-      color: var(--orange-hi); letter-spacing: -.005em;
+      color: var(--orange-hi);
     }
 
     /* ── features ── */
@@ -1642,7 +1662,7 @@
       .plan-card { padding: 28px 20px 22px; gap: 18px; border-radius: 18px; }
       .plan-name { font-size: 21px; }
       .plan-price-num { font-size: 46px; }
-      .plan-price-cur { font-size: 34px; }
+      .plan-price-cur { font-size: 23px; }
       .plan-eyebrow { font-size: 14px; letter-spacing: .15em; }
       .plan-warn { font-size: 13.5px; padding: 14px 14px; }
       .plan-feat { font-size: 14px; }
@@ -1791,6 +1811,24 @@
       .train-cap .en { font-size: 10px; letter-spacing: .05em; }
       .coach-name { font-size: 14px; }
       .coach-role { font-size: 10px; }
+    }
+
+    /* ── REDUCED MOTION — page-wide, not just the new components ── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-badge-dot { animation: none; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .pay-card:hover, .social-btn:hover, .shot-card:hover,
+      .cta-btn-clean:hover, .plan-card:hover, .wa-fab:hover { transform: none; }
+    }
+    /* ── REDUCED TRANSPARENCY — drop the grain film ── */
+    @media (prefers-reduced-transparency: reduce) {
+      body::after { display: none; }
     }
 </style>
 </head>
@@ -2601,7 +2639,7 @@
 
     </div>
 
-    <h3 style="text-align:center; font-size:15px; font-weight:600; color:var(--text-mid); margin-bottom:24px; letter-spacing:.01em;">اختار طريقة الدفع:</h3>
+    <h3 style="text-align:center; font-size:15px; font-weight:600; color:var(--text-mid); margin-bottom:24px;">اختار طريقة الدفع:</h3>
 
     <div class="pay-grid">
 
@@ -2627,7 +2665,7 @@
             </button>
           </div>
         </div>
-        <a href="http://vf.eg/vfcash?id=mt&qrId=AlTpBf" target="_blank" class="pay-action-btn vf-btn">
+        <a href="http://vf.eg/vfcash?id=mt&qrId=AlTpBf" target="_blank" rel="noopener" class="pay-action-btn vf-btn">
           ادفع عبر Vodafone Cash
         </a>
       </div>
@@ -2654,7 +2692,7 @@
             </button>
           </div>
         </div>
-        <a href="https://ipn.eg/S/amrkh41462/instapay/4ZKucQ" target="_blank" class="pay-action-btn ip-btn">
+        <a href="https://ipn.eg/S/amrkh41462/instapay/4ZKucQ" target="_blank" rel="noopener" class="pay-action-btn ip-btn">
           ادفع عبر InstaPay
         </a>
       </div>
@@ -2664,7 +2702,7 @@
     <!-- SECURE BADGE -->
     <div class="secure-badge">
       <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke-width="2"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
-      SECURE PAYMENT · SSL ENCRYPTED · الدفع آمن ومشفّر
+      SECURE PAYMENT · SSL ENCRYPTED · <span class="ar-reset">الدفع آمن ومشفّر</span>
     </div>
 
     <!-- AFTER PAYMENT STEPS -->
@@ -2740,7 +2778,8 @@ function scrollToPayment(e) {
   if (e) e.preventDefault();
   var target = document.getElementById('price') || document.getElementById('payment');
   if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
   }
 }
 
