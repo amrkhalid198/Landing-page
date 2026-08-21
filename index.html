@@ -1686,6 +1686,10 @@
     .plan-feats {
       list-style: none; display: flex; flex-direction: column; gap: 14px;
       padding-top: 20px; border-top: 1px solid var(--bg-stroke);
+      /* paired with the auto margin on .plan-fit: flexbox splits the
+         leftover height evenly between the two, so the shorter card
+         distributes its slack instead of pooling it in one gap */
+      margin-top: auto;
     }
     .plan-card-vip .plan-feats { border-top-color: rgba(232,102,61,.22); }
     .plan-feat {
@@ -1727,14 +1731,16 @@
       font-family: var(--en); font-size: 15.5px; font-weight: 700;
       letter-spacing: .03em;
       text-align: center; text-decoration: none;
-      background: transparent;
+      background: rgba(232,102,61,.14);
       color: var(--orange-hi);
-      border: 1.5px solid rgba(232,102,61,.48);
+      border: 1.5px solid rgba(232,102,61,.78);
+      box-shadow: 0 4px 18px rgba(232,102,61,.14), inset 0 1px 0 rgba(255,255,255,.05);
       transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
     }
     .plan-cta:hover {
-      background: var(--orange-dim);
+      background: rgba(232,102,61,.22);
       border-color: var(--orange);
+      box-shadow: 0 8px 24px rgba(232,102,61,.22), inset 0 1px 0 rgba(255,255,255,.07);
       transform: translateY(-2px);
     }
     .plan-cta-vip {
