@@ -1629,21 +1629,23 @@
     }
 
     /* ── head ── */
-    .plan-eyebrow {
-      display: flex; align-items: center; gap: 14px;
-      font-size: 16px; font-weight: 800; letter-spacing: .17em;
-      color: var(--text-mid); text-transform: uppercase;
+    /* Latin tier name carries the card; tracking is fine on Latin */
+    .plan-title {
+      display: flex; align-items: center; gap: 15px;
+      /* container stays RTL so the title aligns with the rest of the card;
+         the name itself is a single Latin run and needs no isolation */
+      font-family: var(--en);
+      font-size: 27px; font-weight: 800; line-height: 1.1;
+      letter-spacing: .13em; text-transform: uppercase;
+      color: var(--text-hi);
     }
-    .plan-eyebrow::after {
+    .plan-title-txt { flex-shrink: 0; }
+    .plan-title::after {
       content: ''; flex: 1; height: 1px;
-      background: linear-gradient(90deg, currentColor, transparent);
-      opacity: .3;
+      background: linear-gradient(270deg, currentColor, transparent);
+      opacity: .28;
     }
-    .plan-card-vip .plan-eyebrow { color: var(--orange-hi); }
-    .plan-name {
-      font-size: 25px; font-weight: 700; line-height: 1.4;
-      color: var(--text-hi); margin-top: -8px;
-    }
+    .plan-card-vip .plan-title { color: var(--orange-hi); }
 
     /* ── price ── */
     /* direction:ltr so the pair reads "900 EGP"; flex-end keeps it on
@@ -1721,7 +1723,9 @@
       margin-top: 2px;
       padding: 14px 18px;
       border-radius: 11px;
-      font-family: var(--ar); font-size: 15px; font-weight: 700;
+      direction: ltr;
+      font-family: var(--en); font-size: 15.5px; font-weight: 700;
+      letter-spacing: .03em;
       text-align: center; text-decoration: none;
       background: transparent;
       color: var(--orange-hi);
@@ -1801,7 +1805,7 @@
       .plan-name { font-size: 21px; }
       .plan-price-num { font-size: 46px; }
       .plan-price-cur { font-size: 23px; }
-      .plan-eyebrow { font-size: 14px; letter-spacing: .15em; }
+      .plan-title { font-size: 22px; letter-spacing: .11em; gap: 12px; }
       .plan-warn { font-size: 12px; }
       .plan-feat { font-size: 14px; }
       .plan-feats { gap: 13px; padding-top: 18px; }
@@ -2730,8 +2734,7 @@
 
       <!-- STANDARD -->
       <div class="plan-card">
-        <div class="plan-eyebrow"><span class="en">STANDARD</span></div>
-        <h3 class="plan-name">الباقة الأساسية</h3>
+        <h3 class="plan-title"><span class="plan-title-txt">Standard</span></h3>
 
         <div class="plan-warn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -2752,13 +2755,12 @@
         </ul>
 
         <p class="plan-fit"><b>مناسبة لك إذا:</b> تقدر تلتزم بالبرنامج وتنفذه بنفسك بدون الحاجة لمتابعة مباشرة مني.</p>
-        <a href="#pay-methods" class="plan-cta">ابدأ الباقة الأساسية</a>
+        <a href="#pay-methods" class="plan-cta">Start Standard</a>
       </div>
 
       <!-- VIP -->
       <div class="plan-card plan-card-vip">
-        <div class="plan-eyebrow"><span class="en">VIP</span></div>
-        <h3 class="plan-name">باقة <span class="en-term">VIP</span></h3>
+        <h3 class="plan-title"><span class="plan-title-txt">VIP</span></h3>
 
         <div class="plan-price">
           <span class="plan-price-num">2,500</span>
@@ -2775,7 +2777,7 @@
         </ul>
 
         <p class="plan-fit"><b>مناسبة لك إذا:</b> مش عايز تمشي في التأهيل لوحدك وعايزني أكون معاك خطوة بخطوة أثناء البرنامج.</p>
-        <a href="#pay-methods" class="plan-cta plan-cta-vip">ابدأ باقة VIP</a>
+        <a href="#pay-methods" class="plan-cta plan-cta-vip">Start VIP</a>
       </div>
 
     </div>
