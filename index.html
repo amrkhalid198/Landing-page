@@ -929,6 +929,28 @@
     .after-step p { font-size: 14px; color: var(--text-mid); line-height: 1.7; padding-top: 4px; }
     .after-step p strong { color: var(--text-hi); }
 
+    /* ── VIP-only branch in the post-payment flow ──────────
+       Orange (the VIP tier colour) rather than the red used
+       for the Standard warning. No new tokens introduced. */
+    .after-vip-note {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin-top: 18px; padding-top: 16px;
+      border-top: 1px solid rgba(232,102,61,.22);
+    }
+    .after-vip-tag {
+      flex-shrink: 0;
+      padding: 3px 9px; border-radius: 6px;
+      background: var(--orange-dim);
+      border: 1px solid rgba(232,102,61,.3);
+      color: var(--orange-hi);
+      font-size: 11px; font-weight: 700; line-height: 1.5;
+    }
+    .after-vip-note p {
+      font-size: 13.5px; line-height: 1.7; color: var(--text-mid);
+      padding-top: 2px;
+    }
+    .after-vip-note p strong { color: var(--orange-hi); }
+
     /* ── RESPONSIVE TWEAKS ─────────────────────────────── */
     @media (max-width: 600px) {
       /* Hero — tighter on small screens, account for notch */
@@ -2214,7 +2236,7 @@
       </a>
       <p class="cta-note" style="margin-top:12px;">
         <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
-        وصول فوري بعد التأكيد · <span class="en" style="font-size:11px;">900 EGP One-Time</span>
+        وصول فوري بعد التأكيد
       </p>
     </div>
 
@@ -2559,10 +2581,6 @@
 
     <div class="notfor-card">
 
-      <div class="acute-warning">
-        <strong>ملاحظة مهمة:</strong> لو لسه متعرض لـ <strong>التواء في الكاحل</strong> من أيام قليلة، البرنامج ده مش مناسب دلوقتي — الكاحل لسه محتاج راحة وتدخل طبي أولي. هو متصمم لحالات عدم الثبات المزمن والتأهيل الرياضي، مش للإصابة وهي لسه حديثة ووارمة.
-      </div>
-
       <p class="notfor-head">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         متبدأش البرنامج ده لو:
@@ -2617,6 +2635,22 @@
     <h2 class="sec-title"><span class="en" style="font-family:var(--display); font-size:.9em; letter-spacing:.04em;">Frequently Asked Questions</span></h2>
 
     <div class="faq-list">
+
+      <!-- Standard vs VIP — tier comparison -->
+      <div class="faq-item">
+        <input type="checkbox" id="q8" />
+        <label class="faq-label" for="q8">
+          <span>إيه الفرق بين باقة الـ <span class="en-term">Standard</span> والـ <span class="en-term">VIP</span>؟</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </label>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            البرنامج الأساسي هو نفسه في الباقتين: هتاخد خطة التأهيل الكاملة لمدة 10 أسابيع، التمارين، التقييمات، متابعة التقدم، واختبارات العودة للرياضة.<br />
+            الفرق إنك في باقة الـ <span class="en-term">VIP</span> مش هتكون لوحدك.<br />
+            هيكون في متابعة أسبوعية معايا، تقدر تبعتلي فيديوهات للتمارين عشان أراجع وأصحح الـ <span class="en-term">Technique</span>، وفي المرحلة الأخيرة هنضيف تمارين مناسبة لمتطلبات رياضتك.
+          </div>
+        </div>
+      </div>
 
       <!-- REQUIRED Q1 — Tools needed -->
       <div class="faq-item">
@@ -2888,6 +2922,12 @@
           <div class="after-step-num">٢</div>
           <p>ابعت الـ <strong>screenshot</strong> على الواتساب واكتبلي اخترت أنهي باقة — <strong>الأساسية</strong> ولا <strong>VIP</strong> — وهبعتلك البرنامج <strong>فورًا.</strong></p>
         </div>
+      </div>
+
+      <!-- VIP-only branch. Applies to VIP buyers only; Standard flow stays two steps. -->
+      <div class="after-vip-note">
+        <span class="after-vip-tag en-term">VIP</span>
+        <p>لو اخترت باقة الـ<span class="en-term">VIP</span>، هتبعت شوية تفاصيل عن حالتك قبل ما نبدأ عشان أقدر أتابعك بشكل مناسب.</p>
       </div>
 
       <div class="social-btns">
