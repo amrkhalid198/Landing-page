@@ -1714,9 +1714,37 @@
     }
     .plan-fit b { color: var(--text-hi); font-weight: 700; }
 
+    /* ── start buttons — Standard secondary, VIP primary ── */
+    .plan-cta {
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; min-height: 52px;
+      margin-top: 2px;
+      padding: 14px 18px;
+      border-radius: 11px;
+      font-family: var(--ar); font-size: 15px; font-weight: 700;
+      text-align: center; text-decoration: none;
+      background: transparent;
+      color: var(--orange-hi);
+      border: 1.5px solid rgba(232,102,61,.48);
+      transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .plan-cta:hover {
+      background: var(--orange-dim);
+      border-color: var(--orange);
+      transform: translateY(-2px);
+    }
+    .plan-cta-vip {
+      background: var(--orange);
+      color: #fff;
+      border-color: var(--orange);
+      box-shadow: 0 8px 28px rgba(232,102,61,.34);
+    }
+    .plan-cta-vip:hover { background: var(--orange-hi); border-color: var(--orange-hi); }
+    .plan-cta:active { transform: scale(.978); transition: transform 90ms ease-out; }
+
     @media (prefers-reduced-motion: reduce) {
       .plan-card { transition: box-shadow .28s ease; }
-      .plan-card:hover { transform: none; }
+      .plan-card:hover, .plan-cta:hover { transform: none; }
     }
 
     /* ── WHATSAPP FLOATING BUTTON ──────────────────────────
@@ -1778,6 +1806,7 @@
       .plan-feat { font-size: 14px; }
       .plan-feats { gap: 13px; padding-top: 18px; }
       .plan-fit { padding: 14px 14px; }
+      .plan-cta { min-height: 50px; font-size: 14.5px; padding: 13px 14px; }
     }
     @media (max-width: 380px) {
       .test-grid { grid-template-columns: 1fr; }
@@ -2723,6 +2752,7 @@
         </ul>
 
         <p class="plan-fit"><b>مناسبة لك إذا:</b> تقدر تلتزم بالبرنامج وتنفذه بنفسك بدون الحاجة لمتابعة مباشرة مني.</p>
+        <a href="#pay-methods" class="plan-cta">ابدأ الباقة الأساسية</a>
       </div>
 
       <!-- VIP -->
@@ -2745,11 +2775,12 @@
         </ul>
 
         <p class="plan-fit"><b>مناسبة لك إذا:</b> مش عايز تمشي في التأهيل لوحدك وعايزني أكون معاك خطوة بخطوة أثناء البرنامج.</p>
+        <a href="#pay-methods" class="plan-cta plan-cta-vip">ابدأ باقة VIP</a>
       </div>
 
     </div>
 
-    <h3 style="text-align:center; font-size:15px; font-weight:600; color:var(--text-mid); margin-bottom:24px;">اختار طريقة الدفع:</h3>
+    <h3 id="pay-methods" style="text-align:center; font-size:15px; font-weight:600; color:var(--text-mid); margin-bottom:24px; scroll-margin-top:84px;">اختار طريقة الدفع:</h3>
 
     <div class="pay-grid">
 
