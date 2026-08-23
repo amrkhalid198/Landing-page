@@ -7,16 +7,6 @@
        (floating button + the after-payment receipt button). -->
   <script>const WHATSAPP_NUMBER = '201509951668';</script>
 
-  <!-- ═══ VISA ENQUIRY MESSAGE ════════════════════════════
-       The Visa button opens WhatsApp. Line 1 is fixed; line 2
-       depends on which tier button was pressed beforehand.
-       Write the three Arabic lines below. -->
-  <script>
-    const WA_VISA_LINE1 = 'السلام عليكم، تفاصيل الدفع بالفيزا للاشتراك في Bulletproof Ankle Program';
-    const WA_TIER_STANDARD = '';
-    const WA_TIER_VIP      = '';
-    const WA_TIER_UNKNOWN  = '';
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bulletproof Ankle — برنامج تأهيل الكاحل للرياضيين</title>
   <meta name="description" content="برنامج تأهيل كاحل متكامل من 10 أسابيع للرياضيين اللي عندهم Chronic Ankle Instability. 4 مراحل مبنية على العلم — ارجع تجري وتنط بدون خوف." />
@@ -2760,7 +2750,7 @@
         </ul>
 
         <p class="plan-fit"><b>مناسبة لك إذا:</b> تقدر تلتزم بالبرنامج وتنفذه بنفسك بدون الحاجة لمتابعة مباشرة مني.</p>
-        <a href="#pay-methods" class="plan-cta" data-tier="standard">Start Standard</a>
+        <a href="#pay-methods" class="plan-cta">Start Standard</a>
       </div>
 
       <!-- VIP -->
@@ -2782,7 +2772,7 @@
         </ul>
 
         <p class="plan-fit"><b>مناسبة لك إذا:</b> مش عايز تمشي في التأهيل لوحدك وعايزني أكون معاك خطوة بخطوة أثناء البرنامج.</p>
-        <a href="#pay-methods" class="plan-cta plan-cta-vip" data-tier="vip">Start VIP</a>
+        <a href="#pay-methods" class="plan-cta plan-cta-vip">Start VIP</a>
       </div>
 
     </div>
@@ -2847,7 +2837,7 @@
 
     </div>
 
-    <!-- VISA (خارج مصر) — opens WhatsApp with the chosen tier -->
+    <!-- VISA (خارج مصر) — Paymob checkout -->
     <div class="visa-card" id="visa-card">
       <div class="visa-head">
         <span class="visa-mark">
@@ -2860,8 +2850,7 @@
           <span class="visa-region">(خارج مصر)</span>
         </span>
       </div>
-      <!-- href built from WHATSAPP_NUMBER + the recorded tier -->
-      <a class="pay-action-btn visa-btn" id="visa-btn" target="_blank" rel="noopener noreferrer">ادفع بالفيزا</a>
+      <a href="https://accept.paymob.com/payme/behind-the-injury" class="pay-action-btn visa-btn" id="visa-btn" target="_blank" rel="noopener noreferrer">ادفع بالفيزا</a>
     </div>
 
     <!-- SECURE BADGE -->
@@ -2953,42 +2942,6 @@ function scrollToPayment(e) {
     target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
   }
 }
-
-/* ── Visa enquiry — tier-aware WhatsApp link ───────────
-   Start Standard / Start VIP record the tier; the Visa button's
-   href is rebuilt from it. Built on load and refreshed on
-   pointerdown as well as click, so middle-click, long-press and
-   "copy link address" also get a correct URL — none of those
-   fire a click event. */
-(function () {
-  var btn = document.getElementById('visa-btn');
-  var methods = document.getElementById('pay-methods');
-  if (!btn) return;
-
-  var selectedTier = null;
-
-  function buildHref() {
-    var line2 = selectedTier === 'standard' ? WA_TIER_STANDARD
-              : selectedTier === 'vip'      ? WA_TIER_VIP
-              : WA_TIER_UNKNOWN;
-    var message = WA_VISA_LINE1 + '\n' + line2;
-    btn.href = 'https://wa.me/' + WHATSAPP_NUMBER +
-      '?text=' + encodeURIComponent(message);
-  }
-
-  var tierBtns = document.querySelectorAll('.plan-cta[data-tier]');
-  for (var i = 0; i < tierBtns.length; i++) {
-    tierBtns[i].addEventListener('click', function () {
-      selectedTier = this.getAttribute('data-tier');
-      if (methods) methods.setAttribute('data-tier', selectedTier);
-      buildHref();
-    });
-  }
-
-  btn.addEventListener('pointerdown', buildHref);
-  btn.addEventListener('click', buildHref);
-  buildHref();
-})();
 
 /* ── WhatsApp links ────────────────────────────────────
    Every wa.me href on the page is built here from the single
