@@ -5,18 +5,17 @@
   <!-- ═══ SINGLE SOURCE OF TRUTH — WhatsApp contact number ═══
        Change it here and every WhatsApp link on the page follows
        (floating button + the after-payment receipt button). -->
-  <script>const WHATSAPP_NUMBER = '201017201075';</script>
+  <script>const WHATSAPP_NUMBER = '201509951668';</script>
 
-  <!-- ═══ PAYMOB / VISA ═══════════════════════════════════
-       To go live once Paymob verification clears:
-         1. paste the checkout URL into PAYMOB_CHECKOUT_URL
-         2. set PAYMOB_LIVE to true
-       Nothing else on the page needs editing. While LIVE is
-       false (or the URL is blank) the Visa option renders as
-       a deliberate "coming soon" tile that cannot be clicked. -->
+  <!-- ═══ VISA ENQUIRY MESSAGE ════════════════════════════
+       The Visa button opens WhatsApp. Line 1 is fixed; line 2
+       depends on which tier button was pressed beforehand.
+       Write the three Arabic lines below. -->
   <script>
-    const PAYMOB_LIVE = false;
-    const PAYMOB_CHECKOUT_URL = '';
+    const WA_VISA_LINE1 = 'السلام عليكم، تفاصيل الدفع بالفيزا للاشتراك في Bulletproof Ankle Program';
+    const WA_TIER_STANDARD = '';
+    const WA_TIER_VIP      = '';
+    const WA_TIER_UNKNOWN  = '';
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bulletproof Ankle — برنامج تأهيل الكاحل للرياضيين</title>
@@ -1272,7 +1271,7 @@
     }
     .copy-btn svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; }
 
-    /* ── VISA / PAYMOB ────────────────────────────────────
+    /* ── VISA (خارج مصر) ──────────────────────────────────
        One quiet row in a single blue family. While disabled the
        action is a status chip, not a button — nothing that cannot
        be pressed gets drawn to look pressable. */
@@ -1301,53 +1300,19 @@
     /* Arabic sits in the RTL flow; no tracking on cursive script */
     .visa-region { font-size: 12px; font-weight: 600; color: #6f7f9b; line-height: 1.5; }
 
-    /* the empty Arabic slot, if it ever gets filled */
-    .visa-soon {
-      font-size: 10.5px; font-weight: 700; line-height: 1.6;
-      color: #9fb6e4;
-      background: rgba(90,120,190,.12);
-      border: 1px solid rgba(90,120,190,.28);
-      border-radius: 50px;
-      padding: 3px 11px;
-    }
-    .visa-soon:empty { display: none; }
-
-    /* live: a real button */
-    .visa-btn {
-      display: flex; align-items: center; justify-content: center;
-      min-height: 44px; padding: 10px 22px;
-      border-radius: 10px;
-      font-family: var(--ar); font-size: 12.5px; font-weight: 700;
-      text-decoration: none;
-      background: #2b4a8f; color: #fff;
-      box-shadow: 0 6px 20px rgba(43,74,143,.35);
-      transition: transform .2s, opacity .2s;
-    }
-    .visa-btn:hover { transform: scale(1.02); opacity: .92; }
-    .visa-btn:active { transform: scale(.978); transition: transform 90ms ease-out; }
-
-    /* awaiting Paymob verification — a chip that reads as a state */
-    .is-soon .visa-btn {
-      min-height: 0;
-      padding: 5px 13px;
-      border-radius: 50px;
-      background: rgba(90,120,190,.11);
-      border: 1px solid rgba(90,120,190,.30);
-      color: #90a6cd;
-      box-shadow: none;
-      font-family: var(--en); font-size: 10px; font-weight: 700;
-      letter-spacing: .14em; text-transform: uppercase;
-      cursor: default; user-select: none;
-    }
-    .is-soon .visa-btn:hover, .is-soon .visa-btn:active { transform: none; opacity: 1; }
+    /* Same .pay-action-btn component as Vodafone Cash and InstaPay:
+       identical height, padding, radius, font size and weight. Only the
+       full-bleed width is dropped, because this card is a horizontal row
+       rather than a vertical tile. */
+    .visa-btn { background: #2b4a8f; color: #fff; box-shadow: 0 6px 20px rgba(43,74,143,.35); }
+    .visa-card .pay-action-btn { width: auto; margin-top: 0; padding-inline: 22px; }
 
     @media (max-width: 600px) {
       .visa-card { padding: 12px 13px; gap: 10px; }
       .visa-mark svg { width: 27px; height: 27px; }
       .visa-brand { font-size: 17px; }
-      /* full width applies to the live button only — the chip stays a chip */
-      .visa-btn { width: 100%; font-size: 11.5px; padding: 10px 14px; }
-      .is-soon .visa-btn { width: auto; font-size: 9.5px; padding: 5px 11px; letter-spacing: .11em; }
+      /* row becomes cramped on narrow screens; let the button span it */
+      .visa-card .pay-action-btn { width: 100%; padding-inline: 14px; }
     }
     @media (max-width: 360px) {
       .visa-head { gap: 9px; }
@@ -2795,7 +2760,7 @@
         </ul>
 
         <p class="plan-fit"><b>مناسبة لك إذا:</b> تقدر تلتزم بالبرنامج وتنفذه بنفسك بدون الحاجة لمتابعة مباشرة مني.</p>
-        <a href="#pay-methods" class="plan-cta">Start Standard</a>
+        <a href="#pay-methods" class="plan-cta" data-tier="standard">Start Standard</a>
       </div>
 
       <!-- VIP -->
@@ -2817,7 +2782,7 @@
         </ul>
 
         <p class="plan-fit"><b>مناسبة لك إذا:</b> مش عايز تمشي في التأهيل لوحدك وعايزني أكون معاك خطوة بخطوة أثناء البرنامج.</p>
-        <a href="#pay-methods" class="plan-cta plan-cta-vip">Start VIP</a>
+        <a href="#pay-methods" class="plan-cta plan-cta-vip" data-tier="vip">Start VIP</a>
       </div>
 
     </div>
@@ -2882,8 +2847,8 @@
 
     </div>
 
-    <!-- VISA / PAYMOB — state driven by PAYMOB_LIVE at the top of the file -->
-    <div class="visa-card is-soon" id="visa-card">
+    <!-- VISA (خارج مصر) — opens WhatsApp with the chosen tier -->
+    <div class="visa-card" id="visa-card">
       <div class="visa-head">
         <span class="visa-mark">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -2894,11 +2859,9 @@
           <span class="visa-brand">Visa</span>
           <span class="visa-region">(خارج مصر)</span>
         </span>
-        <!-- ↓ Arabic "coming soon" line — write it here. Hidden while empty. -->
-        <span class="visa-soon" id="visa-soon"></span>
       </div>
-      <!-- Label swaps to data-label-live automatically when PAYMOB_LIVE is true -->
-      <a class="visa-btn" id="visa-btn" aria-disabled="true" data-label-live="ادفع عبر Visa">Coming Soon</a>
+      <!-- href built from WHATSAPP_NUMBER + the recorded tier -->
+      <a class="pay-action-btn visa-btn" id="visa-btn" target="_blank" rel="noopener noreferrer">ادفع بالفيزا</a>
     </div>
 
     <!-- SECURE BADGE -->
@@ -2991,29 +2954,40 @@ function scrollToPayment(e) {
   }
 }
 
-/* ── Visa / Paymob ─────────────────────────────────────
-   Reads PAYMOB_LIVE + PAYMOB_CHECKOUT_URL declared at the top of
-   the file. The markup ships in the disabled state, so there is no
-   flash of a live button before this runs. */
+/* ── Visa enquiry — tier-aware WhatsApp link ───────────
+   Start Standard / Start VIP record the tier; the Visa button's
+   href is rebuilt from it. Built on load and refreshed on
+   pointerdown as well as click, so middle-click, long-press and
+   "copy link address" also get a correct URL — none of those
+   fire a click event. */
 (function () {
-  var card = document.getElementById('visa-card');
-  var btn  = document.getElementById('visa-btn');
-  if (!card || !btn) return;
+  var btn = document.getElementById('visa-btn');
+  var methods = document.getElementById('pay-methods');
+  if (!btn) return;
 
-  if (PAYMOB_LIVE && PAYMOB_CHECKOUT_URL) {
-    card.classList.remove('is-soon');
-    btn.setAttribute('href', PAYMOB_CHECKOUT_URL);
-    btn.setAttribute('target', '_blank');
-    btn.setAttribute('rel', 'noopener');
-    btn.removeAttribute('aria-disabled');
-    btn.textContent = btn.getAttribute('data-label-live');
-  } else {
-    card.classList.add('is-soon');
-    /* no href: the anchor is not focusable, not activatable,
-       and has nowhere to navigate to */
-    btn.removeAttribute('href');
-    btn.setAttribute('aria-disabled', 'true');
+  var selectedTier = null;
+
+  function buildHref() {
+    var line2 = selectedTier === 'standard' ? WA_TIER_STANDARD
+              : selectedTier === 'vip'      ? WA_TIER_VIP
+              : WA_TIER_UNKNOWN;
+    var message = WA_VISA_LINE1 + '\n' + line2;
+    btn.href = 'https://wa.me/' + WHATSAPP_NUMBER +
+      '?text=' + encodeURIComponent(message);
   }
+
+  var tierBtns = document.querySelectorAll('.plan-cta[data-tier]');
+  for (var i = 0; i < tierBtns.length; i++) {
+    tierBtns[i].addEventListener('click', function () {
+      selectedTier = this.getAttribute('data-tier');
+      if (methods) methods.setAttribute('data-tier', selectedTier);
+      buildHref();
+    });
+  }
+
+  btn.addEventListener('pointerdown', buildHref);
+  btn.addEventListener('click', buildHref);
+  buildHref();
 })();
 
 /* ── WhatsApp links ────────────────────────────────────
