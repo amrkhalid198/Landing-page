@@ -1301,12 +1301,14 @@
       .visa-card { padding: 12px 13px; gap: 10px; }
       .visa-mark svg { width: 27px; height: 27px; }
       .visa-brand { font-size: 17px; }
-      /* row becomes cramped on narrow screens; let the button span it */
-      .visa-card .pay-action-btn { width: 100%; padding-inline: 14px; }
+      /* stays inline beside the heading rather than spanning the row */
+      .visa-card .pay-action-btn { padding-inline: 16px; }
     }
     @media (max-width: 360px) {
       .visa-head { gap: 9px; }
       .visa-region { font-size: 11.5px; }
+      .visa-card { padding: 12px 11px; }
+      .visa-card .pay-action-btn { padding-inline: 12px; font-size: 12px; }
     }
 
     /* ── SECURE BADGE ─────────────────────────────────── */
