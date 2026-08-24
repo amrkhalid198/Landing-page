@@ -942,13 +942,24 @@
 
     /* ── RESPONSIVE TWEAKS ─────────────────────────────── */
     @media (max-width: 600px) {
-      /* Hero — tighter on small screens, account for notch */
+      /* ── Hero, first screen ───────────────────────────
+         The CTA has to land above the fold on a small phone.
+         Two things buy that: the hero image moves below the
+         button (flex order only — the markup is unchanged, and
+         desktop keeps image-then-button), and the block above
+         the headline is tightened. */
       .hero {
-        padding: 28px 16px 48px;
-        padding-top: max(28px, calc(20px + env(safe-area-inset-top)));
+        padding: 14px 16px 40px;
+        padding-top: max(14px, calc(10px + env(safe-area-inset-top)));
       }
-      .hero-badge { font-size: 10px; letter-spacing: .05em; padding: 5px 13px; margin-bottom: 24px; }
-      .hero-sub { font-size: 14px; margin-bottom: 36px; }
+      .hero-badge { font-size: 10px; letter-spacing: .05em; padding: 5px 13px; margin-bottom: 14px; }
+      .hero-h1 { margin-bottom: 18px; }
+      .hero-sub { font-size: 14px; margin-bottom: 20px; }
+      /* button first, image after it */
+      .hero-visual { order: 1; }
+      .hero .tech-bar { order: 2; }
+      /* keep the announcement bar on one line so it costs 35px, not 63px */
+      .ann-bar { font-size: 9.5px; letter-spacing: .04em; padding: 9px 12px; }
 
       /* ── more breathing room between sections on mobile ── */
       .sec { padding: 64px 0; }
@@ -1142,8 +1153,8 @@
       filter: none;
     }
     @media (max-width: 600px) {
-      .hero-logo { width: 140px; height: 140px; }
-      .hero-logo-wrap { margin: 2px 0 10px; }
+      .hero-logo { width: 100px; height: 100px; }
+      .hero-logo-wrap { margin: 0 0 8px; }
     }
 
     /* ── CTA BUTTON — CLEAN (no price inside) ──────────── */
@@ -1855,7 +1866,7 @@
       filter: drop-shadow(0 18px 44px rgba(232,102,61,.18));
     }
     @media (max-width: 600px) {
-      .hero-visual { max-width: 330px; margin: -6px auto 30px; }
+      .hero-visual { max-width: 330px; margin: 20px auto 6px; }
     }
 
     .shots-grid {
