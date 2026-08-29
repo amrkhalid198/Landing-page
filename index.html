@@ -918,28 +918,6 @@
     .after-step p { font-size: 14px; color: var(--text-mid); line-height: 1.7; padding-top: 4px; }
     .after-step p strong { color: var(--text-hi); }
 
-    /* ── VIP-only branch in the post-payment flow ──────────
-       Orange (the VIP tier colour) rather than the red used
-       for the Standard warning. No new tokens introduced. */
-    .after-vip-note {
-      display: flex; align-items: flex-start; gap: 10px;
-      margin-top: 18px; padding-top: 16px;
-      border-top: 1px solid rgba(232,102,61,.22);
-    }
-    .after-vip-tag {
-      flex-shrink: 0;
-      padding: 3px 9px; border-radius: 6px;
-      background: var(--orange-dim);
-      border: 1px solid rgba(232,102,61,.3);
-      color: var(--orange-hi);
-      font-size: 11px; font-weight: 700; line-height: 1.5;
-    }
-    .after-vip-note p {
-      font-size: 13.5px; line-height: 1.7; color: var(--text-mid);
-      padding-top: 2px;
-    }
-    .after-vip-note p strong { color: var(--orange-hi); }
-
     /* ── RESPONSIVE TWEAKS ─────────────────────────────── */
     @media (max-width: 600px) {
       /* Hero — tighter on small screens, account for notch */
@@ -2876,12 +2854,6 @@
           <div class="after-step-num">٢</div>
           <p>ابعت الـ <strong>screenshot</strong> على الواتساب واكتبلي اخترت أنهي باقة — <strong>الأساسية</strong> ولا <strong>VIP</strong> — وهبعتلك البرنامج <strong>فورًا.</strong></p>
         </div>
-      </div>
-
-      <!-- VIP-only branch. Applies to VIP buyers only; Standard flow stays two steps. -->
-      <div class="after-vip-note">
-        <span class="after-vip-tag en-term">VIP</span>
-        <p>لو اخترت باقة الـ<span class="en-term">VIP</span>، هتبعت شوية تفاصيل عن حالتك قبل ما نبدأ عشان أقدر أتابعك بشكل مناسب.</p>
       </div>
 
       <div class="social-btns">
