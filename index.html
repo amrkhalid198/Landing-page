@@ -11,8 +11,18 @@
   <title>Bulletproof Ankle — برنامج تأهيل الكاحل للرياضيين</title>
   <meta name="description" content="برنامج تأهيل كاحل متكامل من 10 أسابيع للرياضيين اللي عندهم Chronic Ankle Instability. 4 مراحل مبنية على العلم — ارجع تجري وتنط بدون خوف." />
   <meta property="og:title" content="Bulletproof Ankle — برنامج تأهيل الكاحل للرياضيين" />
-  <meta property="og:description" content="رجّع قوة وثبات الكاحل خلال 10 أسابيع. بروتوكول تأهيل رياضي مبني على أحدث الأبحاث العلمية. 900 EGP — وصول فوري." />
+  <meta property="og:description" content="رجّع قوة وثبات الكاحل خلال 10 أسابيع. بروتوكول تأهيل رياضي مبني على أحدث الأبحاث العلمية. 900 EGP." />
   <meta property="og:type" content="website" />
+  <!-- ═══ SITE ORIGIN — single swappable token ═══
+       Find-and-replace SITE_ORIGIN_PLACEHOLDER with the live host
+       (e.g. bulletproofankle.com) once the custom domain is attached
+       on Vercel. It appears in the four tags below and nowhere else. -->
+  <link rel="canonical" href="https://SITE_ORIGIN_PLACEHOLDER/" />
+  <meta property="og:url" content="https://SITE_ORIGIN_PLACEHOLDER/" />
+  <meta property="og:image" content="https://SITE_ORIGIN_PLACEHOLDER/hero-ankle.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="800" />
+  <meta name="twitter:image" content="https://SITE_ORIGIN_PLACEHOLDER/hero-ankle.webp" />
   <meta property="og:locale" content="ar_EG" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Bulletproof Ankle — برنامج تأهيل الكاحل" />
@@ -296,41 +306,93 @@
       margin-bottom: 36px;
     }
 
-    /* ── PAIN GRID ─────────────────────────────────────── */
-    .pain-grid {
-      display: grid;
-      gap: 12px;
-      grid-template-columns: 1fr;
+    /* ── INJURY CYCLE ──────────────────
+       A closed loop, not a circle. Five steps run right-to-left across
+       one row, then a single heavy return sweep carries step 5 back to
+       step 1 underneath them. Mobile stacks the same five cards and
+       runs the return down the side of the stack. */
+    .cycle {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
     }
-    @media (min-width: 600px) { .pain-grid { grid-template-columns: 1fr 1fr; } }
 
-    .pain-card {
+    /* the desktop return sweep — hidden until the row layout kicks in */
+    .cycle-return { display: none; }
+
+    .cycle-nodes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-left: 42px;          /* room for the return path */
+    }
+
+    .cycle-node {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
       background: var(--bg-card);
       border: 1px solid var(--bg-stroke);
-      border-right: 3px solid var(--orange);
       border-radius: var(--radius);
-      padding: 18px 20px;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      transition: transform .2s, border-right-color .2s;
+      padding: 15px 18px;
+      transition: transform .2s, border-color .2s;
     }
-    .pain-card:hover { transform: translateX(-3px); border-right-color: var(--orange-hi); }
+    .cycle-node:hover { border-color: rgba(232,102,61,.4); }
 
-    .pain-icon-box {
-      flex-shrink: 0;
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      background: rgba(255,82,0,.08);
-      border: 1px solid rgba(255,82,0,.15);
+    /* step 5 is where the loop turns — the return sweep leaves from it,
+       so it carries a little more weight than the other four */
+    .cycle-node:last-child {
+      border-color: rgba(232,102,61,.45);
+      background: linear-gradient(180deg, rgba(232,102,61,.07), var(--bg-card));
+    }
+
+    /* flow arrow in the gap before every card but the first */
+    .cycle-node + .cycle-node::before {
+      content: '';
+      position: absolute;
+      top: -28px; left: 50%;
+      width: 18px; height: 22px;
+      transform: translateX(-50%);
+      background: no-repeat center / 100% 100% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 22' fill='none' stroke='%23E8663D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 1v13'/%3E%3Cpath d='M3.5 11.5 9 18 14.5 11.5'/%3E%3C/svg%3E");
+      opacity: .8;
+    }
+
+    .cycle-num {
       display: flex; align-items: center; justify-content: center;
+      width: 27px; height: 27px;
+      border-radius: 50%;
+      background: rgba(255,82,0,.10);
+      border: 1px solid rgba(255,82,0,.32);
+      font-family: var(--en);
+      font-size: 12.5px; font-weight: 800; line-height: 1;
+      color: var(--orange);
+      flex-shrink: 0;
     }
-    .pain-icon-box svg { width: 17px; height: 17px; stroke: var(--orange); fill: none; stroke-width: 1.8; }
+    .cycle-label { font-size: 15px; font-weight: 700; line-height: 1.5; }
 
-    .pain-card p { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+    /* mobile return path: down the side of the stack, back up into step 1 */
+    .cycle-loopback {
+      position: absolute;
+      top: 30px; bottom: 30px; left: 0;
+      width: 30px;
+      border: 2.5px dashed rgba(232,102,61,.55);
+      border-right: 0;
+      border-radius: 16px 0 0 16px;
+      pointer-events: none;
+    }
+    .cycle-loopback::after {
+      content: '';
+      position: absolute;
+      top: -12px; left: calc(100% - 10px);
+      width: 19px; height: 22px;
+      background: no-repeat center / 100% 100% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 22' fill='none' stroke='%23E8663D' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4 13 11 4 18'/%3E%3C/svg%3E");
+    }
 
-    .pain-closer {
-      margin-top: 28px;
+    .cycle-closing {
+      margin-top: 34px;
       background: rgba(255,82,0,.05);
       border: 1px solid rgba(255,82,0,.15);
       border-radius: var(--radius);
@@ -340,6 +402,65 @@
       line-height: 1.7;
       text-align: center;
     }
+
+    /* ── row layout ── */
+    @media (min-width: 900px) {
+      /* The diagram needs more than the 820px text column, so this one
+         section's wrapper widens and its text children are pulled back
+         to the normal column width. Delete these two rules to keep the
+         whole section in line with the rest of the page. */
+      /* padding-inline, because .sec's shorthand zeroes .wrap's side
+         padding — harmless while a wrap is capped at 820, but this one
+         is wider than the viewport can be between 900 and 1008px */
+      .wrap-cycle { max-width: 1008px; padding-inline: 24px; }
+      .wrap-cycle > :not(.cycle) { max-width: 772px; margin-inline: auto; }
+
+      .cycle-nodes {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 22px;
+        padding: 0;
+      }
+      .cycle-node {
+        flex-direction: column;
+        text-align: center;
+        gap: 11px;
+        padding: 18px 14px;
+      }
+      .cycle-node:hover { transform: translateY(-3px); }
+      .cycle-label { font-size: 13.5px; line-height: 1.6; }
+
+      /* the arrow moves into the gap between columns and turns to face
+         the flow, which runs right-to-left with the page */
+      .cycle-node + .cycle-node::before {
+        top: 50%; left: calc(100% + 11px);
+        width: 14px; height: 18px;
+        transform: translate(-50%, -50%);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 18' fill='none' stroke='%23E8663D' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 2 3.5 9 10 16'/%3E%3C/svg%3E");
+      }
+
+      .cycle-loopback { display: none; }
+      .cycle-return {
+        display: block;
+        width: 100%; height: auto;
+        margin-top: 2px;
+        overflow: visible;
+      }
+      .cycle-return path, .cycle-return polyline {
+        fill: none;
+        stroke: var(--orange);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .cycle-return .cycle-arc  { stroke-width: 3; opacity: .6; stroke-dasharray: 9 11; }
+      .cycle-return .cycle-head { stroke-width: 3.4; opacity: .95; }
+    }
+
+    /* subtle only, and never against the user's wishes */
+    @media (prefers-reduced-motion: no-preference) {
+      .cycle-return .cycle-arc { animation: cycle-flow 3s linear infinite; }
+    }
+    @keyframes cycle-flow { to { stroke-dashoffset: -40; } }
 
     /* ── DREAM STATE ───────────────────────────────────── */
     .dream-bg {
@@ -564,6 +685,37 @@
     }
     .phase-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
     .phase-card p { font-size: 14px; color: var(--text-mid); line-height: 1.8; }
+
+    /* the one plain-language line the athlete actually reads */
+    .phase-card .phase-outcome { font-size: 14.5px; color: var(--text-hi); line-height: 1.75; }
+
+    /* the original clinical paragraph, kept in the HTML but folded away */
+    .phase-detail { margin-top: 14px; border-top: 1px solid var(--bg-stroke); padding-top: 12px; }
+    .phase-detail summary {
+      cursor: pointer;
+      list-style: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12.5px; font-weight: 600;
+      color: var(--text-mid);
+      transition: color .18s;
+    }
+    .phase-detail summary::-webkit-details-marker { display: none; }
+    .phase-detail summary::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-right: 1.8px solid var(--orange);
+      border-bottom: 1.8px solid var(--orange);
+      transform: rotate(45deg);
+      transition: transform .2s;
+      flex-shrink: 0;
+      margin-bottom: 3px;
+    }
+    .phase-detail[open] summary::before { transform: rotate(-135deg); margin-bottom: 0; }
+    .phase-detail summary:hover { color: var(--text-hi); }
+    .phase-card .phase-detail p { margin-top: 11px; font-size: 13.5px; line-height: 1.8; }
+    @media (prefers-reduced-motion: reduce) {
+      .phase-detail summary::before { transition: none; }
+    }
 
     /* ── DELIVERABLES ──────────────────────────────────── */
     .deliv-grid {
@@ -936,11 +1088,11 @@
       .sec-label-center { font-size: 12px; }
       .sec-title { font-size: clamp(22px, 6vw, 32px); margin-bottom: 24px; }
 
-      .pain-grid { gap: 10px; }
-      .pain-card { padding: 15px 16px; gap: 12px; }
-      .pain-icon-box { width: 32px; height: 32px; border-radius: 7px; }
-      .pain-icon-box svg { width: 15px; height: 15px; }
-      .pain-card p { font-size: 14px; }
+      .cycle-nodes { gap: 26px; padding-left: 36px; }
+      .cycle-node { padding: 14px; }
+      .cycle-node + .cycle-node::before { top: -25px; height: 19px; }
+      .cycle-loopback { width: 26px; }
+      .cycle-label { font-size: 14.5px; }
 
       .dream-grid { gap: 10px; }
       .dream-card { padding: 18px 16px; }
@@ -1014,8 +1166,8 @@
       .backstory-inner { padding: 0; }
       .after-pay-title { font-size: 14px; }
 
-      /* pain closer */
-      .pain-closer { padding: 16px 18px; font-size: 14px; }
+      /* cycle closer */
+      .cycle-closing { padding: 16px 18px; font-size: 14px; margin-top: 26px; }
 
       /* urgency bar */
       .urgency-bar { font-size: 12px; padding: 10px 14px; }
@@ -1239,31 +1391,39 @@
     }
     .copy-btn svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; }
 
-    /* ── VISA (خارج مصر) ──────────────────────────────────
-       One quiet row in a single blue family. While disabled the
-       action is a status chip, not a button — nothing that cannot
-       be pressed gets drawn to look pressable. */
+    /* ── CARD PAYMENT (Paymob) ────────────────────────────
+       Listed first and carries the same visual weight as the two wallet
+       tiles below it: live border, ambient glow, lift on hover. */
     .visa-card {
       max-width: 520px;
       margin: 0 auto 14px;
-      padding: 13px 16px;
-      border-radius: 14px;
+      padding: 17px 18px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       flex-wrap: wrap;
-      background: linear-gradient(180deg, #14171c 0%, #101317 100%);
-      border: 1px solid rgba(90,120,190,.26);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+      background: linear-gradient(180deg, #171d2b 0%, #10141c 100%);
+      border: 1px solid rgba(88,124,235,.42);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05),
+        0 0 40px rgba(40,80,220,.12);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .visa-card:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05),
+        0 12px 40px rgba(40,80,220,.26);
     }
     .visa-head { display: flex; align-items: center; gap: 11px; min-width: 0; }
-    .visa-mark { display: flex; color: #7d9ad6; flex-shrink: 0; }
-    .visa-mark svg { width: 30px; height: 30px; display: block; }
+    .visa-mark { display: flex; color: #93b0f5; flex-shrink: 0; }
+    .visa-mark svg { width: 32px; height: 32px; display: block; }
     .visa-names { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; min-width: 0; }
     .visa-brand {
-      font-family: var(--en); font-size: 19px; font-weight: 800;
-      letter-spacing: .04em; color: #b3c6e8; line-height: 1.1;
+      font-family: var(--en); font-size: 21px; font-weight: 800;
+      letter-spacing: .04em; color: #dae3fa; line-height: 1.1;
     }
     /* Arabic sits in the RTL flow; no tracking on cursive script */
     .visa-region { font-size: 12px; font-weight: 600; color: #6f7f9b; line-height: 1.5; }
@@ -1272,13 +1432,15 @@
        identical height, padding, radius, font size and weight. Only the
        full-bleed width is dropped, because this card is a horizontal row
        rather than a vertical tile. */
-    .visa-btn { background: #2b4a8f; color: #fff; box-shadow: 0 6px 20px rgba(43,74,143,.35); }
-    .visa-card .pay-action-btn { width: auto; margin-top: 0; padding-inline: 22px; }
+    .visa-btn { background: #2450dd; color: #fff; box-shadow: 0 8px 24px rgba(36,80,221,.5); }
+    .visa-btn:hover { background: #3560ee; }
+    .visa-card .pay-action-btn { width: auto; margin-top: 0; padding-inline: 30px; }
 
     @media (max-width: 600px) {
       .visa-card { padding: 12px 13px; gap: 10px; }
       .visa-mark svg { width: 27px; height: 27px; }
-      .visa-brand { font-size: 17px; }
+      .visa-brand { font-size: 19px; }
+      .visa-card { padding: 14px 14px; }
       /* stays inline beside the heading rather than spanning the row */
       .visa-card .pay-action-btn { padding-inline: 16px; }
     }
@@ -1620,6 +1782,31 @@
     .plan-card-vip .plan-price-num { text-shadow: 0 0 38px rgba(232,102,61,.5); }
     .plan-card-vip .plan-price-cur { color: var(--orange-hi); }
 
+    /* ── access term ───────────────────────────────────────
+       Now one of the two headline differences between the tiers,
+       so it gets its own row directly under the price rather than
+       sitting in the feature list. ── */
+    .plan-access {
+      display: flex; align-items: center; gap: 10px;
+      margin: 4px 0 0;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(232,102,61,.28);
+      background: rgba(232,102,61,.07);
+      font-size: 14.5px; font-weight: 700; line-height: 1.6;
+      color: var(--orange-hi);
+    }
+    .plan-access svg {
+      width: 20px; height: 20px; flex-shrink: 0;
+      stroke: var(--orange-hi); fill: none; stroke-width: 1.9;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .plan-card-vip .plan-access {
+      border-color: rgba(232,102,61,.55);
+      background: rgba(232,102,61,.13);
+      box-shadow: inset 0 0 18px rgba(232,102,61,.10);
+    }
+
     /* ── standard-tier warning — bare red line, no panel ── */
     .plan-warn {
       display: flex; align-items: flex-start; gap: 8px;
@@ -1802,6 +1989,7 @@
     }
     .coach-cap {
       display: flex;
+      flex-wrap: wrap;
       align-items: baseline;
       justify-content: center;
       gap: 8px;
@@ -1818,6 +2006,18 @@
       text-transform: uppercase;
       color: var(--text-mid);
       white-space: nowrap;
+    }
+    /* small subdued credentials line, same treatment as the role label */
+    .coach-creds {
+      flex-basis: 100%;
+      margin-top: 2px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      line-height: 1.6;
+      color: var(--text-mid);
+      opacity: .82;
+      text-align: center;
     }
 
     .hero-visual {
@@ -1929,7 +2129,7 @@
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
       }
-      .pay-card:hover, .social-btn:hover, .shot-card:hover,
+      .pay-card:hover, .social-btn:hover, .shot-card:hover, .visa-card:hover,
       .cta-btn-clean:hover, .plan-card:hover, .wa-fab:hover { transform: none; }
     }
     /* ── REDUCED TRANSPARENCY — drop the grain film ── */
@@ -1949,7 +2149,7 @@
   <!-- BRAND LOGO -->
   <div class="hero-logo-wrap">
     <img
-      src="brand.png"
+      src="/brand.png"
       alt="Behind The Injury — Bulletproof Ankle"
       class="hero-logo"
       loading="eager"
@@ -1969,12 +2169,12 @@
   <p class="hero-sub">
     وترجع تجري، تغيّر اتجاه، وتنط بدون خوف من الإصابة تاني —
     برنامج مبني خصيصًا للرياضيين اللي عندهم
-    <strong style="color:var(--text-hi);">عدم ثبات مزمن في الكاحل</strong>
+    <strong style="color:var(--text-hi);">التواء في الكاحل</strong>
   </p>
 
   <!-- HERO VISUAL — injured ankle → armored ankle -->
   <div class="hero-visual">
-    <img src="hero-ankle.webp" width="1200" height="800" alt="التحول: من كاحل مصاب لكاحل مدرّع" loading="eager" fetchpriority="high" />
+    <img src="/hero-ankle.webp" width="1200" height="800" alt="التحول: من كاحل مصاب لكاحل مدرّع" loading="eager" fetchpriority="high" />
   </div>
 
   <!-- CTA -->
@@ -2010,68 +2210,53 @@
 
 <hr class="div" />
 
-<!-- ═══════════════ PAIN POINTS ═══════════════ -->
+<!-- ═══════════════ THE INJURY CYCLE ═══════════════ -->
+<!-- Replaces the old six-card pain grid. Five steps on a closed ring:
+     injury → ice+painkillers → random YouTube → return to play →
+     re-injury, which feeds back into step 1. The loop runs
+     counter-clockwise so it reads right-to-left with the page. -->
 <section>
-  <div class="wrap sec">
+  <div class="wrap wrap-cycle sec">
     <div class="sec-label">هل ده بيوصف حالتك؟</div>
-    <h2 class="sec-title">البرنامج ده معمول ليك لو تعبت من:</h2>
+    <h2 class="sec-title">حاسس إنك عالق في دوامة؟</h2>
 
-    <div class="pain-grid">
+    <div class="cycle">
 
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: repeat/loop -->
-          <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
-        </div>
-        <p>دوامة الإصابات المتكررة (<span class="en">Chronic Instability</span>): كل إصابة جديدة تؤدي إلى تدهور ملحوظ في الأداء الحركي، وتزيد من فترة الانقطاع عن الملاعب.</p>
-      </div>
+      <ol class="cycle-nodes">
+        <li class="cycle-node">
+          <span class="cycle-num">1</span>
+          <h3 class="cycle-label">بيجيلك التواء في الكاحل</h3>
+        </li>
+        <li class="cycle-node">
+          <span class="cycle-num">2</span>
+          <h3 class="cycle-label">تحط تلج ومسكنات لحد ما الألم والتورم يخفوا</h3>
+        </li>
+        <li class="cycle-node">
+          <span class="cycle-num">3</span>
+          <h3 class="cycle-label">تعمل تمارين عشوائية على النت</h3>
+        </li>
+        <li class="cycle-node">
+          <span class="cycle-num">4</span>
+          <h3 class="cycle-label">ترجع الملعب عشان حاسس إنك تمام</h3>
+        </li>
+        <li class="cycle-node">
+          <span class="cycle-num">5</span>
+          <h3 class="cycle-label">يجيلك التواء تاني</h3>
+        </li>
+      </ol>
 
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: alert triangle -->
-          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <p>الإحساس المستمر إن كاحلك ممكن "يفلت" منك في أي <span class="en">landing</span> أو <span class="en">hard cut</span> — حتى لو ما حصلش تواء من فترة.</p>
-      </div>
+      <!-- desktop: the sweep that closes the loop, step 5 back to step 1 -->
+      <svg class="cycle-return" viewBox="0 0 960 84" aria-hidden="true" focusable="false">
+        <path class="cycle-arc" d="M86.4 4 L86.4 46 Q86.4 70 110.4 70 L849.6 70 Q873.6 70 873.6 46 L873.6 24" />
+        <polyline class="cycle-head" points="858.1 33 873.6 15 889.1 33" />
+      </svg>
 
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: user/stand still -->
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21v-2a6.5 6.5 0 0 1 13 0v2"/></svg>
-        </div>
-        <p>حاسس إنك واقف مكانك بينما زمايلك بيتمرنوا وينافسوا — الإصابة بقت قيد بيحول بينك وبين أهدافك الرياضية.</p>
-      </div>
-
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: percent / reduced performance -->
-          <svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
-        </div>
-        <p>بتلعب بمجهود 70–80% بس عشان خايف — فقدت الثقة الكاملة في جسمك وبقيت بتلعب بعقلية دفاعية مش هجومية.</p>
-      </div>
-
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: frown -->
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        </div>
-        <p>عمال تحاول تقنع نفسك إن "هي دي طبيعة كاحلك" و"مش هيرجع زي الأول" — وده مش صح على الإطلاق.</p>
-      </div>
-
-      <div class="pain-card">
-        <div class="pain-icon-box">
-          <!-- icon: phone/social -->
-          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-        </div>
-        <p>جربت فيديوهات عشوائية من السوشيال ميديا ومش جايبه نتيجة — لأن مفيش <span class="en">system</span> متكامل خلف أي فيديو منهم.</p>
-      </div>
+      <!-- mobile: the same return, running down the side of the stack -->
+      <span class="cycle-loopback" aria-hidden="true"></span>
 
     </div>
 
-    <div class="pain-closer">
-      لو الكلام ده بيوصف حالتك، أنت محتاج <strong><span class="en">System</span> حقيقي يربط بين التأهيل والأداء الرياضي الفعلي.</strong><br />
-      مش تمارين عشوائية — <strong>بروتوكول متكامل مبني على العلم.</strong>
-    </div>
+    <div class="cycle-closing">لو الكلام ده بيوصف حالتك، أنت محتاج نظام كامل يقيس جاهزية الكاحل عندك ويرجعك للرياضة بأمان وأعلى مستوى.</div>
   </div>
 </section>
 
@@ -2123,9 +2308,13 @@
         <div class="phase-card">
           <span class="phase-tag">PHASE 1 — MIN 2 WEEKS</span>
           <h3>التنشيط والحماية</h3>
-          <p>
+          <p class="phase-outcome">تنشيط عضلات الكاحل واستعادة المدى الحركي كامل بدون ألم أو تورم</p>
+          <details class="phase-detail">
+            <summary>التفاصيل العلمية</summary>
+            <p>
             استعادة الـ <span class="en">Arthrokinematics</span> الأساسية للكاحل، تقليل الاستجابة الالتهابية، استعادة حركة الـ <span class="en">Dorsiflexion</span>، وإعادة التنشيط العصبي العضلي المعزول لـ <span class="en">Intrinsic Foot Muscles</span> والـ <span class="en">Lateral Stabilizers</span>.
-          </p>
+            </p>
+          </details>
         </div>
       </div>
 
@@ -2134,9 +2323,13 @@
         <div class="phase-card">
           <span class="phase-tag">PHASE 2 — MIN 2 WEEKS</span>
           <h3>التحكم الحركي الثابت</h3>
-          <p>
+          <p class="phase-outcome">استعادة التوازن في الكاحل وبناء روابط عصبية عضلية بين الكاحل والمخ</p>
+          <details class="phase-detail">
+            <summary>التفاصيل العلمية</summary>
+            <p>
             إعادة التوافق الحسي الحركي <span class="en">(Sensorimotor Integration)</span>، تحسين ثبات الـ <span class="en">Closed-Kinetic Chain</span>، والاستعادة التدريجية لتنظيم صلابة الكاحل <span class="en">(Ankle Stiffness)</span> أثناء الـ <span class="en">Unilateral Loading</span>.
-          </p>
+            </p>
+          </details>
         </div>
       </div>
 
@@ -2145,9 +2338,13 @@
         <div class="phase-card">
           <span class="phase-tag">PHASE 3 — MIN 3 WEEKS</span>
           <h3>الثبات الديناميكي</h3>
-          <p>
+          <p class="phase-outcome">بناء ثقة في الكاحل خلال الحركة والقفز وتغيير الاتجاهات وتباطؤ السرعة</p>
+          <details class="phase-detail">
+            <summary>التفاصيل العلمية</summary>
+            <p>
             تطوير التحكم في التباطؤ <span class="en">(Deceleration Control)</span> في أكثر من مستوى حركي، كفاءة الأوتار في الـ <span class="en">Eccentric Loading</span>، والثبات الديناميكي في الـ <span class="en">Frontal Plane</span> أثناء المهام الرياضية العالية الكثافة.
-          </p>
+            </p>
+          </details>
         </div>
       </div>
 
@@ -2156,9 +2353,13 @@
         <div class="phase-card">
           <span class="phase-tag">PHASE 4 — MIN 3 WEEKS — RTS</span>
           <h3>العودة للرياضة</h3>
-          <p>
+          <p class="phase-outcome">تمارين لمتطلبات الرياضة تساعدك تتحكم في الكاحل أحسن وتجهزك لسيناريوهات الرياضة العشوائية</p>
+          <details class="phase-detail">
+            <summary>التفاصيل العلمية</summary>
+            <p>
             دمج وظائف الـ <span class="en">Stretch-Shortening Cycle (SSC)</span> السريعة، تطوير الـ <span class="en">Reactive Agility</span>، والجاهزية العصبية الميكانيكية الكاملة الخاصة برياضتك — تحت ظروف الإجهاد الحقيقي والأحمال غير المتوقعة.
-          </p>
+            </p>
+          </details>
         </div>
       </div>
 
@@ -2170,8 +2371,8 @@
         احجز مكانك الآن
       </a>
       <p class="cta-note" style="margin-top:12px;">
-        <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
-        وصول فوري بعد التأكيد
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6.5 12 12 15.6 14"/></svg>
+        وصول البرنامج خلال ساعات قليلة من التأكيد
       </p>
     </div>
 
@@ -2203,37 +2404,37 @@
       </div>
       <div class="test-grid">
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 8-8 8 8 0 0 1 8 8"/><line x1="12" y1="12" x2="16" y2="9"/></svg></span>
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M5 19V6.5"/><path d="M5 19h12.5"/><path d="M5 9.5a9.5 9.5 0 0 1 9.5 9.5"/><polyline points="2.6 12.1 5 9.4 7.4 12.1"/></svg></span>
           <span class="test-chip-idx">01</span>
           <span class="test-chip-name">المرونة والحركة</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M5 9l7-4 7 4"/><path d="M5 15l7 4 7-4"/></svg></span>
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><line x1="7.5" y1="21" x2="16.5" y2="21"/><line x1="4" y1="7" x2="20" y2="7"/><path d="M4 7 1.5 14.5h5z"/><path d="M20 7l-2.5 7.5h5z"/></svg></span>
           <span class="test-chip-idx">02</span>
           <span class="test-chip-name">التوازن الديناميكي</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M13.2 2.5 4.5 13.5h6.4L9.9 21.5l8.7-11h-6.4z"/></svg></span>
           <span class="test-chip-idx">03</span>
           <span class="test-chip-name">الثبات التفاعلي</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="20" y2="21"/><line x1="12" y1="17.5" x2="12" y2="4"/><polyline points="7 9 12 4 17 9"/><line x1="6" y1="15" x2="4.2" y2="16.8"/><line x1="18" y1="15" x2="19.8" y2="16.8"/></svg></span>
           <span class="test-chip-idx">04</span>
           <span class="test-chip-name">القوة الانفجارية</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M6.5 6.5a2.5 2.5 0 0 1 5 0v11a2.5 2.5 0 0 1-5 0z"/><path d="M12.5 9h5a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-5"/></svg></span>
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><line x1="2.5" y1="9.5" x2="2.5" y2="14.5"/><line x1="6" y1="6.5" x2="6" y2="17.5"/><line x1="18" y1="6.5" x2="18" y2="17.5"/><line x1="21.5" y1="9.5" x2="21.5" y2="14.5"/><line x1="6" y1="12" x2="18" y2="12"/></svg></span>
           <span class="test-chip-idx">05</span>
           <span class="test-chip-name">قوة العضلات</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span>
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><polyline points="1.5 12 5 12 7.5 6 11 18 13.5 12 16 12"/><path d="M18.6 9.2a4 4 0 0 1 0 5.6"/><path d="M21.2 6.8a7.5 7.5 0 0 1 0 10.4"/></svg></span>
           <span class="test-chip-idx">06</span>
           <span class="test-chip-name">التحكم العصبي</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg></span>
+          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M12 2.5 3.8 7v5.1c0 4.9 3.4 9.5 8.2 10.6 4.8-1.1 8.2-5.7 8.2-10.6V7z"/><polyline points="8.8 12 11 14.2 15.3 9.9"/></svg></span>
           <span class="test-chip-idx">07</span>
           <span class="test-chip-name">الثقة في المفصل</span>
         </div>
@@ -2384,11 +2585,13 @@
     <div class="backstory-inner">
 
       <figure class="coach-card">
-        <img src="coach.jpg" width="900" height="1200" loading="lazy" alt="عمرو خالد — Sports Rehabilitation" class="coach-img" />
+        <img src="/coach.jpg" width="900" height="1200" loading="lazy" alt="عمرو خالد — Sports Rehabilitation" class="coach-img" />
         <figcaption class="coach-cap">
           <span class="coach-name">عمرو خالد</span>
           <span class="coach-sep" aria-hidden="true">·</span>
           <span class="coach-role en">Sports Rehabilitation</span>
+          <!-- credentials line goes here when Amr writes it:
+               <span class="coach-creds">...</span>  (.coach-creds is styled below) -->
         </figcaption>
       </figure>
 
@@ -2446,27 +2649,27 @@
     <div class="shots-grid">
 
       <figure class="shot-card">
-        <img src="app-session.webp" width="800" height="1023" loading="lazy" alt="لوحة التحكم داخل التطبيق — جلسة النهاردة بتمارينها وفيديوهاتها" />
+        <img src="/app-session.webp" width="800" height="1023" loading="lazy" alt="لوحة التحكم داخل التطبيق — جلسة النهاردة بتمارينها وفيديوهاتها" />
         <figcaption class="shot-cap"><b>جلسة النهاردة</b> — تفتح التطبيق تلاقي جلسة اليوم جاهزة قدامك بالفيديوهات والتكرارات.</figcaption>
       </figure>
 
       <figure class="shot-card">
-        <img src="app-education.webp" width="800" height="905" loading="lazy" alt="المركز التعليمي — التثقيف الطبي داخل التطبيق" />
+        <img src="/app-education.webp" width="800" height="905" loading="lazy" alt="المركز التعليمي — التثقيف الطبي داخل التطبيق" />
         <figcaption class="shot-cap"><b>التثقيف الطبي</b> — تفهم ليه الإصابة بتتكرر وإزاي تمنعها ترجع.</figcaption>
       </figure>
 
       <figure class="shot-card">
-        <img src="app-protocol.webp" width="800" height="625" loading="lazy" alt="بروتوكول التأهيل داخل التطبيق — المراحل والجلسات يوم بيوم" />
+        <img src="/app-protocol.webp" width="800" height="625" loading="lazy" alt="بروتوكول التأهيل داخل التطبيق — المراحل والجلسات يوم بيوم" />
         <figcaption class="shot-cap"><b>بروتوكول التأهيل</b> — الجلسات يوم بيوم، وقاعدة ألم واضحة لكل مرحلة.</figcaption>
       </figure>
 
       <figure class="shot-card">
-        <img src="app-progress.webp" width="800" height="531" loading="lazy" alt="شاشة متابعة التطور — 7 اختبارات بأرقام مستهدفة" />
+        <img src="/app-progress.webp" width="800" height="531" loading="lazy" alt="شاشة متابعة التطور — 7 اختبارات بأرقام مستهدفة" />
         <figcaption class="shot-cap"><b>متابعة التطور</b> — ٧ اختبارات بأرقام مستهدفة وتسجيل نتائجك.</figcaption>
       </figure>
 
       <figure class="shot-card">
-        <img src="app-symptoms.webp" width="800" height="734" loading="lazy" alt="مراقبة الأعراض اليومية — الألم والتورم والثقة في المفصل" />
+        <img src="/app-symptoms.webp" width="800" height="734" loading="lazy" alt="مراقبة الأعراض اليومية — الألم والتورم والثقة في المفصل" />
         <figcaption class="shot-cap"><b>مراقبة الأعراض</b> — سجل يومي للألم والتورم والثقة في المفصل.</figcaption>
       </figure>
 
@@ -2485,22 +2688,22 @@
     <div class="train-grid">
 
       <figure class="train-card">
-        <img src="ex-mobility.jpg" width="435" height="578" loading="lazy" alt="تمرين مرونة من داخل البرنامج" />
+        <img src="/ex-mobility.jpg" width="435" height="578" loading="lazy" alt="تمرين مرونة من داخل البرنامج" />
         <figcaption class="train-cap"><span class="en">Mobility</span></figcaption>
       </figure>
 
       <figure class="train-card">
-        <img src="ex-reactive.jpg" width="431" height="496" loading="lazy" alt="تمرين ثبات تفاعلي بحبل مقاومة من داخل البرنامج" />
+        <img src="/ex-reactive.jpg" width="431" height="496" loading="lazy" alt="تمرين ثبات تفاعلي بحبل مقاومة من داخل البرنامج" />
         <figcaption class="train-cap"><span class="en">Reactive Stability</span></figcaption>
       </figure>
 
       <figure class="train-card">
-        <img src="ex-landing.jpg" width="294" height="386" loading="lazy" alt="تمرين تحكم في الهبوط من داخل البرنامج" />
+        <img src="/ex-landing.jpg" width="294" height="386" loading="lazy" alt="تمرين تحكم في الهبوط من داخل البرنامج" />
         <figcaption class="train-cap"><span class="en">Landing Control</span></figcaption>
       </figure>
 
       <figure class="train-card">
-        <img src="ex-balance.jpg" width="490" height="621" loading="lazy" alt="تمرين توازن ديناميكي من داخل البرنامج" />
+        <img src="/ex-balance.jpg" width="490" height="621" loading="lazy" alt="تمرين توازن ديناميكي من داخل البرنامج" />
         <figcaption class="train-cap"><span class="en">Dynamic Balance</span></figcaption>
       </figure>
 
@@ -2637,7 +2840,7 @@
         </label>
         <div class="faq-body">
           <div class="faq-body-inner">
-            بروتوكول الدرع هو نظام تأهيلي متقدم مبني على أحدث أسس الميكانيكا الحيوية الرياضية، ولكنه لا يحل محل التقييم الطبي المبدئي. البرنامج مصمم ليقود رحلة استشفائك الحركي بالكامل، بشرط أن تكون قد خضعت لفحص مبدئي لاستبعاد وجود كسور أو تمزقات كاملة تتطلب تدخلاً جراحياً.
+            <span class="en-term">Bulletproof Ankle Program</span> هو نظام تأهيلي متقدم مبني على أحدث أسس الميكانيكا الحيوية الرياضية، ولكنه لا يحل محل التقييم الطبي المبدئي. البرنامج مصمم ليقود رحلة استشفائك الحركي بالكامل، بشرط أن تكون قد خضعت لفحص مبدئي لاستبعاد وجود كسور أو تمزقات كاملة تتطلب تدخلاً جراحياً.
           </div>
         </div>
       </div>
@@ -2684,15 +2887,31 @@
         </div>
       </div>
 
+      <!-- Access duration -->
       <div class="faq-item">
-        <input type="checkbox" id="q3" />
-        <label class="faq-label" for="q3">
-          <span>هل فيه ضمان؟</span>
+        <input type="checkbox" id="q9" />
+        <label class="faq-label" for="q9">
+          <span>البرنامج بيفضل معايا قد إيه؟</span>
           <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </label>
         <div class="faq-body">
           <div class="faq-body-inner">
-            الضمان الوحيد الحقيقي في التأهيل الرياضي هو الالتزام بالـ <span class="en">system</span>. مفيش برنامج في الدنيا يضمنلك نتيجة بدون شغل حقيقي. لكن لو التزمت بالبروتوكول فعلًا، الأبحاث العلمية والنتائج العملية بتثبت إن فرص رجوعك أسرع بكتير مقارنة بأي <span class="en">rehab</span> تقليدي — وده مش كلام تسويقي، ده علم.
+            الـ <span class="en-term">Standard</span> معاك 90 يوم من ساعة ما تستلم حسابك، وده أكتر من مدة الـ 10 أسابيع للبرنامج.<br />
+            الـ <span class="en-term">VIP</span> معاك دايمًا مع كل التحديثات والإضافات اللي بتنزل على البرنامج بعد كده.
+          </div>
+        </div>
+      </div>
+
+      <!-- Device / app vs web -->
+      <div class="faq-item">
+        <input type="checkbox" id="q10" />
+        <label class="faq-label" for="q10">
+          <span>البرنامج ده تطبيق بنزله ولا موقع؟</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </label>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            ده تطبيق ويب بيشتغل معاك على جوجل أو سفاري، مش محتاج تنزله من الـ <span class="en-term">App Store</span>. شغال على الموبايل والتابلت واللابتوب، وحسابك محفوظ عليه تقدمك.
           </div>
         </div>
       </div>
@@ -2714,6 +2933,11 @@
         <div class="plan-price">
           <span class="plan-price-num">900</span>
           <span class="plan-price-cur">EGP</span>
+        </div>
+
+        <div class="plan-access">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 6.8 12 12 15.6 14.2"/></svg>
+          <span>البرنامج معاك لمدة 90 يوم، بعدها بيقفل</span>
         </div>
 
         <div class="plan-warn">
@@ -2742,6 +2966,11 @@
           <span class="plan-price-cur">EGP</span>
         </div>
 
+        <div class="plan-access">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 8.4c-2.15 0-3.9 1.6-3.9 3.6s1.75 3.6 3.9 3.6c3.5 0 5.7-7.2 9.2-7.2 2.15 0 3.9 1.6 3.9 3.6s-1.75 3.6-3.9 3.6c-3.5 0-5.7-7.2-9.2-7.2z"/></svg>
+          <span>البرنامج معاك دايمًا + تحديثات وإضافات مجانية</span>
+        </div>
+
         <p class="plan-note">كل ما يوجد في <span class="en-term">Standard</span>، بالإضافة إلى:</p>
 
         <ul class="plan-feats">
@@ -2758,6 +2987,22 @@
     </div>
 
     <h3 id="pay-methods" style="text-align:center; font-size:15px; font-weight:600; color:var(--text-mid); margin-bottom:24px; scroll-margin-top:84px;">اختار طريقة الدفع:</h3>
+
+    <!-- CARD PAYMENT — Paymob checkout. Listed first: it is the
+         general-purpose option, not an outside-Egypt fallback. -->
+    <div class="visa-card" id="visa-card">
+      <div class="visa-head">
+        <span class="visa-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1.5" y="4.5" width="21" height="15" rx="2.5"/><line x1="1.5" y1="9.5" x2="22.5" y2="9.5"/><line x1="5.5" y1="15" x2="9.5" y2="15"/>
+          </svg>
+        </span>
+        <span class="visa-names">
+          <span class="visa-brand">Visa</span>
+        </span>
+      </div>
+      <a href="https://accept.paymob.com/payme/behind-the-injury" class="pay-action-btn visa-btn" id="visa-btn" target="_blank" rel="noopener noreferrer">ادفع بالفيزا</a>
+    </div>
 
     <div class="pay-grid">
 
@@ -2817,22 +3062,6 @@
 
     </div>
 
-    <!-- VISA (خارج مصر) — Paymob checkout -->
-    <div class="visa-card" id="visa-card">
-      <div class="visa-head">
-        <span class="visa-mark">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="1.5" y="4.5" width="21" height="15" rx="2.5"/><line x1="1.5" y1="9.5" x2="22.5" y2="9.5"/><line x1="5.5" y1="15" x2="9.5" y2="15"/>
-          </svg>
-        </span>
-        <span class="visa-names">
-          <span class="visa-brand">Visa</span>
-          <span class="visa-region">(خارج مصر)</span>
-        </span>
-      </div>
-      <a href="https://accept.paymob.com/payme/behind-the-injury" class="pay-action-btn visa-btn" id="visa-btn" target="_blank" rel="noopener noreferrer">ادفع بالفيزا</a>
-    </div>
-
     <!-- SECURE BADGE -->
     <div class="secure-badge">
       <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke-width="2"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
@@ -2852,12 +3081,12 @@
         </div>
         <div class="after-step">
           <div class="after-step-num">٢</div>
-          <p>ابعت الـ <strong>screenshot</strong> على الواتساب واكتبلي اخترت أنهي باقة — <strong>الأساسية</strong> ولا <strong>VIP</strong> — وهبعتلك البرنامج <strong>فورًا.</strong></p>
+          <p>ابعت الـ <strong>screenshot</strong> على الواتساب واكتبلي اخترت أنهي باقة — <strong>Standard</strong> ولا <strong>VIP</strong> — وهبعتلك حسابك <strong>خلال ساعات قليلة.</strong></p>
         </div>
       </div>
 
       <div class="social-btns">
-        <a data-wa-text="السلام عليكم، عايز أشترك في Bulletproof Ankle Program — الباقة: (الأساسية / VIP) وبعتلك الإيصال" target="_blank" rel="noopener" class="social-btn wa-btn">
+        <a data-wa-text="السلام عليكم، عايز أشترك في Bulletproof Ankle Program — الباقة: (Standard / VIP) وبعتلك الإيصال" target="_blank" rel="noopener" class="social-btn wa-btn">
           <svg viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
             <path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.824L.057 23.852l6.188-1.438A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.513-5.167-1.407l-.37-.22-3.674.853.877-3.579-.242-.379A9.971 9.971 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>

@@ -1,0 +1,3 @@
+# Internal copy notes — keep them out of the deployed site.
+# Without this, copy.md is publicly readable at https://<domain>/copy.md
+copy.md

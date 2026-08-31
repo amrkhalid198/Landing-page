@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+.vercel
+
+# Internal copy notes — not part of the site.
+# Remove this line if you deliberately want them public.
+copy.md
