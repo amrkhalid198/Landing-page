@@ -1,0 +1,1917 @@
+{
+  "meta": {
+    "title": "Domain Map — Ankle & Sports Rehab",
+    "builtOn": "2026-09-06",
+    "verifiedOn": "2026-09-06",
+    "verificationNote": "Every URL in this file was located by live web search during the build. NONE was fetched directly: the build environment's egress proxy blocked every research domain (PubMed, E-utilities, PMC, JOSPT, PEDro, Crossref, OpenAlex). Read the tier on each card before you trust a link.",
+    "tiers": {
+      "search-confirmed": "A live web search returned this exact URL, with a page title matching the expected target. Not fetched.",
+      "search-asserted": "The URL was stated in live search-result text but never returned as an indexed link. Lowest confidence — one entry only (BJSM homepage).",
+      "constructed": "Built from documented PubMed query syntax ([jour], [au], ?term=). The syntax is documented and the name inside it was search-confirmed, but the query itself could not be executed from this session."
+    }
+  },
+  "journals": [
+    {
+      "id": "bjsm",
+      "name": "British Journal of Sports Medicine",
+      "abbrev": "BJSM",
+      "url": "https://bjsm.bmj.com/",
+      "access": "hybrid",
+      "verification": "search-asserted",
+      "note": "Homepage URL never returned as an indexed search result across 3 attempts; it is asserted repeatedly in live search-result text. Lowest confidence entry in this file. See UNVERIFIED.md.",
+      "answers": "Consensus statements, IOC positions, editorials and the field's agenda-setting debate. Where you find out what the field currently believes.",
+      "tags": [
+        "sports-rehab",
+        "foot-ankle",
+        "general-physio"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22British+Journal+of+Sports+Medicine%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null
+    },
+    {
+      "id": "jospt",
+      "name": "Journal of Orthopaedic & Sports Physical Therapy",
+      "abbrev": "JOSPT",
+      "url": "https://www.jospt.org/",
+      "access": "hybrid",
+      "verification": "search-confirmed",
+      "answers": "ICF-linked clinical practice guidelines and rehab-focused clinical research. The single best journal for 'how do I actually program this'.",
+      "tags": [
+        "sports-rehab",
+        "foot-ankle",
+        "general-physio"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal+of+Orthopaedic+%26+Sports+Physical+Therapy%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "sportsmed",
+      "name": "Sports Medicine",
+      "abbrev": "Sports Med (Auckland)",
+      "url": "https://link.springer.com/journal/40279",
+      "access": "hybrid",
+      "verification": "search-confirmed",
+      "answers": "High-quality systematic reviews, meta-analyses and narrative reviews. Best Tier-1 synthesis entry point.",
+      "tags": [
+        "sports-rehab",
+        "biomechanics"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Sports+Medicine%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "smopen",
+      "name": "Sports Medicine - Open",
+      "abbrev": "Sports Med Open",
+      "url": "https://link.springer.com/journal/40798",
+      "access": "full-oa",
+      "verification": "search-confirmed",
+      "answers": "Same territory as Sports Medicine but fully open access. Free reviews and original research.",
+      "tags": [
+        "sports-rehab",
+        "open-access"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Sports+Medicine+-+Open%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "ajsm",
+      "name": "The American Journal of Sports Medicine",
+      "abbrev": "AJSM",
+      "url": "https://journals.sagepub.com/home/ajs",
+      "tocUrl": "https://journals.sagepub.com/connected/AJS",
+      "access": "paywalled",
+      "verification": "search-confirmed",
+      "answers": "Surgical outcomes and orthopaedic sports medicine. Read it for what surgeons do and what happens after.",
+      "tags": [
+        "surgical",
+        "sports-rehab",
+        "foot-ankle"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22The+American+Journal+of+Sports+Medicine%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "note": null
+    },
+    {
+      "id": "ojsm",
+      "name": "Orthopaedic Journal of Sports Medicine",
+      "abbrev": "OJSM",
+      "url": "https://journals.sagepub.com/home/ojs",
+      "access": "full-oa",
+      "verification": "search-confirmed",
+      "answers": "AOSSM's open-access sibling to AJSM. Surgical and non-surgical sports medicine, free to read.",
+      "tags": [
+        "surgical",
+        "sports-rehab",
+        "open-access",
+        "foot-ankle"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Orthopaedic+Journal+of+Sports+Medicine%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "ptj",
+      "name": "Physical Therapy",
+      "abbrev": "PTJ",
+      "url": "https://academic.oup.com/ptj",
+      "access": "hybrid",
+      "verification": "search-confirmed",
+      "note": "Hybrid: all articles become free 12 months after publication.",
+      "answers": "Broad physical therapy science, measurement properties, and profession-level questions. Not ankle-specific but methodologically strong.",
+      "tags": [
+        "general-physio"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Physical+Therapy%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null
+    },
+    {
+      "id": "jat",
+      "name": "Journal of Athletic Training",
+      "abbrev": "JAT",
+      "url": "https://meridian.allenpress.com/jat",
+      "access": "full-oa",
+      "verification": "search-confirmed",
+      "answers": "Athletic training research: injury surveillance, epidemiology, and a large share of the chronic ankle instability literature. Fully open access.",
+      "tags": [
+        "sports-rehab",
+        "foot-ankle",
+        "open-access"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal+of+Athletic+Training%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "ptis",
+      "name": "Physical Therapy in Sport",
+      "abbrev": "Phys Ther Sport",
+      "url": "https://www.sciencedirect.com/journal/physical-therapy-in-sport",
+      "access": "hybrid",
+      "verification": "search-confirmed",
+      "answers": "Clinically applied sports physiotherapy: masterclasses, clinical approaches, and practice-facing research.",
+      "tags": [
+        "sports-rehab",
+        "general-physio"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Physical+Therapy+in+Sport%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "sjmss",
+      "name": "Scandinavian Journal of Medicine & Science in Sports",
+      "abbrev": "Scand J Med Sci Sports",
+      "url": "https://onlinelibrary.wiley.com/journal/16000838",
+      "tocUrl": "https://onlinelibrary.wiley.com/loi/16000838",
+      "access": "hybrid",
+      "verification": "search-confirmed",
+      "answers": "Sports medicine, exercise physiology, biomechanics and motor control. Strong Scandinavian injury-prevention tradition.",
+      "tags": [
+        "sports-rehab",
+        "biomechanics"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Scandinavian+Journal+of+Medicine+%26+Science+in+Sports%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "note": null
+    },
+    {
+      "id": "cjsm",
+      "name": "Clinical Journal of Sport Medicine",
+      "abbrev": "CJSM",
+      "url": "https://journals.lww.com/cjsportsmed/pages/default.aspx",
+      "access": "paywalled",
+      "verification": "search-confirmed",
+      "answers": "Clinician-facing sport medicine: diagnostics, therapeutics and rehabilitation across ages and ability levels.",
+      "tags": [
+        "sports-rehab"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Clinical+Journal+of+Sport+Medicine%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "fai",
+      "name": "Foot & Ankle International",
+      "abbrev": "FAI",
+      "url": "https://journals.sagepub.com/home/fai",
+      "access": "paywalled",
+      "verification": "search-confirmed",
+      "answers": "AOFAS flagship. Foot and ankle reconstruction, trauma and surgical outcomes. The surgical half of your domain.",
+      "tags": [
+        "foot-ankle",
+        "surgical"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Foot+%26+Ankle+International%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "jfar",
+      "name": "Journal of Foot and Ankle Research",
+      "abbrev": "JFAR",
+      "url": "https://onlinelibrary.wiley.com/journal/17571146",
+      "access": "full-oa",
+      "verification": "search-confirmed",
+      "note": "MOVED PUBLISHER. Launched 2008 with BioMed Central; now published by Wiley. Older articles still resolve at jfootankleres.biomedcentral.com.",
+      "answers": "Multidisciplinary foot and ankle: podiatry, orthotics, assessment and management. Fully open access — the most accessible foot/ankle journal you have.",
+      "tags": [
+        "foot-ankle",
+        "open-access",
+        "biomechanics"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal+of+Foot+and+Ankle+Research%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null
+    },
+    {
+      "id": "kssta",
+      "name": "Knee Surgery, Sports Traumatology, Arthroscopy",
+      "abbrev": "KSSTA",
+      "url": "https://esskajournals.onlinelibrary.wiley.com/journal/14337347",
+      "access": "hybrid",
+      "verification": "search-confirmed",
+      "note": "MOVED PUBLISHER in 2024. ESSKA's journal is now on Wiley; the Springer archive (link.springer.com/journal/167) remains searchable but no longer receives submissions.",
+      "answers": "European sports traumatology and arthroscopy. Ankle ligament surgery, osteochondral defects, surgical decision-making.",
+      "tags": [
+        "surgical",
+        "foot-ankle"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Knee+Surgery%2C+Sports+Traumatology%2C+Arthroscopy%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null
+    },
+    {
+      "id": "jbiomech",
+      "name": "Journal of Biomechanics",
+      "abbrev": "J Biomech",
+      "url": "https://www.sciencedirect.com/journal/journal-of-biomechanics",
+      "access": "hybrid",
+      "verification": "search-confirmed",
+      "answers": "Pure mechanics applied to biological problems. Modelling, cadaveric, instrumented. Answers 'why does this happen mechanically'.",
+      "tags": [
+        "biomechanics"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal+of+Biomechanics%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "clinbiomech",
+      "name": "Clinical Biomechanics",
+      "abbrev": "Clin Biomech",
+      "url": "https://www.sciencedirect.com/journal/clinical-biomechanics",
+      "access": "hybrid",
+      "verification": "search-confirmed",
+      "answers": "Biomechanics with a clinical question attached. The bridge between a force plate and a patient.",
+      "tags": [
+        "biomechanics",
+        "foot-ankle"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Clinical+Biomechanics%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "gaitposture",
+      "name": "Gait & Posture",
+      "abbrev": "Gait Posture",
+      "url": "https://www.sciencedirect.com/journal/gait-and-posture",
+      "access": "hybrid",
+      "verification": "search-confirmed",
+      "answers": "Locomotion, balance and postural control. Where CAI gait-deviation and postural-control studies live.",
+      "tags": [
+        "biomechanics",
+        "foot-ankle"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Gait+%26+Posture%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "jab",
+      "name": "Journal of Applied Biomechanics",
+      "abbrev": "J Appl Biomech",
+      "url": "https://journals.humankinetics.com/view/journals/jab/jab-overview.xml",
+      "access": "paywalled",
+      "verification": "search-confirmed",
+      "answers": "Applied movement biomechanics — sport mechanics, gait and posture, musculoskeletal modelling.",
+      "tags": [
+        "biomechanics"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal+of+Applied+Biomechanics%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    },
+    {
+      "id": "jsr",
+      "name": "Journal of Sport Rehabilitation",
+      "abbrev": "J Sport Rehabil",
+      "url": "https://journals.humankinetics.com/view/journals/jsr/jsr-overview.xml",
+      "access": "paywalled",
+      "verification": "search-confirmed",
+      "answers": "Therapeutic exercise, modalities and injury evaluation aimed squarely at rehab practice. A lot of small ankle intervention studies land here.",
+      "tags": [
+        "sports-rehab",
+        "foot-ankle"
+      ],
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal+of+Sport+Rehabilitation%22%5Bjour%5D",
+      "verifiedOn": "2026-09-06",
+      "tocUrl": null,
+      "note": null
+    }
+  ],
+  "researchers": [
+    {
+      "id": "hertel",
+      "name": "Jay Hertel",
+      "institution": "University of Virginia",
+      "country": "USA",
+      "scholar": "https://scholar.google.com/citations?user=La5FP70AAAAJ&hl=en",
+      "homepage": "https://education.virginia.edu/documents/hertel-jaycv2025-07-30",
+      "description": "Joe H. Gieck Professor of Sports Medicine and Chair of Kinesiology at UVA, co-director of the Exercise & Sport Injury Lab. Built much of the conceptual scaffolding the CAI field still uses, including the functional-anatomy and pathomechanics model of lateral ankle instability. Works across clinical biomechanics, gait retraining and epidemiology of lower-extremity injury.",
+      "papers": [
+        {
+          "title": "Functional Anatomy, Pathomechanics, and Pathophysiology of Lateral Ankle Instability",
+          "year": 2002,
+          "journal": "Journal of Athletic Training",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC164367"
+        }
+      ],
+      "tags": [
+        "chronic-ankle-instability",
+        "acute-sprain",
+        "biomechanics",
+        "motor-control"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Hertel+J%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "gribble",
+      "name": "Phillip A. Gribble",
+      "institution": "University of Kentucky",
+      "country": "USA",
+      "homepage": "https://www.uky.edu/chs/pagr224",
+      "description": "Professor and Chair of Athletic Training and Clinical Nutrition at Kentucky, and former Co-Director of the International Ankle Consortium. First author on the Consortium's selection-criteria position statement, which is the document that decides whether a CAI study's sample is comparable to anyone else's. Works on the neuromuscular consequences of ankle and knee injury.",
+      "papers": [
+        {
+          "title": "Selection Criteria for Patients With Chronic Ankle Instability in Controlled Research: A Position Statement of the International Ankle Consortium",
+          "year": 2014,
+          "journal": "Journal of Athletic Training",
+          "url": "https://meridian.allenpress.com/jat/article/49/1/121/112137/Selection-Criteria-for-Patients-With-Chronic-Ankle"
+        }
+      ],
+      "tags": [
+        "chronic-ankle-instability",
+        "motor-control",
+        "epidemiology"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Gribble+PA%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "scholar": null
+    },
+    {
+      "id": "delahunt",
+      "name": "Eamonn Delahunt",
+      "institution": "University College Dublin",
+      "country": "Ireland",
+      "scholar": "https://scholar.google.com/citations?user=t9j51zsAAAAJ&hl=en",
+      "homepage": "https://people.ucd.ie/eamonn.delahunt",
+      "description": "Professor in the UCD School of Public Health, Physiotherapy and Sports Science. Lead author of the International Ankle Consortium's ROAST consensus, which defines what a complete clinical assessment of an acute lateral ankle sprain actually contains. Bridges physiotherapy, sports science and biomechanics.",
+      "papers": [
+        {
+          "title": "Clinical assessment of acute lateral ankle sprain injuries (ROAST): 2019 consensus statement and recommendations of the International Ankle Consortium",
+          "year": 2018,
+          "journal": "British Journal of Sports Medicine",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29886432/"
+        },
+        {
+          "title": "The Incidence and Prevalence of Ankle Sprain Injury: A Systematic Review and Meta-Analysis of Prospective Epidemiological Studies",
+          "year": 2014,
+          "journal": "Sports Medicine",
+          "url": "https://link.springer.com/article/10.1007/s40279-013-0102-5"
+        }
+      ],
+      "tags": [
+        "acute-sprain",
+        "chronic-ankle-instability",
+        "biomechanics",
+        "epidemiology"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Delahunt+E%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "wikstrom",
+      "name": "Erik A. Wikstrom",
+      "institution": "University of North Carolina at Chapel Hill",
+      "country": "USA",
+      "scholar": "https://scholar.google.com/citations?user=keFbzOwAAAAJ&hl=en",
+      "description": "Professor of Exercise & Sport Science at UNC. Works on the interaction between musculoskeletal biomechanics and sensorimotor control after ankle injury, with a particular focus on balance coordination. Co-author of the constraints-based model that reframed CAI as a continuum ending in post-traumatic ankle osteoarthritis rather than a static deficit.",
+      "papers": [
+        {
+          "title": "Understanding and Treating Lateral Ankle Sprains and their Consequences: A Constraints-Based Approach",
+          "year": 2013,
+          "journal": "Sports Medicine",
+          "url": "https://link.springer.com/article/10.1007/s40279-013-0043-z"
+        },
+        {
+          "title": "Epidemiology of Ankle Sprains and Chronic Ankle Instability",
+          "year": 2019,
+          "journal": "Journal of Athletic Training",
+          "url": "https://meridian.allenpress.com/jat/article/54/6/603/420863/Epidemiology-of-Ankle-Sprains-and-Chronic-Ankle"
+        }
+      ],
+      "tags": [
+        "chronic-ankle-instability",
+        "biomechanics",
+        "motor-control",
+        "epidemiology"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Wikstrom+EA%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "homepage": null
+    },
+    {
+      "id": "mckeon",
+      "name": "Patrick O. McKeon",
+      "institution": "Ithaca College",
+      "country": "USA",
+      "scholar": "https://scholar.google.com/citations?user=-U2yX60AAAAJ&hl=en",
+      "homepage": "https://www.ithaca.edu/faculty/pmckeon",
+      "description": "Professor of Exercise Science and Athletic Training at Ithaca. Research centres on the idea that deficient sensory input from damaged ankle ligament receptors drives the sensorimotor deficits seen in CAI, and on sensory-targeted rehabilitation built from that premise. Read him for the mechanism argument behind balance training.",
+      "papers": [
+        {
+          "title": "Sensory-Targeted Ankle Rehabilitation Strategies for Chronic Ankle Instability",
+          "year": 2016,
+          "journal": "Medicine & Science in Sports & Exercise",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4833574/"
+        },
+        {
+          "title": "Understanding and Treating Lateral Ankle Sprains and their Consequences: A Constraints-Based Approach",
+          "year": 2013,
+          "journal": "Sports Medicine",
+          "url": "https://link.springer.com/article/10.1007/s40279-013-0043-z"
+        }
+      ],
+      "tags": [
+        "chronic-ankle-instability",
+        "motor-control",
+        "biomechanics"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=McKeon+PO%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "hiller",
+      "name": "Claire E. Hiller",
+      "institution": "The University of Sydney",
+      "country": "Australia",
+      "scholar": "https://scholar.google.com/citations?user=DTlO7BgAAAAJ&hl=en",
+      "description": "Physiotherapist and researcher in the Arthritis and Musculoskeletal Research Group at Sydney, with a PhD in chronic ankle instability and a long clinical background in dance injury. Lead author of the Cumberland Ankle Instability Tool, the patient-reported measure that most CAI inclusion criteria are built on.",
+      "papers": [
+        {
+          "title": "The Cumberland Ankle Instability Tool: A Report of Validity and Reliability Testing",
+          "year": 2006,
+          "journal": "Archives of Physical Medicine and Rehabilitation",
+          "url": "https://www.archives-pmr.org/article/S0003-9993(06)00519-3/abstract"
+        }
+      ],
+      "tags": [
+        "chronic-ankle-instability",
+        "acute-sprain"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Hiller+CE%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "homepage": null
+    },
+    {
+      "id": "bleakley",
+      "name": "Chris M. Bleakley",
+      "institution": "Ulster University",
+      "country": "United Kingdom",
+      "scholar": "https://scholar.google.com/citations?user=F8h0e9IAAAAJ&hl=en",
+      "homepage": "https://pure.ulster.ac.uk/en/persons/chris-bleakley",
+      "description": "Professor at Ulster with a focus on acute injury management and early rehabilitation. Work spans cryotherapy, early exercise after ankle sprain, and the question of whether rehabilitation actually reduces reinjury. Co-author on the ROAST consensus.",
+      "papers": [
+        {
+          "title": "Exercise-based rehabilitation reduces reinjury following acute lateral ankle sprain: A systematic review update with meta-analysis",
+          "year": 2022,
+          "journal": "PLOS ONE",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0262023"
+        },
+        {
+          "title": "Clinical assessment of acute lateral ankle sprain injuries (ROAST): 2019 consensus statement and recommendations of the International Ankle Consortium",
+          "year": 2018,
+          "journal": "British Journal of Sports Medicine",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29886432/"
+        }
+      ],
+      "tags": [
+        "acute-sprain",
+        "chronic-ankle-instability",
+        "return-to-sport"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Bleakley+CM%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "doherty",
+      "name": "Cailbhe Doherty",
+      "institution": "University College Dublin",
+      "country": "Ireland",
+      "scholar": "https://scholar.google.com/citations?user=iM9ug6IAAAAJ&hl=en",
+      "homepage": "https://www.ucd.ie/chas/research/researchthemes/healthresearch/publichealthandhealthpromotion/researchershowcase/drcailbhedoherty/",
+      "description": "Ad Astra Fellow and Assistant Professor at UCD. His doctoral work was the first prospective analysis of recovery after a first-time lateral ankle sprain, identifying which movement and balance characteristics predict who goes on to develop chronic ankle instability. Also authored the definitive incidence/prevalence meta-analysis.",
+      "papers": [
+        {
+          "title": "The Incidence and Prevalence of Ankle Sprain Injury: A Systematic Review and Meta-Analysis of Prospective Epidemiological Studies",
+          "year": 2014,
+          "journal": "Sports Medicine",
+          "url": "https://link.springer.com/article/10.1007/s40279-013-0102-5"
+        }
+      ],
+      "tags": [
+        "acute-sprain",
+        "epidemiology",
+        "biomechanics",
+        "chronic-ankle-instability"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Doherty+C%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "kerkhoffs",
+      "name": "Gino M.M.J. Kerkhoffs",
+      "institution": "Amsterdam UMC",
+      "country": "Netherlands",
+      "homepage": "https://researchinformation.amsterdamumc.org/en/persons/gino-m-m-j-kerkhoffs",
+      "description": "Professor and Chair of Orthopaedic Surgery and Sports Medicine at Amsterdam UMC, founder of the Academic Center for Evidence based Sports medicine (ACES). Works on osteochondral defects and on diagnosis and treatment of ankle injuries. Lead author of the Cochrane review on immobilisation versus functional treatment for acute lateral ligament injury.",
+      "papers": [
+        {
+          "title": "Immobilisation and functional treatment for acute lateral ankle ligament injuries in adults",
+          "year": 2002,
+          "journal": "Cochrane Database of Systematic Reviews",
+          "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD003762/abstract"
+        }
+      ],
+      "tags": [
+        "surgical",
+        "acute-sprain",
+        "chronic-ankle-instability"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Kerkhoffs+GM%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "scholar": null
+    },
+    {
+      "id": "vuurberg",
+      "name": "Gwendolyn Vuurberg",
+      "institution": "Amsterdam UMC / University of Amsterdam",
+      "country": "Netherlands",
+      "homepage": "https://www.researchgate.net/profile/Gwendolyn-Vuurberg-2",
+      "description": "Radiology resident and postdoctoral researcher trained in Kerkhoffs' group, thesis on the multidimensional management of lateral ankle injuries. First author of the 2018 update of the Dutch evidence-based clinical guideline on ankle sprains, which is the most practically written guideline in this domain.",
+      "papers": [
+        {
+          "title": "Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline",
+          "year": 2018,
+          "journal": "British Journal of Sports Medicine",
+          "url": "https://researchinformation.amsterdamumc.org/en/publications/diagnosis-treatment-and-prevention-of-ankle-sprains-update-of-an-"
+        }
+      ],
+      "tags": [
+        "acute-sprain",
+        "surgical"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Vuurberg+G%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "scholar": null
+    },
+    {
+      "id": "verhagen",
+      "name": "Evert Verhagen",
+      "institution": "Amsterdam UMC / Vrije Universiteit Amsterdam",
+      "country": "Netherlands",
+      "scholar": "https://scholar.google.com/citations?user=EwBrijQAAAAJ&hl=en",
+      "homepage": "https://evertverhagen.com/",
+      "description": "Human movement scientist and epidemiologist, professor at Amsterdam UMC, director of the Amsterdam Collaboration on Health and Safety in Sports (an IOC research centre) and Editor-in-Chief of BMJ Open Sport & Exercise Medicine. The reference point for whether an injury-prevention programme actually works when implemented, not just in a trial.",
+      "tags": [
+        "epidemiology",
+        "acute-sprain",
+        "return-to-sport"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Verhagen+E%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "papers": []
+    },
+    {
+      "id": "bahr",
+      "name": "Roald Bahr",
+      "institution": "Norwegian School of Sport Sciences / Oslo Sports Trauma Research Center",
+      "country": "Norway",
+      "scholar": "https://scholar.google.com/citations?user=y3Cj1fAAAAAJ&hl=en",
+      "homepage": "https://ostrc.no/en/staff/roald-bahr/",
+      "description": "Professor of Sports Medicine and Chair of the Oslo Sports Trauma Research Center, which set the modern template for sports injury surveillance and prevention research. Read him for injury-risk methodology and for how prevention programmes should be evaluated.",
+      "tags": [
+        "epidemiology",
+        "return-to-sport",
+        "acute-sprain"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Bahr+R%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "papers": []
+    },
+    {
+      "id": "khan",
+      "name": "Karim M. Khan",
+      "institution": "University of British Columbia",
+      "country": "Canada",
+      "scholar": "https://scholar.google.com/citations?user=A5TVjnQAAAAJ&hl=en",
+      "homepage": "https://familypractice.ubc.ca/research/researchers-list-layout/karim-khan/",
+      "description": "Professor of Sports Medicine at UBC and Editor-in-Chief of BJSM from 2008 to 2020, the period in which the journal became the field's centre of gravity. Long-standing work on tendinopathy and on translating evidence into clinical practice.",
+      "tags": [
+        "achilles",
+        "return-to-sport",
+        "sports-rehab"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Khan+KM%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "papers": []
+    },
+    {
+      "id": "silbernagel",
+      "name": "Karin Gravare Silbernagel",
+      "institution": "University of Delaware",
+      "country": "USA",
+      "scholar": "https://scholar.google.com/citations?user=G0dpYu0AAAAJ&hl=en",
+      "homepage": "https://sites.udel.edu/kgs/",
+      "description": "Professor and Associate Chair of Physical Therapy at Delaware, leading the Delaware Tendon Research Group. Thirty years as a physiotherapist and a PhD in Achilles tendinopathy. The primary source on tendon loading protocols and on what return-to-sport looks like for a tendon rather than a ligament.",
+      "tags": [
+        "achilles",
+        "return-to-sport",
+        "biomechanics"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Silbernagel+KG%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "papers": []
+    },
+    {
+      "id": "thorborg",
+      "name": "Kristian Thorborg",
+      "institution": "Copenhagen University Hospital Hvidovre / University of Copenhagen",
+      "country": "Denmark",
+      "homepage": "https://research.regionh.dk/en/persons/kristian-thorborg/",
+      "description": "Professor in orthopaedic surgery and sports sciences, based at the Sports Orthopedic Research Center-Copenhagen. Developed validated outcome scores and muscle function tests used worldwide. Most relevant to you for outcome-measure selection and for how return-to-sport testing gets validated.",
+      "tags": [
+        "return-to-sport",
+        "sports-rehab"
+      ],
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=Thorborg+K%5Bau%5D",
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "scholar": null,
+      "papers": []
+    }
+  ],
+  "guidelines": [
+    {
+      "id": "iac-selection",
+      "title": "Selection Criteria for Patients With Chronic Ankle Instability in Controlled Research: A Position Statement of the International Ankle Consortium",
+      "body": "International Ankle Consortium",
+      "year": 2014,
+      "url": "https://www.jospt.org/doi/10.2519/jospt.2013.0303",
+      "freeFullText": "https://meridian.allenpress.com/jat/article/49/1/121/112137/Selection-Criteria-for-Patients-With-Chronic-Ankle",
+      "alt": "https://pubmed.ncbi.nlm.nih.gov/24377963/",
+      "summary": "Defines who counts as having chronic ankle instability for research purposes: number of previous sprains, frequency of giving-way episodes and feelings of instability, scores on validated self-reported instruments, and severity of the index and most recent injuries. Published simultaneously in JOSPT, the Journal of Athletic Training and BJSM. If you do not know these criteria you cannot read the CAI literature correctly, because a study that ignored them is not describing the same patients as one that followed them.",
+      "newerVersion": "No superseding version found. Operationalised further by the 2019 ROAST assessment statement rather than replaced.",
+      "tags": [
+        "chronic-ankle-instability",
+        "assessment",
+        "research-methods"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "flags": [
+        "possibly superseded"
+      ]
+    },
+    {
+      "id": "iac-2016",
+      "title": "2016 consensus statement of the International Ankle Consortium: prevalence, impact and long-term consequences of lateral ankle sprains",
+      "body": "International Ankle Consortium",
+      "year": 2016,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27259750/",
+      "alt": "https://pubmed.ncbi.nlm.nih.gov/27259753/",
+      "summary": "The Consortium's argument that lateral ankle sprain is not a trivial injury: high recurrence, a large proportion progressing to chronic ankle instability, reduced physical activity and quality of life, and rising rates of post-traumatic ankle osteoarthritis. This is the public-health framing you use to justify treating a first sprain properly. A companion evidence review (PMID 27259753) sets out the underlying data.",
+      "newerVersion": "No superseding consensus statement on this specific question found.",
+      "tags": [
+        "acute-sprain",
+        "chronic-ankle-instability",
+        "epidemiology"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "flags": [
+        "possibly superseded"
+      ]
+    },
+    {
+      "id": "iac-roast",
+      "title": "Clinical assessment of acute lateral ankle sprain injuries (ROAST): 2019 consensus statement and recommendations of the International Ankle Consortium",
+      "body": "International Ankle Consortium",
+      "year": 2019,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29886432/",
+      "summary": "The Rehabilitation-Oriented ASsessmenT. Specifies what a complete clinical assessment of an acute lateral ankle sprain contains — mechanism of injury, bone and ligament assessment, pain, swelling, range of motion, strength, balance and gait — with the explicit purpose of catching the mechanical and sensorimotor impairments that predict chronic ankle instability. BJSM 2018;52(20):1304-1310, DOI 10.1136/bjsports-2017-098885. This is the single most directly usable document in this whole map.",
+      "newerVersion": "None found. Complemented by the PAASS return-to-sport framework (2021).",
+      "tags": [
+        "acute-sprain",
+        "assessment",
+        "chronic-ankle-instability"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "alt": null,
+      "flags": []
+    },
+    {
+      "id": "paass",
+      "title": "Return to sport decisions after an acute lateral ankle sprain injury: introducing the PAASS framework — an international multidisciplinary consensus",
+      "body": "International multidisciplinary Delphi consensus (BJSM)",
+      "year": 2021,
+      "url": "https://www.semanticscholar.org/paper/Return-to-sport-decisions-after-an-acute-lateral-Smith-Vicenzino/77554d06dbb90c64b827dd3c3454647f49fce04c",
+      "summary": "A three-round Delphi among 155 clinicians working in elite field and court sport, producing 16 consensus items grouped into five domains: Pain severity, Ankle impairments, Athlete perception, Sensorimotor control, and Sport/functional performance. It exists because systematic reviews found no prospectively validated return-to-sport criteria for ankle sprain at all. Treat it as expert opinion with a clear structure, not as validated criteria. BJSM 2021;55(22):1270-1276, DOI 10.1136/bjsports-2021-104087.",
+      "newerVersion": "None found. The Ankle-GO score (2024) is a separate, prospectively tested scoring instrument covering the same decision.",
+      "tags": [
+        "return-to-sport",
+        "acute-sprain",
+        "assessment"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "alt": null,
+      "flags": []
+    },
+    {
+      "id": "anklego",
+      "title": "Development and Validation of the Ankle-GO Score for Discriminating and Predicting Return-to-Sport Outcomes After Lateral Ankle Sprain",
+      "body": "Picot et al., Sports Health",
+      "year": 2024,
+      "url": "https://journals.sagepub.com/doi/10.1177/19417381231183647",
+      "alt": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10920508/",
+      "summary": "A composite score combining functional tests and self-reported measures to discriminate and predict return-to-sport outcomes after lateral ankle sprain. A two-year prospective cohort found a low Ankle-GO score at return to sport associated with a large increase in recurrence risk. Included here because it is one of the few return-to-sport instruments in this domain with prospective predictive data behind it rather than consensus alone.",
+      "newerVersion": "Current.",
+      "tags": [
+        "return-to-sport",
+        "assessment",
+        "acute-sprain"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "flags": []
+    },
+    {
+      "id": "jospt-las-2021",
+      "title": "Ankle Stability and Movement Coordination Impairments: Lateral Ankle Ligament Sprains Revision 2021 — Clinical Practice Guidelines Linked to the ICF",
+      "body": "Academy of Orthopaedic Physical Therapy, APTA (JOSPT)",
+      "year": 2021,
+      "url": "https://www.jospt.org/doi/10.2519/jospt.2021.0302",
+      "freeFullText": "https://www.orthopt.org/uploads/content_files/files/jospt.2021.0302.pdf",
+      "alt": "https://pubmed.ncbi.nlm.nih.gov/33789434/",
+      "summary": "The core rehab guideline for your domain. Covers risk factors, clinical course, diagnosis, examination and intervention for both first-time lateral ankle sprain (under 12 months post-injury) and chronic ankle instability (12 months or more). JOSPT 2021;51(4):CPG1-CPG80. The free PDF hosted by APTA Orthopedics means you never need journal access for this one. Patient-facing summary at jospt.2021.0503 and a practice-change commentary at jospt.2021.0504.",
+      "newerVersion": "Current as of this build; the 2021 edition is itself a revision of the 2013 guideline.",
+      "tags": [
+        "acute-sprain",
+        "chronic-ankle-instability",
+        "rehabilitation",
+        "assessment"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "flags": []
+    },
+    {
+      "id": "jospt-cpg-index",
+      "title": "APTA Orthopedics Clinical Practice Guideline library",
+      "body": "Academy of Orthopaedic Physical Therapy, APTA",
+      "year": 2026,
+      "url": "https://www.orthopt.org/content/s/ankle-stability-and-movement-coordination-impairments-lateral-ankle-ligament-sprains-revision-2021",
+      "summary": "Entry point to the APTA Orthopedics CPG collection, which hosts free PDFs of the JOSPT ICF-linked guidelines. Included because the JOSPT site itself paywalls most CPGs while APTA Orthopedics often does not. Use this before you try to get institutional access.",
+      "newerVersion": "Living index page.",
+      "tags": [
+        "rehabilitation",
+        "index"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "alt": null,
+      "flags": []
+    },
+    {
+      "id": "jospt-achilles-2024",
+      "title": "Achilles Pain, Stiffness, and Muscle Power Deficits: Midportion Achilles Tendinopathy Revision 2024 — Clinical Practice Guidelines Linked to the ICF",
+      "body": "Academy of Orthopaedic Physical Therapy, APTA (JOSPT)",
+      "year": 2024,
+      "url": "https://www.jospt.org/doi/10.2519/jospt.2024.0302",
+      "summary": "The current Achilles tendinopathy CPG. JOSPT 2024;54(12). Supersedes the 2018 revision (DOI 10.2519/jospt.2018.0302, PMID 29712543), which is still widely cited and still what most course material quotes. If a course cites the 2018 version as current, that tells you something about the course.",
+      "newerVersion": "This IS the newer version. Explicitly supersedes the 2018 revision.",
+      "tags": [
+        "achilles",
+        "rehabilitation"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "alt": null,
+      "flags": []
+    },
+    {
+      "id": "jospt-achilles-2018",
+      "title": "Achilles Pain, Stiffness, and Muscle Power Deficits: Midportion Achilles Tendinopathy Revision 2018",
+      "body": "Orthopaedic Section, APTA (JOSPT)",
+      "year": 2018,
+      "url": "https://www.jospt.org/doi/10.2519/jospt.2018.0302",
+      "freeFullText": "https://www.jospt.org/doi/pdf/10.2519/jospt.2018.0302",
+      "alt": "https://pubmed.ncbi.nlm.nih.gov/29712543/",
+      "summary": "Martin RL, Chimenti R, Cuddeford T, et al. JOSPT 2018;48(5):A1-A38. Retained here only so you can see what changed between 2018 and the 2024 revision — reading the two side by side is one of the fastest ways to learn what moved in the tendon literature.",
+      "newerVersion": "SUPERSEDED by the 2024 revision (DOI 10.2519/jospt.2024.0302).",
+      "tags": [
+        "achilles",
+        "rehabilitation",
+        "superseded"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "flags": [
+        "possibly superseded"
+      ]
+    },
+    {
+      "id": "jospt-heel-2023",
+      "title": "Heel Pain — Plantar Fasciitis: Revision 2023 — Clinical Practice Guidelines Linked to the ICF",
+      "body": "Academy of Orthopaedic Physical Therapy and American Academy of Sports Physical Therapy, APTA (JOSPT)",
+      "year": 2023,
+      "url": "https://www.jospt.org/doi/10.2519/jospt.2023.0303",
+      "freeFullText": "https://www.orthopt.org/uploads/content_files/files/koc_et_al_2023_heel_pain_plantar_fasciitis_revision_2023.pdf",
+      "summary": "Koc TA Jr, Bise CG, Neville C, Carreira D, Martin RL, McDonough CM. JOSPT 2023;53(12):CPG1-CPG39. The second update of this guideline. Free PDF via APTA Orthopedics. Note that a 2025 JOSPT commentary reinterprets these recommendations through a non-US lens, which is worth reading alongside it if you practise outside the US.",
+      "newerVersion": "Current. A 2025 international-lens commentary exists (DOI 10.2519/jospt.2025.0202) but does not supersede the guideline.",
+      "tags": [
+        "foot-ankle",
+        "rehabilitation"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null,
+      "flags": []
+    },
+    {
+      "id": "dutch-2018",
+      "title": "Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline",
+      "body": "Dutch multidisciplinary guideline (Vuurberg et al., BJSM)",
+      "year": 2018,
+      "url": "https://researchinformation.amsterdamumc.org/en/publications/diagnosis-treatment-and-prevention-of-ankle-sprains-update-of-an-",
+      "summary": "The Dutch multidisciplinary update, BJSM 2018;52(15), DOI 10.1136/bjsports-2017-098106. Practically written and unusually direct: NSAIDs reduce pain and swelling but may suppress healing; supervised exercise-based programmes are preferred over passive modalities for restoring functional joint stability; surgery is reserved for cases that fail comprehensive exercise-based treatment. Often more immediately usable at the treatment-table than the US guidelines.",
+      "newerVersion": "No newer multidisciplinary Dutch update found as of this build.",
+      "tags": [
+        "acute-sprain",
+        "rehabilitation",
+        "prevention"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "alt": null,
+      "flags": []
+    },
+    {
+      "id": "kngf-2006",
+      "title": "KNGF Guideline: Acute Ankle Sprain (English translation)",
+      "body": "Royal Dutch Society for Physical Therapy (KNGF)",
+      "year": 2006,
+      "url": "https://www.kennisplatformfysiotherapie.nl/app/uploads/sites/2/2024/10/acute_ankle_sprain_practice_guidelines_2006.pdf",
+      "alt": "https://www.kennisplatformfysiotherapie.nl/app/uploads/sites/2/2024/10/acute_ankle_sprain_flowchart.pdf",
+      "summary": "The KNGF physiotherapy guideline, structured by tissue recovery phase: inflammatory (0-3 days), proliferation (4-10 days), early remodelling (11-21 days), late remodelling and transfer phases. Published as a supplement to the Dutch Journal of Physical Therapy, 2006;116:1-30. A one-page clinical flowchart is available separately. The phase-based structure is the most directly programmable thing in this section — but see the date flag.",
+      "newerVersion": "NOT ESTABLISHED. Two decades old. The Dutch 2018 multidisciplinary guideline (Vuurberg et al.) covers overlapping ground and is far more current. Use the 2018 guideline for recommendations and this one only for its phase structure.",
+      "tags": [
+        "acute-sprain",
+        "rehabilitation"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "flags": [
+        "possibly superseded"
+      ]
+    },
+    {
+      "id": "bern-rts",
+      "title": "2016 Consensus statement on return to sport from the First World Congress in Sports Physical Therapy, Bern",
+      "body": "Consensus group, First World Congress in Sports Physical Therapy (BJSM)",
+      "year": 2016,
+      "url": "https://ifspt.org/wp-content/uploads/2025/05/2016-Consensus-statement-on-return.pdf",
+      "summary": "Ardern CL, Glasgow P, Schneiders A, et al. BJSM 2016;50:853-864. Not ankle-specific, but it is the document that frames return-to-sport as a shared risk-management decision along a continuum (return to participation, return to sport, return to performance) rather than a binary clearance. Free full-text PDF hosted by IFSPT. Read this before PAASS, because PAASS assumes it.",
+      "newerVersion": "No direct replacement of this specific statement found.",
+      "tags": [
+        "return-to-sport"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "alt": null,
+      "flags": [
+        "possibly superseded"
+      ]
+    },
+    {
+      "id": "cochrane-immob",
+      "title": "Immobilisation and functional treatment for acute lateral ankle ligament injuries in adults",
+      "body": "Cochrane Database of Systematic Reviews (Kerkhoffs GMMJ et al.)",
+      "year": 2002,
+      "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD003762/abstract",
+      "summary": "The Cochrane comparison of immobilisation against functional treatment for acute lateral ligament injury. Directly relevant to search-string topic 2. Old, and its search date is older still — treat its conclusions as the historical baseline and check what has been published since rather than as the current answer.",
+      "newerVersion": "NOT ESTABLISHED — no updated Cochrane version located from this session. Check the Cochrane Library directly.",
+      "tags": [
+        "acute-sprain",
+        "rehabilitation",
+        "superseded"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "alt": null,
+      "flags": [
+        "possibly superseded"
+      ]
+    },
+    {
+      "id": "cochrane-prevent",
+      "title": "Interventions for preventing ankle ligament injuries",
+      "body": "Cochrane Database of Systematic Reviews (Handoll HHG et al.)",
+      "year": 2001,
+      "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD000018/full",
+      "summary": "Cochrane review of prevention interventions for ankle ligament injury in physically active people from adolescence to middle age. Relevant to search-string topic 3. Very old; the bracing, taping and neuromuscular-prevention literature has moved substantially since. Use it to see what the question looked like before the modern prevention trials.",
+      "newerVersion": "NOT ESTABLISHED from this session. The prevention evidence base has expanded considerably since 2001.",
+      "tags": [
+        "prevention",
+        "acute-sprain",
+        "superseded"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "alt": null,
+      "flags": [
+        "possibly superseded"
+      ]
+    },
+    {
+      "id": "cochrane-us",
+      "title": "Therapeutic ultrasound for acute ankle sprains",
+      "body": "Cochrane Database of Systematic Reviews (van den Bekerom MPJ et al.)",
+      "year": 2011,
+      "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD001250.pub2/references",
+      "summary": "Included mainly as a worked example of a passive modality being formally tested and found wanting. Useful when a patient or a course asks about ultrasound for an acute sprain.",
+      "newerVersion": "NOT ESTABLISHED from this session.",
+      "tags": [
+        "acute-sprain",
+        "superseded"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "alt": null,
+      "flags": [
+        "possibly superseded"
+      ]
+    },
+    {
+      "id": "cochrane-library",
+      "title": "Cochrane Library — search entry point",
+      "body": "Cochrane",
+      "year": 2026,
+      "url": "https://www.cochranelibrary.com/",
+      "alt": "https://www.cochranelibrary.com/cdsr/about-cdsr",
+      "summary": "Search here directly rather than relying on the individual reviews listed above, all of which are old. Cochrane reviews are continuously published and updated as new evidence appears, so the ankle sprain picture may have changed since this map was built.",
+      "newerVersion": "Living resource.",
+      "tags": [
+        "index",
+        "rehabilitation"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "flags": []
+    },
+    {
+      "id": "cpg-quality-sr",
+      "title": "What is the quality of clinical practice guidelines for the treatment of acute lateral ankle ligament sprains in adults? A systematic review",
+      "body": "BMC Musculoskeletal Disorders",
+      "year": 2019,
+      "url": "https://bmcmusculoskeletdisord.biomedcentral.com/articles/10.1186/s12891-019-2750-6",
+      "summary": "An appraisal of the ankle sprain guidelines themselves. Read this before you treat any single guideline in this section as authoritative — it tells you which ones were developed rigorously and which were not. Open access.",
+      "newerVersion": "Not checked for a newer appraisal.",
+      "tags": [
+        "research-methods",
+        "acute-sprain"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "alt": null,
+      "flags": []
+    },
+    {
+      "id": "iac-home",
+      "title": "International Ankle Consortium",
+      "body": "International Ankle Consortium",
+      "year": 2026,
+      "url": "https://ankleconsortium.org/",
+      "alt": "https://ankleconsortium.org/research/publications/",
+      "summary": "The society that owns this subfield. Its publications page is the authoritative list of position and consensus statements — check it directly rather than trusting any secondary list, including this one. Also runs the International Ankle Symposium.",
+      "newerVersion": "Living site.",
+      "tags": [
+        "index",
+        "chronic-ankle-instability"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "freeFullText": null,
+      "flags": []
+    }
+  ],
+  "tools": [
+    {
+      "id": "pubmed",
+      "name": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "cost": "free",
+      "purpose": "The workhorse bibliographic database. Over 40 million citations from MEDLINE, life science journals and online books, with controlled vocabulary (MeSH), field tags and precise filters.",
+      "useWhen": "Use it when you need precision and reproducibility — a search string you can save, re-run and email to yourself. Every string in Section 5 runs here.",
+      "tags": [
+        "database",
+        "core",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "pmc",
+      "name": "PubMed Central (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/",
+      "cost": "free",
+      "purpose": "Free full-text archive of biomedical literature. Where a large fraction of the papers in this map are legally readable in full.",
+      "useWhen": "Use it when PubMed shows you an abstract and you need the tables. Check here before you email an author.",
+      "tags": [
+        "database",
+        "access",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "mesh",
+      "name": "PubMed MeSH Database / NLM MeSH Browser",
+      "url": "https://www.nlm.nih.gov/mesh/meshhome.html",
+      "alt": "https://meshb.nlm.nih.gov/",
+      "cost": "free",
+      "purpose": "The controlled vocabulary used to index MEDLINE. Every indexed paper is tagged with MeSH headings regardless of the words its authors chose.",
+      "useWhen": "Use it before writing any search string. Look the concept up here rather than guessing the [mh] term — it catches papers that used words you did not think of.",
+      "tags": [
+        "database",
+        "search-craft",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "clinqueries",
+      "name": "PubMed Clinical Queries",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/clinical/",
+      "cost": "free",
+      "purpose": "Pre-built, validated search filters for clinical study categories — therapy, diagnosis, prognosis, aetiology — applied on top of your own terms.",
+      "useWhen": "Use it when you want a design filter you did not have to write yourself, or as a sanity check that your hand-built design filter is not throwing away half the literature.",
+      "tags": [
+        "database",
+        "search-craft",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "myncbi",
+      "name": "My NCBI — saved searches and email alerts",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK53592/",
+      "cost": "free",
+      "purpose": "Saves a PubMed search and emails you new results daily, weekly or monthly. Set up from the 'Create alert' link under the PubMed search box.",
+      "useWhen": "Set this up once for each of your core topics and the literature comes to you forever. Highest return on five minutes anywhere in this map.",
+      "tags": [
+        "alerts",
+        "core",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "pedro",
+      "name": "PEDro — Physiotherapy Evidence Database",
+      "url": "https://pedro.org.au/",
+      "cost": "free",
+      "purpose": "Physiotherapy-specific index of RCTs, systematic reviews and practice guidelines. Every indexed RCT carries a PEDro score out of 10 for methodological quality.",
+      "useWhen": "Use it before PubMed for any 'does this treatment work' question. The pre-scored trials mean you can discard weak studies before reading a word. Physio's structural advantage and most physios never open it.",
+      "tags": [
+        "database",
+        "core",
+        "free",
+        "appraisal"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "pedro-adv",
+      "name": "PEDro Advanced Search",
+      "url": "https://search.pedro.org.au/advanced-search",
+      "cost": "free",
+      "purpose": "Thirteen fields for defining search terms precisely, including subdiscipline (musculoskeletal, sports) and method (clinical trial, systematic review, practice guideline).",
+      "useWhen": "Always use this rather than PEDro's simple search. Filter to subdiscipline = musculoskeletal or sports, then sort by score.",
+      "tags": [
+        "database",
+        "search-craft",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "cochrane",
+      "name": "Cochrane Library",
+      "url": "https://www.cochranelibrary.com/",
+      "cost": "partial",
+      "purpose": "The highest-rigour evidence syntheses in healthcare, plus CENTRAL, a very large trials register.",
+      "useWhen": "Use it at Tier 1, before primary studies. If a current Cochrane review exists on your question, its included-studies table is a literature search someone else already did.",
+      "tags": [
+        "database",
+        "core",
+        "synthesis"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "epistemonikos",
+      "name": "Epistemonikos",
+      "url": "https://www.epistemonikos.org/",
+      "cost": "free",
+      "purpose": "The largest dedicated database of systematic reviews, with a matrix-of-evidence tool that cross-tabulates every review on a question against every study those reviews included.",
+      "useWhen": "Fastest way to find ALL systematic reviews on a topic and see instantly which primary studies each one covered. Use the evidence matrix when reviews disagree.",
+      "tags": [
+        "database",
+        "synthesis",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "gscholar",
+      "name": "Google Scholar",
+      "url": "https://scholar.google.com/",
+      "alt": "https://scholar.google.com/citations?view_op=search_authors",
+      "cost": "free",
+      "purpose": "Broadest coverage including grey literature, theses and preprints. Forward citation chasing via 'Cited by', and author alerts.",
+      "useWhen": "Use it for chasing, not finding. Click 'Cited by' on a seed paper to get everything published since. Set author alerts on the researchers in Section 2.",
+      "tags": [
+        "database",
+        "citation-chasing",
+        "free",
+        "alerts"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "semanticscholar",
+      "name": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/",
+      "cost": "free",
+      "purpose": "AI-backed literature discovery and citation graph from the Allen Institute for AI, with a free API.",
+      "useWhen": "Use it when you want the citation neighbourhood of a paper without a subscription, or when Google Scholar's ranking is burying what you need.",
+      "tags": [
+        "database",
+        "citation-chasing",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "openalex",
+      "name": "OpenAlex",
+      "url": "https://openalex.org/",
+      "cost": "free",
+      "purpose": "Fully open catalogue of 250M+ works, authors, institutions and sources, released CC0. Replaced Microsoft Academic Graph. Now also the home of Unpaywall.",
+      "useWhen": "Use it for bibliometrics, for building your own tooling on top of a citation graph, or as a free stand-in for Scopus and Web of Science.",
+      "tags": [
+        "database",
+        "citation-chasing",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "unpaywall",
+      "name": "Unpaywall",
+      "url": "https://unpaywall.org/products/extension",
+      "alt": "https://unpaywall.org/faq",
+      "cost": "free",
+      "purpose": "Browser extension that checks a database of millions of legally-deposited open access copies whenever you land on a paywalled article, and shows a green tab if one exists.",
+      "useWhen": "Install it once. Second step in the access ladder, after your university proxy and before you email the author.",
+      "tags": [
+        "access",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "prospero",
+      "name": "PROSPERO",
+      "url": "https://www.crd.york.ac.uk/prospero/",
+      "cost": "free",
+      "purpose": "International prospective register of systematic reviews, run by the Centre for Reviews and Dissemination at York. Nearly half a million registered records.",
+      "useWhen": "Use it to see what syntheses are being written right now. Tells you an answer is coming 1-2 years before it publishes — and stops you duplicating work.",
+      "tags": [
+        "database",
+        "frontier",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "ctgov",
+      "name": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/",
+      "cost": "free",
+      "purpose": "Registry of clinical trials worldwide, including protocols, planned outcomes and completion status.",
+      "useWhen": "Use it to find trials in progress, to read a full protocol (dose, progression criteria, outcome timing) that the published paper compressed into a paragraph, and to spot trials that finished but never published — a signal of a negative result.",
+      "tags": [
+        "database",
+        "frontier",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "sportrxiv",
+      "name": "SportRxiv",
+      "url": "https://sportrxiv.org/index.php/server",
+      "cost": "free",
+      "purpose": "Community-led open access preprint server for sport, exercise, performance and health research.",
+      "useWhen": "Tier 3. Use it to see findings 6-18 months before journal publication. Preprints are not peer reviewed — they generate leads, they do not settle questions.",
+      "tags": [
+        "preprint",
+        "frontier",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "medrxiv",
+      "name": "medRxiv",
+      "url": "https://www.medrxiv.org/",
+      "cost": "free",
+      "purpose": "Preprint server for the health sciences across all disciplines.",
+      "useWhen": "Same role as SportRxiv but broader. Check both when a topic is moving fast.",
+      "tags": [
+        "preprint",
+        "frontier",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "trip",
+      "name": "Trip Medical Database",
+      "url": "https://www.tripdatabase.com/",
+      "alt": "https://www.tripdatabase.com/search/advanced",
+      "cost": "partial",
+      "purpose": "Clinical search engine across 75+ sources, ranking results by a publication quality score so Cochrane outranks a journal article which outranks a textbook. PICO search mode built in.",
+      "useWhen": "Use it for a fast first pass on a clinical question when you want guidelines, syntheses and primary evidence in one ranked list. Free tier is usable; Trip Pro is paid.",
+      "tags": [
+        "database",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "connectedpapers",
+      "name": "Connected Papers",
+      "url": "https://www.connectedpapers.com/",
+      "cost": "partial",
+      "purpose": "Builds a visual similarity graph from one origin paper using co-citation and bibliographic coupling, so papers that never cite each other can still sit close together. Built on Semantic Scholar data.",
+      "useWhen": "Paste your seed paper and look for clusters you have not touched. Fastest way to find out you have been reading one corner of a field. Free searches are now capped per month.",
+      "tags": [
+        "citation-chasing",
+        "ai"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "researchrabbit",
+      "name": "ResearchRabbit",
+      "url": "https://www.researchrabbit.ai/",
+      "cost": "free",
+      "purpose": "Citation-based literature mapping with collections that update as new work appears.",
+      "useWhen": "Same job as Connected Papers but persistent — build a collection per question and let it keep watching.",
+      "tags": [
+        "citation-chasing",
+        "ai",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "elicit",
+      "name": "Elicit",
+      "url": "https://elicit.com/",
+      "cost": "partial",
+      "purpose": "Automates parts of a literature review: finds papers without exact keyword match, and extracts structured data into a table across many papers at once.",
+      "useWhen": "Use it to build an extraction table (columns: n, population, dose, comparator, outcome, effect) across the studies you already screened. Verify every extracted cell against the PDF — it is a first pass, not a source.",
+      "tags": [
+        "ai"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "consensus",
+      "name": "Consensus",
+      "url": "https://consensus.app/",
+      "cost": "partial",
+      "purpose": "AI academic search over peer-reviewed literature, with a Consensus Meter showing how retrieved papers split on a testable claim.",
+      "useWhen": "Orientation only, for binary 'does X reduce Y' questions. It tells you where to look. It never terminates a question.",
+      "tags": [
+        "ai"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "scite",
+      "name": "scite",
+      "url": "https://scite.ai/features",
+      "cost": "paid",
+      "purpose": "Smart Citations: classifies over a billion citation statements as supporting, contrasting or merely mentioning the cited claim, with the surrounding context shown.",
+      "useWhen": "Use it before you build any clinical argument on a single study. A paper cited 400 times and contradicted in 30 of them is a different paper than its citation count suggests.",
+      "tags": [
+        "appraisal",
+        "ai"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "notebooklm",
+      "name": "NotebookLM (Gemini Notebook)",
+      "url": "https://workspace.google.com/products/notebooklm/",
+      "cost": "partial",
+      "purpose": "Source-grounded AI notebook: upload PDFs and interrogate only that closed corpus, with answers tied to your sources.",
+      "useWhen": "Feed it the 10-15 PDFs you have already vetted, then ask it to compare doses or find disagreements. The safest AI use in this entire workflow, because the corpus is one you chose. Recently renamed Gemini Notebook by Google.",
+      "tags": [
+        "ai"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "pedro-scale",
+      "name": "PEDro scale",
+      "url": "https://pedro.org.au/english/resources/pedro-scale/",
+      "alt": "https://pedro.org.au/wp-content/uploads/PEDro_scale.pdf",
+      "cost": "free",
+      "purpose": "The 11-item scale used to rate every RCT indexed in PEDro. Based on the Delphi list developed by Verhagen and colleagues at Maastricht. A free online training programme exists.",
+      "useWhen": "Applies to RCTs. Rough heuristic: 6 or above is worth your reading time, 4 or below is close to noise. Check blinding, intention-to-treat and dropout yourself rather than trusting the total.",
+      "tags": [
+        "appraisal",
+        "rct",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "rob2",
+      "name": "Cochrane RoB 2",
+      "url": "https://methods.cochrane.org/bias/resources/rob-2-revised-cochrane-risk-bias-tool-randomized-trials",
+      "cost": "free",
+      "purpose": "The revised Cochrane risk-of-bias tool for randomised trials, released 2019. Five domains: randomisation process, deviations from intended interventions, missing outcome data, outcome measurement, and selection of the reported result.",
+      "useWhen": "Applies to RCTs, and it is what Cochrane reviews use. More rigorous and slower than the PEDro scale — use RoB 2 when a single trial is going to change what you do.",
+      "tags": [
+        "appraisal",
+        "rct",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "amstar2",
+      "name": "AMSTAR 2",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5833365/",
+      "cost": "free",
+      "purpose": "Sixteen-item critical appraisal tool for systematic reviews of healthcare interventions, seven of them designated critical. Produces an overall confidence rating: high, moderate, low, or critically low. The instrument is contained in the open-access 2017 BMJ paper.",
+      "useWhen": "Applies to systematic reviews. Was it registered on PROSPERO? Two independent screeners? Is the search date stated? Those three questions alone filter most of the field.",
+      "tags": [
+        "appraisal",
+        "systematic-review",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "robis",
+      "name": "ROBIS",
+      "url": "https://www.bristol.ac.uk/population-health-sciences/projects/robis/robis-tool/",
+      "alt": "https://www.bristol.ac.uk/media-library/sites/social-community-medicine/robis/ROBIS%201.2%20Clean.pdf",
+      "cost": "free",
+      "purpose": "Risk-of-bias tool for systematic reviews (not for the primary studies inside them), covering interventions, diagnosis, prognosis and aetiology reviews. Three phases; four domains in phase 2.",
+      "useWhen": "Use alongside or instead of AMSTAR 2 when you are appraising reviews for an overview. Cochrane and JBI both accept either.",
+      "tags": [
+        "appraisal",
+        "systematic-review",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "quadas2",
+      "name": "QUADAS-2",
+      "url": "https://www.acpjournals.org/doi/10.7326/0003-4819-155-8-201110180-00009",
+      "alt": "https://www.bristol.ac.uk/population-health-sciences/projects/quadas/",
+      "cost": "free",
+      "purpose": "Quality assessment of diagnostic accuracy studies. Four domains: patient selection, index test, reference standard, and flow and timing.",
+      "useWhen": "Applies to 'is this test accurate' questions. The two that matter most: was there a proper reference standard, and were patients consecutive rather than cherry-picked? NOTE: QUADAS-3 has now been released and is the current recommended version.",
+      "tags": [
+        "appraisal",
+        "diagnosis",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "quips",
+      "name": "QUIPS",
+      "url": "https://www.acpjournals.org/doi/10.7326/0003-4819-158-4-201302190-00009",
+      "cost": "free",
+      "purpose": "Quality In Prognosis Studies. Six bias domains: study participation, study attrition, prognostic factor measurement, outcome measurement, study confounding, and statistical analysis and reporting. Hayden JA et al., Ann Intern Med 2013;158:280-286.",
+      "useWhen": "Applies to 'who will do badly' and 'how long until return to sport' questions. Attrition is usually where prognosis studies fall over.",
+      "tags": [
+        "appraisal",
+        "prognosis",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "grade",
+      "name": "GRADE Handbook",
+      "url": "https://gdt.gradepro.org/app/handbook/handbook.html",
+      "alt": "https://methods.cochrane.org/gradeing/gradepro-gdt",
+      "cost": "free",
+      "purpose": "The framework for rating overall certainty of evidence across a body of studies as high, moderate, low or very low, and for grading strength of recommendation.",
+      "useWhen": "Use it when you are summarising a whole body of evidence rather than one study — which is what your written note in Section 8 of the research system actually is.",
+      "tags": [
+        "appraisal",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed"
+    },
+    {
+      "id": "casp",
+      "name": "CASP Checklists",
+      "url": "https://casp-uk.net/casp-tools-checklists/",
+      "cost": "free",
+      "purpose": "Free critical appraisal checklists from the Critical Appraisal Skills Programme, one per study design — RCT, systematic review, cohort, case-control, diagnostic, qualitative, economic.",
+      "useWhen": "Use these when you are learning to appraise, or for designs where you do not have a specialised tool. Plain language and quick.",
+      "tags": [
+        "appraisal",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "consort",
+      "name": "CONSORT 2010",
+      "url": "https://journals.plos.org/plosmedicine/article?id=10.1371%2Fjournal.pmed.1000251",
+      "cost": "free",
+      "purpose": "Twenty-five-item reporting checklist plus participant flow diagram for randomised parallel-group trials. Linked here to the open-access PLOS Medicine version of the statement.",
+      "useWhen": "Use it in reverse: if a trial does not report an item CONSORT requires, ask why. Missing dose detail or a missing flow diagram is a red flag, not an oversight.",
+      "tags": [
+        "appraisal",
+        "rct",
+        "reporting",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "prisma",
+      "name": "PRISMA 2020",
+      "url": "https://www.equator-network.org/reporting-guidelines/prisma/",
+      "cost": "free",
+      "purpose": "Reporting guideline for systematic reviews and meta-analyses, updated in 2020 from the 2009 version.",
+      "useWhen": "Use it to check whether a review reported its search date, databases, screening process and exclusions. A review that will not tell you its search date cannot be assessed for currency.",
+      "tags": [
+        "appraisal",
+        "systematic-review",
+        "reporting",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "strobe",
+      "name": "STROBE",
+      "url": "https://www.equator-network.org/reporting-guidelines/strobe/",
+      "cost": "free",
+      "purpose": "Reporting guideline for observational studies: cohort, case-control and cross-sectional.",
+      "useWhen": "Applies to epidemiology and prognosis papers. Check whether the study was genuinely prospective and how loss to follow-up was handled.",
+      "tags": [
+        "appraisal",
+        "prognosis",
+        "reporting",
+        "free"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    },
+    {
+      "id": "equator",
+      "name": "EQUATOR Network",
+      "url": "https://www.equator-network.org/reporting-guidelines/",
+      "cost": "free",
+      "purpose": "Central searchable library of over 500 reporting guidelines across every study design, with checklists and flow diagrams.",
+      "useWhen": "Use it when you hit a design you do not have a checklist for. Search by study type.",
+      "tags": [
+        "appraisal",
+        "reporting",
+        "free",
+        "index"
+      ],
+      "verifiedOn": "2026-09-06",
+      "verification": "search-confirmed",
+      "alt": null
+    }
+  ],
+  "searchStrings": [
+    {
+      "id": "ss1",
+      "topic": "Chronic ankle instability — balance and neuromuscular training RCTs",
+      "description": "Randomised trials of balance, proprioceptive, neuromuscular or sensorimotor training in people who already have chronic ankle instability. This is the 'does the standard treatment actually work' string.",
+      "design": "RCT",
+      "string": "(\"chronic ankle instability\"[tiab] OR \"functional ankle instability\"[tiab] OR (\"Ankle Injuries\"[mh] AND \"Joint Instability\"[mh])) AND (\"balance training\"[tiab] OR \"neuromuscular training\"[tiab] OR \"proprioceptive training\"[tiab] OR \"sensorimotor training\"[tiab] OR \"wobble board\"[tiab] OR \"Postural Balance\"[mh] OR \"Proprioception\"[mh]) AND (randomized controlled trial[pt] OR randomised[tiab] OR randomized[tiab])",
+      "tags": [
+        "chronic-ankle-instability",
+        "rehabilitation",
+        "rct"
+      ],
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22chronic+ankle+instability%22%5Btiab%5D+OR+%22functional+ankle+instability%22%5Btiab%5D+OR+%28%22Ankle+Injuries%22%5Bmh%5D+AND+%22Joint+Instability%22%5Bmh%5D%29%29+AND+%28%22balance+training%22%5Btiab%5D+OR+%22neuromuscular+training%22%5Btiab%5D+OR+%22proprioceptive+training%22%5Btiab%5D+OR+%22sensorimotor+training%22%5Btiab%5D+OR+%22wobble+board%22%5Btiab%5D+OR+%22Postural+Balance%22%5Bmh%5D+OR+%22Proprioception%22%5Bmh%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+randomised%5Btiab%5D+OR+randomized%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-06",
+      "verification": "constructed"
+    },
+    {
+      "id": "ss2",
+      "topic": "Acute lateral ankle sprain — immobilisation vs early mobilisation",
+      "description": "Early management of a fresh lateral ankle sprain: cast or brace immobilisation compared against functional treatment and early loading. Directly answers 'what do I do in week one'.",
+      "design": "RCT and systematic review",
+      "string": "(\"ankle sprain*\"[tiab] OR \"lateral ankle ligament\"[tiab] OR \"Ankle Injuries\"[mh]) AND (immobili*[tiab] OR cast[tiab] OR \"functional treatment\"[tiab] OR \"early mobilisation\"[tiab] OR \"early mobilization\"[tiab] OR \"Immobilization\"[mh] OR \"Early Ambulation\"[mh]) AND (randomized controlled trial[pt] OR systematic[sb])",
+      "tags": [
+        "acute-sprain",
+        "rehabilitation",
+        "rct"
+      ],
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22ankle+sprain%2A%22%5Btiab%5D+OR+%22lateral+ankle+ligament%22%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D%29+AND+%28immobili%2A%5Btiab%5D+OR+cast%5Btiab%5D+OR+%22functional+treatment%22%5Btiab%5D+OR+%22early+mobilisation%22%5Btiab%5D+OR+%22early+mobilization%22%5Btiab%5D+OR+%22Immobilization%22%5Bmh%5D+OR+%22Early+Ambulation%22%5Bmh%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+systematic%5Bsb%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-06",
+      "verification": "constructed"
+    },
+    {
+      "id": "ss3",
+      "topic": "Ankle sprain recurrence and prevention — bracing, taping, prophylactic programmes",
+      "description": "Everything aimed at stopping the next sprain: external support, tape, and prophylactic neuromuscular programmes, restricted to studies that actually measured prevention or recurrence.",
+      "design": "RCT and meta-analysis",
+      "string": "(\"ankle sprain*\"[tiab] OR \"Ankle Injuries\"[mh]) AND (brace*[tiab] OR bracing[tiab] OR taping[tiab] OR orthos*[tiab] OR \"Braces\"[mh] OR \"Athletic Tape\"[mh] OR \"neuromuscular training\"[tiab]) AND (prevent*[tiab] OR recurren*[tiab] OR reinjur*[tiab] OR \"re-injury\"[tiab]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic[sb])",
+      "tags": [
+        "prevention",
+        "acute-sprain",
+        "rct"
+      ],
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22ankle+sprain%2A%22%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D%29+AND+%28brace%2A%5Btiab%5D+OR+bracing%5Btiab%5D+OR+taping%5Btiab%5D+OR+orthos%2A%5Btiab%5D+OR+%22Braces%22%5Bmh%5D+OR+%22Athletic+Tape%22%5Bmh%5D+OR+%22neuromuscular+training%22%5Btiab%5D%29+AND+%28prevent%2A%5Btiab%5D+OR+recurren%2A%5Btiab%5D+OR+reinjur%2A%5Btiab%5D+OR+%22re-injury%22%5Btiab%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+meta-analysis%5Bpt%5D+OR+systematic%5Bsb%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-06",
+      "verification": "constructed"
+    },
+    {
+      "id": "ss4",
+      "topic": "Return-to-sport criteria and testing after ankle injury",
+      "description": "How the return-to-sport decision is made after ankle injury: criteria, test batteries, decision frameworks and readiness measures. Pair the results with the PAASS framework and Ankle-GO in the Guidelines section.",
+      "design": "Consensus, cohort, systematic review",
+      "string": "(\"ankle sprain*\"[tiab] OR \"ankle instability\"[tiab] OR \"Ankle Injuries\"[mh]) AND (\"return to sport\"[tiab] OR \"return to play\"[tiab] OR \"Return to Sport\"[mh] OR readiness[tiab]) AND (criteri*[tiab] OR test*[tiab] OR assess*[tiab] OR decision*[tiab])",
+      "tags": [
+        "return-to-sport",
+        "assessment"
+      ],
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22ankle+sprain%2A%22%5Btiab%5D+OR+%22ankle+instability%22%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D%29+AND+%28%22return+to+sport%22%5Btiab%5D+OR+%22return+to+play%22%5Btiab%5D+OR+%22Return+to+Sport%22%5Bmh%5D+OR+readiness%5Btiab%5D%29+AND+%28criteri%2A%5Btiab%5D+OR+test%2A%5Btiab%5D+OR+assess%2A%5Btiab%5D+OR+decision%2A%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-06",
+      "verification": "constructed"
+    },
+    {
+      "id": "ss5",
+      "topic": "Ankle dorsiflexion range of motion — measurement, restriction and consequences",
+      "description": "How dorsiflexion is measured, how reliable those measures are, what restricts it, and what a restriction does downstream. The weight-bearing lunge test literature lives here.",
+      "design": "Measurement property and observational studies",
+      "string": "(dorsiflexion[tiab] OR \"Range of Motion, Articular\"[mh]) AND (ankle[tiab] OR \"Ankle Joint\"[mh]) AND (measur*[tiab] OR reliab*[tiab] OR restrict*[tiab] OR limit*[tiab] OR \"weight-bearing lunge\"[tiab] OR \"lunge test\"[tiab])",
+      "tags": [
+        "assessment",
+        "biomechanics",
+        "foot-ankle"
+      ],
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28dorsiflexion%5Btiab%5D+OR+%22Range+of+Motion%2C+Articular%22%5Bmh%5D%29+AND+%28ankle%5Btiab%5D+OR+%22Ankle+Joint%22%5Bmh%5D%29+AND+%28measur%2A%5Btiab%5D+OR+reliab%2A%5Btiab%5D+OR+restrict%2A%5Btiab%5D+OR+limit%2A%5Btiab%5D+OR+%22weight-bearing+lunge%22%5Btiab%5D+OR+%22lunge+test%22%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-06",
+      "verification": "constructed"
+    },
+    {
+      "id": "ss6",
+      "topic": "Achilles tendinopathy — loading protocols",
+      "description": "Trials of loading interventions for midportion Achilles tendinopathy: eccentric, heavy slow resistance, isometric and progressive loading programmes. Read alongside the 2024 JOSPT CPG.",
+      "design": "RCT",
+      "string": "(\"achilles tendinopathy\"[tiab] OR \"achilles tendinosis\"[tiab] OR (\"Achilles Tendon\"[mh] AND \"Tendinopathy\"[mh])) AND (eccentric[tiab] OR \"heavy slow resistance\"[tiab] OR \"loading program*\"[tiab] OR \"loading protocol*\"[tiab] OR isometric[tiab] OR \"Resistance Training\"[mh]) AND (randomized controlled trial[pt] OR randomized[tiab] OR randomised[tiab])",
+      "tags": [
+        "achilles",
+        "rehabilitation",
+        "rct"
+      ],
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22achilles+tendinopathy%22%5Btiab%5D+OR+%22achilles+tendinosis%22%5Btiab%5D+OR+%28%22Achilles+Tendon%22%5Bmh%5D+AND+%22Tendinopathy%22%5Bmh%5D%29%29+AND+%28eccentric%5Btiab%5D+OR+%22heavy+slow+resistance%22%5Btiab%5D+OR+%22loading+program%2A%22%5Btiab%5D+OR+%22loading+protocol%2A%22%5Btiab%5D+OR+isometric%5Btiab%5D+OR+%22Resistance+Training%22%5Bmh%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+randomized%5Btiab%5D+OR+randomised%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-06",
+      "verification": "constructed"
+    },
+    {
+      "id": "ss7",
+      "topic": "Foot and ankle biomechanics — gait and landing mechanics in ankle instability",
+      "description": "Laboratory mechanism studies: how people with chronic ankle instability actually walk, run and land differently. Kinematics, kinetics, ground reaction force and EMG.",
+      "design": "Laboratory biomechanics, cross-sectional",
+      "string": "(\"chronic ankle instability\"[tiab] OR \"functional ankle instability\"[tiab]) AND (gait[tiab] OR walking[tiab] OR running[tiab] OR landing[tiab] OR \"jump landing\"[tiab] OR \"Gait\"[mh] OR \"Biomechanical Phenomena\"[mh]) AND (kinematic*[tiab] OR kinetic*[tiab] OR \"ground reaction force\"[tiab] OR electromyograph*[tiab] OR \"Electromyography\"[mh])",
+      "tags": [
+        "biomechanics",
+        "chronic-ankle-instability"
+      ],
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22chronic+ankle+instability%22%5Btiab%5D+OR+%22functional+ankle+instability%22%5Btiab%5D%29+AND+%28gait%5Btiab%5D+OR+walking%5Btiab%5D+OR+running%5Btiab%5D+OR+landing%5Btiab%5D+OR+%22jump+landing%22%5Btiab%5D+OR+%22Gait%22%5Bmh%5D+OR+%22Biomechanical+Phenomena%22%5Bmh%5D%29+AND+%28kinematic%2A%5Btiab%5D+OR+kinetic%2A%5Btiab%5D+OR+%22ground+reaction+force%22%5Btiab%5D+OR+electromyograph%2A%5Btiab%5D+OR+%22Electromyography%22%5Bmh%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-06",
+      "verification": "constructed"
+    },
+    {
+      "id": "ss8",
+      "topic": "Ankle sprain epidemiology and incidence in sport",
+      "description": "How common ankle sprain is, in whom, and in which sports. Surveillance and prospective cohort data — the numbers you quote when justifying a prevention programme.",
+      "design": "Prospective cohort and surveillance",
+      "string": "(\"ankle sprain*\"[tiab] OR \"ankle injur*\"[tiab] OR \"Ankle Injuries\"[mh]) AND (incidence[tiab] OR epidemiolog*[tiab] OR prevalence[tiab] OR \"injury rate*\"[tiab] OR \"Incidence\"[mh]) AND (sport*[tiab] OR athlet*[tiab] OR \"Athletic Injuries\"[mh])",
+      "tags": [
+        "epidemiology",
+        "acute-sprain"
+      ],
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22ankle+sprain%2A%22%5Btiab%5D+OR+%22ankle+injur%2A%22%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D%29+AND+%28incidence%5Btiab%5D+OR+epidemiolog%2A%5Btiab%5D+OR+prevalence%5Btiab%5D+OR+%22injury+rate%2A%22%5Btiab%5D+OR+%22Incidence%22%5Bmh%5D%29+AND+%28sport%2A%5Btiab%5D+OR+athlet%2A%5Btiab%5D+OR+%22Athletic+Injuries%22%5Bmh%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-06",
+      "verification": "constructed"
+    },
+    {
+      "id": "ss9",
+      "topic": "Post-operative rehabilitation after lateral ligament reconstruction",
+      "description": "What happens after a Brostrom or other lateral ligament reconstruction: rehabilitation protocols, progression and outcomes. The surgical-handover question.",
+      "design": "Cohort, RCT, protocol studies",
+      "string": "(\"lateral ligament\"[tiab] OR Brostrom[tiab] OR \"ligament reconstruction\"[tiab]) AND (ankle[tiab] OR \"Ankle Joint\"[mh]) AND (rehabilitat*[tiab] OR postoperative[tiab] OR \"post-operative\"[tiab] OR \"Postoperative Care\"[mh] OR physiotherap*[tiab] OR \"Physical Therapy Modalities\"[mh])",
+      "tags": [
+        "surgical",
+        "rehabilitation",
+        "foot-ankle"
+      ],
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22lateral+ligament%22%5Btiab%5D+OR+Brostrom%5Btiab%5D+OR+%22ligament+reconstruction%22%5Btiab%5D%29+AND+%28ankle%5Btiab%5D+OR+%22Ankle+Joint%22%5Bmh%5D%29+AND+%28rehabilitat%2A%5Btiab%5D+OR+postoperative%5Btiab%5D+OR+%22post-operative%22%5Btiab%5D+OR+%22Postoperative+Care%22%5Bmh%5D+OR+physiotherap%2A%5Btiab%5D+OR+%22Physical+Therapy+Modalities%22%5Bmh%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-06",
+      "verification": "constructed"
+    },
+    {
+      "id": "ss10",
+      "topic": "Sensorimotor and proprioceptive deficits after ankle injury — mechanism studies",
+      "description": "Why the ankle keeps giving way: proprioceptive, joint position sense, corticospinal and motor control changes after injury. Mechanism, not treatment.",
+      "design": "Mechanism, cross-sectional, laboratory",
+      "string": "(\"ankle sprain*\"[tiab] OR \"chronic ankle instability\"[tiab] OR \"functional ankle instability\"[tiab]) AND (propriocept*[tiab] OR \"joint position sense\"[tiab] OR sensorimotor[tiab] OR corticospinal[tiab] OR \"motor control\"[tiab] OR \"Proprioception\"[mh]) AND (deficit*[tiab] OR impair*[tiab] OR alter*[tiab] OR mechanism*[tiab])",
+      "tags": [
+        "motor-control",
+        "chronic-ankle-instability",
+        "biomechanics"
+      ],
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22ankle+sprain%2A%22%5Btiab%5D+OR+%22chronic+ankle+instability%22%5Btiab%5D+OR+%22functional+ankle+instability%22%5Btiab%5D%29+AND+%28propriocept%2A%5Btiab%5D+OR+%22joint+position+sense%22%5Btiab%5D+OR+sensorimotor%5Btiab%5D+OR+corticospinal%5Btiab%5D+OR+%22motor+control%22%5Btiab%5D+OR+%22Proprioception%22%5Bmh%5D%29+AND+%28deficit%2A%5Btiab%5D+OR+impair%2A%5Btiab%5D+OR+alter%2A%5Btiab%5D+OR+mechanism%2A%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-06",
+      "verification": "constructed"
+    }
+  ],
+  "routing": [
+    {
+      "question": "What is it / how does it work",
+      "designs": "Textbook chapter, narrative review, anatomy or cadaveric study",
+      "database": "Anchor textbook, then Sports Medicine (Auckland) for reviews",
+      "filter": "review[pt] — or skip the database entirely and read a chapter",
+      "note": "You cannot search a field whose vocabulary you do not have. This step exists to give you the correct terms for every later search."
+    },
+    {
+      "question": "Does X work better than Y",
+      "designs": "RCT, then systematic review or meta-analysis of RCTs",
+      "database": "PEDro (filter: clinical trial, musculoskeletal/sports) → Cochrane → Epistemonikos → PubMed",
+      "filter": "randomized controlled trial[pt] / systematic[sb] / PEDro score filter",
+      "note": "Always check the comparator. 'Better than nothing' is close to meaningless in rehab."
+    },
+    {
+      "question": "Is this test accurate",
+      "designs": "Diagnostic accuracy study reporting sensitivity, specificity and likelihood ratios",
+      "database": "PubMed + Clinical Queries (diagnosis category)",
+      "filter": "\"Sensitivity and Specificity\"[mh] OR \"Diagnostic Test Accuracy\"",
+      "note": "Appraise with QUADAS-2 (or QUADAS-3). Ask about the reference standard and whether patients were consecutive."
+    },
+    {
+      "question": "Who will do badly / how long until return to sport",
+      "designs": "Prospective cohort",
+      "database": "PubMed with a cohort filter; Clinical Queries (prognosis category)",
+      "filter": "\"Cohort Studies\"[mh] OR \"Prospective Studies\"[mh] OR prognos*[tiab]",
+      "note": "Appraise with QUIPS. Retrospective is much weaker. Check loss to follow-up before anything else."
+    },
+    {
+      "question": "Why does this happen mechanically",
+      "designs": "Laboratory biomechanics, cadaveric, EMG, computational modelling",
+      "database": "Journal of Biomechanics, Clinical Biomechanics, Gait & Posture — or PubMed string 7",
+      "filter": "\"Biomechanical Phenomena\"[mh] OR kinematic*[tiab] OR \"Electromyography\"[mh]",
+      "note": "Do not look for an RCT to answer a mechanism question. This is the single most common design mismatch."
+    },
+    {
+      "question": "How common is it",
+      "designs": "Injury surveillance, prospective cohort",
+      "database": "Journal of Athletic Training, BJSM — or PubMed string 8",
+      "filter": "\"Incidence\"[mh] OR \"Athletic Injuries\"[mh] OR epidemiolog*[tiab]",
+      "note": "Appraise reporting with STROBE. Check the denominator — per athlete, per exposure hour, or per season changes everything."
+    },
+    {
+      "question": "What does the patient experience",
+      "designs": "Interview studies, qualitative evidence synthesis",
+      "database": "PubMed qualitative filter; CASP qualitative checklist for appraisal",
+      "filter": "\"Qualitative Research\"[mh] OR qualitative[tiab] OR interview*[tiab]",
+      "note": "Underused in ankle rehab. Often the fastest route to why adherence fails."
+    },
+    {
+      "question": "How do I actually program this",
+      "designs": "Clinical practice guidelines, consensus statements, expert practice",
+      "database": "JOSPT CPGs (free PDFs via APTA Orthopedics), International Ankle Consortium, KNGF / Dutch guideline",
+      "filter": "\"Practice Guideline\"[pt] OR \"Consensus\"[mh] OR guideline[tiab]",
+      "note": "Weakest evidence tier in this table. Be honest about that when you teach it. Check the year and check whether a revision exists."
+    }
+  ],
+  "checklist": [
+    {
+      "id": "c1",
+      "text": "Create a My NCBI account and save search string 1 with a weekly email alert"
+    },
+    {
+      "id": "c2",
+      "text": "Save the remaining 9 search strings to My NCBI (weekly or monthly)"
+    },
+    {
+      "id": "c3",
+      "text": "Set Google Scholar author alerts for Hertel, Gribble, Delahunt, Wikstrom, McKeon"
+    },
+    {
+      "id": "c4",
+      "text": "Set Google Scholar author alerts for Hiller, Bleakley, Doherty, Silbernagel"
+    },
+    {
+      "id": "c5",
+      "text": "Set a Google Scholar 'Cited by' alert on the ROAST 2019 consensus statement"
+    },
+    {
+      "id": "c6",
+      "text": "Set journal TOC alerts: BJSM, JOSPT, Sports Medicine, Physical Therapy in Sport, JFAR"
+    },
+    {
+      "id": "c7",
+      "text": "Download the free JOSPT Lateral Ankle Ligament Sprains 2021 CPG PDF and read it once, properly"
+    },
+    {
+      "id": "c8",
+      "text": "Read the IAC selection criteria (2014) and ROAST (2019) — these two define the field's vocabulary"
+    },
+    {
+      "id": "c9",
+      "text": "Install the Unpaywall browser extension"
+    },
+    {
+      "id": "c10",
+      "text": "Create a PEDro bookmark straight to the Advanced Search page, not the homepage"
+    },
+    {
+      "id": "c11",
+      "text": "Check PROSPERO and ClinicalTrials.gov for your subfield — set a quarterly reminder"
+    },
+    {
+      "id": "c12",
+      "text": "Set up the question-note template (Q / ANSWER / CONFIDENCE / EVIDENCE / CONTESTED / UNKNOWN / CLINICAL RULE / SEARCH STRINGS THAT WORKED)"
+    }
+  ]
+}

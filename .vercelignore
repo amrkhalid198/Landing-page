@@ -1,3 +1,10 @@
 # Internal copy notes — keep them out of the deployed site.
 # Without this, copy.md is publicly readable at https://<domain>/copy.md
 copy.md
+
+# Personal research dashboard — keep it out of the deployed site.
+# Without this, domain-map.html is publicly readable at https://<domain>/domain-map.html
+domain-map.html
+data.json
+BUILD-LOG.md
+UNVERIFIED.md
