@@ -1,8 +1,16 @@
 {
   "meta": {
     "title": "Domain Map — Ankle & Sports Rehab",
-    "builtOn": "2026-09-06",
+    "subtitle": "A router, not a reading list",
+    "builtOn": "2026-09-08",
     "verifiedOn": "2026-09-06",
+    "chain": [
+      "My specific question",
+      "What KIND of knowledge would answer this?",
+      "Where does that kind of knowledge usually live?",
+      "What terminology does the literature use?",
+      "What exact search route should I take?"
+    ],
     "verificationNote": "Every URL in this file was located by live web search during the build. NONE was fetched directly: the build environment's egress proxy blocked every research domain (PubMed, E-utilities, PMC, JOSPT, PEDro, Crossref, OpenAlex). Read the tier on each card before you trust a link.",
     "tiers": {
       "search-confirmed": "A live web search returned this exact URL, with a page title matching the expected target. Not fetched.",
@@ -10,6 +18,1846 @@
       "constructed": "Built from documented PubMed query syntax ([jour], [au], ?term=). The syntax is documented and the name inside it was search-confirmed, but the query itself could not be executed from this session."
     }
   },
+  "knowledgeKinds": [
+    {
+      "id": "background",
+      "label": "Background",
+      "headline": "What is it / how does it work",
+      "soundsLike": [
+        "What actually is chronic ankle instability?",
+        "Which ligament does what?",
+        "What happens to the tissue in the first three weeks?",
+        "What is a coper?"
+      ],
+      "pico": "Not a PICO question. Population + Phenomenon is enough.",
+      "canAnswer": [
+        [
+          "Textbook chapter",
+          "Gives you structure and vocabulary in one pass, which is the actual goal here."
+        ],
+        [
+          "Narrative review",
+          "Written to orient, not to answer. That is what you want at this stage."
+        ],
+        [
+          "Anatomy / cadaveric study",
+          "Where structural claims are actually established."
+        ]
+      ],
+      "cannotAnswer": [
+        [
+          "RCT",
+          "A trial tests an intervention. It cannot tell you what a structure is."
+        ],
+        [
+          "Meta-analysis",
+          "Pooling effect sizes answers nothing about definitions or anatomy."
+        ]
+      ],
+      "venues": [
+        "sportsmed",
+        "jfar",
+        "jat"
+      ],
+      "people": [
+        "hertel",
+        "wikstrom"
+      ],
+      "guides": [
+        "iac-selection",
+        "iac-2016"
+      ],
+      "dbs": [
+        "pubmed",
+        "gscholar"
+      ],
+      "ladder": [
+        [
+          "Tier 0 — orientation",
+          "15 min",
+          "Read one textbook chapter or one narrative review. Extract: correct technical terms, 3-5 author names, 2-3 landmark trial names. Do not try to answer anything yet."
+        ],
+        [
+          "Tier 1 — anchor",
+          "20 min",
+          "Read the IAC selection criteria so you know how the field defines its own population."
+        ]
+      ],
+      "defaultFilter": "none",
+      "appraisal": [],
+      "redFlags": [
+        "Reading a 2011 primary study when a 2024 consensus statement exists.",
+        "Taking a definition from a course slide rather than from the body that publishes the criteria."
+      ],
+      "stopRule": "Stop when you can write the question down using the field's own vocabulary. That is the entire deliverable of this kind.",
+      "tags": [
+        "background"
+      ]
+    },
+    {
+      "id": "intervention",
+      "label": "Intervention",
+      "headline": "Does X work better than Y",
+      "soundsLike": [
+        "Does balance training reduce recurrence?",
+        "Is bracing better than taping?",
+        "Should I immobilise this or load it early?",
+        "Eccentric or heavy slow resistance?"
+      ],
+      "pico": "Full PICO. The Comparator is the part everyone skips and it changes the answer completely.",
+      "canAnswer": [
+        [
+          "RCT",
+          "The only design that isolates the effect of the intervention itself."
+        ],
+        [
+          "Systematic review / meta-analysis of RCTs",
+          "Start here, not with individual trials."
+        ],
+        [
+          "Clinical practice guideline",
+          "Tells you what a panel concluded from the trials — a shortcut, not a substitute."
+        ]
+      ],
+      "cannotAnswer": [
+        [
+          "Cross-sectional study",
+          "No intervention, no time, no causal claim available."
+        ],
+        [
+          "Cohort study",
+          "Confounded by why people chose the treatment they got."
+        ],
+        [
+          "Laboratory biomechanics",
+          "Tells you what changed in the lab, not whether patients did better."
+        ]
+      ],
+      "venues": [
+        "jospt",
+        "bjsm",
+        "ptis",
+        "jsr",
+        "jat"
+      ],
+      "people": [
+        "bleakley",
+        "wikstrom",
+        "mckeon",
+        "silbernagel"
+      ],
+      "guides": [
+        "jospt-las-2021",
+        "dutch-2018",
+        "jospt-achilles-2024",
+        "cochrane-immob"
+      ],
+      "dbs": [
+        "pedro",
+        "pedro-adv",
+        "cochrane",
+        "epistemonikos",
+        "pubmed"
+      ],
+      "ladder": [
+        [
+          "Tier 0 — orientation",
+          "15 min",
+          "Read the relevant JOSPT CPG section. It gives you the current consensus position and the vocabulary in one go."
+        ],
+        [
+          "Tier 1 — synthesis",
+          "30 min",
+          "PEDro Advanced Search: subdiscipline musculoskeletal or sports, method systematic review. Then Cochrane, then Epistemonikos. Take the most recent good SR and mine its included-studies table."
+        ],
+        [
+          "Tier 2 — primary",
+          "60 min",
+          "Only trials the SR missed or that postdate its SEARCH date (not its publication date — usually 12-24 months earlier). Chase citations forward from the SR."
+        ],
+        [
+          "Tier 3 — frontier",
+          "20 min",
+          "PROSPERO for reviews in progress, ClinicalTrials.gov for unpublished and negative results."
+        ]
+      ],
+      "defaultFilter": "rct",
+      "appraisal": [
+        "pedro-scale",
+        "rob2",
+        "amstar2",
+        "grade"
+      ],
+      "redFlags": [
+        "Comparator is nothing. 'Better than no treatment' is close to meaningless in rehab.",
+        "Surrogate outcome. Better balance on a force plate is not fewer sprains.",
+        "No MCID reported. A statistically significant 2-point change on a 100-point scale is nothing.",
+        "Dose not reported. If you cannot reproduce the intervention, the trial is clinically useless to you.",
+        "Follow-up under 12 months for a recurrence question."
+      ],
+      "stopRule": "Stop when you have read the most recent high-quality SR plus everything published after its search date, or when new searches only return papers you have already seen.",
+      "tags": [
+        "intervention",
+        "rehabilitation"
+      ]
+    },
+    {
+      "id": "diagnosis",
+      "label": "Diagnostic accuracy",
+      "headline": "Is this test accurate",
+      "soundsLike": [
+        "How good is the anterior drawer test?",
+        "Does the Ottawa Ankle Rule rule out fracture?",
+        "Can I trust ultrasound for ATFL integrity?"
+      ],
+      "pico": "Population + Index test + Reference standard + Target condition. The reference standard is the whole question.",
+      "canAnswer": [
+        [
+          "Diagnostic accuracy study",
+          "Reports sensitivity, specificity and likelihood ratios against a reference standard."
+        ],
+        [
+          "Systematic review of accuracy studies",
+          "Pools them, if the reference standards were comparable."
+        ]
+      ],
+      "cannotAnswer": [
+        [
+          "RCT",
+          "Tests treatments, not tests."
+        ],
+        [
+          "Reliability study",
+          "Agreement between raters is not accuracy against truth. Two clinicians can agree perfectly and both be wrong."
+        ],
+        [
+          "Case series",
+          "No comparison, no accuracy estimate."
+        ]
+      ],
+      "venues": [
+        "bjsm",
+        "jospt",
+        "fai",
+        "jfar"
+      ],
+      "people": [
+        "delahunt",
+        "kerkhoffs",
+        "hiller"
+      ],
+      "guides": [
+        "iac-roast",
+        "jospt-las-2021",
+        "dutch-2018"
+      ],
+      "dbs": [
+        "pubmed",
+        "clinqueries",
+        "cochrane"
+      ],
+      "ladder": [
+        [
+          "Tier 0 — orientation",
+          "10 min",
+          "Read the ROAST consensus. It tells you which tests the field considers part of a complete assessment at all."
+        ],
+        [
+          "Tier 1 — synthesis",
+          "30 min",
+          "PubMed Clinical Queries, diagnosis category. Look for an accuracy SR first."
+        ],
+        [
+          "Tier 2 — primary",
+          "45 min",
+          "Individual accuracy studies. Check the reference standard in each before reading the numbers."
+        ]
+      ],
+      "defaultFilter": "dx",
+      "appraisal": [
+        "quadas2",
+        "casp"
+      ],
+      "redFlags": [
+        "No proper reference standard, or the reference standard was applied only to test-positives.",
+        "Non-consecutive or case-control sampling — inflates accuracy dramatically.",
+        "Reliability reported and presented as if it were accuracy.",
+        "Test performed by the person who developed it, in the population it was developed on."
+      ],
+      "stopRule": "Stop when you can state sensitivity, specificity and a likelihood ratio with the reference standard named. Without the reference standard the numbers mean nothing.",
+      "tags": [
+        "diagnosis",
+        "assessment"
+      ]
+    },
+    {
+      "id": "prognosis",
+      "label": "Prognosis",
+      "headline": "Who will do badly / how long until return",
+      "soundsLike": [
+        "Who goes on to develop chronic instability?",
+        "How long until they play again?",
+        "Does a first sprain predict a second?",
+        "What predicts a poor outcome?"
+      ],
+      "pico": "Population + Prognostic factor + Outcome + Timeframe. No intervention involved.",
+      "canAnswer": [
+        [
+          "Prospective cohort",
+          "Follows people forward from a defined starting point. The only honest answer to a 'what happens next' question."
+        ],
+        [
+          "Prediction model study",
+          "If externally validated. Most are not."
+        ],
+        [
+          "Systematic review of cohorts",
+          "Where consistent effects can be identified."
+        ]
+      ],
+      "cannotAnswer": [
+        [
+          "Cross-sectional study",
+          "Measures everything at once, so it cannot establish that the factor preceded the outcome."
+        ],
+        [
+          "RCT",
+          "Its population is filtered by eligibility criteria, so its natural history is not yours."
+        ],
+        [
+          "Retrospective case series",
+          "Recall and selection bias dominate."
+        ]
+      ],
+      "venues": [
+        "bjsm",
+        "jat",
+        "sportsmed",
+        "ajsm"
+      ],
+      "people": [
+        "doherty",
+        "delahunt",
+        "wikstrom",
+        "gribble"
+      ],
+      "guides": [
+        "iac-2016",
+        "anklego",
+        "paass"
+      ],
+      "dbs": [
+        "pubmed",
+        "clinqueries",
+        "prospero"
+      ],
+      "ladder": [
+        [
+          "Tier 0 — orientation",
+          "10 min",
+          "Read the IAC 2016 consensus for the base rates — what proportion go on to instability at all."
+        ],
+        [
+          "Tier 1 — synthesis",
+          "30 min",
+          "PubMed with the prognosis filter. Doherty's prospective cohort work is the anchor for first-time sprain."
+        ],
+        [
+          "Tier 2 — primary",
+          "45 min",
+          "Individual cohorts. Check follow-up duration and attrition before anything else."
+        ],
+        [
+          "Tier 3 — frontier",
+          "15 min",
+          "ClinicalTrials.gov and PROSPERO for cohorts still running."
+        ]
+      ],
+      "defaultFilter": "prog",
+      "appraisal": [
+        "quips",
+        "strobe",
+        "grade"
+      ],
+      "redFlags": [
+        "Retrospective, presented as if prospective.",
+        "Loss to follow-up over 20% with no comparison of completers and dropouts.",
+        "Prognostic factor measured after the outcome started developing.",
+        "Model developed and tested on the same dataset."
+      ],
+      "stopRule": "Stop when you have a base rate and a confidence interval from a prospective cohort in a population resembling your patient. A point estimate alone is not an answer.",
+      "tags": [
+        "prognosis",
+        "epidemiology"
+      ]
+    },
+    {
+      "id": "mechanism",
+      "label": "Mechanism",
+      "headline": "Why does this happen, mechanically",
+      "soundsLike": [
+        "Why does the ankle keep giving way?",
+        "What changes in gait after a sprain?",
+        "Is it the ligament or the nervous system?",
+        "What happens to peroneal reaction time?"
+      ],
+      "pico": "Population + Phenomenon + Measurement method. There is no intervention and no comparator group in the PICO sense.",
+      "canAnswer": [
+        [
+          "Laboratory biomechanics",
+          "Kinematics, kinetics, force plate, motion capture."
+        ],
+        [
+          "EMG study",
+          "Muscle activation timing and amplitude."
+        ],
+        [
+          "Cadaveric study",
+          "Structural and load-to-failure questions."
+        ],
+        [
+          "Computational modelling",
+          "Where measurement in vivo is impossible."
+        ]
+      ],
+      "cannotAnswer": [
+        [
+          "RCT",
+          "**This is the most common design mismatch in the whole field.** A trial tells you whether something works, never why."
+        ],
+        [
+          "Clinical practice guideline",
+          "Guidelines summarise treatment effects, not mechanisms."
+        ],
+        [
+          "Systematic review of trials",
+          "Same problem, aggregated."
+        ]
+      ],
+      "venues": [
+        "jbiomech",
+        "clinbiomech",
+        "gaitposture",
+        "jab",
+        "jat"
+      ],
+      "people": [
+        "hertel",
+        "wikstrom",
+        "mckeon",
+        "delahunt",
+        "doherty"
+      ],
+      "guides": [
+        "iac-selection"
+      ],
+      "dbs": [
+        "pubmed",
+        "gscholar",
+        "semanticscholar",
+        "connectedpapers"
+      ],
+      "ladder": [
+        [
+          "Tier 0 — orientation",
+          "15 min",
+          "Read the constraints-based model paper (Wikstrom, Hubbard-Turner, McKeon) and Hertel's functional anatomy paper. These two frame the entire mechanism debate."
+        ],
+        [
+          "Tier 1 — by person, not by keyword",
+          "30 min",
+          "**Mechanism literature is found by author.** Open the Scholar profiles of Hertel, Wikstrom, McKeon and Delahunt and sort by citations. This is faster and more complete than any keyword search."
+        ],
+        [
+          "Tier 2 — primary",
+          "60 min",
+          "PubMed with the biomechanics filter, plus Connected Papers from one good seed to catch the cluster you missed."
+        ],
+        [
+          "Tier 3 — frontier",
+          "15 min",
+          "SportRxiv. Biomechanics preprints run well ahead of publication."
+        ]
+      ],
+      "defaultFilter": "mech",
+      "appraisal": [
+        "casp",
+        "strobe"
+      ],
+      "redFlags": [
+        "Causation read into a cross-sectional difference. Almost every mechanism study is cross-sectional.",
+        "Lab task chosen for measurability, not relevance. A drop vertical jump is not a sprain mechanism.",
+        "Statistically significant kinematic difference of 1-2 degrees, presented as clinically meaningful.",
+        "Small n with a large effect — endemic in biomechanics."
+      ],
+      "stopRule": "Stop when you can state the proposed mechanism, the evidence for it, and explicitly which part is inference rather than demonstration.",
+      "tags": [
+        "mechanism",
+        "biomechanics"
+      ]
+    },
+    {
+      "id": "epidemiology",
+      "label": "Epidemiology",
+      "headline": "How common is it",
+      "soundsLike": [
+        "How common are ankle sprains in basketball?",
+        "What is the recurrence rate?",
+        "Which sport has the highest rate?",
+        "What proportion go on to instability?"
+      ],
+      "pico": "Population + Outcome + Timeframe + Exposure denominator.",
+      "canAnswer": [
+        [
+          "Injury surveillance study",
+          "Systematic capture across a defined population and exposure period."
+        ],
+        [
+          "Prospective cohort",
+          "Where surveillance systems do not exist."
+        ],
+        [
+          "Systematic review with meta-analysis of rates",
+          "Doherty 2014 is the anchor for this domain."
+        ]
+      ],
+      "cannotAnswer": [
+        [
+          "RCT",
+          "Its population is selected, so its rates are not population rates."
+        ],
+        [
+          "Retrospective chart review",
+          "Captures only those who presented for care — a large undercount for ankle sprain specifically."
+        ]
+      ],
+      "venues": [
+        "jat",
+        "bjsm",
+        "ajsm",
+        "sjmss"
+      ],
+      "people": [
+        "doherty",
+        "verhagen",
+        "bahr",
+        "wikstrom"
+      ],
+      "guides": [
+        "iac-2016",
+        "cpg-quality-sr"
+      ],
+      "dbs": [
+        "pubmed",
+        "gscholar",
+        "cochrane"
+      ],
+      "ladder": [
+        [
+          "Tier 0 — orientation",
+          "10 min",
+          "Doherty 2014 Sports Medicine meta-analysis. It is the reference point for incidence and prevalence in this domain."
+        ],
+        [
+          "Tier 1 — synthesis",
+          "25 min",
+          "PubMed with the epidemiology filter, plus the Journal of Athletic Training surveillance literature."
+        ],
+        [
+          "Tier 2 — primary",
+          "40 min",
+          "Sport-specific surveillance. Convert every rate to a common denominator before comparing."
+        ]
+      ],
+      "defaultFilter": "epi",
+      "appraisal": [
+        "strobe",
+        "casp"
+      ],
+      "redFlags": [
+        "Denominator not stated, or per-athlete-exposure and per-hour rates compared directly.",
+        "Time-loss definition not given, or inconsistent between the studies being compared.",
+        "Self-reported injury history over a long recall window.",
+        "Military or captive cohorts generalised to recreational sport."
+      ],
+      "stopRule": "Stop when you have a rate with its denominator, its injury definition and its population stated. A bare number is not usable.",
+      "tags": [
+        "epidemiology"
+      ]
+    },
+    {
+      "id": "qualitative",
+      "label": "Qualitative",
+      "headline": "What does the patient actually experience",
+      "soundsLike": [
+        "Why do patients stop doing their exercises?",
+        "What does 'giving way' feel like to them?",
+        "Why do people not seek care for a sprain?",
+        "What do athletes think 'ready' means?"
+      ],
+      "pico": "PEO — Population, Exposure/Experience, Outcome. Not PICO.",
+      "canAnswer": [
+        [
+          "Semi-structured interview study",
+          "The only way to access meaning and reasoning."
+        ],
+        [
+          "Focus group study",
+          "For shared and contested understandings."
+        ],
+        [
+          "Qualitative evidence synthesis",
+          "Where enough primary work exists."
+        ]
+      ],
+      "cannotAnswer": [
+        [
+          "RCT",
+          "Measures whether something worked, never why anyone did or did not do it."
+        ],
+        [
+          "Questionnaire study",
+          "A closed-response survey tests your categories, not theirs."
+        ]
+      ],
+      "venues": [
+        "ptis",
+        "bjsm",
+        "jfar",
+        "ptj"
+      ],
+      "people": [
+        "hiller",
+        "bleakley"
+      ],
+      "guides": [
+        "iac-2016"
+      ],
+      "dbs": [
+        "pubmed",
+        "gscholar",
+        "epistemonikos"
+      ],
+      "ladder": [
+        [
+          "Tier 0 — orientation",
+          "10 min",
+          "Search broadly first. This literature is thin in ankle rehab — expect tens of papers, not hundreds."
+        ],
+        [
+          "Tier 1 — synthesis",
+          "25 min",
+          "Look for a qualitative evidence synthesis. If none exists, that is itself a finding worth recording."
+        ],
+        [
+          "Tier 2 — primary",
+          "45 min",
+          "Individual interview studies. Read the quotes, not just the themes."
+        ]
+      ],
+      "defaultFilter": "qual",
+      "appraisal": [
+        "casp"
+      ],
+      "redFlags": [
+        "Themes presented with no supporting quotes.",
+        "No statement of the researchers' own position or how it shaped interpretation.",
+        "Sample of convenience presented as if it were purposive.",
+        "Counting responses — turning qualitative data into weak quantitative data."
+      ],
+      "stopRule": "Stop when new interviews stop producing new categories in the papers you read. If nothing exists, record 'no qualitative evidence located' — that is a legitimate answer and a genuine gap.",
+      "tags": [
+        "qualitative"
+      ]
+    },
+    {
+      "id": "measurement",
+      "label": "Measurement",
+      "headline": "Is this test or score any good",
+      "soundsLike": [
+        "Is the CAIT reliable?",
+        "What is the MCID for the FAAM?",
+        "Does the Y Balance Test measure what I think it measures?",
+        "Which cut-off should I use?"
+      ],
+      "pico": "Instrument + Population + Measurement property. A distinct question type that most routing tables leave out.",
+      "canAnswer": [
+        [
+          "Reliability study",
+          "Test-retest, intra- and inter-rater agreement."
+        ],
+        [
+          "Validity study",
+          "Construct, criterion, content."
+        ],
+        [
+          "Responsiveness / MCID study",
+          "Whether a change score means anything."
+        ],
+        [
+          "COSMIN-based systematic review",
+          "The proper synthesis for measurement properties."
+        ]
+      ],
+      "cannotAnswer": [
+        [
+          "RCT",
+          "Uses the instrument, does not evaluate it."
+        ],
+        [
+          "Diagnostic accuracy study",
+          "Different question — accuracy against a reference standard, not measurement stability."
+        ]
+      ],
+      "venues": [
+        "jospt",
+        "ptj",
+        "jat",
+        "ptis",
+        "jfar"
+      ],
+      "people": [
+        "hiller",
+        "thorborg",
+        "delahunt"
+      ],
+      "guides": [
+        "iac-selection",
+        "iac-roast",
+        "anklego"
+      ],
+      "dbs": [
+        "pubmed",
+        "pedro",
+        "gscholar"
+      ],
+      "ladder": [
+        [
+          "Tier 0 — orientation",
+          "10 min",
+          "Find the original development paper for the instrument. Hiller 2006 for the CAIT."
+        ],
+        [
+          "Tier 1 — synthesis",
+          "25 min",
+          "Search for a COSMIN review of the instrument. Check whether the cut-off has been recalibrated since development."
+        ],
+        [
+          "Tier 2 — primary",
+          "40 min",
+          "Individual property studies in the population you care about. Properties do not transfer across populations."
+        ]
+      ],
+      "defaultFilter": "measure",
+      "appraisal": [
+        "casp",
+        "grade"
+      ],
+      "redFlags": [
+        "Reliability established in a different population from yours and assumed to transfer.",
+        "No MCID reported anywhere, yet the score is used to judge change.",
+        "Cut-off taken from the development paper when a recalibration exists — the CAIT is exactly this case.",
+        "Validity claimed against another unvalidated instrument."
+      ],
+      "stopRule": "Stop when you know the instrument's reliability, its MCID, and the cut-off appropriate to your population — with the source of each.",
+      "tags": [
+        "assessment",
+        "research-methods",
+        "outcome"
+      ]
+    },
+    {
+      "id": "practice",
+      "label": "Practice / programming",
+      "headline": "How do I actually program this on Tuesday",
+      "soundsLike": [
+        "What does week 3 look like?",
+        "How many sets, how often, how do I progress it?",
+        "When do I let them run?",
+        "What are my discharge criteria?"
+      ],
+      "pico": "Not answerable by PICO. This is where evidence runs out and structured expert opinion takes over. Be honest about that.",
+      "canAnswer": [
+        [
+          "Clinical practice guideline",
+          "Closest thing to a defensible answer. JOSPT CPGs and the Dutch guideline."
+        ],
+        [
+          "Consensus statement",
+          "ROAST for assessment, PAASS for return-to-sport decisions."
+        ],
+        [
+          "Trial protocol / appendix",
+          "Often the only place a reproducible dose is written down — read the protocol, not the paper."
+        ],
+        [
+          "Expert practice description",
+          "Lowest tier. Label it as such when you teach it."
+        ]
+      ],
+      "cannotAnswer": [
+        [
+          "Meta-analysis",
+          "Pools heterogeneous doses into an average that describes no actual programme."
+        ],
+        [
+          "Mechanism study",
+          "Tells you what to target, never how much of it to give."
+        ]
+      ],
+      "venues": [
+        "jospt",
+        "bjsm",
+        "ptis",
+        "jsr"
+      ],
+      "people": [
+        "silbernagel",
+        "bleakley",
+        "delahunt",
+        "mckeon"
+      ],
+      "guides": [
+        "jospt-las-2021",
+        "dutch-2018",
+        "kngf-2006",
+        "jospt-achilles-2024",
+        "paass",
+        "bern-rts",
+        "iac-roast"
+      ],
+      "dbs": [
+        "pedro",
+        "ctgov",
+        "trip",
+        "pubmed"
+      ],
+      "ladder": [
+        [
+          "Tier 0 — guideline first",
+          "20 min",
+          "JOSPT CPG, then the Dutch 2018 guideline. The KNGF document is 20 years old but its phase structure is still the most directly programmable thing in this domain."
+        ],
+        [
+          "Tier 1 — consensus",
+          "20 min",
+          "ROAST for what to assess, PAASS and Ankle-GO for return-to-sport criteria."
+        ],
+        [
+          "Tier 2 — steal the dose",
+          "40 min",
+          "**Go to ClinicalTrials.gov and read the full protocol** of a trial with the effect you want. Published papers compress the intervention into a paragraph; the registered protocol has the actual sets, reps and progression rules."
+        ],
+        [
+          "Tier 3 — frontier",
+          "15 min",
+          "Preprints and PROSPERO for what is about to change."
+        ]
+      ],
+      "defaultFilter": "guide",
+      "appraisal": [
+        "grade",
+        "casp"
+      ],
+      "redFlags": [
+        "Guideline older than 8 years quoted as current — check for a revision every time.",
+        "A dose invented to fill a gap and then taught as if it were evidence-based.",
+        "Programme copied from a trial whose population is nothing like your patient.",
+        "Confusing 'no evidence for' with 'evidence against'."
+      ],
+      "stopRule": "Stop at the current guideline plus one protocol you can actually reproduce. Then write down explicitly which parts of your programme are evidence and which are your judgement.",
+      "tags": [
+        "rehabilitation",
+        "return-to-sport"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "las",
+      "label": "Lateral ankle sprain (the injury event)",
+      "why": "The index event. Get this wrong and you either drown in every ankle pathology or miss the European literature entirely.",
+      "clinical": [
+        "lateral ankle sprain",
+        "ankle sprain",
+        "inversion injury",
+        "inversion ankle sprain",
+        "lateral ligament injury",
+        "lateral ankle ligament injury",
+        "ATFL rupture",
+        "ankle ligament injury"
+      ],
+      "abbrev": [
+        "LAS",
+        "ATFL"
+      ],
+      "lay": [
+        "rolled ankle",
+        "twisted ankle",
+        "sprained ankle",
+        "gone over on the ankle"
+      ],
+      "spelling": [],
+      "obsolete": [
+        "ankle distortion",
+        "supination trauma",
+        "ankle inversion trauma"
+      ],
+      "mesh": [
+        "\"Ankle Injuries\"[mh]",
+        "\"Sprains and Strains\"[mh]",
+        "\"Lateral Ligament, Ankle\"[mh]"
+      ],
+      "meshNote": "\"Ankle Injuries\" is the workhorse heading but it also indexes fractures and Achilles ruptures. Pair it with a [tiab] concept, never use it alone.",
+      "traps": [
+        "**\"supination trauma\" is not optional.** Dutch and Belgian groups — which produced the KNGF and Vuurberg guidelines — used this term for years. Omit it and you lose a large slice of the best practical literature.",
+        "\"ankle injury\" without qualification pulls in fractures, syndesmosis injuries and Achilles ruptures. Three different problems, three different timelines.",
+        "ATFL is the ligament, not the injury. Searching ATFL alone skews heavily surgical and imaging."
+      ],
+      "tags": [
+        "acute-sprain",
+        "injury"
+      ],
+      "tiabBlock": "(\"lateral ankle sprain\"[tiab] OR \"ankle sprain\"[tiab] OR \"inversion injury\"[tiab] OR \"inversion ankle sprain\"[tiab] OR \"lateral ligament injury\"[tiab] OR \"lateral ankle ligament injury\"[tiab] OR \"ATFL rupture\"[tiab] OR \"ankle ligament injury\"[tiab] OR \"ankle distortion\"[tiab] OR \"supination trauma\"[tiab] OR \"ankle inversion trauma\"[tiab] OR LAS[tiab] OR ATFL[tiab])",
+      "fullBlock": "(\"lateral ankle sprain\"[tiab] OR \"ankle sprain\"[tiab] OR \"inversion injury\"[tiab] OR \"inversion ankle sprain\"[tiab] OR \"lateral ligament injury\"[tiab] OR \"lateral ankle ligament injury\"[tiab] OR \"ATFL rupture\"[tiab] OR \"ankle ligament injury\"[tiab] OR \"ankle distortion\"[tiab] OR \"supination trauma\"[tiab] OR \"ankle inversion trauma\"[tiab] OR LAS[tiab] OR ATFL[tiab] OR \"Ankle Injuries\"[mh] OR \"Sprains and Strains\"[mh] OR \"Lateral Ligament, Ankle\"[mh])"
+    },
+    {
+      "id": "cai",
+      "label": "Chronic ankle instability",
+      "why": "There is no MeSH heading for chronic ankle instability. If you search it as a MeSH concept you get nothing. This is the single most common ankle-search failure.",
+      "clinical": [
+        "chronic ankle instability",
+        "functional ankle instability",
+        "mechanical ankle instability",
+        "recurrent ankle sprain",
+        "ankle joint instability",
+        "perceived ankle instability",
+        "giving way"
+      ],
+      "abbrev": [
+        "CAI",
+        "MAI"
+      ],
+      "lay": [
+        "weak ankle",
+        "unstable ankle",
+        "ankle keeps giving way",
+        "ankle gives out"
+      ],
+      "spelling": [
+        "instabilit* catches instability and instabilities"
+      ],
+      "obsolete": [
+        "functional instability",
+        "chronic ankle laxity",
+        "residual symptoms after ankle sprain"
+      ],
+      "mesh": [
+        "\"Joint Instability\"[mh]",
+        "\"Ankle Injuries\"[mh]"
+      ],
+      "meshNote": "NO dedicated MeSH heading exists for CAI. The nearest approximation is \"Joint Instability\"[mh] AND \"Ankle Injuries\"[mh] — which is why every good CAI string leans on [tiab] and uses MeSH only as a safety net.",
+      "traps": [
+        "**FAI is a collision.** In this literature it means functional ankle instability. Everywhere else it means femoroacetabular impingement. Never put a bare FAI[tiab] in a string — you will import a hip literature.",
+        "\"functional\" vs \"mechanical\" instability is a real theoretical split (Hertel's model), not a synonym pair. If your question is about laxity, mechanical is the term; if it is about giving way with normal laxity, functional is.",
+        "Papers published before roughly 2014 predate the International Ankle Consortium selection criteria, so their samples may not be comparable to modern ones even when the label matches."
+      ],
+      "tags": [
+        "chronic-ankle-instability",
+        "injury"
+      ],
+      "tiabBlock": "(\"chronic ankle instability\"[tiab] OR \"functional ankle instability\"[tiab] OR \"mechanical ankle instability\"[tiab] OR \"recurrent ankle sprain\"[tiab] OR \"ankle joint instability\"[tiab] OR \"perceived ankle instability\"[tiab] OR \"giving way\"[tiab] OR \"functional instability\"[tiab] OR \"chronic ankle laxity\"[tiab] OR \"residual symptoms after ankle sprain\"[tiab] OR CAI[tiab] OR MAI[tiab])",
+      "fullBlock": "(\"chronic ankle instability\"[tiab] OR \"functional ankle instability\"[tiab] OR \"mechanical ankle instability\"[tiab] OR \"recurrent ankle sprain\"[tiab] OR \"ankle joint instability\"[tiab] OR \"perceived ankle instability\"[tiab] OR \"giving way\"[tiab] OR \"functional instability\"[tiab] OR \"chronic ankle laxity\"[tiab] OR \"residual symptoms after ankle sprain\"[tiab] OR CAI[tiab] OR MAI[tiab] OR \"Joint Instability\"[mh] OR \"Ankle Injuries\"[mh])"
+    },
+    {
+      "id": "coper",
+      "label": "Coper (the comparison group)",
+      "why": "A term you will never guess, and the reason half the CAI literature is comparative. Without it you cannot find the studies that explain why some people recover and some do not.",
+      "clinical": [
+        "coper",
+        "copers",
+        "ankle sprain coper",
+        "potential coper",
+        "uninjured control"
+      ],
+      "abbrev": [],
+      "lay": [
+        "recovered fully after a sprain"
+      ],
+      "spelling": [],
+      "obsolete": [],
+      "mesh": [],
+      "meshNote": "No MeSH heading. [tiab] only. It is a coined research term, not clinical vocabulary.",
+      "traps": [
+        "A coper is someone who sprained their ankle and did **not** go on to develop instability. They are not a healthy control — that distinction is the whole point of the design.",
+        "Studies vary on how long post-injury someone must be symptom-free to qualify. Check the definition in every paper."
+      ],
+      "tags": [
+        "chronic-ankle-instability",
+        "research-methods"
+      ],
+      "tiabBlock": "(coper[tiab] OR copers[tiab] OR \"ankle sprain coper\"[tiab] OR \"potential coper\"[tiab] OR \"uninjured control\"[tiab])",
+      "fullBlock": "(coper[tiab] OR copers[tiab] OR \"ankle sprain coper\"[tiab] OR \"potential coper\"[tiab] OR \"uninjured control\"[tiab])"
+    },
+    {
+      "id": "balance",
+      "label": "Balance and postural control (the outcome)",
+      "why": "The MeSH heading is 'Postural Balance', not 'Balance'. Searching the obvious word costs you the indexed literature.",
+      "clinical": [
+        "postural control",
+        "postural stability",
+        "postural sway",
+        "dynamic balance",
+        "static balance",
+        "balance",
+        "single-leg stance",
+        "centre of pressure",
+        "center of pressure",
+        "time to boundary"
+      ],
+      "abbrev": [
+        "COP",
+        "SEBT",
+        "mSEBT",
+        "YBT",
+        "BESS",
+        "TTB"
+      ],
+      "lay": [
+        "balance",
+        "steadiness",
+        "wobbliness"
+      ],
+      "spelling": [
+        "centre / center of pressure — both spellings appear",
+        "stabilisation / stabilization"
+      ],
+      "obsolete": [
+        "equilibrium",
+        "balance ability"
+      ],
+      "mesh": [
+        "\"Postural Balance\"[mh]"
+      ],
+      "meshNote": "\"Postural Balance\"[mh] is the correct heading. There is no \"Balance\"[mh].",
+      "traps": [
+        "Balance on a force plate is a **surrogate outcome**. Improved sway is not fewer sprains. Do not let a balance-only outcome persuade you an intervention prevents injury.",
+        "SEBT and Y Balance Test are related but not interchangeable, and normalisation to leg length varies between studies. Compare raw protocols before pooling results in your head."
+      ],
+      "tags": [
+        "assessment",
+        "motor-control",
+        "outcome"
+      ],
+      "tiabBlock": "(\"postural control\"[tiab] OR \"postural stability\"[tiab] OR \"postural sway\"[tiab] OR \"dynamic balance\"[tiab] OR \"static balance\"[tiab] OR balance[tiab] OR \"single-leg stance\"[tiab] OR \"centre of pressure\"[tiab] OR \"center of pressure\"[tiab] OR \"time to boundary\"[tiab] OR equilibrium[tiab] OR \"balance ability\"[tiab] OR COP[tiab] OR SEBT[tiab] OR mSEBT[tiab] OR BESS[tiab])",
+      "fullBlock": "(\"postural control\"[tiab] OR \"postural stability\"[tiab] OR \"postural sway\"[tiab] OR \"dynamic balance\"[tiab] OR \"static balance\"[tiab] OR balance[tiab] OR \"single-leg stance\"[tiab] OR \"centre of pressure\"[tiab] OR \"center of pressure\"[tiab] OR \"time to boundary\"[tiab] OR equilibrium[tiab] OR \"balance ability\"[tiab] OR COP[tiab] OR SEBT[tiab] OR mSEBT[tiab] OR BESS[tiab] OR \"Postural Balance\"[mh])"
+    },
+    {
+      "id": "proprio",
+      "label": "Proprioception and sensorimotor control",
+      "why": "Genuine British/American spelling split, plus a cluster of near-synonyms that index differently.",
+      "clinical": [
+        "proprioception",
+        "joint position sense",
+        "kinaesthesia",
+        "kinesthesia",
+        "sensorimotor control",
+        "neuromuscular control",
+        "force sense",
+        "movement detection threshold",
+        "motor control",
+        "corticospinal excitability",
+        "arthrogenic muscle inhibition"
+      ],
+      "abbrev": [
+        "JPS",
+        "AMI"
+      ],
+      "lay": [
+        "sense of where the joint is",
+        "body awareness"
+      ],
+      "spelling": [
+        "kinaesthesia (UK) / kinesthesia (US) — you need both",
+        "sensorimotor / sensori-motor"
+      ],
+      "obsolete": [
+        "articular deafferentation",
+        "proprioceptive deficit",
+        "joint position sense error"
+      ],
+      "mesh": [
+        "\"Proprioception\"[mh]",
+        "\"Kinesthesis\"[mh]"
+      ],
+      "meshNote": "MeSH spells it \"Kinesthesis\" — neither of the two spellings you would type as free text.",
+      "traps": [
+        "Proprioception is measured half a dozen incompatible ways (passive JPS, active repositioning, threshold to detection of passive motion). A null result in one method says little about the others.",
+        "\"Neuromuscular control\" is used loosely and often means the intervention, not the construct. Check which sense a paper intends."
+      ],
+      "tags": [
+        "motor-control",
+        "mechanism"
+      ],
+      "tiabBlock": "(proprioception[tiab] OR \"joint position sense\"[tiab] OR kinaesthesia[tiab] OR kinesthesia[tiab] OR \"sensorimotor control\"[tiab] OR \"neuromuscular control\"[tiab] OR \"force sense\"[tiab] OR \"movement detection threshold\"[tiab] OR \"motor control\"[tiab] OR \"corticospinal excitability\"[tiab] OR \"arthrogenic muscle inhibition\"[tiab] OR \"articular deafferentation\"[tiab] OR \"proprioceptive deficit\"[tiab] OR \"joint position sense error\"[tiab] OR JPS[tiab] OR AMI[tiab])",
+      "fullBlock": "(proprioception[tiab] OR \"joint position sense\"[tiab] OR kinaesthesia[tiab] OR kinesthesia[tiab] OR \"sensorimotor control\"[tiab] OR \"neuromuscular control\"[tiab] OR \"force sense\"[tiab] OR \"movement detection threshold\"[tiab] OR \"motor control\"[tiab] OR \"corticospinal excitability\"[tiab] OR \"arthrogenic muscle inhibition\"[tiab] OR \"articular deafferentation\"[tiab] OR \"proprioceptive deficit\"[tiab] OR \"joint position sense error\"[tiab] OR JPS[tiab] OR AMI[tiab] OR \"Proprioception\"[mh] OR \"Kinesthesis\"[mh])"
+    },
+    {
+      "id": "balancetrain",
+      "label": "Balance / neuromuscular training (the intervention)",
+      "why": "No MeSH heading exists for balance training. This concept is [tiab] or it is nothing.",
+      "clinical": [
+        "balance training",
+        "neuromuscular training",
+        "proprioceptive training",
+        "sensorimotor training",
+        "coordination training",
+        "perturbation training",
+        "wobble board",
+        "ankle disk",
+        "balance board",
+        "unstable surface training"
+      ],
+      "abbrev": [],
+      "lay": [
+        "balance exercises",
+        "wobble cushion work"
+      ],
+      "spelling": [
+        "programme (UK) / program (US) — use both, or truncate to program*"
+      ],
+      "obsolete": [
+        "coordination exercise",
+        "ankle disk training",
+        "proprioceptive rehabilitation"
+      ],
+      "mesh": [
+        "\"Exercise Therapy\"[mh]",
+        "\"Resistance Training\"[mh]",
+        "\"Physical Therapy Modalities\"[mh]"
+      ],
+      "meshNote": "There is NO \"Balance Training\" MeSH heading. \"Exercise Therapy\"[mh] is broad enough to be nearly useless alone; carry the specificity in your [tiab] terms.",
+      "traps": [
+        "**programme / program** is the single most commonly forgotten spelling variant in this literature, and much of the best work is British, Irish, Dutch and Scandinavian.",
+        "Trials rarely report dose in reproducible terms. If you cannot rebuild the intervention from the paper, it is not usable clinically no matter how good the effect size."
+      ],
+      "tags": [
+        "rehabilitation",
+        "intervention"
+      ],
+      "tiabBlock": "(\"balance training\"[tiab] OR \"neuromuscular training\"[tiab] OR \"proprioceptive training\"[tiab] OR \"sensorimotor training\"[tiab] OR \"coordination training\"[tiab] OR \"perturbation training\"[tiab] OR \"wobble board\"[tiab] OR \"ankle disk\"[tiab] OR \"balance board\"[tiab] OR \"unstable surface training\"[tiab] OR \"coordination exercise\"[tiab] OR \"ankle disk training\"[tiab] OR \"proprioceptive rehabilitation\"[tiab])",
+      "fullBlock": "(\"balance training\"[tiab] OR \"neuromuscular training\"[tiab] OR \"proprioceptive training\"[tiab] OR \"sensorimotor training\"[tiab] OR \"coordination training\"[tiab] OR \"perturbation training\"[tiab] OR \"wobble board\"[tiab] OR \"ankle disk\"[tiab] OR \"balance board\"[tiab] OR \"unstable surface training\"[tiab] OR \"coordination exercise\"[tiab] OR \"ankle disk training\"[tiab] OR \"proprioceptive rehabilitation\"[tiab] OR \"Exercise Therapy\"[mh] OR \"Resistance Training\"[mh] OR \"Physical Therapy Modalities\"[mh])"
+    },
+    {
+      "id": "dorsiflexion",
+      "label": "Ankle dorsiflexion range of motion",
+      "why": "Several test names refer to the same measurement, and the test name is often the only searchable term.",
+      "clinical": [
+        "dorsiflexion",
+        "ankle dorsiflexion",
+        "weight-bearing lunge test",
+        "knee to wall test",
+        "talocrural joint mobility",
+        "ankle range of motion",
+        "closed kinetic chain dorsiflexion"
+      ],
+      "abbrev": [
+        "DF ROM",
+        "WBLT",
+        "WBDF"
+      ],
+      "lay": [
+        "ankle stiffness",
+        "tight ankle",
+        "can't get the knee over the toes"
+      ],
+      "spelling": [
+        "weight-bearing / weightbearing / weight bearing — all three appear",
+        "dorsiflexion / dorsi-flexion"
+      ],
+      "obsolete": [
+        "ankle equinus"
+      ],
+      "mesh": [
+        "\"Range of Motion, Articular\"[mh]",
+        "\"Ankle Joint\"[mh]"
+      ],
+      "meshNote": "\"Range of Motion, Articular\"[mh] is joint-agnostic. It must be paired with ankle[tiab] or \"Ankle Joint\"[mh] or you will get shoulders.",
+      "traps": [
+        "\"Ankle equinus\" is podiatric vocabulary for the same restriction and sits in a partly separate literature (JFAR, podiatry journals).",
+        "Non-weight-bearing goniometry and the weight-bearing lunge measure different things and do not correlate well. Do not pool them."
+      ],
+      "tags": [
+        "assessment",
+        "foot-ankle",
+        "biomechanics"
+      ],
+      "tiabBlock": "(dorsiflexion[tiab] OR \"ankle dorsiflexion\"[tiab] OR \"weight-bearing lunge test\"[tiab] OR \"knee to wall test\"[tiab] OR \"talocrural joint mobility\"[tiab] OR \"ankle range of motion\"[tiab] OR \"closed kinetic chain dorsiflexion\"[tiab] OR \"ankle equinus\"[tiab] OR DF ROM[tiab] OR WBLT[tiab] OR WBDF[tiab])",
+      "fullBlock": "(dorsiflexion[tiab] OR \"ankle dorsiflexion\"[tiab] OR \"weight-bearing lunge test\"[tiab] OR \"knee to wall test\"[tiab] OR \"talocrural joint mobility\"[tiab] OR \"ankle range of motion\"[tiab] OR \"closed kinetic chain dorsiflexion\"[tiab] OR \"ankle equinus\"[tiab] OR DF ROM[tiab] OR WBLT[tiab] OR WBDF[tiab] OR \"Range of Motion, Articular\"[mh] OR \"Ankle Joint\"[mh])"
+    },
+    {
+      "id": "achilles",
+      "label": "Achilles tendinopathy",
+      "why": "The correct modern term deliberately excludes decades of literature filed under a term now known to be wrong. You must search the wrong one on purpose.",
+      "clinical": [
+        "Achilles tendinopathy",
+        "midportion Achilles tendinopathy",
+        "insertional Achilles tendinopathy",
+        "Achilles tendinosis",
+        "Achilles tendon pain"
+      ],
+      "abbrev": [
+        "AT"
+      ],
+      "lay": [
+        "Achilles pain",
+        "sore Achilles",
+        "heel cord pain"
+      ],
+      "spelling": [
+        "Achilles / achilles",
+        "tendinopathy / tendonopathy (frequent misspelling in older records)"
+      ],
+      "obsolete": [
+        "Achilles tendinitis",
+        "Achilles tendonitis",
+        "peritendinitis",
+        "paratendinopathy",
+        "paratenonitis"
+      ],
+      "mesh": [
+        "\"Achilles Tendon\"[mh]",
+        "\"Tendinopathy\"[mh]"
+      ],
+      "meshNote": "\"Tendinopathy\"[mh] was introduced relatively recently; older records are indexed under \"Tendinitis\" concepts. MeSH plus obsolete [tiab] terms is the only complete search.",
+      "traps": [
+        "**Include tendinitis even though it is wrong.** The inflammatory model was abandoned, but twenty-plus years of trials are filed under it. Excluding the obsolete term is the fastest way to build a falsely thin evidence base.",
+        "Midportion and insertional are different conditions with different loading responses. Most guidelines cover midportion only — check which one you are reading about.",
+        "AT as an abbreviation also means athletic trainer and anterior tibial. Do not use bare AT[tiab]."
+      ],
+      "tags": [
+        "achilles",
+        "injury"
+      ],
+      "tiabBlock": "(\"Achilles tendinopathy\"[tiab] OR \"midportion Achilles tendinopathy\"[tiab] OR \"insertional Achilles tendinopathy\"[tiab] OR \"Achilles tendinosis\"[tiab] OR \"Achilles tendon pain\"[tiab] OR \"Achilles tendinitis\"[tiab] OR \"Achilles tendonitis\"[tiab] OR peritendinitis[tiab] OR paratendinopathy[tiab] OR paratenonitis[tiab])",
+      "fullBlock": "(\"Achilles tendinopathy\"[tiab] OR \"midportion Achilles tendinopathy\"[tiab] OR \"insertional Achilles tendinopathy\"[tiab] OR \"Achilles tendinosis\"[tiab] OR \"Achilles tendon pain\"[tiab] OR \"Achilles tendinitis\"[tiab] OR \"Achilles tendonitis\"[tiab] OR peritendinitis[tiab] OR paratendinopathy[tiab] OR paratenonitis[tiab] OR \"Achilles Tendon\"[mh] OR \"Tendinopathy\"[mh])"
+    },
+    {
+      "id": "rts",
+      "label": "Return to sport",
+      "why": "The MeSH heading is new. Every paper published before it existed is invisible to a MeSH-only search.",
+      "clinical": [
+        "return to sport",
+        "return to play",
+        "return to performance",
+        "return to participation",
+        "readiness to return",
+        "time to return",
+        "clearance to play"
+      ],
+      "abbrev": [
+        "RTS",
+        "RTP"
+      ],
+      "lay": [
+        "getting back to playing",
+        "back on the pitch"
+      ],
+      "spelling": [],
+      "obsolete": [
+        "return to activity",
+        "return to competition",
+        "fitness to play"
+      ],
+      "mesh": [
+        "\"Return to Sport\"[mh]"
+      ],
+      "meshNote": "\"Return to Sport\"[mh] is a comparatively recent heading. Papers indexed before its introduction do not carry it — this is the textbook case for always writing MeSH OR [tiab], never MeSH alone.",
+      "traps": [
+        "Return to sport, return to participation and return to performance are three different milestones in the Bern consensus framework, not synonyms. A paper reporting one is not answering a question about another.",
+        "\"Time to return\" studies usually measure a decision made by a clinician under pressure, not a biological recovery endpoint."
+      ],
+      "tags": [
+        "return-to-sport",
+        "assessment"
+      ],
+      "tiabBlock": "(\"return to sport\"[tiab] OR \"return to play\"[tiab] OR \"return to performance\"[tiab] OR \"return to participation\"[tiab] OR \"readiness to return\"[tiab] OR \"time to return\"[tiab] OR \"clearance to play\"[tiab] OR \"return to activity\"[tiab] OR \"return to competition\"[tiab] OR \"fitness to play\"[tiab] OR RTS[tiab] OR RTP[tiab])",
+      "fullBlock": "(\"return to sport\"[tiab] OR \"return to play\"[tiab] OR \"return to performance\"[tiab] OR \"return to participation\"[tiab] OR \"readiness to return\"[tiab] OR \"time to return\"[tiab] OR \"clearance to play\"[tiab] OR \"return to activity\"[tiab] OR \"return to competition\"[tiab] OR \"fitness to play\"[tiab] OR RTS[tiab] OR RTP[tiab] OR \"Return to Sport\"[mh])"
+    },
+    {
+      "id": "prevention",
+      "label": "Prevention, bracing and taping",
+      "why": "Prevention terms split across intervention names and prevention concepts; you need both halves.",
+      "clinical": [
+        "injury prevention",
+        "prophylactic",
+        "primary prevention",
+        "secondary prevention",
+        "recurrence",
+        "reinjury",
+        "re-injury",
+        "brace",
+        "bracing",
+        "ankle brace",
+        "taping",
+        "athletic tape",
+        "rigid tape",
+        "kinesio tape",
+        "orthosis",
+        "external support",
+        "semi-rigid support"
+      ],
+      "abbrev": [],
+      "lay": [
+        "ankle support",
+        "strapping",
+        "ankle guard"
+      ],
+      "spelling": [
+        "reinjur* catches reinjury and re-injury only if you also write \"re-injury\" as a phrase",
+        "prophylaxis / prophylactic",
+        "orthosis / orthoses / orthotic"
+      ],
+      "obsolete": [
+        "ankle strapping",
+        "prophylactic ankle stabiliser"
+      ],
+      "mesh": [
+        "\"Braces\"[mh]",
+        "\"Athletic Tape\"[mh]",
+        "\"Primary Prevention\"[mh]",
+        "\"Secondary Prevention\"[mh]"
+      ],
+      "meshNote": "\"Athletic Tape\"[mh] exists and is under-used. Most people search taping[tiab] alone and miss indexed trials.",
+      "traps": [
+        "**Hyphenation kills recall here.** reinjur* does not match \"re-injury\". Write both.",
+        "Prevention trials in this field are usually delivered as whole programmes (warm-ups) rather than single interventions. A question about bracing alone may not be answerable from them."
+      ],
+      "tags": [
+        "prevention",
+        "intervention"
+      ],
+      "tiabBlock": "(\"injury prevention\"[tiab] OR prophylactic[tiab] OR \"primary prevention\"[tiab] OR \"secondary prevention\"[tiab] OR recurrence[tiab] OR reinjury[tiab] OR re-injury[tiab] OR brace[tiab] OR bracing[tiab] OR \"ankle brace\"[tiab] OR taping[tiab] OR \"athletic tape\"[tiab] OR \"rigid tape\"[tiab] OR \"kinesio tape\"[tiab] OR orthosis[tiab] OR \"external support\"[tiab] OR \"semi-rigid support\"[tiab] OR \"ankle strapping\"[tiab] OR \"prophylactic ankle stabiliser\"[tiab])",
+      "fullBlock": "(\"injury prevention\"[tiab] OR prophylactic[tiab] OR \"primary prevention\"[tiab] OR \"secondary prevention\"[tiab] OR recurrence[tiab] OR reinjury[tiab] OR re-injury[tiab] OR brace[tiab] OR bracing[tiab] OR \"ankle brace\"[tiab] OR taping[tiab] OR \"athletic tape\"[tiab] OR \"rigid tape\"[tiab] OR \"kinesio tape\"[tiab] OR orthosis[tiab] OR \"external support\"[tiab] OR \"semi-rigid support\"[tiab] OR \"ankle strapping\"[tiab] OR \"prophylactic ankle stabiliser\"[tiab] OR \"Braces\"[mh] OR \"Athletic Tape\"[mh] OR \"Primary Prevention\"[mh] OR \"Secondary Prevention\"[mh])"
+    },
+    {
+      "id": "epi",
+      "label": "Epidemiology and injury burden",
+      "why": "The denominator is the whole story, and it hides in terms you have to search for explicitly.",
+      "clinical": [
+        "incidence",
+        "prevalence",
+        "injury rate",
+        "injury burden",
+        "injury surveillance",
+        "epidemiology",
+        "exposure",
+        "athlete-exposures",
+        "injury severity",
+        "time loss"
+      ],
+      "abbrev": [
+        "AE",
+        "IR"
+      ],
+      "lay": [
+        "how common it is"
+      ],
+      "spelling": [
+        "epidemiolog* covers epidemiology and epidemiological"
+      ],
+      "obsolete": [
+        "injury frequency"
+      ],
+      "mesh": [
+        "\"Incidence\"[mh]",
+        "\"Prevalence\"[mh]",
+        "\"Athletic Injuries\"[mh]",
+        "\"Epidemiologic Studies\"[mh]"
+      ],
+      "meshNote": "\"Athletic Injuries\"[mh] is the sport qualifier that saves you from adding sport[tiab] OR athlet*[tiab] by hand.",
+      "traps": [
+        "Rates per 1000 athlete-exposures and per 1000 hours are not interchangeable and differ by a factor that depends on the sport. Never compare across the two without converting.",
+        "\"Time loss\" definitions vary from one day to full return to competition. Two studies with identical rates can be counting different injuries."
+      ],
+      "tags": [
+        "epidemiology"
+      ],
+      "tiabBlock": "(incidence[tiab] OR prevalence[tiab] OR \"injury rate\"[tiab] OR \"injury burden\"[tiab] OR \"injury surveillance\"[tiab] OR epidemiology[tiab] OR exposure[tiab] OR athlete-exposures[tiab] OR \"injury severity\"[tiab] OR \"time loss\"[tiab] OR \"injury frequency\"[tiab] OR AE[tiab] OR IR[tiab])",
+      "fullBlock": "(incidence[tiab] OR prevalence[tiab] OR \"injury rate\"[tiab] OR \"injury burden\"[tiab] OR \"injury surveillance\"[tiab] OR epidemiology[tiab] OR exposure[tiab] OR athlete-exposures[tiab] OR \"injury severity\"[tiab] OR \"time loss\"[tiab] OR \"injury frequency\"[tiab] OR AE[tiab] OR IR[tiab] OR \"Incidence\"[mh] OR \"Prevalence\"[mh] OR \"Athletic Injuries\"[mh] OR \"Epidemiologic Studies\"[mh])"
+    },
+    {
+      "id": "biomech",
+      "label": "Gait and landing biomechanics",
+      "why": "Mechanism work is indexed under measurement techniques, not clinical concepts. You search the method, not the problem.",
+      "clinical": [
+        "kinematics",
+        "kinetics",
+        "ground reaction force",
+        "joint moment",
+        "joint angle",
+        "muscle activation",
+        "electromyography",
+        "gait",
+        "walking",
+        "running",
+        "jump landing",
+        "single-leg landing",
+        "drop vertical jump",
+        "cutting",
+        "change of direction",
+        "motion capture"
+      ],
+      "abbrev": [
+        "GRF",
+        "EMG",
+        "DVJ",
+        "COD"
+      ],
+      "lay": [
+        "how they move",
+        "movement pattern"
+      ],
+      "spelling": [
+        "electromyograph* covers electromyography and electromyographic"
+      ],
+      "obsolete": [
+        "gait analysis",
+        "movement analysis"
+      ],
+      "mesh": [
+        "\"Biomechanical Phenomena\"[mh]",
+        "\"Gait\"[mh]",
+        "\"Electromyography\"[mh]",
+        "\"Movement\"[mh]"
+      ],
+      "meshNote": "\"Biomechanical Phenomena\"[mh] is the umbrella heading for this entire literature and is very often the difference between 12 hits and 120.",
+      "traps": [
+        "Mechanism studies are cross-sectional almost without exception. They tell you what is different, never what caused it. Do not read causation into them.",
+        "Lab tasks are chosen for measurability, not ecological validity. A drop vertical jump is not a sprain mechanism."
+      ],
+      "tags": [
+        "biomechanics",
+        "mechanism"
+      ],
+      "tiabBlock": "(kinematics[tiab] OR kinetics[tiab] OR \"ground reaction force\"[tiab] OR \"joint moment\"[tiab] OR \"joint angle\"[tiab] OR \"muscle activation\"[tiab] OR electromyography[tiab] OR gait[tiab] OR walking[tiab] OR running[tiab] OR \"jump landing\"[tiab] OR \"single-leg landing\"[tiab] OR \"drop vertical jump\"[tiab] OR cutting[tiab] OR \"change of direction\"[tiab] OR \"motion capture\"[tiab] OR \"gait analysis\"[tiab] OR \"movement analysis\"[tiab] OR GRF[tiab] OR EMG[tiab] OR DVJ[tiab])",
+      "fullBlock": "(kinematics[tiab] OR kinetics[tiab] OR \"ground reaction force\"[tiab] OR \"joint moment\"[tiab] OR \"joint angle\"[tiab] OR \"muscle activation\"[tiab] OR electromyography[tiab] OR gait[tiab] OR walking[tiab] OR running[tiab] OR \"jump landing\"[tiab] OR \"single-leg landing\"[tiab] OR \"drop vertical jump\"[tiab] OR cutting[tiab] OR \"change of direction\"[tiab] OR \"motion capture\"[tiab] OR \"gait analysis\"[tiab] OR \"movement analysis\"[tiab] OR GRF[tiab] OR EMG[tiab] OR DVJ[tiab] OR \"Biomechanical Phenomena\"[mh] OR \"Gait\"[mh] OR \"Electromyography\"[mh] OR \"Movement\"[mh])"
+    },
+    {
+      "id": "outcomes",
+      "label": "Outcome measures and instruments",
+      "why": "This is your PICO 'O'. Naming the instrument is usually far more precise than naming the construct.",
+      "clinical": [
+        "Cumberland Ankle Instability Tool",
+        "Foot and Ankle Ability Measure",
+        "Foot and Ankle Outcome Score",
+        "Identification of Functional Ankle Instability",
+        "Ankle Instability Instrument",
+        "Star Excursion Balance Test",
+        "Y Balance Test",
+        "side hop test",
+        "figure-of-8 hop",
+        "single-leg hop",
+        "patient reported outcome"
+      ],
+      "abbrev": [
+        "CAIT",
+        "FAAM",
+        "FAOS",
+        "IdFAI",
+        "AII",
+        "SEBT",
+        "YBT",
+        "PROM"
+      ],
+      "lay": [
+        "questionnaire",
+        "score"
+      ],
+      "spelling": [],
+      "obsolete": [
+        "Ankle Joint Functional Assessment Tool",
+        "AJFAT"
+      ],
+      "mesh": [
+        "\"Patient Reported Outcome Measures\"[mh]",
+        "\"Psychometrics\"[mh]",
+        "\"Reproducibility of Results\"[mh]"
+      ],
+      "meshNote": "For \"is this measure any good\" questions, \"Reproducibility of Results\"[mh] and \"Psychometrics\"[mh] are the design filter, not the topic.",
+      "traps": [
+        "The CAIT cut-off has been recalibrated since the original 2006 paper. Studies using different cut-offs have different populations under the same label.",
+        "Searching the instrument acronym alone (FAAM, AII) is high-precision but low-recall — always OR it with the spelled-out name."
+      ],
+      "tags": [
+        "assessment",
+        "outcome",
+        "research-methods"
+      ],
+      "tiabBlock": "(\"Cumberland Ankle Instability Tool\"[tiab] OR \"Foot and Ankle Ability Measure\"[tiab] OR \"Foot and Ankle Outcome Score\"[tiab] OR \"Identification of Functional Ankle Instability\"[tiab] OR \"Ankle Instability Instrument\"[tiab] OR \"Star Excursion Balance Test\"[tiab] OR \"Y Balance Test\"[tiab] OR \"side hop test\"[tiab] OR \"figure-of-8 hop\"[tiab] OR \"single-leg hop\"[tiab] OR \"patient reported outcome\"[tiab] OR \"Ankle Joint Functional Assessment Tool\"[tiab] OR AJFAT[tiab] OR CAIT[tiab] OR FAAM[tiab] OR FAOS[tiab] OR IdFAI[tiab] OR SEBT[tiab] OR PROM[tiab])",
+      "fullBlock": "(\"Cumberland Ankle Instability Tool\"[tiab] OR \"Foot and Ankle Ability Measure\"[tiab] OR \"Foot and Ankle Outcome Score\"[tiab] OR \"Identification of Functional Ankle Instability\"[tiab] OR \"Ankle Instability Instrument\"[tiab] OR \"Star Excursion Balance Test\"[tiab] OR \"Y Balance Test\"[tiab] OR \"side hop test\"[tiab] OR \"figure-of-8 hop\"[tiab] OR \"single-leg hop\"[tiab] OR \"patient reported outcome\"[tiab] OR \"Ankle Joint Functional Assessment Tool\"[tiab] OR AJFAT[tiab] OR CAIT[tiab] OR FAAM[tiab] OR FAOS[tiab] OR IdFAI[tiab] OR SEBT[tiab] OR PROM[tiab] OR \"Patient Reported Outcome Measures\"[mh] OR \"Psychometrics\"[mh] OR \"Reproducibility of Results\"[mh])"
+    },
+    {
+      "id": "olt",
+      "label": "Osteochondral lesions of the talus",
+      "why": "The thing that gets missed behind a 'simple sprain' that will not settle.",
+      "clinical": [
+        "osteochondral lesion of the talus",
+        "osteochondral defect",
+        "talar dome lesion",
+        "osteochondritis dissecans",
+        "cartilage lesion",
+        "bone marrow lesion"
+      ],
+      "abbrev": [
+        "OLT",
+        "OCD",
+        "OCL"
+      ],
+      "lay": [
+        "cartilage damage in the ankle"
+      ],
+      "spelling": [],
+      "obsolete": [
+        "transchondral fracture",
+        "talar dome fracture"
+      ],
+      "mesh": [
+        "\"Talus\"[mh]",
+        "\"Cartilage, Articular\"[mh]",
+        "\"Osteochondritis Dissecans\"[mh]"
+      ],
+      "meshNote": "Indexed under the anatomy (\"Talus\") more reliably than under the lesion.",
+      "traps": [
+        "**OCD collides with obsessive-compulsive disorder.** Never use bare OCD[tiab] — always spell it out or pair it with talus/talar.",
+        "This literature is overwhelmingly surgical and imaging-based. Expect FAI, KSSTA and AJSM, not JOSPT."
+      ],
+      "tags": [
+        "surgical",
+        "foot-ankle",
+        "injury"
+      ],
+      "tiabBlock": "(\"osteochondral lesion of the talus\"[tiab] OR \"osteochondral defect\"[tiab] OR \"talar dome lesion\"[tiab] OR \"osteochondritis dissecans\"[tiab] OR \"cartilage lesion\"[tiab] OR \"bone marrow lesion\"[tiab] OR \"transchondral fracture\"[tiab] OR \"talar dome fracture\"[tiab] OR OLT[tiab])",
+      "fullBlock": "(\"osteochondral lesion of the talus\"[tiab] OR \"osteochondral defect\"[tiab] OR \"talar dome lesion\"[tiab] OR \"osteochondritis dissecans\"[tiab] OR \"cartilage lesion\"[tiab] OR \"bone marrow lesion\"[tiab] OR \"transchondral fracture\"[tiab] OR \"talar dome fracture\"[tiab] OR OLT[tiab] OR \"Talus\"[mh] OR \"Cartilage, Articular\"[mh] OR \"Osteochondritis Dissecans\"[mh])"
+    },
+    {
+      "id": "syndesmosis",
+      "label": "Syndesmotic / high ankle sprain",
+      "why": "A completely different injury with a completely different timeline that generic 'ankle sprain' searches quietly mix in.",
+      "clinical": [
+        "syndesmotic injury",
+        "syndesmosis injury",
+        "high ankle sprain",
+        "distal tibiofibular",
+        "anterior inferior tibiofibular ligament",
+        "external rotation injury"
+      ],
+      "abbrev": [
+        "AITFL",
+        "PITFL"
+      ],
+      "lay": [
+        "high ankle sprain"
+      ],
+      "spelling": [
+        "syndesmotic / syndesmosis"
+      ],
+      "obsolete": [
+        "tibiofibular diastasis"
+      ],
+      "mesh": [
+        "\"Ankle Injuries\"[mh]"
+      ],
+      "meshNote": "No specific MeSH heading. Must be carried by [tiab] terms.",
+      "traps": [
+        "Return-to-sport timelines are roughly double those of a lateral sprain. Pooling them with lateral sprains corrupts any prognosis estimate.",
+        "If your question is about lateral sprain, actively EXCLUDE this: add NOT (syndesmo*[tiab] OR \"high ankle\"[tiab])."
+      ],
+      "tags": [
+        "acute-sprain",
+        "injury"
+      ],
+      "tiabBlock": "(\"syndesmotic injury\"[tiab] OR \"syndesmosis injury\"[tiab] OR \"high ankle sprain\"[tiab] OR \"distal tibiofibular\"[tiab] OR \"anterior inferior tibiofibular ligament\"[tiab] OR \"external rotation injury\"[tiab] OR \"tibiofibular diastasis\"[tiab] OR AITFL[tiab] OR PITFL[tiab])",
+      "fullBlock": "(\"syndesmotic injury\"[tiab] OR \"syndesmosis injury\"[tiab] OR \"high ankle sprain\"[tiab] OR \"distal tibiofibular\"[tiab] OR \"anterior inferior tibiofibular ligament\"[tiab] OR \"external rotation injury\"[tiab] OR \"tibiofibular diastasis\"[tiab] OR AITFL[tiab] OR PITFL[tiab] OR \"Ankle Injuries\"[mh])"
+    },
+    {
+      "id": "population",
+      "label": "Population qualifiers",
+      "why": "External validity lives here. The same intervention has different answers in a military cohort and a recreational one.",
+      "clinical": [
+        "athlete",
+        "recreational athlete",
+        "physically active",
+        "elite athlete",
+        "court sport",
+        "field sport",
+        "military",
+        "cadet",
+        "adolescent",
+        "general population",
+        "dancer"
+      ],
+      "abbrev": [],
+      "lay": [
+        "people who play sport"
+      ],
+      "spelling": [
+        "athlet* covers athlete, athletes, athletic"
+      ],
+      "obsolete": [],
+      "mesh": [
+        "\"Athletes\"[mh]",
+        "\"Athletic Injuries\"[mh]",
+        "\"Military Personnel\"[mh]",
+        "\"Sports\"[mh]"
+      ],
+      "meshNote": "\"Athletic Injuries\"[mh] both qualifies the population and narrows to a sport context in one term.",
+      "traps": [
+        "**Military cohorts dominate parts of the ankle prevention literature** because they are captive populations with mandatory reporting. Their exposure, footwear and load bear little resemblance to a recreational footballer.",
+        "Adding a population concept as a third AND is the fastest way to crash a search to single figures. Add it last, and only if you are over 300 hits."
+      ],
+      "tags": [
+        "research-methods",
+        "epidemiology"
+      ],
+      "tiabBlock": "(athlete[tiab] OR \"recreational athlete\"[tiab] OR \"physically active\"[tiab] OR \"elite athlete\"[tiab] OR \"court sport\"[tiab] OR \"field sport\"[tiab] OR military[tiab] OR cadet[tiab] OR adolescent[tiab] OR \"general population\"[tiab] OR dancer[tiab])",
+      "fullBlock": "(athlete[tiab] OR \"recreational athlete\"[tiab] OR \"physically active\"[tiab] OR \"elite athlete\"[tiab] OR \"court sport\"[tiab] OR \"field sport\"[tiab] OR military[tiab] OR cadet[tiab] OR adolescent[tiab] OR \"general population\"[tiab] OR dancer[tiab] OR \"Athletes\"[mh] OR \"Athletic Injuries\"[mh] OR \"Military Personnel\"[mh] OR \"Sports\"[mh])"
+    }
+  ],
+  "filters": [
+    {
+      "id": "none",
+      "label": "No design filter (broad)",
+      "block": "",
+      "note": "Use when you are orienting and want to see the shape of the literature, or when adding a filter drops you under 20 hits."
+    },
+    {
+      "id": "rct",
+      "label": "Randomised trials",
+      "block": "(randomized controlled trial[pt] OR randomized[tiab] OR randomised[tiab] OR \"randomly allocated\"[tiab])",
+      "note": "Both spellings are mandatory. [pt] alone misses recent papers not yet fully indexed."
+    },
+    {
+      "id": "sr",
+      "label": "Systematic reviews and meta-analyses",
+      "block": "(systematic[sb] OR meta-analysis[pt] OR \"systematic review\"[tiab] OR \"meta-analysis\"[tiab])",
+      "note": "systematic[sb] is PubMed's own curated subset — more reliable than the free-text phrase alone."
+    },
+    {
+      "id": "dx",
+      "label": "Diagnostic accuracy",
+      "block": "(\"Sensitivity and Specificity\"[mh] OR sensitivit*[tiab] OR specificit*[tiab] OR \"predictive value\"[tiab] OR \"likelihood ratio\"[tiab] OR \"diagnostic accuracy\"[tiab])",
+      "note": "Appraise anything this returns with QUADAS-2 (QUADAS-3 is now current)."
+    },
+    {
+      "id": "prog",
+      "label": "Prognosis and risk factors",
+      "block": "(\"Cohort Studies\"[mh] OR \"Prospective Studies\"[mh] OR prognos*[tiab] OR predict*[tiab] OR \"risk factor*\"[tiab] OR \"Risk Factors\"[mh])",
+      "note": "Prospective is the word that matters. Appraise with QUIPS."
+    },
+    {
+      "id": "mech",
+      "label": "Mechanism / laboratory biomechanics",
+      "block": "(\"Biomechanical Phenomena\"[mh] OR kinematic*[tiab] OR kinetic*[tiab] OR electromyograph*[tiab] OR \"motion capture\"[tiab] OR \"force plate\"[tiab])",
+      "note": "\"Biomechanical Phenomena\"[mh] is the umbrella heading that most people omit."
+    },
+    {
+      "id": "epi",
+      "label": "Epidemiology and surveillance",
+      "block": "(\"Incidence\"[mh] OR \"Prevalence\"[mh] OR incidence[tiab] OR epidemiolog*[tiab] OR \"injury rate*\"[tiab] OR surveillance[tiab])",
+      "note": "Appraise reporting with STROBE. Always check the denominator."
+    },
+    {
+      "id": "qual",
+      "label": "Qualitative",
+      "block": "(\"Qualitative Research\"[mh] OR qualitative[tiab] OR interview*[tiab] OR \"focus group*\"[tiab] OR \"lived experience\"[tiab] OR \"thematic analysis\"[tiab])",
+      "note": "Appraise with the CASP qualitative checklist. Underused in ankle rehab."
+    },
+    {
+      "id": "guide",
+      "label": "Guidelines and consensus",
+      "block": "(\"Practice Guideline\"[pt] OR Guideline[pt] OR \"Consensus\"[mh] OR guideline*[tiab] OR \"consensus statement\"[tiab] OR \"position statement\"[tiab])",
+      "note": "Weakest evidence tier. Always check the year and whether a revision exists."
+    },
+    {
+      "id": "measure",
+      "label": "Measurement properties",
+      "block": "(\"Reproducibility of Results\"[mh] OR \"Psychometrics\"[mh] OR reliabilit*[tiab] OR validit*[tiab] OR responsiveness[tiab] OR \"measurement propert*\"[tiab] OR \"minimal clinically important\"[tiab])",
+      "note": "For 'is this test/score any good' questions. COSMIN is the appraisal framework."
+    }
+  ],
+  "routes": [
+    {
+      "id": "r1",
+      "question": "In athletes with chronic ankle instability, does balance training reduce recurrent sprains compared with strength training alone?",
+      "kind": "intervention",
+      "concepts": [
+        "cai",
+        "balancetrain"
+      ],
+      "filter": "rct",
+      "getsYou": "Randomised trials of balance and neuromuscular training in a CAI population. Screen titles for the comparator first — most will be 'versus nothing', which is the weakest possible comparison.",
+      "thenWhat": "Cross-check against the JOSPT 2021 CPG intervention section, then run the same two concepts with the systematic-review filter to find the pooled estimate.",
+      "string": "(\"chronic ankle instability\"[tiab] OR \"functional ankle instability\"[tiab] OR \"mechanical ankle instability\"[tiab] OR \"recurrent ankle sprain\"[tiab] OR \"ankle joint instability\"[tiab] OR \"perceived ankle instability\"[tiab] OR \"giving way\"[tiab] OR \"functional instability\"[tiab] OR \"chronic ankle laxity\"[tiab] OR \"residual symptoms after ankle sprain\"[tiab] OR CAI[tiab] OR MAI[tiab] OR \"Joint Instability\"[mh] OR \"Ankle Injuries\"[mh])\nAND (\"balance training\"[tiab] OR \"neuromuscular training\"[tiab] OR \"proprioceptive training\"[tiab] OR \"sensorimotor training\"[tiab] OR \"coordination training\"[tiab] OR \"perturbation training\"[tiab] OR \"wobble board\"[tiab] OR \"ankle disk\"[tiab] OR \"balance board\"[tiab] OR \"unstable surface training\"[tiab] OR \"coordination exercise\"[tiab] OR \"ankle disk training\"[tiab] OR \"proprioceptive rehabilitation\"[tiab] OR \"Exercise Therapy\"[mh] OR \"Resistance Training\"[mh] OR \"Physical Therapy Modalities\"[mh])\nAND (randomized controlled trial[pt] OR randomized[tiab] OR randomised[tiab] OR \"randomly allocated\"[tiab])",
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22chronic+ankle+instability%22%5Btiab%5D+OR+%22functional+ankle+instability%22%5Btiab%5D+OR+%22mechanical+ankle+instability%22%5Btiab%5D+OR+%22recurrent+ankle+sprain%22%5Btiab%5D+OR+%22ankle+joint+instability%22%5Btiab%5D+OR+%22perceived+ankle+instability%22%5Btiab%5D+OR+%22giving+way%22%5Btiab%5D+OR+%22functional+instability%22%5Btiab%5D+OR+%22chronic+ankle+laxity%22%5Btiab%5D+OR+%22residual+symptoms+after+ankle+sprain%22%5Btiab%5D+OR+CAI%5Btiab%5D+OR+MAI%5Btiab%5D+OR+%22Joint+Instability%22%5Bmh%5D+OR+%22Ankle+Injuries%22%5Bmh%5D%29+AND+%28%22balance+training%22%5Btiab%5D+OR+%22neuromuscular+training%22%5Btiab%5D+OR+%22proprioceptive+training%22%5Btiab%5D+OR+%22sensorimotor+training%22%5Btiab%5D+OR+%22coordination+training%22%5Btiab%5D+OR+%22perturbation+training%22%5Btiab%5D+OR+%22wobble+board%22%5Btiab%5D+OR+%22ankle+disk%22%5Btiab%5D+OR+%22balance+board%22%5Btiab%5D+OR+%22unstable+surface+training%22%5Btiab%5D+OR+%22coordination+exercise%22%5Btiab%5D+OR+%22ankle+disk+training%22%5Btiab%5D+OR+%22proprioceptive+rehabilitation%22%5Btiab%5D+OR+%22Exercise+Therapy%22%5Bmh%5D+OR+%22Resistance+Training%22%5Bmh%5D+OR+%22Physical+Therapy+Modalities%22%5Bmh%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+randomized%5Btiab%5D+OR+randomised%5Btiab%5D+OR+%22randomly+allocated%22%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-08",
+      "verification": "constructed"
+    },
+    {
+      "id": "r2",
+      "question": "In adults with an acute lateral ankle sprain, does early mobilisation beat immobilisation for return to function?",
+      "kind": "intervention",
+      "concepts": [
+        "las"
+      ],
+      "filter": "rct",
+      "extra": "(immobili*[tiab] OR cast[tiab] OR \"functional treatment\"[tiab] OR \"early mobilisation\"[tiab] OR \"early mobilization\"[tiab] OR \"Immobilization\"[mh] OR \"Early Ambulation\"[mh])",
+      "exclude": "(syndesmo*[tiab] OR \"high ankle\"[tiab])",
+      "getsYou": "Early-management trials, with high ankle sprains actively excluded so the timelines stay comparable.",
+      "thenWhat": "Read the Cochrane review (Kerkhoffs 2002) for the historical baseline, then everything published after its search date.",
+      "string": "(\"lateral ankle sprain\"[tiab] OR \"ankle sprain\"[tiab] OR \"inversion injury\"[tiab] OR \"inversion ankle sprain\"[tiab] OR \"lateral ligament injury\"[tiab] OR \"lateral ankle ligament injury\"[tiab] OR \"ATFL rupture\"[tiab] OR \"ankle ligament injury\"[tiab] OR \"ankle distortion\"[tiab] OR \"supination trauma\"[tiab] OR \"ankle inversion trauma\"[tiab] OR LAS[tiab] OR ATFL[tiab] OR \"Ankle Injuries\"[mh] OR \"Sprains and Strains\"[mh] OR \"Lateral Ligament, Ankle\"[mh])\nAND (immobili*[tiab] OR cast[tiab] OR \"functional treatment\"[tiab] OR \"early mobilisation\"[tiab] OR \"early mobilization\"[tiab] OR \"Immobilization\"[mh] OR \"Early Ambulation\"[mh])\nAND (randomized controlled trial[pt] OR randomized[tiab] OR randomised[tiab] OR \"randomly allocated\"[tiab])\nNOT (syndesmo*[tiab] OR \"high ankle\"[tiab])",
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22lateral+ankle+sprain%22%5Btiab%5D+OR+%22ankle+sprain%22%5Btiab%5D+OR+%22inversion+injury%22%5Btiab%5D+OR+%22inversion+ankle+sprain%22%5Btiab%5D+OR+%22lateral+ligament+injury%22%5Btiab%5D+OR+%22lateral+ankle+ligament+injury%22%5Btiab%5D+OR+%22ATFL+rupture%22%5Btiab%5D+OR+%22ankle+ligament+injury%22%5Btiab%5D+OR+%22ankle+distortion%22%5Btiab%5D+OR+%22supination+trauma%22%5Btiab%5D+OR+%22ankle+inversion+trauma%22%5Btiab%5D+OR+LAS%5Btiab%5D+OR+ATFL%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D+OR+%22Sprains+and+Strains%22%5Bmh%5D+OR+%22Lateral+Ligament%2C+Ankle%22%5Bmh%5D%29+AND+%28immobili%2A%5Btiab%5D+OR+cast%5Btiab%5D+OR+%22functional+treatment%22%5Btiab%5D+OR+%22early+mobilisation%22%5Btiab%5D+OR+%22early+mobilization%22%5Btiab%5D+OR+%22Immobilization%22%5Bmh%5D+OR+%22Early+Ambulation%22%5Bmh%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+randomized%5Btiab%5D+OR+randomised%5Btiab%5D+OR+%22randomly+allocated%22%5Btiab%5D%29+NOT+%28syndesmo%2A%5Btiab%5D+OR+%22high+ankle%22%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-08",
+      "verification": "constructed"
+    },
+    {
+      "id": "r3",
+      "question": "Do braces or taping prevent recurrent ankle sprain in court-sport athletes?",
+      "kind": "intervention",
+      "concepts": [
+        "las",
+        "prevention"
+      ],
+      "filter": "rct",
+      "getsYou": "Prevention and recurrence trials covering external support and prophylactic programmes.",
+      "thenWhat": "Note whether the intervention was support alone or a whole warm-up programme — you usually cannot separate them afterwards.",
+      "string": "(\"lateral ankle sprain\"[tiab] OR \"ankle sprain\"[tiab] OR \"inversion injury\"[tiab] OR \"inversion ankle sprain\"[tiab] OR \"lateral ligament injury\"[tiab] OR \"lateral ankle ligament injury\"[tiab] OR \"ATFL rupture\"[tiab] OR \"ankle ligament injury\"[tiab] OR \"ankle distortion\"[tiab] OR \"supination trauma\"[tiab] OR \"ankle inversion trauma\"[tiab] OR LAS[tiab] OR ATFL[tiab] OR \"Ankle Injuries\"[mh] OR \"Sprains and Strains\"[mh] OR \"Lateral Ligament, Ankle\"[mh])\nAND (\"injury prevention\"[tiab] OR prophylactic[tiab] OR \"primary prevention\"[tiab] OR \"secondary prevention\"[tiab] OR recurrence[tiab] OR reinjury[tiab] OR re-injury[tiab] OR brace[tiab] OR bracing[tiab] OR \"ankle brace\"[tiab] OR taping[tiab] OR \"athletic tape\"[tiab] OR \"rigid tape\"[tiab] OR \"kinesio tape\"[tiab] OR orthosis[tiab] OR \"external support\"[tiab] OR \"semi-rigid support\"[tiab] OR \"ankle strapping\"[tiab] OR \"prophylactic ankle stabiliser\"[tiab] OR \"Braces\"[mh] OR \"Athletic Tape\"[mh] OR \"Primary Prevention\"[mh] OR \"Secondary Prevention\"[mh])\nAND (randomized controlled trial[pt] OR randomized[tiab] OR randomised[tiab] OR \"randomly allocated\"[tiab])",
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22lateral+ankle+sprain%22%5Btiab%5D+OR+%22ankle+sprain%22%5Btiab%5D+OR+%22inversion+injury%22%5Btiab%5D+OR+%22inversion+ankle+sprain%22%5Btiab%5D+OR+%22lateral+ligament+injury%22%5Btiab%5D+OR+%22lateral+ankle+ligament+injury%22%5Btiab%5D+OR+%22ATFL+rupture%22%5Btiab%5D+OR+%22ankle+ligament+injury%22%5Btiab%5D+OR+%22ankle+distortion%22%5Btiab%5D+OR+%22supination+trauma%22%5Btiab%5D+OR+%22ankle+inversion+trauma%22%5Btiab%5D+OR+LAS%5Btiab%5D+OR+ATFL%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D+OR+%22Sprains+and+Strains%22%5Bmh%5D+OR+%22Lateral+Ligament%2C+Ankle%22%5Bmh%5D%29+AND+%28%22injury+prevention%22%5Btiab%5D+OR+prophylactic%5Btiab%5D+OR+%22primary+prevention%22%5Btiab%5D+OR+%22secondary+prevention%22%5Btiab%5D+OR+recurrence%5Btiab%5D+OR+reinjury%5Btiab%5D+OR+re-injury%5Btiab%5D+OR+brace%5Btiab%5D+OR+bracing%5Btiab%5D+OR+%22ankle+brace%22%5Btiab%5D+OR+taping%5Btiab%5D+OR+%22athletic+tape%22%5Btiab%5D+OR+%22rigid+tape%22%5Btiab%5D+OR+%22kinesio+tape%22%5Btiab%5D+OR+orthosis%5Btiab%5D+OR+%22external+support%22%5Btiab%5D+OR+%22semi-rigid+support%22%5Btiab%5D+OR+%22ankle+strapping%22%5Btiab%5D+OR+%22prophylactic+ankle+stabiliser%22%5Btiab%5D+OR+%22Braces%22%5Bmh%5D+OR+%22Athletic+Tape%22%5Bmh%5D+OR+%22Primary+Prevention%22%5Bmh%5D+OR+%22Secondary+Prevention%22%5Bmh%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+randomized%5Btiab%5D+OR+randomised%5Btiab%5D+OR+%22randomly+allocated%22%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-08",
+      "verification": "constructed"
+    },
+    {
+      "id": "r4",
+      "question": "What criteria should decide return to sport after a lateral ankle sprain?",
+      "kind": "practice",
+      "concepts": [
+        "las",
+        "rts"
+      ],
+      "filter": "guide",
+      "getsYou": "Consensus statements and guideline material on return-to-sport decision-making.",
+      "thenWhat": "Go straight to PAASS and Ankle-GO in the guidelines section. Then read the Bern consensus for the framework they both assume.",
+      "string": "(\"lateral ankle sprain\"[tiab] OR \"ankle sprain\"[tiab] OR \"inversion injury\"[tiab] OR \"inversion ankle sprain\"[tiab] OR \"lateral ligament injury\"[tiab] OR \"lateral ankle ligament injury\"[tiab] OR \"ATFL rupture\"[tiab] OR \"ankle ligament injury\"[tiab] OR \"ankle distortion\"[tiab] OR \"supination trauma\"[tiab] OR \"ankle inversion trauma\"[tiab] OR LAS[tiab] OR ATFL[tiab] OR \"Ankle Injuries\"[mh] OR \"Sprains and Strains\"[mh] OR \"Lateral Ligament, Ankle\"[mh])\nAND (\"return to sport\"[tiab] OR \"return to play\"[tiab] OR \"return to performance\"[tiab] OR \"return to participation\"[tiab] OR \"readiness to return\"[tiab] OR \"time to return\"[tiab] OR \"clearance to play\"[tiab] OR \"return to activity\"[tiab] OR \"return to competition\"[tiab] OR \"fitness to play\"[tiab] OR RTS[tiab] OR RTP[tiab] OR \"Return to Sport\"[mh])\nAND (\"Practice Guideline\"[pt] OR Guideline[pt] OR \"Consensus\"[mh] OR guideline*[tiab] OR \"consensus statement\"[tiab] OR \"position statement\"[tiab])",
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22lateral+ankle+sprain%22%5Btiab%5D+OR+%22ankle+sprain%22%5Btiab%5D+OR+%22inversion+injury%22%5Btiab%5D+OR+%22inversion+ankle+sprain%22%5Btiab%5D+OR+%22lateral+ligament+injury%22%5Btiab%5D+OR+%22lateral+ankle+ligament+injury%22%5Btiab%5D+OR+%22ATFL+rupture%22%5Btiab%5D+OR+%22ankle+ligament+injury%22%5Btiab%5D+OR+%22ankle+distortion%22%5Btiab%5D+OR+%22supination+trauma%22%5Btiab%5D+OR+%22ankle+inversion+trauma%22%5Btiab%5D+OR+LAS%5Btiab%5D+OR+ATFL%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D+OR+%22Sprains+and+Strains%22%5Bmh%5D+OR+%22Lateral+Ligament%2C+Ankle%22%5Bmh%5D%29+AND+%28%22return+to+sport%22%5Btiab%5D+OR+%22return+to+play%22%5Btiab%5D+OR+%22return+to+performance%22%5Btiab%5D+OR+%22return+to+participation%22%5Btiab%5D+OR+%22readiness+to+return%22%5Btiab%5D+OR+%22time+to+return%22%5Btiab%5D+OR+%22clearance+to+play%22%5Btiab%5D+OR+%22return+to+activity%22%5Btiab%5D+OR+%22return+to+competition%22%5Btiab%5D+OR+%22fitness+to+play%22%5Btiab%5D+OR+RTS%5Btiab%5D+OR+RTP%5Btiab%5D+OR+%22Return+to+Sport%22%5Bmh%5D%29+AND+%28%22Practice+Guideline%22%5Bpt%5D+OR+Guideline%5Bpt%5D+OR+%22Consensus%22%5Bmh%5D+OR+guideline%2A%5Btiab%5D+OR+%22consensus+statement%22%5Btiab%5D+OR+%22position+statement%22%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-08",
+      "verification": "constructed"
+    },
+    {
+      "id": "r5",
+      "question": "How reliable is the weight-bearing lunge test, and what change is clinically meaningful?",
+      "kind": "measurement",
+      "concepts": [
+        "dorsiflexion"
+      ],
+      "filter": "measure",
+      "getsYou": "Reliability, validity and MCID studies for dorsiflexion measurement.",
+      "thenWhat": "Check whether the reliability was established in your population. Properties do not transfer across populations.",
+      "string": "(dorsiflexion[tiab] OR \"ankle dorsiflexion\"[tiab] OR \"weight-bearing lunge test\"[tiab] OR \"knee to wall test\"[tiab] OR \"talocrural joint mobility\"[tiab] OR \"ankle range of motion\"[tiab] OR \"closed kinetic chain dorsiflexion\"[tiab] OR \"ankle equinus\"[tiab] OR DF ROM[tiab] OR WBLT[tiab] OR WBDF[tiab] OR \"Range of Motion, Articular\"[mh] OR \"Ankle Joint\"[mh])\nAND (\"Reproducibility of Results\"[mh] OR \"Psychometrics\"[mh] OR reliabilit*[tiab] OR validit*[tiab] OR responsiveness[tiab] OR \"measurement propert*\"[tiab] OR \"minimal clinically important\"[tiab])",
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28dorsiflexion%5Btiab%5D+OR+%22ankle+dorsiflexion%22%5Btiab%5D+OR+%22weight-bearing+lunge+test%22%5Btiab%5D+OR+%22knee+to+wall+test%22%5Btiab%5D+OR+%22talocrural+joint+mobility%22%5Btiab%5D+OR+%22ankle+range+of+motion%22%5Btiab%5D+OR+%22closed+kinetic+chain+dorsiflexion%22%5Btiab%5D+OR+%22ankle+equinus%22%5Btiab%5D+OR+DF+ROM%5Btiab%5D+OR+WBLT%5Btiab%5D+OR+WBDF%5Btiab%5D+OR+%22Range+of+Motion%2C+Articular%22%5Bmh%5D+OR+%22Ankle+Joint%22%5Bmh%5D%29+AND+%28%22Reproducibility+of+Results%22%5Bmh%5D+OR+%22Psychometrics%22%5Bmh%5D+OR+reliabilit%2A%5Btiab%5D+OR+validit%2A%5Btiab%5D+OR+responsiveness%5Btiab%5D+OR+%22measurement+propert%2A%22%5Btiab%5D+OR+%22minimal+clinically+important%22%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-08",
+      "verification": "constructed"
+    },
+    {
+      "id": "r6",
+      "question": "Which loading protocol works best for midportion Achilles tendinopathy?",
+      "kind": "intervention",
+      "concepts": [
+        "achilles"
+      ],
+      "filter": "rct",
+      "extra": "(eccentric[tiab] OR \"heavy slow resistance\"[tiab] OR \"loading program*\"[tiab] OR \"loading protocol*\"[tiab] OR isometric[tiab] OR \"Resistance Training\"[mh] OR \"Exercise Therapy\"[mh])",
+      "getsYou": "Loading trials — including the older literature filed under 'tendinitis', which the vocabulary block deliberately captures.",
+      "thenWhat": "Read the 2024 JOSPT CPG revision, not the 2018 one that most courses still quote. Then pull a protocol off ClinicalTrials.gov for the actual dose.",
+      "string": "(\"Achilles tendinopathy\"[tiab] OR \"midportion Achilles tendinopathy\"[tiab] OR \"insertional Achilles tendinopathy\"[tiab] OR \"Achilles tendinosis\"[tiab] OR \"Achilles tendon pain\"[tiab] OR \"Achilles tendinitis\"[tiab] OR \"Achilles tendonitis\"[tiab] OR peritendinitis[tiab] OR paratendinopathy[tiab] OR paratenonitis[tiab] OR \"Achilles Tendon\"[mh] OR \"Tendinopathy\"[mh])\nAND (eccentric[tiab] OR \"heavy slow resistance\"[tiab] OR \"loading program*\"[tiab] OR \"loading protocol*\"[tiab] OR isometric[tiab] OR \"Resistance Training\"[mh] OR \"Exercise Therapy\"[mh])\nAND (randomized controlled trial[pt] OR randomized[tiab] OR randomised[tiab] OR \"randomly allocated\"[tiab])",
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22Achilles+tendinopathy%22%5Btiab%5D+OR+%22midportion+Achilles+tendinopathy%22%5Btiab%5D+OR+%22insertional+Achilles+tendinopathy%22%5Btiab%5D+OR+%22Achilles+tendinosis%22%5Btiab%5D+OR+%22Achilles+tendon+pain%22%5Btiab%5D+OR+%22Achilles+tendinitis%22%5Btiab%5D+OR+%22Achilles+tendonitis%22%5Btiab%5D+OR+peritendinitis%5Btiab%5D+OR+paratendinopathy%5Btiab%5D+OR+paratenonitis%5Btiab%5D+OR+%22Achilles+Tendon%22%5Bmh%5D+OR+%22Tendinopathy%22%5Bmh%5D%29+AND+%28eccentric%5Btiab%5D+OR+%22heavy+slow+resistance%22%5Btiab%5D+OR+%22loading+program%2A%22%5Btiab%5D+OR+%22loading+protocol%2A%22%5Btiab%5D+OR+isometric%5Btiab%5D+OR+%22Resistance+Training%22%5Bmh%5D+OR+%22Exercise+Therapy%22%5Bmh%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+randomized%5Btiab%5D+OR+randomised%5Btiab%5D+OR+%22randomly+allocated%22%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-08",
+      "verification": "constructed"
+    },
+    {
+      "id": "r7",
+      "question": "How does gait differ in people with chronic ankle instability?",
+      "kind": "mechanism",
+      "concepts": [
+        "cai",
+        "biomech"
+      ],
+      "filter": "mech",
+      "getsYou": "Laboratory kinematics, kinetics and EMG studies comparing CAI with controls and copers.",
+      "thenWhat": "Faster route: open Hertel's and Wikstrom's Scholar profiles and sort by citations. Mechanism literature is found by author, not by keyword.",
+      "string": "(\"chronic ankle instability\"[tiab] OR \"functional ankle instability\"[tiab] OR \"mechanical ankle instability\"[tiab] OR \"recurrent ankle sprain\"[tiab] OR \"ankle joint instability\"[tiab] OR \"perceived ankle instability\"[tiab] OR \"giving way\"[tiab] OR \"functional instability\"[tiab] OR \"chronic ankle laxity\"[tiab] OR \"residual symptoms after ankle sprain\"[tiab] OR CAI[tiab] OR MAI[tiab] OR \"Joint Instability\"[mh] OR \"Ankle Injuries\"[mh])\nAND (kinematics[tiab] OR kinetics[tiab] OR \"ground reaction force\"[tiab] OR \"joint moment\"[tiab] OR \"joint angle\"[tiab] OR \"muscle activation\"[tiab] OR electromyography[tiab] OR gait[tiab] OR walking[tiab] OR running[tiab] OR \"jump landing\"[tiab] OR \"single-leg landing\"[tiab] OR \"drop vertical jump\"[tiab] OR cutting[tiab] OR \"change of direction\"[tiab] OR \"motion capture\"[tiab] OR \"gait analysis\"[tiab] OR \"movement analysis\"[tiab] OR GRF[tiab] OR EMG[tiab] OR DVJ[tiab] OR \"Biomechanical Phenomena\"[mh] OR \"Gait\"[mh] OR \"Electromyography\"[mh] OR \"Movement\"[mh])\nAND (\"Biomechanical Phenomena\"[mh] OR kinematic*[tiab] OR kinetic*[tiab] OR electromyograph*[tiab] OR \"motion capture\"[tiab] OR \"force plate\"[tiab])",
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22chronic+ankle+instability%22%5Btiab%5D+OR+%22functional+ankle+instability%22%5Btiab%5D+OR+%22mechanical+ankle+instability%22%5Btiab%5D+OR+%22recurrent+ankle+sprain%22%5Btiab%5D+OR+%22ankle+joint+instability%22%5Btiab%5D+OR+%22perceived+ankle+instability%22%5Btiab%5D+OR+%22giving+way%22%5Btiab%5D+OR+%22functional+instability%22%5Btiab%5D+OR+%22chronic+ankle+laxity%22%5Btiab%5D+OR+%22residual+symptoms+after+ankle+sprain%22%5Btiab%5D+OR+CAI%5Btiab%5D+OR+MAI%5Btiab%5D+OR+%22Joint+Instability%22%5Bmh%5D+OR+%22Ankle+Injuries%22%5Bmh%5D%29+AND+%28kinematics%5Btiab%5D+OR+kinetics%5Btiab%5D+OR+%22ground+reaction+force%22%5Btiab%5D+OR+%22joint+moment%22%5Btiab%5D+OR+%22joint+angle%22%5Btiab%5D+OR+%22muscle+activation%22%5Btiab%5D+OR+electromyography%5Btiab%5D+OR+gait%5Btiab%5D+OR+walking%5Btiab%5D+OR+running%5Btiab%5D+OR+%22jump+landing%22%5Btiab%5D+OR+%22single-leg+landing%22%5Btiab%5D+OR+%22drop+vertical+jump%22%5Btiab%5D+OR+cutting%5Btiab%5D+OR+%22change+of+direction%22%5Btiab%5D+OR+%22motion+capture%22%5Btiab%5D+OR+%22gait+analysis%22%5Btiab%5D+OR+%22movement+analysis%22%5Btiab%5D+OR+GRF%5Btiab%5D+OR+EMG%5Btiab%5D+OR+DVJ%5Btiab%5D+OR+%22Biomechanical+Phenomena%22%5Bmh%5D+OR+%22Gait%22%5Bmh%5D+OR+%22Electromyography%22%5Bmh%5D+OR+%22Movement%22%5Bmh%5D%29+AND+%28%22Biomechanical+Phenomena%22%5Bmh%5D+OR+kinematic%2A%5Btiab%5D+OR+kinetic%2A%5Btiab%5D+OR+electromyograph%2A%5Btiab%5D+OR+%22motion+capture%22%5Btiab%5D+OR+%22force+plate%22%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-08",
+      "verification": "constructed"
+    },
+    {
+      "id": "r8",
+      "question": "How common is ankle sprain, and what proportion go on to chronic instability?",
+      "kind": "epidemiology",
+      "concepts": [
+        "las",
+        "epi"
+      ],
+      "filter": "epi",
+      "getsYou": "Surveillance and prospective incidence studies with population denominators.",
+      "thenWhat": "Anchor on Doherty 2014. Convert every rate to a common denominator before comparing anything.",
+      "string": "(\"lateral ankle sprain\"[tiab] OR \"ankle sprain\"[tiab] OR \"inversion injury\"[tiab] OR \"inversion ankle sprain\"[tiab] OR \"lateral ligament injury\"[tiab] OR \"lateral ankle ligament injury\"[tiab] OR \"ATFL rupture\"[tiab] OR \"ankle ligament injury\"[tiab] OR \"ankle distortion\"[tiab] OR \"supination trauma\"[tiab] OR \"ankle inversion trauma\"[tiab] OR LAS[tiab] OR ATFL[tiab] OR \"Ankle Injuries\"[mh] OR \"Sprains and Strains\"[mh] OR \"Lateral Ligament, Ankle\"[mh])\nAND (incidence[tiab] OR prevalence[tiab] OR \"injury rate\"[tiab] OR \"injury burden\"[tiab] OR \"injury surveillance\"[tiab] OR epidemiology[tiab] OR exposure[tiab] OR athlete-exposures[tiab] OR \"injury severity\"[tiab] OR \"time loss\"[tiab] OR \"injury frequency\"[tiab] OR AE[tiab] OR IR[tiab] OR \"Incidence\"[mh] OR \"Prevalence\"[mh] OR \"Athletic Injuries\"[mh] OR \"Epidemiologic Studies\"[mh])\nAND (\"Incidence\"[mh] OR \"Prevalence\"[mh] OR incidence[tiab] OR epidemiolog*[tiab] OR \"injury rate*\"[tiab] OR surveillance[tiab])",
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22lateral+ankle+sprain%22%5Btiab%5D+OR+%22ankle+sprain%22%5Btiab%5D+OR+%22inversion+injury%22%5Btiab%5D+OR+%22inversion+ankle+sprain%22%5Btiab%5D+OR+%22lateral+ligament+injury%22%5Btiab%5D+OR+%22lateral+ankle+ligament+injury%22%5Btiab%5D+OR+%22ATFL+rupture%22%5Btiab%5D+OR+%22ankle+ligament+injury%22%5Btiab%5D+OR+%22ankle+distortion%22%5Btiab%5D+OR+%22supination+trauma%22%5Btiab%5D+OR+%22ankle+inversion+trauma%22%5Btiab%5D+OR+LAS%5Btiab%5D+OR+ATFL%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D+OR+%22Sprains+and+Strains%22%5Bmh%5D+OR+%22Lateral+Ligament%2C+Ankle%22%5Bmh%5D%29+AND+%28incidence%5Btiab%5D+OR+prevalence%5Btiab%5D+OR+%22injury+rate%22%5Btiab%5D+OR+%22injury+burden%22%5Btiab%5D+OR+%22injury+surveillance%22%5Btiab%5D+OR+epidemiology%5Btiab%5D+OR+exposure%5Btiab%5D+OR+athlete-exposures%5Btiab%5D+OR+%22injury+severity%22%5Btiab%5D+OR+%22time+loss%22%5Btiab%5D+OR+%22injury+frequency%22%5Btiab%5D+OR+AE%5Btiab%5D+OR+IR%5Btiab%5D+OR+%22Incidence%22%5Bmh%5D+OR+%22Prevalence%22%5Bmh%5D+OR+%22Athletic+Injuries%22%5Bmh%5D+OR+%22Epidemiologic+Studies%22%5Bmh%5D%29+AND+%28%22Incidence%22%5Bmh%5D+OR+%22Prevalence%22%5Bmh%5D+OR+incidence%5Btiab%5D+OR+epidemiolog%2A%5Btiab%5D+OR+%22injury+rate%2A%22%5Btiab%5D+OR+surveillance%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-08",
+      "verification": "constructed"
+    },
+    {
+      "id": "r9",
+      "question": "What does rehabilitation look like after lateral ligament reconstruction?",
+      "kind": "practice",
+      "concepts": [
+        "las"
+      ],
+      "filter": "none",
+      "extra": "(\"lateral ligament\"[tiab] OR Brostrom[tiab] OR \"ligament reconstruction\"[tiab] OR \"Ankle Joint\"[mh]) AND (rehabilitat*[tiab] OR postoperative[tiab] OR \"post-operative\"[tiab] OR \"Postoperative Care\"[mh] OR physiotherap*[tiab] OR \"Physical Therapy Modalities\"[mh])",
+      "getsYou": "Post-operative protocols and outcome studies. Expect FAI, KSSTA and AJSM rather than JOSPT.",
+      "thenWhat": "The published paper will compress the protocol. Find the trial on ClinicalTrials.gov and read the registered protocol instead.",
+      "string": "(\"lateral ankle sprain\"[tiab] OR \"ankle sprain\"[tiab] OR \"inversion injury\"[tiab] OR \"inversion ankle sprain\"[tiab] OR \"lateral ligament injury\"[tiab] OR \"lateral ankle ligament injury\"[tiab] OR \"ATFL rupture\"[tiab] OR \"ankle ligament injury\"[tiab] OR \"ankle distortion\"[tiab] OR \"supination trauma\"[tiab] OR \"ankle inversion trauma\"[tiab] OR LAS[tiab] OR ATFL[tiab] OR \"Ankle Injuries\"[mh] OR \"Sprains and Strains\"[mh] OR \"Lateral Ligament, Ankle\"[mh])\nAND (\"lateral ligament\"[tiab] OR Brostrom[tiab] OR \"ligament reconstruction\"[tiab] OR \"Ankle Joint\"[mh]) AND (rehabilitat*[tiab] OR postoperative[tiab] OR \"post-operative\"[tiab] OR \"Postoperative Care\"[mh] OR physiotherap*[tiab] OR \"Physical Therapy Modalities\"[mh])",
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22lateral+ankle+sprain%22%5Btiab%5D+OR+%22ankle+sprain%22%5Btiab%5D+OR+%22inversion+injury%22%5Btiab%5D+OR+%22inversion+ankle+sprain%22%5Btiab%5D+OR+%22lateral+ligament+injury%22%5Btiab%5D+OR+%22lateral+ankle+ligament+injury%22%5Btiab%5D+OR+%22ATFL+rupture%22%5Btiab%5D+OR+%22ankle+ligament+injury%22%5Btiab%5D+OR+%22ankle+distortion%22%5Btiab%5D+OR+%22supination+trauma%22%5Btiab%5D+OR+%22ankle+inversion+trauma%22%5Btiab%5D+OR+LAS%5Btiab%5D+OR+ATFL%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D+OR+%22Sprains+and+Strains%22%5Bmh%5D+OR+%22Lateral+Ligament%2C+Ankle%22%5Bmh%5D%29+AND+%28%22lateral+ligament%22%5Btiab%5D+OR+Brostrom%5Btiab%5D+OR+%22ligament+reconstruction%22%5Btiab%5D+OR+%22Ankle+Joint%22%5Bmh%5D%29+AND+%28rehabilitat%2A%5Btiab%5D+OR+postoperative%5Btiab%5D+OR+%22post-operative%22%5Btiab%5D+OR+%22Postoperative+Care%22%5Bmh%5D+OR+physiotherap%2A%5Btiab%5D+OR+%22Physical+Therapy+Modalities%22%5Bmh%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-08",
+      "verification": "constructed"
+    },
+    {
+      "id": "r10",
+      "question": "Why does the ankle keep giving way when the ligament has healed?",
+      "kind": "mechanism",
+      "concepts": [
+        "cai",
+        "proprio"
+      ],
+      "filter": "mech",
+      "getsYou": "Sensorimotor and proprioceptive mechanism studies — the evidence behind the balance-training rationale.",
+      "thenWhat": "Read McKeon's sensory-targeted rehabilitation work and the constraints-based model paper. Then ask whether the mechanism evidence actually supports the intervention you use.",
+      "string": "(\"chronic ankle instability\"[tiab] OR \"functional ankle instability\"[tiab] OR \"mechanical ankle instability\"[tiab] OR \"recurrent ankle sprain\"[tiab] OR \"ankle joint instability\"[tiab] OR \"perceived ankle instability\"[tiab] OR \"giving way\"[tiab] OR \"functional instability\"[tiab] OR \"chronic ankle laxity\"[tiab] OR \"residual symptoms after ankle sprain\"[tiab] OR CAI[tiab] OR MAI[tiab] OR \"Joint Instability\"[mh] OR \"Ankle Injuries\"[mh])\nAND (proprioception[tiab] OR \"joint position sense\"[tiab] OR kinaesthesia[tiab] OR kinesthesia[tiab] OR \"sensorimotor control\"[tiab] OR \"neuromuscular control\"[tiab] OR \"force sense\"[tiab] OR \"movement detection threshold\"[tiab] OR \"motor control\"[tiab] OR \"corticospinal excitability\"[tiab] OR \"arthrogenic muscle inhibition\"[tiab] OR \"articular deafferentation\"[tiab] OR \"proprioceptive deficit\"[tiab] OR \"joint position sense error\"[tiab] OR JPS[tiab] OR AMI[tiab] OR \"Proprioception\"[mh] OR \"Kinesthesis\"[mh])\nAND (\"Biomechanical Phenomena\"[mh] OR kinematic*[tiab] OR kinetic*[tiab] OR electromyograph*[tiab] OR \"motion capture\"[tiab] OR \"force plate\"[tiab])",
+      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22chronic+ankle+instability%22%5Btiab%5D+OR+%22functional+ankle+instability%22%5Btiab%5D+OR+%22mechanical+ankle+instability%22%5Btiab%5D+OR+%22recurrent+ankle+sprain%22%5Btiab%5D+OR+%22ankle+joint+instability%22%5Btiab%5D+OR+%22perceived+ankle+instability%22%5Btiab%5D+OR+%22giving+way%22%5Btiab%5D+OR+%22functional+instability%22%5Btiab%5D+OR+%22chronic+ankle+laxity%22%5Btiab%5D+OR+%22residual+symptoms+after+ankle+sprain%22%5Btiab%5D+OR+CAI%5Btiab%5D+OR+MAI%5Btiab%5D+OR+%22Joint+Instability%22%5Bmh%5D+OR+%22Ankle+Injuries%22%5Bmh%5D%29+AND+%28proprioception%5Btiab%5D+OR+%22joint+position+sense%22%5Btiab%5D+OR+kinaesthesia%5Btiab%5D+OR+kinesthesia%5Btiab%5D+OR+%22sensorimotor+control%22%5Btiab%5D+OR+%22neuromuscular+control%22%5Btiab%5D+OR+%22force+sense%22%5Btiab%5D+OR+%22movement+detection+threshold%22%5Btiab%5D+OR+%22motor+control%22%5Btiab%5D+OR+%22corticospinal+excitability%22%5Btiab%5D+OR+%22arthrogenic+muscle+inhibition%22%5Btiab%5D+OR+%22articular+deafferentation%22%5Btiab%5D+OR+%22proprioceptive+deficit%22%5Btiab%5D+OR+%22joint+position+sense+error%22%5Btiab%5D+OR+JPS%5Btiab%5D+OR+AMI%5Btiab%5D+OR+%22Proprioception%22%5Bmh%5D+OR+%22Kinesthesis%22%5Bmh%5D%29+AND+%28%22Biomechanical+Phenomena%22%5Bmh%5D+OR+kinematic%2A%5Btiab%5D+OR+kinetic%2A%5Btiab%5D+OR+electromyograph%2A%5Btiab%5D+OR+%22motion+capture%22%5Btiab%5D+OR+%22force+plate%22%5Btiab%5D%29",
+      "hitCount": null,
+      "verifiedOn": "2026-09-08",
+      "verification": "constructed"
+    }
+  ],
   "journals": [
     {
       "id": "bjsm",
@@ -1645,223 +3493,6 @@
       "verifiedOn": "2026-09-06",
       "verification": "search-confirmed",
       "alt": null
-    }
-  ],
-  "searchStrings": [
-    {
-      "id": "ss1",
-      "topic": "Chronic ankle instability — balance and neuromuscular training RCTs",
-      "description": "Randomised trials of balance, proprioceptive, neuromuscular or sensorimotor training in people who already have chronic ankle instability. This is the 'does the standard treatment actually work' string.",
-      "design": "RCT",
-      "string": "(\"chronic ankle instability\"[tiab] OR \"functional ankle instability\"[tiab] OR (\"Ankle Injuries\"[mh] AND \"Joint Instability\"[mh])) AND (\"balance training\"[tiab] OR \"neuromuscular training\"[tiab] OR \"proprioceptive training\"[tiab] OR \"sensorimotor training\"[tiab] OR \"wobble board\"[tiab] OR \"Postural Balance\"[mh] OR \"Proprioception\"[mh]) AND (randomized controlled trial[pt] OR randomised[tiab] OR randomized[tiab])",
-      "tags": [
-        "chronic-ankle-instability",
-        "rehabilitation",
-        "rct"
-      ],
-      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22chronic+ankle+instability%22%5Btiab%5D+OR+%22functional+ankle+instability%22%5Btiab%5D+OR+%28%22Ankle+Injuries%22%5Bmh%5D+AND+%22Joint+Instability%22%5Bmh%5D%29%29+AND+%28%22balance+training%22%5Btiab%5D+OR+%22neuromuscular+training%22%5Btiab%5D+OR+%22proprioceptive+training%22%5Btiab%5D+OR+%22sensorimotor+training%22%5Btiab%5D+OR+%22wobble+board%22%5Btiab%5D+OR+%22Postural+Balance%22%5Bmh%5D+OR+%22Proprioception%22%5Bmh%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+randomised%5Btiab%5D+OR+randomized%5Btiab%5D%29",
-      "hitCount": null,
-      "verifiedOn": "2026-09-06",
-      "verification": "constructed"
-    },
-    {
-      "id": "ss2",
-      "topic": "Acute lateral ankle sprain — immobilisation vs early mobilisation",
-      "description": "Early management of a fresh lateral ankle sprain: cast or brace immobilisation compared against functional treatment and early loading. Directly answers 'what do I do in week one'.",
-      "design": "RCT and systematic review",
-      "string": "(\"ankle sprain*\"[tiab] OR \"lateral ankle ligament\"[tiab] OR \"Ankle Injuries\"[mh]) AND (immobili*[tiab] OR cast[tiab] OR \"functional treatment\"[tiab] OR \"early mobilisation\"[tiab] OR \"early mobilization\"[tiab] OR \"Immobilization\"[mh] OR \"Early Ambulation\"[mh]) AND (randomized controlled trial[pt] OR systematic[sb])",
-      "tags": [
-        "acute-sprain",
-        "rehabilitation",
-        "rct"
-      ],
-      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22ankle+sprain%2A%22%5Btiab%5D+OR+%22lateral+ankle+ligament%22%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D%29+AND+%28immobili%2A%5Btiab%5D+OR+cast%5Btiab%5D+OR+%22functional+treatment%22%5Btiab%5D+OR+%22early+mobilisation%22%5Btiab%5D+OR+%22early+mobilization%22%5Btiab%5D+OR+%22Immobilization%22%5Bmh%5D+OR+%22Early+Ambulation%22%5Bmh%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+systematic%5Bsb%5D%29",
-      "hitCount": null,
-      "verifiedOn": "2026-09-06",
-      "verification": "constructed"
-    },
-    {
-      "id": "ss3",
-      "topic": "Ankle sprain recurrence and prevention — bracing, taping, prophylactic programmes",
-      "description": "Everything aimed at stopping the next sprain: external support, tape, and prophylactic neuromuscular programmes, restricted to studies that actually measured prevention or recurrence.",
-      "design": "RCT and meta-analysis",
-      "string": "(\"ankle sprain*\"[tiab] OR \"Ankle Injuries\"[mh]) AND (brace*[tiab] OR bracing[tiab] OR taping[tiab] OR orthos*[tiab] OR \"Braces\"[mh] OR \"Athletic Tape\"[mh] OR \"neuromuscular training\"[tiab]) AND (prevent*[tiab] OR recurren*[tiab] OR reinjur*[tiab] OR \"re-injury\"[tiab]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic[sb])",
-      "tags": [
-        "prevention",
-        "acute-sprain",
-        "rct"
-      ],
-      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22ankle+sprain%2A%22%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D%29+AND+%28brace%2A%5Btiab%5D+OR+bracing%5Btiab%5D+OR+taping%5Btiab%5D+OR+orthos%2A%5Btiab%5D+OR+%22Braces%22%5Bmh%5D+OR+%22Athletic+Tape%22%5Bmh%5D+OR+%22neuromuscular+training%22%5Btiab%5D%29+AND+%28prevent%2A%5Btiab%5D+OR+recurren%2A%5Btiab%5D+OR+reinjur%2A%5Btiab%5D+OR+%22re-injury%22%5Btiab%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+meta-analysis%5Bpt%5D+OR+systematic%5Bsb%5D%29",
-      "hitCount": null,
-      "verifiedOn": "2026-09-06",
-      "verification": "constructed"
-    },
-    {
-      "id": "ss4",
-      "topic": "Return-to-sport criteria and testing after ankle injury",
-      "description": "How the return-to-sport decision is made after ankle injury: criteria, test batteries, decision frameworks and readiness measures. Pair the results with the PAASS framework and Ankle-GO in the Guidelines section.",
-      "design": "Consensus, cohort, systematic review",
-      "string": "(\"ankle sprain*\"[tiab] OR \"ankle instability\"[tiab] OR \"Ankle Injuries\"[mh]) AND (\"return to sport\"[tiab] OR \"return to play\"[tiab] OR \"Return to Sport\"[mh] OR readiness[tiab]) AND (criteri*[tiab] OR test*[tiab] OR assess*[tiab] OR decision*[tiab])",
-      "tags": [
-        "return-to-sport",
-        "assessment"
-      ],
-      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22ankle+sprain%2A%22%5Btiab%5D+OR+%22ankle+instability%22%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D%29+AND+%28%22return+to+sport%22%5Btiab%5D+OR+%22return+to+play%22%5Btiab%5D+OR+%22Return+to+Sport%22%5Bmh%5D+OR+readiness%5Btiab%5D%29+AND+%28criteri%2A%5Btiab%5D+OR+test%2A%5Btiab%5D+OR+assess%2A%5Btiab%5D+OR+decision%2A%5Btiab%5D%29",
-      "hitCount": null,
-      "verifiedOn": "2026-09-06",
-      "verification": "constructed"
-    },
-    {
-      "id": "ss5",
-      "topic": "Ankle dorsiflexion range of motion — measurement, restriction and consequences",
-      "description": "How dorsiflexion is measured, how reliable those measures are, what restricts it, and what a restriction does downstream. The weight-bearing lunge test literature lives here.",
-      "design": "Measurement property and observational studies",
-      "string": "(dorsiflexion[tiab] OR \"Range of Motion, Articular\"[mh]) AND (ankle[tiab] OR \"Ankle Joint\"[mh]) AND (measur*[tiab] OR reliab*[tiab] OR restrict*[tiab] OR limit*[tiab] OR \"weight-bearing lunge\"[tiab] OR \"lunge test\"[tiab])",
-      "tags": [
-        "assessment",
-        "biomechanics",
-        "foot-ankle"
-      ],
-      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28dorsiflexion%5Btiab%5D+OR+%22Range+of+Motion%2C+Articular%22%5Bmh%5D%29+AND+%28ankle%5Btiab%5D+OR+%22Ankle+Joint%22%5Bmh%5D%29+AND+%28measur%2A%5Btiab%5D+OR+reliab%2A%5Btiab%5D+OR+restrict%2A%5Btiab%5D+OR+limit%2A%5Btiab%5D+OR+%22weight-bearing+lunge%22%5Btiab%5D+OR+%22lunge+test%22%5Btiab%5D%29",
-      "hitCount": null,
-      "verifiedOn": "2026-09-06",
-      "verification": "constructed"
-    },
-    {
-      "id": "ss6",
-      "topic": "Achilles tendinopathy — loading protocols",
-      "description": "Trials of loading interventions for midportion Achilles tendinopathy: eccentric, heavy slow resistance, isometric and progressive loading programmes. Read alongside the 2024 JOSPT CPG.",
-      "design": "RCT",
-      "string": "(\"achilles tendinopathy\"[tiab] OR \"achilles tendinosis\"[tiab] OR (\"Achilles Tendon\"[mh] AND \"Tendinopathy\"[mh])) AND (eccentric[tiab] OR \"heavy slow resistance\"[tiab] OR \"loading program*\"[tiab] OR \"loading protocol*\"[tiab] OR isometric[tiab] OR \"Resistance Training\"[mh]) AND (randomized controlled trial[pt] OR randomized[tiab] OR randomised[tiab])",
-      "tags": [
-        "achilles",
-        "rehabilitation",
-        "rct"
-      ],
-      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22achilles+tendinopathy%22%5Btiab%5D+OR+%22achilles+tendinosis%22%5Btiab%5D+OR+%28%22Achilles+Tendon%22%5Bmh%5D+AND+%22Tendinopathy%22%5Bmh%5D%29%29+AND+%28eccentric%5Btiab%5D+OR+%22heavy+slow+resistance%22%5Btiab%5D+OR+%22loading+program%2A%22%5Btiab%5D+OR+%22loading+protocol%2A%22%5Btiab%5D+OR+isometric%5Btiab%5D+OR+%22Resistance+Training%22%5Bmh%5D%29+AND+%28randomized+controlled+trial%5Bpt%5D+OR+randomized%5Btiab%5D+OR+randomised%5Btiab%5D%29",
-      "hitCount": null,
-      "verifiedOn": "2026-09-06",
-      "verification": "constructed"
-    },
-    {
-      "id": "ss7",
-      "topic": "Foot and ankle biomechanics — gait and landing mechanics in ankle instability",
-      "description": "Laboratory mechanism studies: how people with chronic ankle instability actually walk, run and land differently. Kinematics, kinetics, ground reaction force and EMG.",
-      "design": "Laboratory biomechanics, cross-sectional",
-      "string": "(\"chronic ankle instability\"[tiab] OR \"functional ankle instability\"[tiab]) AND (gait[tiab] OR walking[tiab] OR running[tiab] OR landing[tiab] OR \"jump landing\"[tiab] OR \"Gait\"[mh] OR \"Biomechanical Phenomena\"[mh]) AND (kinematic*[tiab] OR kinetic*[tiab] OR \"ground reaction force\"[tiab] OR electromyograph*[tiab] OR \"Electromyography\"[mh])",
-      "tags": [
-        "biomechanics",
-        "chronic-ankle-instability"
-      ],
-      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22chronic+ankle+instability%22%5Btiab%5D+OR+%22functional+ankle+instability%22%5Btiab%5D%29+AND+%28gait%5Btiab%5D+OR+walking%5Btiab%5D+OR+running%5Btiab%5D+OR+landing%5Btiab%5D+OR+%22jump+landing%22%5Btiab%5D+OR+%22Gait%22%5Bmh%5D+OR+%22Biomechanical+Phenomena%22%5Bmh%5D%29+AND+%28kinematic%2A%5Btiab%5D+OR+kinetic%2A%5Btiab%5D+OR+%22ground+reaction+force%22%5Btiab%5D+OR+electromyograph%2A%5Btiab%5D+OR+%22Electromyography%22%5Bmh%5D%29",
-      "hitCount": null,
-      "verifiedOn": "2026-09-06",
-      "verification": "constructed"
-    },
-    {
-      "id": "ss8",
-      "topic": "Ankle sprain epidemiology and incidence in sport",
-      "description": "How common ankle sprain is, in whom, and in which sports. Surveillance and prospective cohort data — the numbers you quote when justifying a prevention programme.",
-      "design": "Prospective cohort and surveillance",
-      "string": "(\"ankle sprain*\"[tiab] OR \"ankle injur*\"[tiab] OR \"Ankle Injuries\"[mh]) AND (incidence[tiab] OR epidemiolog*[tiab] OR prevalence[tiab] OR \"injury rate*\"[tiab] OR \"Incidence\"[mh]) AND (sport*[tiab] OR athlet*[tiab] OR \"Athletic Injuries\"[mh])",
-      "tags": [
-        "epidemiology",
-        "acute-sprain"
-      ],
-      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22ankle+sprain%2A%22%5Btiab%5D+OR+%22ankle+injur%2A%22%5Btiab%5D+OR+%22Ankle+Injuries%22%5Bmh%5D%29+AND+%28incidence%5Btiab%5D+OR+epidemiolog%2A%5Btiab%5D+OR+prevalence%5Btiab%5D+OR+%22injury+rate%2A%22%5Btiab%5D+OR+%22Incidence%22%5Bmh%5D%29+AND+%28sport%2A%5Btiab%5D+OR+athlet%2A%5Btiab%5D+OR+%22Athletic+Injuries%22%5Bmh%5D%29",
-      "hitCount": null,
-      "verifiedOn": "2026-09-06",
-      "verification": "constructed"
-    },
-    {
-      "id": "ss9",
-      "topic": "Post-operative rehabilitation after lateral ligament reconstruction",
-      "description": "What happens after a Brostrom or other lateral ligament reconstruction: rehabilitation protocols, progression and outcomes. The surgical-handover question.",
-      "design": "Cohort, RCT, protocol studies",
-      "string": "(\"lateral ligament\"[tiab] OR Brostrom[tiab] OR \"ligament reconstruction\"[tiab]) AND (ankle[tiab] OR \"Ankle Joint\"[mh]) AND (rehabilitat*[tiab] OR postoperative[tiab] OR \"post-operative\"[tiab] OR \"Postoperative Care\"[mh] OR physiotherap*[tiab] OR \"Physical Therapy Modalities\"[mh])",
-      "tags": [
-        "surgical",
-        "rehabilitation",
-        "foot-ankle"
-      ],
-      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22lateral+ligament%22%5Btiab%5D+OR+Brostrom%5Btiab%5D+OR+%22ligament+reconstruction%22%5Btiab%5D%29+AND+%28ankle%5Btiab%5D+OR+%22Ankle+Joint%22%5Bmh%5D%29+AND+%28rehabilitat%2A%5Btiab%5D+OR+postoperative%5Btiab%5D+OR+%22post-operative%22%5Btiab%5D+OR+%22Postoperative+Care%22%5Bmh%5D+OR+physiotherap%2A%5Btiab%5D+OR+%22Physical+Therapy+Modalities%22%5Bmh%5D%29",
-      "hitCount": null,
-      "verifiedOn": "2026-09-06",
-      "verification": "constructed"
-    },
-    {
-      "id": "ss10",
-      "topic": "Sensorimotor and proprioceptive deficits after ankle injury — mechanism studies",
-      "description": "Why the ankle keeps giving way: proprioceptive, joint position sense, corticospinal and motor control changes after injury. Mechanism, not treatment.",
-      "design": "Mechanism, cross-sectional, laboratory",
-      "string": "(\"ankle sprain*\"[tiab] OR \"chronic ankle instability\"[tiab] OR \"functional ankle instability\"[tiab]) AND (propriocept*[tiab] OR \"joint position sense\"[tiab] OR sensorimotor[tiab] OR corticospinal[tiab] OR \"motor control\"[tiab] OR \"Proprioception\"[mh]) AND (deficit*[tiab] OR impair*[tiab] OR alter*[tiab] OR mechanism*[tiab])",
-      "tags": [
-        "motor-control",
-        "chronic-ankle-instability",
-        "biomechanics"
-      ],
-      "runUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22ankle+sprain%2A%22%5Btiab%5D+OR+%22chronic+ankle+instability%22%5Btiab%5D+OR+%22functional+ankle+instability%22%5Btiab%5D%29+AND+%28propriocept%2A%5Btiab%5D+OR+%22joint+position+sense%22%5Btiab%5D+OR+sensorimotor%5Btiab%5D+OR+corticospinal%5Btiab%5D+OR+%22motor+control%22%5Btiab%5D+OR+%22Proprioception%22%5Bmh%5D%29+AND+%28deficit%2A%5Btiab%5D+OR+impair%2A%5Btiab%5D+OR+alter%2A%5Btiab%5D+OR+mechanism%2A%5Btiab%5D%29",
-      "hitCount": null,
-      "verifiedOn": "2026-09-06",
-      "verification": "constructed"
-    }
-  ],
-  "routing": [
-    {
-      "question": "What is it / how does it work",
-      "designs": "Textbook chapter, narrative review, anatomy or cadaveric study",
-      "database": "Anchor textbook, then Sports Medicine (Auckland) for reviews",
-      "filter": "review[pt] — or skip the database entirely and read a chapter",
-      "note": "You cannot search a field whose vocabulary you do not have. This step exists to give you the correct terms for every later search."
-    },
-    {
-      "question": "Does X work better than Y",
-      "designs": "RCT, then systematic review or meta-analysis of RCTs",
-      "database": "PEDro (filter: clinical trial, musculoskeletal/sports) → Cochrane → Epistemonikos → PubMed",
-      "filter": "randomized controlled trial[pt] / systematic[sb] / PEDro score filter",
-      "note": "Always check the comparator. 'Better than nothing' is close to meaningless in rehab."
-    },
-    {
-      "question": "Is this test accurate",
-      "designs": "Diagnostic accuracy study reporting sensitivity, specificity and likelihood ratios",
-      "database": "PubMed + Clinical Queries (diagnosis category)",
-      "filter": "\"Sensitivity and Specificity\"[mh] OR \"Diagnostic Test Accuracy\"",
-      "note": "Appraise with QUADAS-2 (or QUADAS-3). Ask about the reference standard and whether patients were consecutive."
-    },
-    {
-      "question": "Who will do badly / how long until return to sport",
-      "designs": "Prospective cohort",
-      "database": "PubMed with a cohort filter; Clinical Queries (prognosis category)",
-      "filter": "\"Cohort Studies\"[mh] OR \"Prospective Studies\"[mh] OR prognos*[tiab]",
-      "note": "Appraise with QUIPS. Retrospective is much weaker. Check loss to follow-up before anything else."
-    },
-    {
-      "question": "Why does this happen mechanically",
-      "designs": "Laboratory biomechanics, cadaveric, EMG, computational modelling",
-      "database": "Journal of Biomechanics, Clinical Biomechanics, Gait & Posture — or PubMed string 7",
-      "filter": "\"Biomechanical Phenomena\"[mh] OR kinematic*[tiab] OR \"Electromyography\"[mh]",
-      "note": "Do not look for an RCT to answer a mechanism question. This is the single most common design mismatch."
-    },
-    {
-      "question": "How common is it",
-      "designs": "Injury surveillance, prospective cohort",
-      "database": "Journal of Athletic Training, BJSM — or PubMed string 8",
-      "filter": "\"Incidence\"[mh] OR \"Athletic Injuries\"[mh] OR epidemiolog*[tiab]",
-      "note": "Appraise reporting with STROBE. Check the denominator — per athlete, per exposure hour, or per season changes everything."
-    },
-    {
-      "question": "What does the patient experience",
-      "designs": "Interview studies, qualitative evidence synthesis",
-      "database": "PubMed qualitative filter; CASP qualitative checklist for appraisal",
-      "filter": "\"Qualitative Research\"[mh] OR qualitative[tiab] OR interview*[tiab]",
-      "note": "Underused in ankle rehab. Often the fastest route to why adherence fails."
-    },
-    {
-      "question": "How do I actually program this",
-      "designs": "Clinical practice guidelines, consensus statements, expert practice",
-      "database": "JOSPT CPGs (free PDFs via APTA Orthopedics), International Ankle Consortium, KNGF / Dutch guideline",
-      "filter": "\"Practice Guideline\"[pt] OR \"Consensus\"[mh] OR guideline[tiab]",
-      "note": "Weakest evidence tier in this table. Be honest about that when you teach it. Check the year and check whether a revision exists."
     }
   ],
   "checklist": [

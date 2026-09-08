@@ -235,3 +235,114 @@ Journal of Medicine & Science in Sports** (same ampersand issue). If one returns
 substitute the NLM abbreviation — `"J Orthop Sports Phys Ther"[jour]` — which PubMed also accepts.
 
 The 10 search-string "Run in PubMed" links are constructed the same way and carry the same caveat.
+
+---
+
+# Addendum — 2026-09-08 restructure
+
+The app was rebuilt around the question-routing chain (question → knowledge kind → where it
+lives → terminology → exact route). The source directory is now the substrate the router points
+into rather than the product itself.
+
+That restructure added three new layers — **knowledge kinds**, the **vocabulary bank** and the
+**string composer** — which introduce a **new class of claim that needs a different kind of
+scrutiny than a URL does.**
+
+## 11. The new layers are analytical, not link-verified
+
+Nothing in the knowledge-kinds or vocabulary layers is a link, so "did this URL resolve" does not
+apply to them. What they assert instead is domain knowledge: that a given design can or cannot
+answer a given question, that a given term is used in this literature, that a given abbreviation
+collides with another field's.
+
+**These were written from domain knowledge and cross-checked against the material verified in
+the original build** (the IAC statements, the JOSPT CPGs, the Dutch guideline, the Hertel /
+Wikstrom / McKeon / Doherty / Hiller papers). They were **not** independently sourced
+claim-by-claim, and no citation is attached to each individual synonym or trap.
+
+Treat them as a well-informed starting map that you correct as you read, not as verified fact.
+The specific things most worth checking yourself as you go:
+
+- **Obsolete-term claims.** That "supination trauma" was used in the Dutch literature, that
+  "Achilles tendinitis" dominates pre-2000s records, that "functional instability" is Freeman's
+  original term. Each is a claim about publication history, easy to confirm the first time you
+  run the relevant search and look at the dates on what comes back.
+- **Trap claims.** The FAI (functional ankle instability vs femoroacetabular impingement) and OCD
+  (osteochondral defect vs obsessive-compulsive disorder) collisions are real and easy to verify
+  in one search each. Do that once and you will trust the rest more sensibly.
+- **The "cannot answer" column.** These are epistemics, not facts about the literature. They are
+  the strongest opinions in the file and the most useful part of it — but they are opinions.
+
+## 12. MeSH headings — asserted, NOT checked against the MeSH Browser
+
+The vocabulary bank uses **36 distinct MeSH headings**, and the composer inserts them into every
+string it builds:
+
+- `"Achilles Tendon"[mh]`
+- `"Ankle Injuries"[mh]`
+- `"Ankle Joint"[mh]`
+- `"Athletes"[mh]`
+- `"Athletic Injuries"[mh]`
+- `"Athletic Tape"[mh]`
+- `"Biomechanical Phenomena"[mh]`
+- `"Braces"[mh]`
+- `"Cartilage, Articular"[mh]`
+- `"Electromyography"[mh]`
+- `"Epidemiologic Studies"[mh]`
+- `"Exercise Therapy"[mh]`
+- `"Gait"[mh]`
+- `"Incidence"[mh]`
+- `"Joint Instability"[mh]`
+- `"Kinesthesis"[mh]`
+- `"Lateral Ligament, Ankle"[mh]`
+- `"Military Personnel"[mh]`
+- `"Movement"[mh]`
+- `"Osteochondritis Dissecans"[mh]`
+- `"Patient Reported Outcome Measures"[mh]`
+- `"Physical Therapy Modalities"[mh]`
+- `"Postural Balance"[mh]`
+- `"Prevalence"[mh]`
+- `"Primary Prevention"[mh]`
+- `"Proprioception"[mh]`
+- `"Psychometrics"[mh]`
+- `"Range of Motion, Articular"[mh]`
+- `"Reproducibility of Results"[mh]`
+- `"Resistance Training"[mh]`
+- `"Return to Sport"[mh]`
+- `"Secondary Prevention"[mh]`
+- `"Sports"[mh]`
+- `"Sprains and Strains"[mh]`
+- `"Talus"[mh]`
+- `"Tendinopathy"[mh]`
+`meshb.nlm.nih.gov` and the PubMed MeSH Database are both blocked in this build environment, so
+**not one of these was confirmed against the actual MeSH vocabulary.** They are asserted from
+domain knowledge.
+
+Most are long-standing, stable headings and are very likely correct as written. The ones most
+worth checking first, because they are the ones where being wrong costs you most:
+
+- `"Lateral Ligament, Ankle"[mh]` — the most specific heading in the set, and the most likely to
+  be wrong or to not exist in that exact form.
+- `"Athletic Tape"[mh]` — asserted to exist and to be under-used. If it does not exist, that
+  claim in the prevention concept is wrong.
+- `"Return to Sport"[mh]` — the claim that it is a *recent* heading is the entire reason the
+  vocabulary bank insists on `MeSH OR [tiab]`. The reasoning holds regardless, but the specific
+  introduction-date claim is unverified.
+- `"Kinesthesis"[mh]` — asserted to be the MeSH spelling, which is neither of the two free-text
+  spellings. Worth one look.
+- `"Early Ambulation"[mh]` — used in the acute-sprain route.
+
+**A wrong MeSH heading does not break a search.** PubMed will simply return nothing for that one
+`[mh]` term while the `[tiab]` terms in the same OR block carry on working. Every concept block in
+this file is built so the `[tiab]` terms alone would still function — the MeSH headings are a
+recall bonus, never the load-bearing element. That is deliberate, and it is why an unverified MeSH
+heading is a recall risk rather than a correctness risk.
+
+**Fastest fix:** open the MeSH Database once, paste each heading in, and correct `data.json`
+where needed. Twenty minutes, once, and the whole composer becomes trustworthy.
+
+## 13. Still true from the original build
+
+Everything in sections 1–10 above still applies. In particular: **hit counts remain unvalidated**
+(E-utilities was re-tested on 2026-09-08 and is still blocked), the BJSM homepage is still the one
+`search-asserted` entry, and the four missing Google Scholar profiles are still missing.

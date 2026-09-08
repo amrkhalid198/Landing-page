@@ -177,3 +177,128 @@ copy button                 clipboard content verified === the search string; la
 localStorage                query, open cards and checklist ticks all survive a reload
 mobile 390px                scrollWidth 390, no horizontal overflow
 ```
+
+---
+
+# 2026-09-08 — restructured from directory to router
+
+## What changed and why
+
+The first build answered "what are the sources in this field". The brief was then corrected: the
+product should be the **decision chain**, not the source list —
+
+```
+MY SPECIFIC QUESTION
+        ↓
+What KIND of knowledge would answer this?
+        ↓
+Where does that kind of knowledge usually live?
+        ↓
+What terminology does the literature use?
+        ↓
+What exact search route should I take?
+```
+
+The journals, researchers, guidelines and tools verified in the first build are unchanged. They
+are now **the substrate the router points into**, demoted below the router in the page and
+reachable from within each knowledge kind, rather than being the front door.
+
+## Layers added
+
+**1. Knowledge kinds (9).** background, intervention, diagnosis, prognosis, mechanism,
+epidemiology, qualitative, **measurement**, practice. Measurement is not in the routing table
+from the source document and was added because "is the CAIT reliable / what is the MCID" is a
+distinct question type that physiotherapy asks constantly and that no other row answers.
+
+Each kind carries: "sounds like" trigger phrases, question shape (PICO / PEO / neither), designs
+that CAN answer it, **designs that CANNOT and why**, the journals and people who hold it, the
+guidelines to read first, the database order, the appraisal instrument, red flags, a tiered search
+ladder with time budgets, and a stop rule.
+
+The "cannot answer" column is the load-bearing part. Most wasted searching is a design mismatch —
+looking for an RCT to answer a mechanism question.
+
+**2. Vocabulary bank (16 concepts, 217 terms, 36 MeSH headings, 35 traps).** The layer that was
+entirely missing from v1 and the direct answer to "what terminology does the literature use".
+Each concept expands into clinical terms, abbreviations, lay terms, spelling variants, obsolete
+terminology, MeSH headings, a MeSH note, and the traps that silently destroy recall.
+
+Content that a source list cannot give you, and the reason this layer exists:
+
+- **No MeSH heading exists for chronic ankle instability.** Searching it as a MeSH concept returns
+  nothing. Recorded on the concept, and the reason every CAI block leans on `[tiab]`.
+- **`FAI` collides** — functional ankle instability here, femoroacetabular impingement everywhere
+  else. The block builder programmatically excludes collision-flagged abbreviations, verified in
+  the test suite.
+- **`OCD` collides** with obsessive-compulsive disorder.
+- **"supination trauma"** — the Dutch/Belgian term. Omit it and you lose the literature behind the
+  KNGF and Vuurberg guidelines.
+- **"Achilles tendinitis" must be searched on purpose** even though the inflammatory model was
+  abandoned, because twenty-plus years of trials are filed under it.
+- **`programme` / `program`**, `kinaesthesia` / `kinesthesia`, `centre` / `center of pressure`,
+  and `reinjur*` not matching `"re-injury"`.
+- **`"Postural Balance"[mh]`, not `Balance`.** **`"Kinesthesis"[mh]`**, neither free-text spelling.
+- **`coper`** — a coined research term you would never guess, and the key to the comparative CAI
+  literature.
+- **Syndesmotic injury actively excluded** from lateral-sprain routes, because the return-to-sport
+  timeline is roughly double.
+
+**3. Design filters (10) and a live string composer.** Concepts AND concepts AND filter, assembled
+in the browser. This replaces the fixed set of 10 strings with the ability to build a string for
+any question in the domain. The 10 original strings survive as **worked routes** that load back
+into the router.
+
+The composer warns when a chosen concept block already carries the design vocabulary of the
+chosen filter (biomechanics concept + mechanism filter, for example) and tells you to drop the
+filter first if you land under 20 hits.
+
+## Verification status of the new layers
+
+The new layers contain **no URLs**, so link verification does not apply to them. They assert
+domain knowledge instead. This is a different class of claim and it is documented in
+**UNVERIFIED.md §11 and §12** — in particular that **all 36 MeSH headings are asserted, not
+checked against the MeSH Browser**, which is blocked. Every concept block is deliberately built so
+its `[tiab]` terms alone still function, making a wrong MeSH heading a recall risk rather than a
+correctness risk.
+
+`eutils.ncbi.nlm.nih.gov` was re-tested on 2026-09-08 and is **still blocked**. Hit counts remain
+`null`. No numbers were invented.
+
+## Build and test
+
+`data.json` is assembled by script with a **cross-reference integrity check** — every journal,
+researcher, guideline, tool, concept, kind and filter id referenced by a knowledge kind or a route
+must resolve, or the build fails. It passes.
+
+Headless Chromium, `file:///`, all non-`file://` requests aborted at the route level:
+
+```
+externalRequests                    []        (zero network requests)
+jsErrors                            []
+chain steps / router steps          5 / 5
+knowledge kinds / concepts          9 / 16
+kind selection                      auto-selects that kind's default design filter
+concept ordering                    concepts matching the chosen kind are listed first
+composed string                     contains both concept blocks + the design filter
+FAI collision                       correctly absent from the CAI block
+obsolete terms                      present (proprioceptive rehabilitation, Achilles tendinitis)
+redundancy warning                  fires on biomech+mech, clears on filter change
+worked-route fidelity               r1 r2 r6 r7 r9 r10 -> loaded router string is an EXACT match
+carried NOT clause                  survives load, and its remove button works
+picking a kind                      resets clauses carried in from a route
+copy button                         clipboard verified === composed string
+global search                       "supination" hits the vocabulary layer and nothing else
+localStorage                        question, kind, concepts, filter, ticks all survive reload
+links                               33/33 target=_blank + rel=noopener
+mobile 390px                        scrollWidth 390, no horizontal overflow
+```
+
+Two defects were found by the test suite during this build and fixed:
+
+1. **Worked routes with extra or NOT clauses lost them when loaded into the router**, so the
+   router produced a different string from the one displayed on the route card. Router state now
+   carries both clauses; fidelity is asserted as an exact-match test across all six affected
+   routes.
+2. **The clause remove buttons never fired** — the handlers existed but the ids were missing from
+   the delegated-click selector, so `closest()` returned null. Caught because the fidelity test
+   checked the removal actually changed the string rather than just that the button existed.
