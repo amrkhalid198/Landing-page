@@ -361,15 +361,11 @@
     }
 
     .cycle-num {
+      position: absolute; top: 10px; inset-inline-end: 10px;
       display: flex; align-items: center; justify-content: center;
-      width: 27px; height: 27px;
-      border-radius: 50%;
-      background: rgba(255,82,0,.10);
-      border: 1px solid rgba(255,82,0,.32);
-      font-family: var(--en);
-      font-size: 12.5px; font-weight: 800; line-height: 1;
-      color: var(--orange);
-      flex-shrink: 0;
+      width: 16px; height: 16px;
+      font-family: var(--en); font-size: 10px; font-weight: 800; line-height: 1;
+      color: var(--text-mid);
     }
     .cycle-label { font-size: 15px; font-weight: 700; line-height: 1.5; }
 
@@ -493,16 +489,26 @@
     }
     .dream-card:hover { border-color: rgba(255,82,0,.3); }
     .dream-card:hover::after { background: var(--orange); }
-
-    .dream-num {
-      font-family: var(--display);
-      font-size: 44px;
-      color: rgba(255,82,0,.12);
-      line-height: 1;
-      flex-shrink: 0;
-      width: 36px;
-    }
     .dream-card p { font-size: 14px; line-height: 1.65; }
+
+    /* Shared two-tone pictograms; the orange accents inherit into SVG uses. */
+    .icon-sprite { position: absolute; overflow: hidden; pointer-events: none; }
+    .bp-icon {
+      display: block; width: 32px; height: 32px; flex-shrink: 0;
+      color: var(--text-hi); fill: none; stroke: currentColor;
+      stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .bp-accent { stroke: var(--orange-hi); }
+    .benefit-icon, .cycle-symbol {
+      display: flex; align-items: center; justify-content: center;
+      width: 46px; height: 46px; flex-shrink: 0; border-radius: 12px;
+      background: rgba(232,102,61,.07);
+      border: 1px solid rgba(232,102,61,.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+    }
+    .cycle-label { flex: 1; }
+    .phase-heading { display: flex; align-items: center; gap: 12px; }
+    .phase-heading .bp-icon { width: 30px; height: 30px; }
 
     /* ── NOT FOR ───────────────────────────────────────── */
     .notfor-card {
@@ -745,28 +751,28 @@
     .deliv-card:hover::after { opacity: 1; }
 
     .deliv-index {
-      font-family: var(--display);
-      font-size: 46px;
-      color: rgba(255,82,0,.07);
-      line-height: 1;
-      margin-bottom: 8px;
+      position: absolute; top: 24px; inset-inline-end: 20px;
+      font-family: var(--display); font-size: 22px;
+      color: rgba(232,102,61,.4); line-height: 1;
     }
 
     .deliv-icon-row {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
+      gap: 14px;
+      margin-bottom: 12px; padding-inline-end: 24px;
     }
     .deliv-icon {
-      width: 32px; height: 32px;
-      border-radius: 7px;
-      background: rgba(255,82,0,.08);
-      border: 1px solid rgba(255,82,0,.15);
+      width: 48px; height: 48px; flex-shrink: 0;
+      border-radius: 12px;
+      background: rgba(232,102,61,.07);
+      border: 1px solid rgba(232,102,61,.18);
       display: flex; align-items: center; justify-content: center;
     }
-    .deliv-icon svg { width: 16px; height: 16px; stroke: var(--orange); fill: none; stroke-width: 1.8; }
+    .deliv-icon .bp-icon { width: 30px; height: 30px; }
     .deliv-card h3 { font-size: 16px; font-weight: 700; }
+    .deliv-icon-row h3 { flex: 1; min-width: 0; }
+    .deliv-icon-row .en { max-width: 100%; }
     .deliv-card p { font-size: 14px; color: var(--text-mid); line-height: 1.75; margin-top: 8px; }
 
     /* ── BACKSTORY ─────────────────────────────────────── */
@@ -1096,7 +1102,6 @@
 
       .dream-grid { gap: 10px; }
       .dream-card { padding: 18px 16px; }
-      .dream-num { font-size: 36px; width: 30px; }
 
       .notfor-card { padding: 22px 16px; }
       .notfor-list li { font-size: 14px; }
@@ -1116,7 +1121,7 @@
 
       .deliv-grid { gap: 10px; }
       .deliv-card { padding: 20px 16px; }
-      .deliv-index { font-size: 36px; }
+      .deliv-index { top: 22px; font-size: 20px; }
 
       /* tech bar: stack items more cleanly on mobile */
       .tech-bar {
@@ -1582,7 +1587,7 @@
       position: relative; overflow: hidden;
       background: linear-gradient(160deg, #14171a, var(--bg-card));
       border: 1px solid var(--bg-stroke);
-      border-radius: 14px; padding: 16px 16px 15px;
+      border-radius: 14px; padding: 20px 20px 18px;
       transition: border-color .22s, transform .22s, box-shadow .22s;
     }
     .test-chip::after {
@@ -1597,14 +1602,15 @@
     .test-chip:hover::after { opacity: 1; }
     .test-chip-ico {
       display: inline-flex; align-items: center; justify-content: center;
-      width: 34px; height: 34px; border-radius: 9px; margin-bottom: 10px;
-      background: var(--orange-dim); border: 1px solid rgba(232,102,61,.22);
+      width: 52px; height: 52px; border-radius: 14px; margin-bottom: 14px;
+      background: rgba(232,102,61,.065); border: 1px solid rgba(232,102,61,.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
     }
-    .test-chip-ico svg { width: 17px; height: 17px; stroke: var(--orange-hi); fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+    .test-chip-ico .bp-icon { width: 34px; height: 34px; }
     .test-chip-idx {
-      position: absolute; top: 13px; inset-inline-end: 14px;
+      position: absolute; top: 20px; inset-inline-end: 18px;
       font-family: var(--display); font-size: 20px; line-height: 1;
-      color: rgba(232,102,61,.28);
+      color: rgba(232,102,61,.48);
     }
     .test-chip-name { font-size: 13.5px; font-weight: 600; display: block; line-height: 1.5; color: var(--text-hi); }
     .test-chip-sub { font-size: 11px; color: var(--text-mid); display: block; margin-top: 3px; line-height: 1.6; }
@@ -1612,7 +1618,13 @@
       background: linear-gradient(160deg, rgba(232,102,61,.14), rgba(232,102,61,.04));
       border-color: rgba(232,102,61,.35);
     }
-    .test-chip-accent .test-chip-ico { background: rgba(232,102,61,.2); }
+    .test-chip-accent .test-chip-ico { background: rgba(232,102,61,.12); }
+    @media (max-width: 480px) {
+      .test-chip { padding: 17px 14px 16px; }
+      .test-chip-ico { width: 48px; height: 48px; margin-bottom: 13px; }
+      .test-chip-ico .bp-icon { width: 32px; height: 32px; }
+      .test-chip-idx { top: 18px; inset-inline-end: 14px; font-size: 18px; }
+    }
 
     .sys-closer { margin-top: 64px; text-align: center; font-size: 17px; font-weight: 600; line-height: 1.9; }
     .sys-closer em { color: var(--orange-hi); font-style: normal; }
@@ -2160,6 +2172,33 @@
 </head>
 <body>
 
+<!-- Shared sports pictograms: decorative; each card keeps its text label. -->
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="bp-mobility" viewBox="0 0 32 32"><path d="M8 4v9l3 6v7h15v-2.5a2 2 0 0 0-1.5-1.9L18 19.5a4 4 0 0 1-3-3.9V4"/><circle class="bp-accent" cx="13" cy="18" r="2.5"/><path class="bp-accent" d="M20 6a10 10 0 0 1 7 10m-4-2 4 2 1-4"/></symbol>
+    <symbol id="bp-balance" viewBox="0 0 32 32"><circle cx="17" cy="5" r="2.3"/><path d="m16 10-4 7 6 4-2 5m-4-9-6 5m8-9-5-2-4 3m10-2 5 3 6-2"/><path class="bp-accent" d="M6 28q10-5 20 0m-10-1v3"/></symbol>
+    <symbol id="bp-reactive" viewBox="0 0 32 32"><circle cx="16" cy="5" r="2.3"/><path d="M16 10v8m-6-5 6-3 6 3m-6 5-5 9m5-9 5 9"/><path class="bp-accent" d="M2 17h6m-3-3 3 3-3 3m25-3h-6m3-3-3 3 3 3"/><path class="bp-accent" d="M10 29h12"/></symbol>
+    <symbol id="bp-power" viewBox="0 0 32 32"><circle cx="16" cy="5" r="2.3"/><path d="M16 10v7m-6-9 6 4 6-4m-6 9-5 6-4-2m9-4 5 6 4-2"/><path class="bp-accent" d="M11 27v3m5-5v5m5-3v3M4 15l2-3m22 3-2-3"/></symbol>
+    <symbol id="bp-strength" viewBox="0 0 32 32"><rect x="6" y="8" width="5" height="16" rx="1.5"/><rect x="21" y="8" width="5" height="16" rx="1.5"/><path d="M6 12H3v8h3m20-8h3v8h-3"/><path class="bp-accent" d="M11 14h10m-10 4h10"/></symbol>
+    <symbol id="bp-neural" viewBox="0 0 32 32"><path d="M16 7c-2-5-8-3-8 1-4 0-6 5-3 8-3 3-1 8 3 8 0 4 6 6 8 2m0-19c2-5 8-3 8 1 4 0 6 5 3 8 3 3 1 8-3 8 0 4-6 6-8 2V7"/><path class="bp-accent" d="m9 12 3 4-3 5m14-9-3 4 3 5m-11-5h8"/><circle class="bp-accent" cx="12" cy="16" r="1.5"/><circle class="bp-accent" cx="20" cy="16" r="1.5"/></symbol>
+    <symbol id="bp-confidence" viewBox="0 0 32 32"><path d="m16 3 11 4v8c0 7-5 11-11 14C10 26 5 22 5 15V7z"/><path class="bp-accent" d="m11 16 3.5 3.5L22 12"/></symbol>
+    <symbol id="bp-repeat" viewBox="0 0 32 32"><path d="M27 13A11 11 0 0 0 8 7L4 11m0-7v7h7M5 19a11 11 0 0 0 19 6l4-4m0 7v-7h-7"/><path class="bp-accent" d="m11 17 3 3 7-8"/></symbol>
+    <symbol id="bp-reinjury" viewBox="0 0 32 32"><path d="M27 13A11 11 0 0 0 8 7L4 11m0-7v7h7M5 19a11 11 0 0 0 19 6l4-4m0 7v-7h-7"/><path class="bp-accent" d="M16 10v8m0 4v.1"/></symbol>
+    <symbol id="bp-injury" viewBox="0 0 32 32"><path d="M8 4v9l3 6v7h15v-2.5a2 2 0 0 0-1.5-1.9L18 19.5a4 4 0 0 1-3-3.9V4"/><path class="bp-accent" d="m9 16 5-2-2 5 5-2m4-10 2-3m1 8h4"/></symbol>
+    <symbol id="bp-ice" viewBox="0 0 32 32"><path d="M16 3v26M5 9l22 14M5 23 27 9"/><path class="bp-accent" d="m12 5 4 4 4-4M12 27l4-4 4 4M5 14l5-2-1-5m18 11-5 2 1 5M5 18l5 2-1 5m18-11-5-2 1-5"/></symbol>
+    <symbol id="bp-video" viewBox="0 0 32 32"><rect x="4" y="6" width="24" height="18" rx="3"/><path class="bp-accent" d="m13 11 7 4-7 4z"/><path d="M11 28h10m-5-4v4"/></symbol>
+    <symbol id="bp-run" viewBox="0 0 32 32"><circle cx="21" cy="5" r="2.3"/><path d="m18 10-5 8 7 4-4 7m-3-11-4 7H3m13-12-5-2-5 4m11-3 5 5 6-1"/><path class="bp-accent" d="M3 7h7M2 11h4m19 11h5"/></symbol>
+    <symbol id="bp-focus" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="6"/><path class="bp-accent" d="M16 2v7m0 14v7M2 16h7m14 0h7"/><circle class="bp-accent" cx="16" cy="16" r="1.5"/></symbol>
+    <symbol id="bp-direction" viewBox="0 0 32 32"><path d="M6 28v-8a4 4 0 0 1 4-4h12a4 4 0 0 0 4-4V4"/><path class="bp-accent" d="m21 9 5-5 5 5M1 23l5 5 5-5"/><path d="M5 6h7m-3-3v6"/></symbol>
+    <symbol id="bp-chain" viewBox="0 0 32 32"><path d="m13 11 6 10m-6 0 6-10"/><circle cx="10" cy="7" r="4"/><circle cx="22" cy="25" r="4"/><circle class="bp-accent" cx="22" cy="7" r="4"/><circle class="bp-accent" cx="10" cy="25" r="4"/></symbol>
+    <symbol id="bp-trophy" viewBox="0 0 32 32"><path d="M10 4h12v8a6 6 0 0 1-12 0V4Zm6 14v7m-6 3h12"/><path class="bp-accent" d="M10 7H5v4a6 6 0 0 0 6 6M22 7h5v4a6 6 0 0 1-6 6"/><path d="M12 25h8"/></symbol>
+    <symbol id="bp-chart" viewBox="0 0 32 32"><rect x="6" y="3" width="20" height="26" rx="3"/><path d="M12 6h8"/><path class="bp-accent" d="m10 20 4-5 4 2 4-6"/><path d="M10 25h12"/></symbol>
+    <symbol id="bp-assessment" viewBox="0 0 32 32"><rect x="7" y="6" width="20" height="23" rx="3"/><rect x="12" y="3" width="10" height="6" rx="2"/><path class="bp-accent" d="m11 15 2 2 3-4m-5 10 2 2 3-4"/><path d="M20 15h3m-3 8h3"/></symbol>
+    <symbol id="bp-calendar" viewBox="0 0 32 32"><rect x="4" y="6" width="24" height="23" rx="3"/><path d="M10 3v6m12-6v6M4 13h24"/><path class="bp-accent" d="m11 21 3 3 7-7"/></symbol>
+    <symbol id="bp-book" viewBox="0 0 32 32"><path d="M16 8c-4-3-8-4-13-3v21c5-1 9 0 13 3 4-3 8-4 13-3V5c-5-1-9 0-13 3v21"/><path class="bp-accent" d="m7 11 5 2m-5 4 5 2m8-6 5-2m-5 8 5-2"/></symbol>
+  </defs>
+</svg>
+
 <!-- ANNOUNCEMENT -->
 <div class="ann-bar">BULLETPROOF ANKLE PROGRAM &nbsp;—&nbsp; 10-WEEK SYSTEM</div>
 
@@ -2244,22 +2283,27 @@
 
       <ol class="cycle-nodes">
         <li class="cycle-node">
+          <span class="cycle-symbol"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-injury"/></svg></span>
           <span class="cycle-num">1</span>
           <h3 class="cycle-label">بيجيلك التواء في الكاحل</h3>
         </li>
         <li class="cycle-node">
+          <span class="cycle-symbol"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-ice"/></svg></span>
           <span class="cycle-num">2</span>
           <h3 class="cycle-label">تحط تلج ومسكنات لحد ما الألم والتورم يخفوا</h3>
         </li>
         <li class="cycle-node">
+          <span class="cycle-symbol"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-video"/></svg></span>
           <span class="cycle-num">3</span>
           <h3 class="cycle-label">تعمل تمارين عشوائية على النت</h3>
         </li>
         <li class="cycle-node">
+          <span class="cycle-symbol"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-run"/></svg></span>
           <span class="cycle-num">4</span>
           <h3 class="cycle-label">ترجع الملعب عشان حاسس إنك تمام</h3>
         </li>
         <li class="cycle-node">
+          <span class="cycle-symbol"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-reinjury"/></svg></span>
           <span class="cycle-num">5</span>
           <h3 class="cycle-label">يجيلك التواء تاني</h3>
         </li>
@@ -2290,23 +2334,23 @@
 
     <div class="dream-grid">
       <div class="dream-card">
-        <div class="dream-num">١</div>
+        <span class="benefit-icon"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-focus"/></svg></span>
         <p>داخل تتمرن وأنت مش بتفكر في الكاحل خالص — تركيزك كله على الأداء، مش على تجنب الإصابة.</p>
       </div>
       <div class="dream-card">
-        <div class="dream-num">٢</div>
+        <span class="benefit-icon"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-direction"/></svg></span>
         <p>قادر تعمل كل الحركات المركّبة في رياضتك — <span class="en">Sprinting, Cutting, Jumping</span> — بثقة كاملة وبدون تردد.</p>
       </div>
       <div class="dream-card">
-        <div class="dream-num">٣</div>
+        <span class="benefit-icon"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-power"/></svg></span>
         <p>بتبني عضلات رجل قوية وانفجارية حقيقية تتحسس فرقها في كل خطوة وكل حركة جوه الملعب.</p>
       </div>
       <div class="dream-card">
-        <div class="dream-num">٤</div>
+        <span class="benefit-icon"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-chain"/></svg></span>
         <p>رجلك بقت كلها قوية وثابتة — مش بس الكاحل — لأن التأهيل الحقيقي بيشتغل على السلسلة كلها.</p>
       </div>
       <div class="dream-card">
-        <div class="dream-num">٥</div>
+        <span class="benefit-icon"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-trophy"/></svg></span>
         <p>راجع تستمتع بالرياضة وتنافس بعقلية هجومية بدل ما تبقى داخل كل ماتش بخوف وتوتر وحذر.</p>
       </div>
     </div>
@@ -2327,7 +2371,7 @@
         <div class="phase-dot">1</div>
         <div class="phase-card">
           <span class="phase-tag">PHASE 1 — MIN 2 WEEKS</span>
-          <h3>التنشيط والحماية</h3>
+          <h3 class="phase-heading"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-confidence"/></svg><span>التنشيط والحماية</span></h3>
           <p class="phase-outcome">تنشيط عضلات الكاحل واستعادة المدى الحركي كامل بدون ألم أو تورم</p>
           <details class="phase-detail">
             <summary>التفاصيل العلمية</summary>
@@ -2342,7 +2386,7 @@
         <div class="phase-dot">2</div>
         <div class="phase-card">
           <span class="phase-tag">PHASE 2 — MIN 2 WEEKS</span>
-          <h3>التحكم الحركي الثابت</h3>
+          <h3 class="phase-heading"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-balance"/></svg><span>التحكم الحركي الثابت</span></h3>
           <p class="phase-outcome">استعادة التوازن في الكاحل وبناء روابط عصبية عضلية بين الكاحل والمخ</p>
           <details class="phase-detail">
             <summary>التفاصيل العلمية</summary>
@@ -2357,7 +2401,7 @@
         <div class="phase-dot">3</div>
         <div class="phase-card">
           <span class="phase-tag">PHASE 3 — MIN 3 WEEKS</span>
-          <h3>الثبات الديناميكي</h3>
+          <h3 class="phase-heading"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-reactive"/></svg><span>الثبات الديناميكي</span></h3>
           <p class="phase-outcome">بناء ثقة في الكاحل خلال الحركة والقفز وتغيير الاتجاهات وتباطؤ السرعة</p>
           <details class="phase-detail">
             <summary>التفاصيل العلمية</summary>
@@ -2372,7 +2416,7 @@
         <div class="phase-dot">4</div>
         <div class="phase-card">
           <span class="phase-tag">PHASE 4 — MIN 3 WEEKS — RTS</span>
-          <h3>العودة للرياضة</h3>
+          <h3 class="phase-heading"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-run"/></svg><span>العودة للرياضة</span></h3>
           <p class="phase-outcome">تمارين لمتطلبات الرياضة تساعدك تتحكم في الكاحل أحسن وتجهزك لسيناريوهات الرياضة العشوائية</p>
           <details class="phase-detail">
             <summary>التفاصيل العلمية</summary>
@@ -2424,42 +2468,42 @@
       </div>
       <div class="test-grid">
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M5 19V6.5"/><path d="M5 19h12.5"/><path d="M5 9.5a9.5 9.5 0 0 1 9.5 9.5"/><polyline points="2.6 12.1 5 9.4 7.4 12.1"/></svg></span>
+          <span class="test-chip-ico"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-mobility"/></svg></span>
           <span class="test-chip-idx">01</span>
           <span class="test-chip-name">المرونة والحركة</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><line x1="7.5" y1="21" x2="16.5" y2="21"/><line x1="4" y1="7" x2="20" y2="7"/><path d="M4 7 1.5 14.5h5z"/><path d="M20 7l-2.5 7.5h5z"/></svg></span>
+          <span class="test-chip-ico"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-balance"/></svg></span>
           <span class="test-chip-idx">02</span>
           <span class="test-chip-name">التوازن الديناميكي</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M13.2 2.5 4.5 13.5h6.4L9.9 21.5l8.7-11h-6.4z"/></svg></span>
+          <span class="test-chip-ico"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-reactive"/></svg></span>
           <span class="test-chip-idx">03</span>
           <span class="test-chip-name">الثبات التفاعلي</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="20" y2="21"/><line x1="12" y1="17.5" x2="12" y2="4"/><polyline points="7 9 12 4 17 9"/><line x1="6" y1="15" x2="4.2" y2="16.8"/><line x1="18" y1="15" x2="19.8" y2="16.8"/></svg></span>
+          <span class="test-chip-ico"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-power"/></svg></span>
           <span class="test-chip-idx">04</span>
           <span class="test-chip-name">القوة الانفجارية</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><line x1="2.5" y1="9.5" x2="2.5" y2="14.5"/><line x1="6" y1="6.5" x2="6" y2="17.5"/><line x1="18" y1="6.5" x2="18" y2="17.5"/><line x1="21.5" y1="9.5" x2="21.5" y2="14.5"/><line x1="6" y1="12" x2="18" y2="12"/></svg></span>
+          <span class="test-chip-ico"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-strength"/></svg></span>
           <span class="test-chip-idx">05</span>
           <span class="test-chip-name">قوة العضلات</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><polyline points="1.5 12 5 12 7.5 6 11 18 13.5 12 16 12"/><path d="M18.6 9.2a4 4 0 0 1 0 5.6"/><path d="M21.2 6.8a7.5 7.5 0 0 1 0 10.4"/></svg></span>
+          <span class="test-chip-ico"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-neural"/></svg></span>
           <span class="test-chip-idx">06</span>
           <span class="test-chip-name">التحكم العصبي</span>
         </div>
         <div class="test-chip">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><path d="M12 2.5 3.8 7v5.1c0 4.9 3.4 9.5 8.2 10.6 4.8-1.1 8.2-5.7 8.2-10.6V7z"/><polyline points="8.8 12 11 14.2 15.3 9.9"/></svg></span>
+          <span class="test-chip-ico"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-confidence"/></svg></span>
           <span class="test-chip-idx">07</span>
           <span class="test-chip-name">الثقة في المفصل</span>
         </div>
         <div class="test-chip test-chip-accent">
-          <span class="test-chip-ico"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></span>
+          <span class="test-chip-ico"><svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-repeat"/></svg></span>
           <span class="test-chip-name">بتتعاد في كل مرحلة</span>
           <span class="test-chip-sub">عشان تشوف الفجوة بتقفل</span>
         </div>
@@ -2531,7 +2575,7 @@
         <div class="deliv-index">01</div>
         <div class="deliv-icon-row">
           <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-chart"/></svg>
           </div>
           <h3><span class="en">Progress Tracking App</span></h3>
         </div>
@@ -2542,7 +2586,7 @@
         <div class="deliv-index">02</div>
         <div class="deliv-icon-row">
           <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/></svg>
+            <svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-assessment"/></svg>
           </div>
           <h3>مركز التقييم <span class="en">(Assessment Center)</span></h3>
         </div>
@@ -2553,7 +2597,7 @@
         <div class="deliv-index">03</div>
         <div class="deliv-icon-row">
           <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-calendar"/></svg>
           </div>
           <h3>بروتوكول تأهيل 10 أسابيع</h3>
         </div>
@@ -2564,7 +2608,7 @@
         <div class="deliv-index">04</div>
         <div class="deliv-icon-row">
           <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-video"/></svg>
           </div>
           <h3>مكتبة التمارين <span class="en">(Exercise Library)</span></h3>
         </div>
@@ -2575,7 +2619,7 @@
         <div class="deliv-index">05</div>
         <div class="deliv-icon-row">
           <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-book"/></svg>
           </div>
           <h3>المركز التعليمي <span class="en">(Education Center)</span></h3>
         </div>
@@ -2586,7 +2630,7 @@
         <div class="deliv-index">06</div>
         <div class="deliv-icon-row">
           <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.2 9 11.4C17.25 22.2 21 17.25 21 12V7l-9-5z"/></svg>
+            <svg class="bp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#bp-confidence"/></svg>
           </div>
           <h3>نظام الأمان <span class="en">(Safety System)</span></h3>
         </div>
@@ -3225,4 +3269,3 @@ function copyText(id, btn) {
 
 </body>
 </html>
-
