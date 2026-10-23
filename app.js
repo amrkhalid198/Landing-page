@@ -1,204 +1,71 @@
 'use strict';
-
-(() => {
-  const contactNumber = '201017201075';
-  const plans = {
-    standard: { name: 'Standard', price: 900, display: '900', access: 'وصول لمدة 90 يوم، بدون متابعة شخصية' },
-    vip: { name: 'VIP', price: 2000, display: '2,000', access: 'وصول دائم ومتابعة لحد العودة للرياضة (RTS)' }
-  };
-  const allowedEvents = new Set(['cta_click', 'plan_select', 'payment_click', 'receipt_click', 'review_open', 'review_prepare']);
-  let selectedPlan = null;
-  const waUrl = text => `https://wa.me/${contactNumber}?text=${encodeURIComponent(text)}`;
-  const store = {
-    get(key) { try { return sessionStorage.getItem(key); } catch { return null; } },
-    set(key, value) { try { sessionStorage.setItem(key, value); } catch { /* The page works without storage. */ } }
-  };
-
-  // Only allowlisted interaction metadata is sent. Reviews, receipts and health data never enter this path.
-  function track(name, metadata = {}) {
-    if (!allowedEvents.has(name) || navigator.globalPrivacyControl || navigator.doNotTrack === '1') return;
-    const payload = { name };
-    if (plans[metadata.plan]) payload.plan = metadata.plan;
-    if (['card', 'vodafone', 'instapay'].includes(metadata.method)) payload.method = metadata.method;
-    if (['hero', 'header', 'mobile-sticky', 'footer'].includes(metadata.placement)) payload.placement = metadata.placement;
-    const params = new URLSearchParams(location.search);
-    for (const key of ['utm_source', 'utm_medium', 'utm_campaign']) {
-      const value = params.get(key);
-      if (value && /^[a-zA-Z0-9._ -]{1,64}$/.test(value)) payload[key] = value;
+function scrollToPayment(event) {
+  if (event) event.preventDefault();
+  const target = document.getElementById('price') || document.getElementById('payment');
+  if (target) target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+}
+let statusTimer;
+function announce(message) {
+  const status=document.getElementById('action-status');clearTimeout(statusTimer);
+  status.textContent=message;status.hidden=false;
+  statusTimer=setTimeout(()=>{status.hidden=true;status.textContent='';},6000);
+}
+async function copyText(id,button) {
+  const text=document.getElementById(id).textContent.trim();let copied=false;
+  try {if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text);copied=true;}}catch{}
+  if(!copied){
+    const previous=document.activeElement,field=document.createElement('textarea');
+    field.value=text;field.style.cssText='position:fixed;opacity:0;pointer-events:none';
+    document.body.append(field);field.select();
+    try{copied=document.execCommand('copy')===true;}catch{copied=false;}
+    field.remove();previous?.focus({preventScroll:true});
+  }
+  if(!copied){announce('تعذر النسخ تلقائيًا. انسخ يدويًا: '+text);return;}
+  announce('تم نسخ: '+text);
+  if(button.classList.contains('copied'))return;
+  const original=button.innerHTML;
+  button.innerHTML='<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> COPIED';
+  button.classList.add('copied');
+  setTimeout(()=>{button.innerHTML=original;button.classList.remove('copied');},2000);
+}
+(()=>{
+  const plans={standard:{name:'Standard',price:900},vip:{name:'VIP',price:2000}};
+  const waUrl=text=>'https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(text);
+  const store={get(){try{return sessionStorage.getItem('bp-selected-plan-v1');}catch{return null;}},set(value){try{sessionStorage.setItem('bp-selected-plan-v1',value);}catch{}}};
+  let selectedPlan=null;
+  function track(name,metadata={}){
+    if(navigator.doNotTrack==='1'||navigator.globalPrivacyControl)return;
+    try{fetch('/api/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,...metadata}),keepalive:true,credentials:'omit'}).catch(()=>{});}catch{}
+  }
+  function selectPlan(id){
+    if(!Object.hasOwn(plans,id))return;
+    selectedPlan=id;store.set(id);const plan=plans[id];
+    for(const link of document.querySelectorAll('[data-select-plan]')){
+      if(link.dataset.selectPlan===id)link.setAttribute('aria-current','true');else link.removeAttribute('aria-current');
     }
-    const body = JSON.stringify(payload);
-    try {
-      if (navigator.sendBeacon && navigator.sendBeacon('/api/events', new Blob([body], { type: 'application/json' }))) return;
-      fetch('/api/events', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, keepalive: true, credentials: 'omit' }).catch(() => {});
-    } catch { /* Tracking never blocks enrollment or feedback. */ }
+    document.querySelector('[data-receipt-link]').href=waUrl(`السلام عليكم، عايز أفعّل اشتراكي في Bulletproof Ankle.\nالباقة: ${plan.name}\nالمبلغ: ${plan.price} جنيه\nهرفق إيصال الدفع للمراجعة.`);
   }
-
-  function renderPlan(id) {
-    if (!plans[id]) return;
-    selectedPlan = id;
-    const plan = plans[id];
-    store.set('bp-selected-plan-v1', id);
-    for (const card of document.querySelectorAll('[data-plan-card]')) {
-      const active = card.dataset.planCard === id;
-      card.classList.toggle('is-selected', active);
-      card.querySelector('.selected-badge').hidden = !active;
-      const link = card.querySelector('[data-select-plan]');
-      if (active) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current');
-    }
-    const summary = document.getElementById('selected-plan-text');
-    summary.replaceChildren();
-    const name = document.createElement('bdi');
-    name.textContent = `${plan.name} — ${plan.display} EGP`;
-    summary.append(name, document.createElement('br'), document.createTextNode(plan.access));
-    document.getElementById('payment-error').hidden = true;
-    for (const link of document.querySelectorAll('[data-receipt-link]')) {
-      link.href = waUrl(`السلام عليكم، عايز أفعّل اشتراكي في Bulletproof Ankle.\nالباقة: ${plan.name}\nالمبلغ: ${plan.price} جنيه\nهرفق إيصال الدفع للمراجعة.`);
-    }
-  }
-
-  const requestedPlan = new URLSearchParams(location.search).get('plan');
-  const savedPlan = requestedPlan || store.get('bp-selected-plan-v1');
-  if (plans[savedPlan]) renderPlan(savedPlan);
-
-  for (const link of document.querySelectorAll('[data-select-plan]')) {
-    link.addEventListener('click', () => {
-      renderPlan(link.dataset.selectPlan);
-      track('plan_select', { plan: selectedPlan });
-    });
-  }
-  function requirePlan(event) {
-    if (selectedPlan) return true;
-    event.preventDefault();
-    const error = document.getElementById('payment-error');
-    error.textContent = 'اختار Standard أو VIP الأول عشان تتأكد من المبلغ الصحيح.';
-    error.hidden = false;
-    document.querySelector('[data-select-plan]').focus();
-    return false;
-  }
-  for (const link of document.querySelectorAll('[data-payment-method]')) {
-    link.addEventListener('click', event => {
-      if (requirePlan(event)) track('payment_click', { plan: selectedPlan, method: link.dataset.paymentMethod });
-    });
-  }
-  for (const link of document.querySelectorAll('[data-receipt-link]')) {
-    link.addEventListener('click', event => {
-      if (requirePlan(event)) track('receipt_click', { plan: selectedPlan });
-    });
-  }
-  for (const link of document.querySelectorAll('[data-track]')) {
-    link.addEventListener('click', () => track('cta_click', { placement: link.dataset.track }));
-  }
-
-  async function copyValue(button) {
-    const source = document.getElementById(button.dataset.copy);
-    const status = document.getElementById('copy-status');
-    if (!source) return;
-    const text = source.textContent.trim();
-    let copied = false;
-    try {
-      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
-        await navigator.clipboard.writeText(text);
-        copied = true;
-      }
-    } catch { /* Try the selection-based fallback below. */ }
-    if (!copied) {
-      const textarea = document.createElement('textarea');
-      textarea.value = text;
-      textarea.setAttribute('aria-label', 'القيمة المطلوب نسخها');
-      textarea.style.cssText = 'position:fixed;inset:0 auto auto 0;opacity:0;pointer-events:none';
-      document.body.append(textarea);
-      textarea.select();
-      try { copied = typeof document.execCommand === 'function' && document.execCommand('copy') === true; } catch { copied = false; }
-      textarea.remove();
-      button.focus({ preventScroll: true });
-    }
-    if (copied) {
-      button.textContent = 'تم النسخ';
-      button.classList.add('copied');
-      status.textContent = 'تم نسخ البيانات.';
-      clearTimeout(button.copyTimer);
-      button.copyTimer = setTimeout(() => { button.textContent = 'انسخ'; button.classList.remove('copied'); }, 2000);
-    } else {
-      button.textContent = 'انسخ يدويًا';
-      button.classList.remove('copied');
-      status.textContent = 'النسخ التلقائي مش متاح. حدّد الرقم أو المعرّف وانسخه يدويًا.';
-      const range = document.createRange();
-      range.selectNodeContents(source);
-      const selection = window.getSelection();
-      if (selection) { selection.removeAllRanges(); selection.addRange(range); }
-    }
-  }
-  for (const button of document.querySelectorAll('[data-copy]')) button.addEventListener('click', () => copyValue(button));
-
-  let dialogOpener = null;
-  function openDialog(dialog, opener) {
-    if (!dialog || typeof dialog.showModal !== 'function') return false;
-    dialogOpener = opener;
-    dialog.showModal();
-    return true;
-  }
-  for (const dialog of document.querySelectorAll('dialog')) {
-    dialog.querySelector('[data-dialog-close]').addEventListener('click', () => dialog.close());
-    dialog.addEventListener('close', () => { if (dialogOpener?.isConnected) dialogOpener.focus({ preventScroll: true }); });
-  }
-  for (const button of document.querySelectorAll('[data-image-open]')) {
-    button.addEventListener('click', () => {
-      const source = button.querySelector('img');
-      const image = document.getElementById('expanded-image');
-      image.src = source.src;
-      image.alt = source.alt;
-      document.getElementById('image-caption').textContent = button.closest('figure').querySelector('figcaption').textContent;
-      if (!openDialog(document.getElementById('image-dialog'), button)) window.open(source.src, '_blank', 'noopener,noreferrer');
-    });
-  }
-  for (const opener of document.querySelectorAll('[data-review-open]')) {
-    opener.addEventListener('click', event => {
-      if (openDialog(document.getElementById('review-dialog'), opener)) {
-        event.preventDefault();
-        track('review_open');
-      }
-    });
-  }
-  const reviewForm = document.getElementById('review-form');
-  reviewForm.addEventListener('input', () => { document.getElementById('review-result').hidden = true; });
-  reviewForm.addEventListener('submit', event => {
-    event.preventDefault();
-    if (!reviewForm.reportValidity()) return;
-    const data = new FormData(reviewForm);
-    const message = [
-      'تجربتي مع Bulletproof Ankle',
-      `الاسم: ${String(data.get('name')).trim()}`,
-      `الرياضة: ${String(data.get('sport')).trim() || 'مش مذكورة'}`,
-      `المدة: ${data.get('duration')}`,
-      `التقييم: ${data.get('rating')}`,
-      `تجربتي وملاحظاتي: ${String(data.get('experience')).trim()}`,
-      `إذن النشر بالاسم الأول والرياضة: ${data.has('consent') ? 'موافق' : 'غير موافق؛ الرأي خاص'}`
-    ].join('\n');
-    document.getElementById('review-message').value = message;
-    document.getElementById('review-send').href = waUrl(message);
-    document.getElementById('review-result').hidden = false;
-    document.getElementById('review-send').focus();
-    track('review_prepare');
+  selectPlan(new URLSearchParams(location.search).get('plan')||store.get());
+  for(const link of document.querySelectorAll('[data-select-plan]'))link.addEventListener('click',()=>{
+    selectPlan(link.dataset.selectPlan);announce(`${plans[selectedPlan].name} — ${plans[selectedPlan].price} EGP`);track('plan_select',{plan:selectedPlan});
   });
-
-  const bar = document.querySelector('.mobile-enroll');
-  const fab = document.querySelector('.wa-fab');
-  const hero = document.querySelector('.hero');
-  const payment = document.getElementById('payment');
-  let heroVisible = true;
-  let paymentVisible = false;
-  function updateFloatingControls() {
-    const onPhone = matchMedia('(max-width: 600px)').matches;
-    const modalOpen = Boolean(document.querySelector('dialog[open]'));
-    const showBar = onPhone && !heroVisible && !paymentVisible && !modalOpen;
-    bar.hidden = !showBar;
-    document.body.classList.toggle('has-enroll-bar', showBar);
-    fab.classList.toggle('is-hidden', paymentVisible || showBar || modalOpen);
-  }
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(entries => { heroVisible = entries[0].isIntersecting; updateFloatingControls(); }).observe(hero);
-    new IntersectionObserver(entries => { paymentVisible = entries[0].isIntersecting; updateFloatingControls(); }).observe(payment);
-    addEventListener('resize', updateFloatingControls);
-    new MutationObserver(updateFloatingControls).observe(document.body, { subtree: true, attributes: true, attributeFilter: ['open'] });
+  for(const link of document.querySelectorAll('[data-payment-method],[data-receipt-link]'))link.addEventListener('click',event=>{
+    if(!selectedPlan){event.preventDefault();announce('اختار Standard أو VIP الأول عشان تتأكد من المبلغ الصحيح.');document.querySelector('[data-select-plan]').focus();return;}
+    track(link.hasAttribute('data-receipt-link')?'receipt_click':'payment_click',{plan:selectedPlan,...(link.dataset.paymentMethod?{method:link.dataset.paymentMethod}:{})});
+  });
+  const fab=document.querySelector('.wa-fab'),payment=document.getElementById('payment');
+  if(fab&&payment&&'IntersectionObserver'in window)new IntersectionObserver(entries=>fab.classList.toggle('is-hidden',entries[0].isIntersecting),{threshold:0}).observe(payment);
+  if('HTMLDialogElement'in window){
+    const dialog=document.createElement('dialog');dialog.id='image-dialog';dialog.setAttribute('aria-label','عرض صورة التطبيق');
+    dialog.style.cssText='margin:auto;padding:16px;border:1px solid #E8663D;border-radius:12px;background:#111315;color:#E8E6E1;max-width:94vw;max-height:94vh';
+    const close=document.createElement('button');close.type='button';close.textContent='إغلاق';close.style.cssText='display:block;margin:0 0 12px auto;padding:8px 16px;cursor:pointer';
+    const expanded=document.createElement('img');expanded.id='expanded-image';expanded.style.cssText='display:block;max-width:85vw;max-height:80vh;object-fit:contain';
+    dialog.append(close,expanded);document.body.append(dialog);close.addEventListener('click',()=>dialog.close());
+    let opener;dialog.addEventListener('close',()=>opener?.focus({preventScroll:true}));
+    for(const img of document.querySelectorAll('.shot-card img')){
+      img.tabIndex=0;img.setAttribute('role','button');img.setAttribute('aria-haspopup','dialog');img.style.cursor='zoom-in';img.dataset.imageOpen='';
+      const open=()=>{opener=img;expanded.src=img.currentSrc||img.src;expanded.alt=img.alt;dialog.showModal();};
+      img.addEventListener('click',open);img.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open();}});
+    }
   }
 })();
