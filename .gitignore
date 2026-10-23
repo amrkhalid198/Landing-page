@@ -1,6 +1,8 @@
 .DS_Store
 Thumbs.db
 .vercel
+node_modules/
+test-results/
 
 # Internal copy notes — not part of the site.
 # Remove this line if you deliberately want them public.

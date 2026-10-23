@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Sitemap: https://landing-page-five-pied-29.vercel.app/sitemap.xml
