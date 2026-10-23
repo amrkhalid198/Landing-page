@@ -1,0 +1,13 @@
+{
+  "name": "bulletproof-ankle-landing",
+  "private": true,
+  "version": "1.0.0",
+  "engines": { "node": "22.x" },
+  "scripts": {
+    "test": "node --test",
+    "preview": "node scripts/preview.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
