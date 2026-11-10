@@ -29,7 +29,7 @@ async function copyText(id,button) {
   setTimeout(()=>{button.innerHTML=original;button.classList.remove('copied');},2000);
 }
 (()=>{
-  const plans={standard:{name:'Standard',price:900},vip:{name:'VIP',price:2000}};
+  const plans={standard:{name:'Standard',price:900},vip:{name:'VIP',price:2500}};
   const waUrl=text=>'https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(text);
   const store={get(){try{return sessionStorage.getItem('bp-selected-plan-v1');}catch{return null;}},set(value){try{sessionStorage.setItem('bp-selected-plan-v1',value);}catch{}}};
   let selectedPlan=null;
