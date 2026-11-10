@@ -1,4 +1,7 @@
 {
   "commit": "4f1980c11508c3ade7607d1c8b753985eaa8e2cf",
-  "sha256": "63d827699b6a23b6809b5104ca7f0899ffb6c74a92e82dc6100827fef57450a6"
+  "sha256": "1d3ba9c98d1c411eca010738308cfcbdd05368251fc6bb34bf3427a0bf51368b",
+  "approvedChanges": [
+    "2026-11-10: VIP is 2,500 EGP; removed 20% discount and crossed-out previous price."
+  ]
 }

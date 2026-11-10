@@ -7,7 +7,7 @@ let server,browser,url;
 before(async()=>{server=createServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));url=`http://127.0.0.1:${server.address().port}/`;browser=await chromium.launch({headless:true,...(process.env.BROWSER_CHANNEL?{channel:process.env.BROWSER_CHANNEL}:{})});});
 after(async()=>{await browser?.close();await new Promise(r=>server.close(r));});
 async function open(width=390,extra={}){const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',...extra});const page=await context.newPage();await page.goto(process.env.RELEASE_URL||url,{waitUntil:'networkidle'});return {context,page};}
-test('original page wording and section order are restored exactly',async()=>{
+test('page wording and section order match the approved pricing baseline',async()=>{
  const {context,page}=await open(390,{javaScriptEnabled:false});try{
   const text=await page.evaluate(()=>{const body=document.body.cloneNode(true);body.querySelectorAll('script,style').forEach(el=>el.remove());return body.textContent.replace(/\s+/g,' ').trim();});
   const expected=JSON.parse(fs.readFileSync(path.join(__dirname,'original-copy.json'),'utf8'));
@@ -17,7 +17,9 @@ test('original page wording and section order are restored exactly',async()=>{
 });
 test('plan selection persists and the receipt carries the correct plan and amount',async()=>{
  const {context,page}=await open();try{
-  for(const [id,name,price]of [['standard','Standard',900],['vip','VIP',2000]]){
+  assert.equal(await page.locator('.plan-card-vip .plan-price-num').textContent(),'2,500');
+  assert.equal(await page.locator('.plan-card-vip .plan-price-old,.plan-card-vip .plan-discount-badge').count(),0);
+  for(const [id,name,price]of [['standard','Standard',900],['vip','VIP',2500]]){
    await page.locator(`[data-select-plan=${id}]`).click();
    assert.match(decodeURIComponent(await page.locator('[data-receipt-link]').getAttribute('href')),new RegExp(`الباقة: ${name}\\nالمبلغ: ${price}`));
   }
